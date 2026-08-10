@@ -3686,7 +3686,6 @@
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Riferimento</block>
   <block id="7ba642558e7e1d23e0a4b6d723fe8cb1" category="sidebar">NetApp Console API di distribuzione locale</block>
   <block id="454d0fa294eacaf6687d76609e9d2de5" category="sidebar">ID dell'organizzazione e della flotta</block>
-  <block id="48a692835317bf23f0c6c5786de2ed91" category="sidebar">Riferimento API per la gestione delle identità e degli accessi</block>
   <block id="cddab4871d91f1348299c2439e79e2c8" category="sidebar">Riferimento agli avvisi ONTAP</block>
   <block id="4bb64a663d2c295916c54bfd11eb3986" category="sidebar">Categorie di conformità alla sicurezza del cluster</block>
   <block id="6833b9c301b8c18695d73d7766de5136" category="sidebar">Categorie di conformità alla sicurezza delle Storage VM</block>
@@ -3695,12 +3694,10 @@
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="sidebar">Ottieni aiuto</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="sidebar">Note legali</block>
   <block id="d84803ce394c9284844fcf1a08967ee4" category="paragraph"><block ref="a11bdddbf642d1f60f3b9997ef8c00d9" category="inline-link-rx"></block>.</block>
-  <block id="0aa0a64aaeee0597df416c44affddd02" category="paragraph">NetApp offre due modalità di esecuzione per la sua piattaforma unificata di gestione dello storage: NetApp Console e NetApp Console con implementazione locale. Entrambe condividono una base comune, ma differiscono per architettura, connettività, funzionalità e modello operativo. NetApp Console utilizza agenti Console distribuiti nel tuo ambiente per gestire i sistemi di storage. NetApp Console con implementazione locale è una macchina virtuale senza agenti. NetApp Console con implementazione locale comunica direttamente con i cluster ONTAP e offre funzionalità di gestione della flotta aziendale non disponibili in NetApp Console.</block>
   <block id="8e3ec462216d5097444b77ca00f80473" category="admonition">Scegli NetApp Console se gestisci ambienti cloud e on-premises e vuoi che NetApp gestisca l'infrastruttura della piattaforma. Scegli NetApp Console implementazione locale se gestisci un ampio ambiente ONTAP on-premises e hai bisogno di piena sovranità dei dati e di una gestione dello storage basata su policy.</block>
   <block id="d7500dc8af696cd476663bebb9d0fcb4" category="paragraph">NetApp ospita e gestisce NetApp Console come applicazione SaaS. Ti registri e inizi subito a gestire lo storage. Per gestire i sistemi di storage, distribuisci agenti Console leggeri nei tuoi ambienti cloud o on-premises. Gli agenti si connettono outbound alla piattaforma NetApp Console e NetApp gestisce automaticamente l'autenticazione, gli aggiornamenti e la disponibilità della piattaforma.</block>
   <block id="773ad4889739d9b22df6b5f152501006" category="paragraph">NetApp Console supporta anche la modalità limitata (installata nel tuo cloud pubblico con connettività outbound limitata) e la modalità privata (installata on-premises o nel tuo cloud senza connettività alla piattaforma NetApp Console, inclusi gli ambienti air-gapped).</block>
   <block id="09e422c729719f602773531e14c7fdcb" category="inline-link">Scopri le modalità di distribuzione della NetApp Console</block>
-  <block id="32ef743eec8d1960468ee10a3c5852f2" category="paragraph"><block ref="6c90d7f16c5f8e8c87a61f8328eb6845" category="inline-link-rx"></block>.</block>
   <block id="6bc8e262d6c87c1cc67ba2e2ef69c080" category="paragraph">NetApp Console supporta la più ampia gamma di sistemi di storage, inclusi cloud storage come Amazon FSx for ONTAP, Cloud Volumes ONTAP, Amazon S3, Google Cloud Storage, E-Series, StorageGRID e cluster ONTAP on-premises. Offre accesso alla suite completa di servizi dati NetApp, inclusi NetApp Backup and Recovery, NetApp Disaster Recovery, NetApp Ransomware Resilience, NetApp Copy and Sync e NetApp Data Classification. NetApp Console offre anche funzionalità dei contratti di supporto come Digital Advisor, Lifecycle Planning e dashboard di Sustainability.</block>
   <block id="abd3ebf1d0176fca066a577a665824f3" category="paragraph">NetApp Console è la soluzione ideale per le organizzazioni che gestiscono ambienti cloud ibridi e desiderano il massimo delle funzionalità, meno lavoro per mantenere tutto operativo e licenze flessibili.</block>
   <block id="78c9351d6bfa969cec1e259c5314fb98" category="inline-link">Scopri NetApp Console^.</block>
@@ -3722,7 +3719,6 @@
   <block id="00c24ecc0e9a6f1c6a5202f40e8c96c1" category="paragraph">La distribuzione locale della Console supporta i cluster ONTAP on-premises e NetApp Backup and Recovery. Si integra con Active Directory per l'autenticazione federata e supporta l'autenticazione a più fattori per gli utenti locali.</block>
   <block id="be6ca74d1ea996c7c4fe59d3f22d39a4" category="paragraph">La distribuzione locale tramite console è la soluzione ideale per le organizzazioni con grandi ambienti ONTAP on-premises che richiedono provisioning basato su policy, controlli di conformità automatizzati e piena sovranità dei dati.</block>
   <block id="70b86d6aa7fb00fd1d760b33b8607159" category="inline-link-macro">Scopri la distribuzione locale della NetApp Console^.</block>
-  <block id="dea2002a8471bfaae7f8b931f449e095" category="paragraph"><block ref="dea2002a8471bfaae7f8b931f449e095" category="inline-link-macro-rx"></block></block>
   <block id="0161e3d40bdbea6ca6998c8c60165b33" category="section-title">Confronto delle funzionalità</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Caratteristica</block>
   <block id="23dad8eedc041cc12dbd56726f7f5a94" category="cell">Sì (richiede l'agente Console)</block>
@@ -3757,4 +3753,7 @@
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="cell">Licenze</block>
   <block id="5d888c34f4251b9bdd3ba8412b69ff87" category="cell">Abbonamenti al Marketplace e bring-your-own-license</block>
   <block id="c7eca4d9dd171fc4b4a21c3425a47aa6" category="cell">Bring-your-own-license</block>
+  <block id="5ceffe99385ecce35b5a538a16ca57cb" category="paragraph"><block ref="dc7c11e9da585b9fa1e35ca44da95ccc" category="inline-link-rx"></block>.</block>
+  <block id="f64bf1d04df251b82d06554b478f9ae4" category="paragraph"><block ref="f64bf1d04df251b82d06554b478f9ae4" category="inline-link-macro-rx"></block></block>
+  <block id="955bb7127a670884e7aac906d810238a" category="sidebar">Riferimento API per la distribuzione locale della console</block>
 </blocks>
