@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: concept-monitor-storage.html 
+keywords: monitor, health, performance, alerts, workload analyzer, remediation, netapp console local, console local 
+summary: 'NetApp Console deployment locale offre dashboard sullo stato di salute dell"intera flotta, analisi approfondite dei volumi, avvisi configurabili e soluzioni guidate o automatizzate, così puoi identificare e risolvere i problemi di storage prima che influiscano sui workload.' 
+---
+= Monitoraggio dello storage nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console local deployment ti aiuta a monitorare lo storage su flotte con dashboard, avvisi, analisi approfondite e soluzioni, così puoi individuare e risolvere i problemi prima che influiscano sui carichi di lavoro.
+
+
+
+[[monitor-fleet-wide-health-with-dashboards]]
+== Monitora lo stato di salute dell'intera flotta con le dashboard
+
+Inizia con le dashboard per una rapida panoramica dello stato e delle prestazioni dello storage. Usa la pagina Home per metriche a colpo d'occhio, apri la tabella delle dashboard per dashboard predefinite e personalizzate, e passa ad avvisi, indagine e risoluzione quando ti servono più dettagli.
+
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-manage.html["Mantieni aggiornate le dashboard nella distribuzione locale di NetApp Console"]
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+
+
+
+
+[[investigate-performance-issues]]
+== Indaga sui problemi di prestazioni
+
+Utilizza Workload Analyzer per esaminare i problemi di prestazioni sui singoli volumi. Mette in relazione latenza, throughput, IOPS e modifiche alla configurazione così puoi individuare le cause principali.
+
+* link:concept-workload-analyzer.html["Scopri l'analizzatore del carico di lavoro per la distribuzione locale della NetApp Console"]
+* link:task-analyzer-volume-latency-investigate.html["Analizza l'elevata latenza su un volume nella distribuzione locale di NetApp Console"]
+* link:task-analyzer-volume-throughput-investigate.html["Analizza l'elevata richiesta di throughput su un volume nella distribuzione locale di NetApp Console"]
+* link:reference-workload-analyzer-metrics.html["Scopri le metriche di Workload Analyzer nella distribuzione locale di NetApp Console"]
+
+
+
+
+[[configure-alerts-and-notifications]]
+== Configura avvisi e notifiche
+
+Configura le policy di avviso e i canali di notifica in modo che le persone giuste vengano informate delle condizioni di storage che richiedono attenzione. Ad esempio, inoltra un avviso di capacità al team di storage e un avviso di protezione all'amministratore del backup che può intervenire.
+
+link:task-alert-rules-manage.html["Configura le notifiche e le policy di avviso nella distribuzione locale di NetApp Console"]. link:task-alerts-monitor.html["Visualizza gli avvisi di storage in NetApp Console distribuzione locale"].
+
+
+
+[[remediate-issues]]
+== Risolvere i problemi
+
+Quando rilevi un problema, risolvilo direttamente dalla distribuzione locale di NetApp Console:
+
+* *Correzione automatizzata* — NetApp Console la distribuzione locale applica automaticamente le azioni correttive in base a regole predefinite.
+* *Risoluzione guidata* — Segui le raccomandazioni passo passo per risolvere i problemi con il pieno controllo su ogni azione.
+

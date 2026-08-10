@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: task-customize-dashboard-cards.html 
+keywords: add card, dashboard card, card template, widget, preview, netapp console local 
+summary: Personalizza le schede del dashboard nella distribuzione locale di NetApp Console impostando ambito, modelli, risorse e finestre temporali. 
+---
+= Personalizza le schede nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, personalizza le schede del dashboard quando devi concentrare l'attenzione degli operatori sui segnali che contano di più, come il rischio SLA, la pressione sulla capacità o il rumore di avvisi ricorrenti. Usa questo argomento per modellare le visualizzazioni del dashboard in base alle decisioni operative che il tuo team deve prendere.
+
+
+
+[[before-you-begin]]
+== Prima di iniziare
+
+* Crea o apri una dashboard in cui vuoi inserire le schede.
+* Esamina i modelli disponibili e le metriche in link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"].
+
+
+
+
+[[add-cards-while-refining-an-existing-dashboard]]
+== Aggiungi schede durante la modifica di una dashboard esistente
+
+Utilizza questa opzione quando stai perfezionando una dashboard esistente e hai bisogno di aggiungere rapidamente delle schede che rispondano a una specifica domanda operativa.
+
+.Passaggi
+. Apri la dashboard a cui desideri aggiungere una scheda.
+. Seleziona *Aggiungi carta*.
+. Seleziona il *tipo di risorsa* per la scheda, ad esempio flotta, sistema o volume e poi scegli le risorse dall'elenco delle risorse disponibili.
+. Seleziona *Avanti* per continuare a scegliere una metrica e un tipo di scheda.
+. Scegli una metrica da visualizzare. Puoi filtrare le metriche disponibili per tipo: il *Tipo di metrica*: *Prestazioni*, *Capacità*, *Stato di salute* o *Avvisi*, oppure cercare una metrica specifica per nome. Le metriche disponibili dipendono dal tipo di risorsa che hai selezionato.
++
+link:reference-dashboard-card-templates.html#metrics-list["Scopri le metriche disponibili."]
+
+. Seleziona una scheda da includere nella dashboard e seleziona *Avanti*.
++
+Puoi selezionare solo una scheda alla volta. L'anteprima della scheda mostra dati in tempo reale per la metrica e il tipo di risorsa selezionati.
+
+. Dai un nome alla tua scheda. Il nome deve essere univoco all'interno della dashboard.
+. Rivedi l'anteprima della scheda, inserisci un nome e una descrizione per la scheda, quindi seleziona *Aggiungi*.
+. Ripeti questi passaggi per le altre schede.
+. Salva la dashboard.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-create.html["Crea una dashboard personalizzata"]
+* link:task-dashboard-manage.html["Gestisci dashboard personalizzate"]
+* link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"]
+

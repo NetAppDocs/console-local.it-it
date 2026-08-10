@@ -1,0 +1,178 @@
+---
+sidebar: sidebar 
+permalink: task-alert-rules-manage.html 
+keywords: notifications, alerts, notification rules, alert rules, severity, impact area, email, webhook, mute, netapp console local 
+summary: Configura le regole di notifica nella distribuzione locale della NetApp Console per controllare quali avvisi generano notifiche, chi le riceve e come vengono recapitate. 
+---
+= Configura le regole di notifica per gli avvisi nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Configura le regole di notifica nella distribuzione locale della NetApp Console per controllare quali avvisi generano notifiche, chi le riceve e come vengono recapitate.
+
+.Ruoli di accesso richiesti
+Super admin, admin dell'organizzazione, admin dello storage, analyst del supporto operativo o uno qualsiasi dei ruoli admin per NetApp Backup and Recovery. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Utilizza le regole di notifica per indirizzare gli avvisi giusti alle persone giuste attraverso i canali che si adattano al tuo ambiente, riducendo il rumore degli avvisi che non sono rilevanti per te. Le regole di notifica completano la pagina Avvisi: indaghi o risolvi l'avviso nel flusso di lavoro Avvisi, poi usi le regole per controllare come verranno consegnati avvisi simili in futuro.
+
+Una regola di notifica abbina gli avvisi in base alle condizioni che definisci, come servizio, gravità e area di impatto, e poi invia una notifica attraverso i canali che selezioni. La distribuzione locale della Console include regole di notifica predefinite che puoi visualizzare e modificare, e puoi creare le tue regole personalizzate. Puoi anche silenziare le regole per sopprimere temporaneamente le notifiche durante eventi pianificati come le finestre di manutenzione.
+
+* link:https://docs.netapp.com/us-en/ontap-ems/acp-auto-events.html["Scopri di più su ONTAP EMS e sugli avvisi disponibili."^]
+
+
+
+
+[[before-you-begin]]
+== Prima di iniziare
+
+* Per inviare notifiche tramite e-mail, l'amministratore dell'organizzazione deve configurare un server di posta elettronica nella distribuzione locale della Console. Per inviare notifiche a un sistema esterno, l'amministratore dell'organizzazione deve configurare un webhook. Per i passaggi, vedi link:task-console-configure-notifications-delivery.html["Configura la consegna delle notifiche"].
+* Il Centro notifiche della distribuzione locale della Console visualizza le notifiche per impostazione predefinita, quindi non è necessaria alcuna configurazione aggiuntiva per le notifiche nella console.
+
+
+
+
+[[view-notification-rules]]
+== Visualizza le regole di notifica
+
+La pagina delle regole di notifica è il punto centrale in cui esaminare e gestire tutte le regole applicabili alla tua organizzazione. Ogni regola mostra i suoi attributi principali così puoi valutare e modificare rapidamente il comportamento delle notifiche.
+
+.Passaggi
+. Dal menu di navigazione a sinistra, seleziona *Salute > Avvisi*.
+. Seleziona *Impostazioni di notifica*.
+. Esamina le regole nell'elenco. Ogni regola mostra il suo stato di attività, il nome, i servizi e i livelli di gravità che monitora, i ruoli autorizzati a ricevere notifiche, i canali di consegna abilitati, quando è stata modificata l'ultima volta e l'eventuale periodo di silenziamento programmato.
+. Per trovare una regola specifica, usa i controlli di filtro e ricerca per filtrare in base allo stato attivo, al servizio, alla gravità, al ruolo, al canale o allo stato di silenziamento.
+
+
+
+
+[[create-a-notification-rule]]
+== Crea una regola di notifica
+
+Crea una regola di notifica per definire le condizioni che attivano una notifica e come viene recapitata.
+
+
+NOTE: Non puoi impostare regole di notifica per le flotte. Puoi impostarle solo per sistemi specifici. In ambienti di grandi dimensioni con molti sistemi, valuta di creare regole più ampie in base alla gravità invece di duplicare le regole per ogni sistema: ad esempio, una regola Critica che copre tutti i sistemi funge da regola generica, con regole mirate aggiuntive per i sistemi che richiedono un instradamento o destinatari diversi.
+
+.Esempio di regola di notifica per avvisi critici su tutti i sistemi
+Supponiamo tu voglia assicurarti che nessun avviso critico passi inosservato, indipendentemente dal sistema da cui proviene. Puoi creare una regola generale che instrada tutti gli avvisi critici al Console Notification Center per gli storage admin.
+
+In questo esempio, crei una regola con le seguenti impostazioni:
+
+* *Servizi*: Tutti
+* *Gravità*: Critica
+* *Ruolo IAM*: Storage admin
+* *Sistema*: (Lascia vuoto per applicare a tutti i sistemi)
+* *Metodo di consegna*: Centro notifiche della Console
+
+
+Con questa regola attiva, gli amministratori dello storage visualizzano una notifica nella Console per ogni avviso critico su tutti i sistemi. Questa regola funge da base che puoi integrare con regole più mirate.
+
+.Esempio di regola di notifica mirata per gli avvisi di capacità admin dello storage
+Supponiamo che i tuoi amministratori dello storage debbano rispondere immediatamente a problemi critici di capacità su uno specifico sistema di produzione, ma non vuoi che le loro caselle di posta vengano inondate da avvisi di minore gravità. Puoi creare una regola mirata che invia un'email agli amministratori dello storage solo quando viene attivato un avviso critico di capacità su quel sistema.
+
+In questo esempio, crei una regola con le seguenti impostazioni:
+
+* *Servizi*: gestione ONTAP
+* *Gravità*: Critica
+* *Area di impatto*: Capacità
+* *Ruolo IAM*: Storage admin
+* *Sistema*: <system_name>
+* *Metodo di consegna*: Email
+
+
+Con questa regola attiva, la distribuzione locale della Console invia un'email a tutti gli amministratori dello storage per il sistema specificato quando si verifica un avviso di capacità critica. Gli avvisi con un livello di gravità inferiore, come quelli di avviso o informativi, non generano un'email, così il team può concentrarsi sui problemi che richiedono attenzione urgente.
+
+.Passaggi
+. Dal menu di navigazione a sinistra, seleziona *Salute > Avvisi*.
+. Seleziona *Impostazioni di notifica* e poi seleziona *Aggiungi regola*.
+. Definisci le condizioni che la regola soddisfa:
++
+** *Nome della regola*: inserisci un nome conciso e descrittivo. Questo campo è obbligatorio.
+** *Descrizione della regola*: facoltativamente, inserisci ulteriori informazioni sullo scopo della regola.
+** *Servizi*: seleziona uno o più servizi ONTAP o della piattaforma a cui si applica la regola.
+** *Ruoli*: seleziona i ruoli di accesso che gli utenti devono avere per ricevere notifiche quando la regola viene attivata.
+** *Livelli di gravità*: seleziona quali livelli di gravità la regola monitora, come Critico, Avviso, Errore o Informazione.
+** *Area di impatto*: seleziona le aree operative da abbinare, come Capacità o Prestazioni.
+** *Nome avviso*: seleziona i tipi di avviso specifici che attivano la regola.
+** *Sistema*: seleziona il contesto di sistema a cui si applica la regola.
+
+
+. Seleziona i canali di consegna per la notifica:
++
+** *Email*: invia email di avviso agli utenti che hanno i ruoli selezionati. Richiede un server di posta elettronica configurato.
+** *Webhook*: invia dati di allerta a un sistema esterno. Richiede la selezione di un'integrazione webhook configurata.
+** *Centro notifiche della console*: visualizza in real-time avvisi per gli utenti che hanno i ruoli selezionati.
+
+
+. Facoltativamente, per sopprimere le notifiche di questa regola durante un periodo pianificato, come una finestra di manutenzione, imposta una pianificazione per *Disattiva notifiche* e scegli una ricorrenza se vuoi che il periodo di disattivazione si ripeta. Puoi aggiungere più finestre di disattivazione per regola, utile per cicli di manutenzione ricorrenti come l'applicazione settimanale delle patch.
+. Seleziona *Crea*.
+
+
+
+
+[[enable-or-disable-a-notification-rule]]
+== Attiva o disattiva una regola di notifica
+
+Attiva o disattiva le singole regole di notifica per controllare quali condizioni generano le notifiche. Disattiva le regole non pertinenti al tuo ambiente per ridurre il rumore e attiva le regole per ricominciare a ricevere le relative notifiche.
+
+.Passaggi
+. Dal menu di navigazione a sinistra, seleziona *Salute > Avvisi*.
+. Seleziona *Impostazioni di notifica*.
+. Individua la regola che desideri modificare.
+. Attiva o disattiva l'interruttore *Attivo* della regola. La modifica ha effetto immediato.
+
+
+
+
+[[mute-a-notification-rule]]
+== Disattiva una regola di notifica
+
+Puoi silenziare una regola di notifica per sopprimere la consegna degli avvisi durante un evento pianificato, come una finestra di manutenzione, senza disabilitare la regola. Gli avvisi continuano a comparire nella pagina Avvisi durante il periodo di silenziamento: solo le notifiche via email, webhook e nella console vengono soppresse. Quando la finestra di silenziamento scade, le notifiche riprendono automaticamente.
+
+Puoi aggiungere più finestre silenziate a una singola regola e configurare ciascuna di esse perché si ripeta secondo una pianificazione.
+
+.Esempi di finestre mute
+* *Finestra di manutenzione una tantum*: Stai eseguendo un aggiornamento del firmware su un sistema storage sabato sera e vuoi sopprimere gli avvisi previsti durante quella finestra. Imposta una finestra di silenziamento dalle 22:00 di sabato alle 2:00 di domenica, senza ricorrenza. Quando la finestra scade, le notifiche riprendono automaticamente.
+* *Finestra di patching settimanale ricorrente*: Il tuo team applica le patch ai sistemi ogni domenica da mezzanotte alle 4:00. Aggiungi una finestra di silenziamento con ricorrenza settimanale così le notifiche vengono soppresse automaticamente ogni settimana senza intervento manuale. Se un secondo sistema ha una propria pianificazione di patching in un orario diverso, aggiungi una seconda finestra di silenziamento alla stessa regola con il proprio orario di inizio e ricorrenza.
+
+
+.Passaggi
+. Dal menu di navigazione a sinistra, seleziona *Salute > Avvisi*.
+. Seleziona *Regole di notifica*.
+. Nell'elenco delle regole, individua la regola che vuoi disattivare e seleziona il menu delle azioni per quella regola.
+. Seleziona *Modifica*.
+. Nella sezione *Disattiva notifiche*, imposta la data e l'ora di inizio e fine del periodo di disattivazione delle notifiche.
+. Facoltativamente, puoi selezionare una frequenza per ripetere la finestra in base a una pianificazione.
+. Per aggiungere altre finestre mute, seleziona *Aggiungi finestra muta* e ripeti i passaggi precedenti.
+. Seleziona *Salva*.
+
+
+
+
+[[delete-a-notification-rule]]
+== Elimina una regola di notifica
+
+Elimina una regola di notifica se non ti serve più. Eliminando una regola, la rimuovi definitivamente, quindi non puoi recuperarla.
+
+.Passaggi
+. Dal menu di navigazione a sinistra, seleziona *Salute > Avvisi*.
+. Seleziona *Impostazioni di notifica*.
+. Nell'elenco delle regole, individua la regola che vuoi eliminare e seleziona il menu delle azioni per quella regola.
+. Seleziona *Elimina* dal menu delle azioni.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-console-configure-notifications-delivery.html["Configura la consegna delle notifiche"]
+* link:concept-console-alerts.html["Scopri gli avvisi della Console"]
+* link:task-alerts-monitor.html["Visualizza gli avvisi"]
+

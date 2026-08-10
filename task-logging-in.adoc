@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-logging-in.html 
+keywords: logging in, log in, sign in, signing in, user account, MFA, multi-factor authentication, AD, Active Directory, directory services, local user, Console local deployment access 
+summary: 'Dopo esserti registrato alla distribuzione locale di NetApp Console, puoi accedere dalla console basata sul web per iniziare a gestire i tuoi dati e l"infrastruttura di storage.' 
+---
+= Accedi alla distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi accedere alla distribuzione locale della NetApp Console dopo che l'amministratore della tua organizzazione ti ha invitato al tuo account utente dell'organizzazione della distribuzione locale della Console. Per accedere, usa l'indirizzo email associato al tuo login.
+
+Se accedi ma non vedi alcuna risorsa, contatta l'amministratore dell'organizzazione. link:task-user-settings.html#contact-admin["Contatta l'amministratore della tua organizzazione"].
+
+.Passaggi
+. Apri un browser web e vai all'indirizzo IP in cui è installata la distribuzione locale della Console.
+. Nella pagina di *Log in*, inserisci l'indirizzo email associato al tuo login.
+. A seconda del metodo di autenticazione associato al tuo login, ti verrà richiesto di inserire le tue credenziali.
++
+** Un account NetApp Console che utilizza il tuo indirizzo email e una password
+
+
++
+[NOTE]
+====
+** Se l'autenticazione a più fattori (MFA) è abilitata: dopo aver inserito la password, ti verrà chiesto di inserire un codice TOTP (dalla tua app authenticator) o di utilizzare un codice di recupero.
+** Se accedi tramite codici di recupero, usali nell'ordine mostrato nell'interfaccia utente durante la richiesta del codice di recupero.
+
+
+====
++
+** Un account Active Directory che utilizza il tuo indirizzo email e la tua password
+
+
+

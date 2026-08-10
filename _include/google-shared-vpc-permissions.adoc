@@ -1,0 +1,52 @@
+= 
+:allow-uri-read: 
+
+
+Se usi una VPC condivisa per distribuire risorse in un progetto di servizio, devi preparare le autorizzazioni.
+
+Questa tabella è solo a scopo di riferimento e il tuo ambiente dovrebbe rispecchiare la tabella delle autorizzazioni quando la configurazione IAM è completa.
+
+.Visualizza le autorizzazioni VPC condivise
+[%collapsible]
+====
+[cols="10,10,10,18,18,34"]
+|===
+| Identità | Creatore | Ospitato in | Autorizzazioni del progetto di servizio | Autorizzazioni del progetto host | Scopo 
+
+
+| Account Google per distribuire l'agente | Personalizzato | Progetto di servizio  a| 
+link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politica di distribuzione degli agenti"]
+ a| 
+compute.networkUser
+| Distribuzione dell'agente nel progetto di servizio 
+
+
+| account di servizio agent | Personalizzato | Progetto di servizio  a| 
+link:reference-permissions-gcp.html["Politica relativa all'account di servizio dell'agente"]
+| compute.networkUser deploymentmanager.editor | Implementazione e manutenzione di Cloud Volumes ONTAP e dei servizi nel progetto di servizio 
+
+
+| Account di servizio Cloud Volumes ONTAP | Personalizzato | Progetto di servizio | Membro storage.admin: account del servizio NetApp Console come serviceAccount.user | N/A | (Facoltativo) Per NetApp Cloud Tiering e NetApp Backup and Recovery 
+
+
+| Agente del servizio Google APIs | Google Cloud | Progetto di servizio  a| 
+Editor (predefinito)
+ a| 
+compute.networkUser
+| Interagisce con le API di Google Cloud per conto del deployment. Consente alla Console di utilizzare la rete condivisa. 
+
+
+| Account di servizio predefinito di Google Compute Engine | Google Cloud | Progetto di servizio  a| 
+Editor (predefinito)
+ a| 
+compute.networkUser
+| Distribuisce istanze Google Cloud e infrastrutture di calcolo per conto del deployment. Consente alla Console di utilizzare la rete condivisa. 
+|===
+Note:
+
+. deploymentmanager.editor è necessario solo nel progetto host se non passi regole firewall al deployment e scegli di lasciare che sia la Console a crearle per te. La NetApp Console crea un deployment nel progetto host che contiene la regola firewall VPC0 se non viene specificata nessuna regola.
+. Le autorizzazioni firewall.create e firewall.delete sono necessarie solo se non passi regole firewall al deployment e scegli di lasciare che sia la Console a crearle per te. Queste autorizzazioni risiedono nel file .yaml dell'account della Console. Se stai implementando una coppia HA utilizzando una VPC condivisa, queste autorizzazioni verranno utilizzate per creare le regole firewall per VPC1, 2 e 3. Per tutti gli altri deployment, queste autorizzazioni verranno utilizzate anche per creare le regole per VPC0.
+. Per Cloud Tiering, l'account di servizio di tiering deve avere il ruolo serviceAccount.user a livello di account di servizio, non solo a livello di progetto. Attualmente, se assegni il ruolo serviceAccount.user a livello di progetto, le autorizzazioni non vengono visualizzate quando interroghi l'account di servizio con getIAMPolicy.
+
+
+====

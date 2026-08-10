@@ -1,0 +1,198 @@
+---
+sidebar: sidebar 
+permalink: task-alerts-monitor.html 
+keywords: view alerts, alerts overview, alerts dashboard, org-wide alerts, fleet alerts, netapp console local 
+summary: 'Visualizza gli avvisi attivi in tutta l"organizzazione o per una flotta specifica dalla pagina di panoramica degli avvisi nella distribuzione locale della NetApp Console.' 
+---
+= Monitora e analizza gli avvisi nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitora e analizza gli avvisi nella distribuzione locale di NetApp Console per mantenere l'integrità dello storage e ridurre al minimo le interruzioni.
+
+Visualizza gli avvisi attivi in tutta l'organizzazione o in una flotta specifica, assegnagli una priorità in base alla gravità e all'area di impatto e indaga sulle cause principali così puoi risolvere i problemi prima che si aggravino. Quando un avviso include un'azione consigliata o un'opzione "Fix It", puoi passare direttamente dall'indagine alla risoluzione.
+
+.Ruolo di accesso richiesto
+Tutti i ruoli, ad eccezione di Federation admin e Federation viewer. Gli utenti con il ruolo di Federation admin o Federation viewer non possono visualizzare gli avvisi. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Per gli avvisi ONTAP, puoi accedere a strumenti come System Manager e Workload Analyzer direttamente dalla pagina Avvisi per analizzare e risolvere i problemi.
+
+Per la creazione di report esterni, puoi esportare l'elenco degli avvisi in un file CSV per l'analisi offline.
+
+
+NOTE: Puoi anche impostare regole di notifica per ricevere avvisi tramite email o webhook. link:task-alert-rules-manage.html["Scopri come impostare le notifiche di avviso"].
+
+
+
+[[available-alerts]]
+== Avvisi disponibili
+
+La distribuzione locale di NetApp Console supporta gli avvisi per ONTAP e NetApp Backup and Recovery.
+
+* link:reference-ontap-alerts.html["Scopri gli avvisi ONTAP nella distribuzione locale di NetApp Console"]
+* link:https://docs.netapp.com/us-en/data-services-backup-recovery/reference-audit-actions.html["Scopri di più sugli avvisi di NetApp Backup and Recovery."^]
+
+
+
+
+[[view-the-alerts-dashboard]]
+== Visualizza la dashboard degli avvisi
+
+Usa la dashboard degli avvisi per avere una panoramica rapida dell'attività di avviso attuale per l'ambito che hai selezionato. La dashboard riassume gli avvisi attivi per gravità e area di impatto e include un grafico che mostra la distribuzione degli avvisi nelle ultime 24 ore, così puoi individuare subito le tendenze.
+
+Puoi filtrare la dashboard per concentrarti sugli avvisi critici o sugli avvisi relativi a una specifica area di impatto.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. Filtra la dashboard in base agli avvisi che vuoi visualizzare, tra cui:
++
+** Gravità (critica, di avvertimento o informativa)
+** Avvisi critici raggruppati per area di impatto
+** Area di impatto (Sicurezza, Protezione, Disponibilità, Prestazioni, Capacità o Configurazione)
+
+
+
+
+
+
+[[view-all-alerts]]
+== Visualizza tutti gli avvisi
+
+Usa la scheda Avvisi per visualizzare l'elenco completo degli avvisi attivi per l'ambito che hai selezionato. L'elenco si aggiorna per riflettere l'organizzazione o l'ambito corrente della flotta e puoi cercare avvisi specifici per nome o descrizione.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. Seleziona la scheda *Avvisi* per visualizzare l'elenco completo degli avvisi attivi per l'ambito selezionato.
+. Facoltativamente, puoi cercare un avviso specifico nell'elenco per nome o descrizione.
++
+image:screenshot-alerts-search.png["Cerca avvisi per nome o descrizione"]
+
+
+
+
+
+[[view-alerts-by-system]]
+== Visualizza gli avvisi per sistema
+
+Puoi visualizzare gli avvisi per uno specifico sistema all'interno di una flotta o della tua organizzazione.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. Seleziona la scheda *Stato di salute dei sistemi* per visualizzare un riepilogo degli avvisi associati ai sistemi compresi nell'ambito che hai selezionato.
+. Seleziona *Visualizza avvisi* sulla riga del sistema corrispondente per visualizzare l'elenco completo degli avvisi attivi associati a quel sistema.
+
+
+
+
+[[investigate-an-alert]]
+== Indaga su un avviso
+
+Puoi esaminare un avviso per vedere cosa lo ha attivato e chi ha ricevuto la notifica.
+
+Quando indaghi su un avviso ONTAP, puoi anche andare direttamente all'interfaccia di System Manager del sistema che ha generato l'avviso per visualizzare ulteriori dettagli e agire.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. In una delle due schede, seleziona il nome dell'avviso che vuoi esaminare per visualizzarne i dettagli.
++
+image:screenshot-alerts-investigate.png["Visualizza i dettagli dell'avviso"]
+
+. Se applicabile, seleziona il nome della macchina virtuale (VM) o del cluster per aprire l'interfaccia System Manager per il sistema che ha generato l'avviso.
++
+image:screenshot-alerts-details.png["Visualizza i dettagli dell'avviso e vai su System Manager"]
+
+
+
+
+
+[[remediate-an-alert]]
+== Risolvi un avviso
+
+Quando un avviso include un'azione consigliata o un'opzione "Correggi", usala per passare dalla fase di indagine a quella di risoluzione senza uscire dai dettagli dell'avviso.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. Seleziona l'avviso che vuoi risolvere.
+. Esamina i dettagli dell'avviso, poi seleziona l'azione consigliata o l'opzione *Fix It* se disponibile.
+. Segui i passaggi guidati per applicare la soluzione e poi torna ai dettagli dell'avviso per confermare lo stato dell'avviso.
+
+
+Se l'azione risolve il problema, l'avviso non risulta più attivo per quell'ambito. Se l'avviso rimane attivo, rivedi di nuovo i dettagli dell'avviso e continua l'indagine.
+
+
+
+[[analyze-an-alert]]
+== Analizza un avviso
+
+Puoi analizzare un avviso ONTAP in Workload Analyzer per capire cosa lo ha generato.
+
+Quando indaghi su un avviso ONTAP, puoi anche andare direttamente all'interfaccia di System Manager del sistema che ha generato l'avviso per visualizzare ulteriori dettagli e agire.
+
+.Passaggi
+. Seleziona *Health > Alerts > Overview*.
+. Dal selettore dell'ambito, scegli una delle seguenti:
++
+** *Tutti* (predefinito) per vedere gli avvisi su tutte le flotte a cui hai accesso
+** Una flotta specifica per vedere gli avvisi solo per quella flotta
+
+
+. Seleziona la scheda *Systems health* per visualizzare l'elenco completo degli avvisi attivi per l'ambito selezionato.
+. In una delle due schede, seleziona il nome dell'avviso che vuoi esaminare per visualizzarne i dettagli.
++
+image:screenshot-alerts-investigate.png["Visualizza i dettagli dell'avviso"]
+
+. Se applicabile, seleziona *Analizza* per aprire l'interfaccia di Workload Analyzer per il sistema che ha generato l'alert.
++
+image:screenshot-alerts-analyze.png["Visualizza i dettagli dell'avviso e vai su Workload Analyzer"]
+
+. Inserisci l'intervallo di tempo che comprende il periodo in cui è stato attivato l'avviso, poi seleziona *Analizza* per vedere i risultati dell'analisi. link:concept-workload-analyzer.html["Scopri Workload Analyzer."]
+
+
+
+
+[[export-alerts-to-csv]]
+== Esporta avvisi in formato CSV
+
+Esporta l'elenco degli avvisi nella distribuzione locale della NetApp Console in un file CSV per l'analisi o la creazione di report offline. L'esportazione riflette l'ambito corrente (organizzazione o flotta), il testo di ricerca e i filtri.
+
+.Passaggi
+. Seleziona *Salute > Avvisi* e poi seleziona la scheda *Avvisi*.
+. Imposta l'ambito (organizzazione o flotta) e applica i filtri o il testo di ricerca che vuoi includere nell'esportazione.
+. Seleziona l'icona di download per esportare l'elenco degli avvisi in un file CSV.
+

@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: reference-alert-remediation.html 
+keywords: alert remediation, fix-it, guided remediation, automated remediation, ONTAP alerts, storage alerts, compliance alerts, remediate drift, alert actions, netapp console local 
+summary: Riferimento per le azioni correttive disponibili nella NetApp Console distribuzione locale, inclusi avvisi correlati, aree di impatto e riepiloghi delle azioni. 
+---
+= Azioni di correzione degli avvisi nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Usa questo riferimento per capire quali azioni di correzione sono disponibili da *Fix it* nella distribuzione locale di NetApp Console. Per ogni azione, la tabella descrive cosa fa l'azione e l'avviso correlato. Controlla i dettagli dell'azione nella finestra di conferma prima di eseguirla.
+
+
+
+[[remediation-actions]]
+== Azioni di correzione
+
+[cols="20,17,28,12,23"]
+|===
+| Azione di correzione | Nome dell'allerta | Descrizione avviso | Area di impatto | Riepilogo degli interventi di bonifica 
+
+
+| *Abilita la crescita automatica del volume* | Volume pieno | Il volume sta esaurendo lo spazio ed è vicino alla capacità massima. | Capacità | Aumenta automaticamente le dimensioni di un volume (fino a un limite configurato) per ridurre il rischio di esaurire lo spazio. 
+
+
+| *Ridimensiona volume* | Volume pieno | Il volume sta esaurendo lo spazio ed è vicino alla capacità massima. | Capacità | Aumenta le dimensioni di un volume per fornire subito più spazio. 
+
+
+| *Porta il volume online* | Volume offline | Il volume è offline e non sta servendo dati. | Disponibilità | Porta online un volume offline così può riprendere a fornire dati. 
+
+
+| *Porta l'aggregato online* | Aggregato offline | L'aggregato non è online e i volumi ospitati su di esso potrebbero non essere disponibili. | Disponibilità | Porta online un aggregato offline per ripristinare l'accesso ai volumi che ospita. 
+
+
+| *Porta LUN online* | LUN offline | La LUN è offline e l'accesso all'host non è disponibile. | Disponibilità | Porta online una LUN offline così gli host possono riprendere l'accesso e le operazioni di I/O. 
+
+
+| *Sblocca volume* | Volume limitato | Il volume si trova in uno stato limitato e potrebbe non servire normalmente le operazioni di I/O. | Disponibilità | Riporta un volume con restrizioni allo stato online così i client possono accedervi di nuovo. 
+
+
+| *Porta online lo spazio dei nomi NVMe* | Lo spazio dei nomi NVMe è offline | Lo spazio dei nomi NVMe è offline e l'accesso all'host non è disponibile. | Disponibilità | Riporta online uno spazio dei nomi NVMe offline per ripristinare l'accesso all'host. 
+
+
+| *Attiva il LIF intercluster* | Intercluster LIF inattivo | Un'interfaccia LIF intercluster è inattiva e la comunicazione tra cluster potrebbe essere compromessa. | Connettività | Avvia un LIF intercluster per ripristinare la connettività cluster-to-cluster utilizzata per la replica. 
+
+
+| *Riattiva MetroCluster AUSO* | MetroCluster commutazione automatica non pianificata disabilitata | Il passaggio automatico non pianificato è disabilitato su questo cluster. | Disponibilità | Riattiva il passaggio automatico non pianificato (AUSO) così la protezione MetroCluster funziona come previsto. 
+
+
+| *Configura la rete del Service Processor* | Service Processor non è configurato | La rete del Service Processor (SP) non è configurata. | Gestibilità | Configura le impostazioni di rete dello SP per abilitare l'accesso di out-of-band management. 
+
+
+| *Assegna i dischi non assegnati* | Rilevati dischi non assegnati | Sono presenti dischi non assegnati e la capacità disponibile potrebbe non essere utilizzata. Assegna i dischi a un nodo così puoi usarli per lo storage. | Disponibilità | Assegna i dischi attualmente non assegnati a un nodo così puoi usarli per l'archiviazione. 
+
+
+| *Recupero dello spazio del volume root* | Spazio volume root del nodo basso | Lo spazio disponibile sul volume root del nodo è insufficiente e potrebbe influire sul normale funzionamento del sistema. | Stato di salute del sistema | Libera spazio sul volume root del nodo eliminando lo snapshot più grande o il file di core dump più grande. Le eliminazioni sono permanenti. 
+|===

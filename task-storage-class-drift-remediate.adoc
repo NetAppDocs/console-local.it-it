@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-storage-class-drift-remediate.html 
+keywords: storage class drift, drift remediation, compliance, fix-it, guided remediation, automated remediation, drift detection, storage governance, storage standards, netapp console local 
+summary: Individua, analizza e correggi le deviazioni della classe di archiviazione nella distribuzione locale di NetApp Console. 
+---
+= Correggi la deriva della storage class nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, trova gli avvisi relativi alle deviazioni, analizza i risultati delle deviazioni e correggi i carichi di lavoro che non corrispondono più all'intento della loro classe di archiviazione.
+
+.Ruoli richiesti
+Amministratore dello storage
+
+
+NOTE: Puoi visualizzare e correggere i carichi di lavoro solo nelle fleet in cui hai i permessi.
+
+
+
+[[remediate-drift]]
+== Correggi la deriva
+
+Quando un carico di lavoro non corrisponde più allo scopo della sua classe di archiviazione, la distribuzione locale di NetApp Console genera un avviso. Usa l'avviso per analizzare la discrepanza e applicare la soluzione consigliata.
+
+Puoi applicare alcune soluzioni direttamente dall'avviso. Per altri problemi, aggiorna la configurazione del workload o assegna una classe di storage diversa per ripristinare la conformità. Il workflow di remediation mostra l'impatto previsto prima che tu applichi le modifiche.
+
+.Passaggi
+. Seleziona *Archiviazione > Classi di archiviazione*.
++
+Un riepilogo delle variazioni della classe di archiviazione appare nell'area *Variazioni per classe di archiviazione*. L'elenco completo appare nella tabella.
+
+. Nella colonna *Drifts*, seleziona *View* per la classe di storage pertinente.
++
+La pagina *Avvisi > Panoramica* si apre con i filtri applicati.
+
+. Seleziona un avviso per aprire la pagina dei dettagli dell'avviso.
+. Seleziona *Analizza*.
+. Esamina i risultati in *Workload analyzer*.
++
+Per individuare eventuali discrepanze nella configurazione, confronta le impostazioni previste con quelle effettive per capire cosa è cambiato.
+
+. Seleziona l'azione di correzione consigliata, ad esempio *Fix it*.
+. Esamina le modifiche proposte e applica le misure correttive.
+. Torna su *Archiviazione > Classi di archiviazione* e verifica che il carico di lavoro non appaia più come drifted.
++
+Le valutazioni di conformità possono richiedere diversi minuti per riflettere le recenti modifiche alla configurazione. Se il carico di lavoro risulta ancora non conforme, torna alla pagina dei dettagli dell'avviso e seleziona *Analizza* per esaminare eventuali risultati rimanenti.
+
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:concept-storage-classes.html#storage-class-drift-and-compliance["Scopri la deriva della classe di storage e la conformità nella distribuzione locale di NetApp Console"]
+* link:concept-console-alerts.html["Scopri gli avvisi relativi allo storage"]
+* link:task-alerts-monitor.html["Visualizza gli avvisi"]
+

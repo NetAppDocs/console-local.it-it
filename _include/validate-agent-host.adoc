@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+Puoi anche accedere al report di convalida in formato JSON e ai log di configurazione direttamente dall'host dell'agente della Console nelle seguenti directory:
+
+[source, cli]
+----
+/tmp/netapp-console-agents/logs
+
+/tmp/netapp-console-agents/results.json
+
+----

@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-resources.html 
+keywords: resource, hierarchy, association, access, resource permissions, resource hierarchy, iam, identity and access management 
+summary: 'Controlla l"accesso degli utenti alle risorse aggiungendoli a fleet e cartelle nell"organizzazione di distribuzione locale della tua NetApp Console. Concedi l"accesso agli utenti a livello di fleet.' 
+---
+= Gestisci le risorse in cartelle e gruppi nella NetApp Console distribuzione locale
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gestisci l'accesso alle risorse nella distribuzione locale di NetApp Console associando le risorse alla cartella o alla fleet corretta, che controlla quali team possono accedervi e gestirle.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione o amministratore di cartella o di flotta. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Colloca le risorse dove i team giusti possano gestirle, spostale quando cambia la proprietà e rimuovi le associazioni quando non sono più necessarie.
+
+Una _risorsa_ è un'entità che la distribuzione locale di Console riconosce, come una risorsa di storage o un workload di Backup and Recovery.
+
+
+
+[[console-resource-types]]
+== Tipi di risorse della console
+
+La distribuzione locale tramite console supporta sia le risorse di storage che i carichi di lavoro di Backup and Recovery. Associa uno dei due tipi di risorsa a una fleet per controllare accesso e gestione.
+
+Risorse di storage:: Le risorse di storage sono il tipo di risorsa più comune nella tua organizzazione. Quando aggiungi un sistema storage alla distribuzione locale di Console, associalo a una fleet così che i team appropriati possano accedervi e gestirlo. Ad esempio, dopo aver aggiunto un ONTAP cluster, associalo alla `Production-US-East` fleet.
+Carichi di lavoro di backup e ripristino:: Anche i carichi di lavoro di Backup and Recovery sono considerati risorse. Puoi assegnare ai membri le autorizzazioni per accedere ai carichi di lavoro di Backup and Recovery associando i carichi di lavoro alle flotte. Ad esempio, assegna a un membro l'accesso a un carico di lavoro di Backup and Recovery associandolo a una flotta a cui il membro può accedere e concedendo il ruolo di Backup and Recovery appropriato.
+
+
+
+
+[[view-the-resources-in-your-organization]]
+== Visualizza le risorse della tua organizzazione
+
+Visualizza le risorse della tua organizzazione per trovare una risorsa specifica e vedere a quali fleet o cartelle è associata. Se non hai creato cartelle o fleet, tutte le risorse sono associate alla fleet predefinita direttamente sotto l'organizzazione.
+
+.Passaggi
+. Seleziona *Amministrazione > Identità e accesso*.
+. Seleziona *Risorse*.
+. Seleziona *Ricerca e filtri avanzati*.
+. Utilizza le opzioni disponibili per trovare una risorsa:
++
+** *Cerca per nome della risorsa*: inserisci una stringa di testo e seleziona *Aggiungi*.
+** *Piattaforma*: Seleziona una o più piattaforme, ad esempio Amazon Web Services.
+** *Risorse*: Seleziona una o più risorse, ad esempio Cloud Volumes ONTAP.
+** *Organizzazione, cartella o flotta*: Seleziona l'intera organizzazione, una cartella specifica o una flotta specifica.
+
+
+. Seleziona *Cerca*.
+
+
+
+
+[[associate-a-resource-with-a-folder-or-fleet]]
+[[associate-resource]]
+== Associa una risorsa a una cartella o a una fleet
+
+Associa una risorsa a un gruppo o a una cartella in modo che i team appropriati possano gestirla. Ad esempio, dopo aver aggiunto un ONTAP cluster, associalo al  `Production-US-East` fleet in modo che gli amministratori regionali delle risorse di storage per quel fleet possano gestirlo.
+
+
+NOTE: Gli utenti con il ruolo di amministratore dell'organizzazione possono aggiungere risorse a una cartella per delegare le attività di associazione della flotta all'amministratore della cartella o della flotta per quella cartella. link:task-iam-manage-folders-fleets.html#associate-resource-folder["Associa una risorsa a una cartella"].
+
+.Passaggi
+. Dalla pagina *Risorse*, individua una risorsa nella tabella, seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] e poi seleziona *Associa a una cartella o a un gruppo*.
+. Seleziona una cartella o una fleet e poi seleziona *Accetta*.
+. Per associare un'ulteriore cartella o flotta, seleziona *Aggiungi cartella o flotta* e poi seleziona la cartella o la flotta.
++
+Tieni presente che puoi selezionare solo le cartelle e i fleet per cui hai i permessi di amministratore.
+
+. Seleziona *Associa risorse*.
++
+** Se hai associato la risorsa alle flotte, i membri che dispongono delle autorizzazioni per tali flotte ora possono accedere alla risorsa dalla Console.
+** Se hai associato la risorsa a una cartella, un amministratore di cartella o di flotta può ora accedere alla risorsa e associarla a una flotta all'interno della cartella. link:task-iam-manage-folders-fleets.html#associate-resource-folder["Associa una risorsa a una cartella"].
+
+
+
+
+
+
+[[view-the-folders-and-fleets-associated-with-a-resource]]
+[[view-folders-and-fleets]]
+== Visualizza le cartelle e le flotte associate a una risorsa
+
+Verifica a quali fleet o cartelle è associata una risorsa.
+
+
+NOTE: Per vedere quali membri hanno accesso alla risorsa, controlla i membri assegnati alla cartella o al fleet associato. link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta"].
+
+.Passaggi
+. Dalla pagina *Risorse*, individua una risorsa nella tabella, seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] e poi seleziona *Visualizza dettagli*.
+
+
+L'esempio seguente mostra una risorsa associata a una flotta.
+
+image:screenshot-iam-resource-details.png["Uno screenshot della pagina dei dettagli della risorsa che mostra una risorsa associata a una flotta che si trova direttamente sotto l'organizzazione."]
+
+
+NOTE: Per vedere quali membri hanno accesso alla risorsa, controlla la cartella o il fleet associati.
+
+link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta"]. link:task-iam-manage-roles.html["Gestisci l'accesso dei membri"].
+
+
+
+[[remove-a-resource-from-a-folder-or-fleet]]
+[[remove-resource]]
+== Rimuovi una risorsa da una cartella o da una fleet
+
+Rimuovi l'associazione di una risorsa con una cartella o un fleet per impedire ai membri di gestirla lì.
+
+
+NOTE: Per rimuovere un sistema storage dall'intera organizzazione, vai alla pagina *Sistemi* e rimuovi il sistema.
+
+.Passaggi
+. Dalla pagina *Risorse*, individua una risorsa nella tabella, seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] e poi seleziona *Visualizza dettagli*.
+. Per rimuovere una risorsa da una cartella o da un fleet, seleziona image:icon-delete.png["L'icona di un bidone della spazzatura"] accanto alla cartella o al fleet.
+. Seleziona *Elimina* per rimuovere l'associazione.
+
+
+
+
+[[move-a-resource-between-fleets]]
+== Sposta una risorsa tra flotte
+
+Sposta una risorsa da una flotta a un'altra rimuovendo la sua associazione con la flotta attuale e poi associandola alla flotta di destinazione.
+
+
+NOTE: L'accesso alla risorsa cambia non appena cambia l'associazione. Se possibile, completa entrambi i passaggi in un'unica finestra di manutenzione.
+
+.Passaggi
+. Dalla pagina *Risorse*, individua una risorsa nella tabella, seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] e poi seleziona *Visualizza dettagli*.
+. Seleziona image:icon-delete.png["L'icona di un bidone della spazzatura"] accanto alla flotta corrente e seleziona *Elimina*.
+. Seleziona *Aggiungi cartella o flotta*.
+. Seleziona la flotta di destinazione e seleziona *Accetta*.
+. Seleziona *Associa risorse*.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:concept-identity-and-access-management.html["Scopri identità e accesso in NetApp Console"]
+* link:task-iam-fleet-mgmt-get-started.html["Inizia a usare identità e accesso in NetApp Console"]
+* link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta dopo lo spostamento delle risorse"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri le API per l'identità e l'accesso"^]
+

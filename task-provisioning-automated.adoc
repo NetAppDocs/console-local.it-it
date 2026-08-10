@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-automated.html 
+keywords: automated provisioning, automation, policy-driven, storage class, netapp console 
+summary: Configura il provisioning dello storage utilizzando classi e criteri di storage nella distribuzione locale di NetApp Console. 
+---
+= Esegui automaticamente il provisioning dello storage nel deployment locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, usa il provisioning automatico per allocare lo storage in base agli standard della classe di storage e alla capacità del fleet. Il provisioning automatico è la scelta migliore quando vuoi risultati coerenti e meno decisioni manuali.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione, amministratore di cartelle o di fleet, oppure amministratore dello storage. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Il provisioning automatizzato in genere seleziona la collocazione più adatta tra i sistemi disponibili nella flotta in base alla capacità e al margine di prestazioni, quindi predispone il carico di lavoro con impostazioni allineate alla classe di storage.
+
+
+
+[[before-you-begin]]
+== Prima di iniziare
+
+* Assicurati che almeno un cluster ONTAP sia stato rilevato nella flotta di destinazione.
+* Se vuoi ottenere risultati basati sulla classe, assicurati che la storage class esista e sia associata alla fleet.
+

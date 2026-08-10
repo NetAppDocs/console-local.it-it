@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.

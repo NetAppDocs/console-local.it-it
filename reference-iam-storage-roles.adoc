@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-storage-roles.html 
+keywords: storage roles, Storage admin, Storage viewer, System health specialist, ONTAP management, storage governance, identity and access management, access roles, rbac, netapp console local 
+summary: Puoi assegnare i seguenti ruoli agli utenti per consentire loro di accedere alle funzionalità di gestione dello storage nella distribuzione locale di NetApp Console. Puoi assegnare agli utenti un ruolo amministrativo per gestire lo storage o un ruolo di visualizzatore per il monitoraggio. 
+---
+= Ruoli di accesso allo storage per la distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi assegnare i seguenti ruoli agli utenti per consentire loro di accedere alle funzionalità di gestione dello storage nella distribuzione locale di NetApp Console. Puoi assegnare agli utenti un ruolo amministrativo per gestire lo storage o un ruolo di visualizzatore per il monitoraggio.
+
+Gli amministratori possono assegnare ruoli di storage agli utenti per le seguenti risorse di storage e funzionalità:
+
+Risorse di storage:
+
+* Cluster ONTAP on-premises
+
+
+Servizi e funzionalità della console:
+
+* funzioni di integrità dello storage
+
+
+.Esempio di ruoli di storage nella distribuzione locale di NetApp Console
+XYZ Corporation, una multinazionale, ha un grande team di storage engineer e storage administrator. Permettono a questo team di gestire le risorse di storage per le loro regioni, limitando però l’accesso alle attività principali di distribuzione locale della Console, come la gestione degli utenti e delle licenze.
+
+All'interno di un team di 12 persone, a due utenti viene assegnato il ruolo di *Storage viewer*, che permette loro di monitorare le risorse di storage associate alle flotte di distribuzione locale della Console a cui sono assegnati. Ai restanti nove viene assegnato il ruolo di *Storage admin*, che include la possibilità di gestire gli aggiornamenti software, accedere a ONTAP System Manager tramite la distribuzione locale della Console, oltre che individuare risorse di storage (aggiungere sistemi). A una persona del team viene assegnato il ruolo di *System health specialist* così può gestire lo stato di salute delle risorse di storage nella propria regione, ma non modificare o eliminare alcun sistema. Questa persona può anche eseguire aggiornamenti software sulle risorse di storage per le flotte a cui è assegnata.
+
+L'organizzazione dispone di due utenti aggiuntivi con il ruolo di *Organization admin* che possono gestire tutti gli aspetti della distribuzione locale della Console, inclusa la gestione degli utenti e delle licenze, nonché di diversi utenti con il ruolo di *Folder or fleet admin* che possono eseguire attività di amministrazione della distribuzione locale della Console per le cartelle e le flotte a cui sono assegnati.
+
+La tabella seguente mostra le azioni eseguite da ciascun ruolo di storage.
+
+[cols="40,20a,20a,20a"]
+|===
+| Caratteristica e azione | Amministratore dello storage | Specialista salute sistema | Visualizzatore di storage 
+
+
+4+| *Gestione dello storage*: 
+
+
+| Scopri nuove risorse (aggiungi sistemi)  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza i sistemi aggiunti  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Elimina i sistemi dalla Console  a| 
+Sì
+ a| 
+No
+ a| 
+No
+
+
+
+| Modifica i sistemi  a| 
+Sì
+ a| 
+No
+ a| 
+No
+
+
+
+4+| *Accesso a System Manager* 
+
+
+| Puoi inserire le credenziali  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+|===

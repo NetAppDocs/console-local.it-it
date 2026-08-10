@@ -1,0 +1,228 @@
+---
+sidebar: sidebar 
+permalink: reference-workload-analyzer-metrics.html 
+keywords: workload analyzer, latency, delay center, throughput, IOPS, resource utilization, capacity, capacity forecast, QoS, storage efficiency, snapshot, performance troubleshooting, metrics reference, netapp console local 
+summary: Riferimento per tutte le metriche disponibili nel Workload Analyzer, organizzate per sezione di analisi. 
+---
+= Metriche di Workload Analyzer nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, Workload Analyzer mostra le metriche suddivise in sei sezioni. La descrizione di ciascuna metrica spiega come l'analizzatore visualizza la metrica sul grafico e cosa indica riguardo al comportamento del volume.
+
+
+
+[[qos-reference-lines-in-latency-charts]]
+=== Linee di riferimento QoS nei grafici di latenza
+
+Se il volume selezionato utilizza una policy QoS, puoi utilizzare due linee di riferimento aggiuntive nel selettore delle metriche:
+
+[cols="20,80"]
+|===
+| Linea di riferimento | Descrizione 
+
+
+| Limite QoS massimo | Il limite massimo di latenza definito dalla policy QoS. Quando la linea della latenza si avvicina o tocca questa linea, ONTAP sta limitando il carico di lavoro e il limite QoS, anziché una risorsa fisica, diventa la principale fonte di latenza. 
+
+
+| Limite QoS minimo | Il valore minimo garantito di latenza definito dalla policy QoS. Questa riga indica il valore minimo di tempo di risposta imposto per il workload. Quando altri workload utilizzano i valori minimi di QoS per garantire il loro throughput, ONTAP può limitare questo workload, che quindi mostrerà una latenza più alta. 
+|===
+Queste linee orizzontali non compaiono nella sezione relativa al centro di ritardo al passaggio del mouse. Servono come soglie di riferimento, non come fattori che contribuiscono alla latenza.
+
+
+
+[[latency-breakdown-by-io-type]]
+=== Analisi della latenza per tipo di I/O
+
+Utilizza la suddivisione per tipo di I/O nella sezione *Analisi della latenza* dopo aver selezionato *Suddivisione per centro di ritardo* dal menu a discesa Visualizza. Il grafico suddivide la latenza totale in tre categorie in base alla direzione dell'operazione di I/O. Utilizza queste metriche per capire se un problema di prestazioni sta influenzando le operazioni di lettura, scrittura o metadati.
+
+[cols="20,40,40"]
+|===
+| Tipo di latenza | Descrizione | Cause comuni di valori elevati 
+
+
+| latenza di lettura | Tempo medio necessario per completare una richiesta di lettura da parte di un client sul volume, dal momento in cui la richiesta viene ricevuta fino alla restituzione dei dati. Le richieste di lettura devono percorrere l'intero percorso I/O, dal livello del protocollo di rete, attraverso lo stack di elaborazione dati, fino all'aggregato in cui risiedono i dati. | Contesa su aggregato o disco; cache miss che promuovono letture su disco fisico; dati freddi recuperati da un livello di capacità cloud tramite FabricPool; letture tra nodi quando i dati risiedono su un nodo diverso da quello che gestisce la richiesta. 
+
+
+| latenza di scrittura | Tempo medio di conferma di una richiesta di scrittura da parte di un client sul volume. ONTAP conferma una scrittura una volta che questa è stata registrata nel registro di scrittura NVRAM; i dati vengono successivamente trasferiti nell'aggregato. | Saturazione della scheda di rete o elevata latenza di andata e ritorno tra il client e il nodo di archiviazione; SnapMirror sincrono in attesa che il cluster di destinazione confermi la ricezione prima che la scrittura possa essere riconosciuta; pressione sulla NVRAM in presenza di carichi di scrittura elevati; sovraccarico della CPU dovuto a deduplicazione inline, compressione o compaction in esecuzione nel percorso I/O di scrittura. 
+
+
+| Altra latenza | Tempo medio per completare operazioni non di lettura e non di scrittura sul volume, tra cui apertura di file, ricerca di attributi, attraversamento di directory, creazione di file e blocchi. Un'elevata latenza delle altre operazioni può influire sulla reattività delle applicazioni anche quando la latenza di lettura e scrittura appare normale. | Pressione sulla CPU dovuta a operazioni di efficienza inline in competizione con l'elaborazione dei metadati; elevata attività dello spazio dei nomi da carichi di lavoro che generano un gran numero di creazioni, eliminazioni o scansioni di directory; limitazione della QoS che vincola il totale degli IOPS, lasciando meno IOPS disponibili per le operazioni sui metadati; overhead di attivazione del volume quando molti volumi sono attivi contemporaneamente. 
+|===
+
+
+[[throughput-components]]
+== Componenti di throughput
+
+Utilizza i componenti di throughput nella sezione *Analisi del throughput* dopo aver selezionato *Analisi dettagliata (RWO)* dal menu a tendina Visualizza. L'analizzatore mostra simultaneamente IOPS e MB/s.
+
+[cols="20,40,40"]
+|===
+| Componente | Descrizione | Reso come 
+
+
+| IOPS di lettura | Operazioni di lettura al secondo. | Area sovrapposta nel grafico IOPS. 
+
+
+| IOPS di scrittura | Operazioni di scrittura al secondo. | Area sovrapposta nel grafico IOPS. 
+
+
+| Altri IOPS | Metadati e altre operazioni non di dati al secondo. | Area sovrapposta nel grafico IOPS. 
+
+
+| Lettura MB/s | Throughput di lettura in megabyte al secondo. | Area sovrapposta sul grafico MB/s. 
+
+
+| Scrittura MB/s | Throughput di scrittura in megabyte al secondo. | Area sovrapposta sul grafico MB/s. 
+
+
+| Throughput del cloud | Throughput in megabyte al secondo tra il volume e il livello di capacità cloud. Questa metrica viene visualizzata solo per i carichi di lavoro che effettuano il tiering della capacità verso il cloud tramite FabricPool. | Area sovrapposta sul grafico MB/s. 
+|===
+La somma delle componenti Lettura, Scrittura e Altre corrisponde al valore totale di IOPS o MB/s. Passa il mouse sul grafico per vedere il valore di ciascuna componente, la sua % sul totale e la dimensione media di I/O (MB/s ÷ IOPS) per categoria.
+
+
+
+[[resource-utilization-metrics]]
+== Metriche di utilizzo delle risorse
+
+Usa la sezione *Utilizzo delle risorse* per esaminare le metriche di utilizzo delle risorse. L'analizzatore mostra ogni risorsa che serve il volume come una riga indipendente. Le risorse non si sommano.
+
+
+
+[[node-metrics]]
+=== Metriche del nodo
+
+[cols="25,75"]
+|===
+| Metrica | Descrizione 
+
+
+| Utilizzo del nodo | Percentuale di utilizzo complessiva per il nodo. Passa il mouse per vedere l'utilizzo della CPU, l'utilizzo della rete e il margine disponibile per ciascun nodo. 
+
+
+| utilizzo della CPU | Percentuale di capacità della CPU del nodo in uso. Il tooltip al passaggio del mouse mostra questo valore. 
+
+
+| Utilizzo della rete | Percentuale di capacità di rete del nodo in uso. Il tooltip visualizzato al passaggio del mouse mostra questo valore. 
+
+
+| Headroom | Capacità residua del nodo disponibile per carichi di lavoro aggiuntivi. Il tooltip visualizzato al passaggio del mouse mostra questo valore. 
+|===
+
+
+[[aggregate-metrics]]
+=== metriche aggregate
+
+[cols="25,75"]
+|===
+| Metrica | Descrizione 
+
+
+| Utilizzo aggregato | Percentuale di utilizzo del disco per l'aggregato. Passa il mouse sopra per vedere il valore di utilizzo del disco, il numero di volumi sull'aggregato e lo spazio disponibile. 
+
+
+| Disco occupato | Percentuale di tempo in cui i dischi dell'aggregato gestiscono attivamente le operazioni di I/O. Il tooltip visualizzato al passaggio del mouse mostra questo valore. 
+
+
+| Conteggio dei volumi | Numero di volumi attualmente ospitati sull'aggregato. Il tooltip visualizzato al passaggio del mouse mostra questo valore. 
+
+
+| Headroom | Capacità aggregata rimanente disponibile per carichi di lavoro aggiuntivi. Il tooltip visualizzato al passaggio del mouse mostra questo valore. 
+|===
+Quando la linea di utilizzo di un nodo o di un aggregato supera la soglia di avviso di utilizzo elevato, indicata nel grafico con una linea tratteggiata, altri carichi di lavoro su quella risorsa potrebbero competere con il volume selezionato per la capacità di I/O.
+
+
+
+[[capacity-metrics]]
+== Metriche di capacità
+
+
+
+[[capacity-view]]
+=== Visualizzazione capacità
+
+Utilizza la sezione *Analisi della capacità* per esaminare le metriche di Capacity View dopo aver selezionato *Vista capacità* dal menu a discesa Visualizza.
+
+[cols="25,75"]
+|===
+| Metrica | Descrizione 
+
+
+| Capacità fisica | Spazio occupato su disco dopo le operazioni di efficienza dello storage. Questa è l'area inferiore impilata nel grafico. Fisico + Disponibile è sempre uguale alla dimensione totale del volume. 
+
+
+| Capacità disponibile | Spazio libero rimanente nel volume. Questa è l'area sovrapposta superiore nel grafico. Diminuisce all'aumentare della capacità fisica. 
+
+
+| Rapporto di efficienza dello storage | Rapporto di efficienza complessivo (dati logici ÷ dati fisici). Il tooltip visualizzato al passaggio del mouse mostra questo valore. Riflette il risparmio combinato derivante da deduplicazione, compressione e compaction. 
+
+
+| Risparmi dalla deduplicazione | Spazio risparmiato grazie all'eliminazione dei blocchi di dati duplicati. Il tooltip al passaggio del mouse mostra questo valore. 
+
+
+| Risparmio di compressione | Spazio risparmiato grazie alla compressione dei dati in linea. Questo valore viene mostrato nel tooltip al passaggio del mouse. 
+
+
+| Risparmi di compaction | Spazio risparmiato grazie all'inserimento di più piccoli blocchi in un unico blocco fisico. Il tooltip al passaggio del mouse mostra questo valore. 
+|===
+
+
+[[snapshot-view]]
+=== Vista Snapshot
+
+Usa Snapshot View quando vuoi esaminare le metriche specifiche della snapshot.
+
+[cols="25,40,35"]
+|===
+| Metrica | Descrizione | Reso come 
+
+
+| Istantanea disponibile | Spazio preallocato riservato per gli snapshot, configurato come % della dimensione del volume. | Linea di riferimento orizzontale. 
+
+
+| Snapshot utilizzata | Spazio effettivo consumato dalle copie Snapshot. | Grafico ad area al di sotto della linea di riserva. 
+|===
+Passa il mouse sul grafico per vedere la dimensione della riserva di snapshot, lo spazio utilizzato dagli snapshot e la sua % rispetto alla riserva, il numero totale di snapshot e l'età dello snapshot più vecchio. Quando il consumo di snapshot supera la riserva, gli snapshot iniziano a occupare spazio nell'area dati del volume.
+
+
+
+[[forecast-behavior]]
+== Comportamento di forecast
+
+Utilizza l'interruttore *Mostra previsioni* in qualsiasi sezione di analisi quando vuoi proiettare i valori futuri oltre il momento corrente in base all'andamento osservato. I seguenti comportamenti si applicano a tutte le sezioni:
+
+[cols="25,75"]
+|===
+| Aspetto | Comportamento 
+
+
+| Finestra di proiezione | Proietta in avanti in base all'intervallo di tempo selezionato. Per una visualizzazione a 2 ore, la finestra di proiezione è di circa 1 ora. Per una visualizzazione a 7 giorni, la finestra di proiezione si estende per diversi giorni. 
+
+
+| Stile visivo | L'analizzatore visualizza i valori previsti come una linea tratteggiata. Un separatore verticale segna il confine tra i dati effettivi e i valori previsti. 
+
+
+| Avvisi di soglia | L'analizzatore visualizza un messaggio di approfondimento quando la previsione indica che il volume supererà una soglia di avviso o critica, insieme a una stima del tempo al superamento. 
+
+
+| Base di tendenza | La proiezione utilizza il tasso di variazione relativo alla porzione più recente dell'intervallo temporale selezionato. L'elevata volatilità dei dati recenti riduce l'affidabilità delle previsioni. 
+
+
+| Dati minimi richiesti | La previsione della capacità richiede almeno 10 giorni di dati storici. Quando mancano meno di 30 giorni prima che il volume sia pieno, l'analizzatore identifica lo storage come quasi pieno. 
+|===
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:concept-workload-analyzer.html["Scopri il Workload Analyzer per la distribuzione locale di NetApp Console"]
+* link:task-analyzer-volume-latency-investigate.html["Indaga sull'alta latenza su un volume"]
+* link:task-analyzer-volume-throughput-investigate.html["Analizza la domanda di throughput elevato su un volume"]
+* link:task-analyzer-volume-capacity-investigate.html["Esamina la crescita della capacità su un volume"]
+

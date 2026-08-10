@@ -1,0 +1,43 @@
+= 
+:allow-uri-read: 
+
+
+.Passaggi
+. Seleziona *Amministrazione > Credenziali*.
+. Seleziona *Credenziali dell'organizzazione*.
+. Seleziona il menu delle azioni per un set di credenziali associate a un agente della Console e quindi seleziona *Configura abbonamento*.
++
+Devi selezionare credenziali associate a un agente della Console. Non puoi associare un abbonamento al marketplace a credenziali associate alla NetApp Console.
+
+. Per associare le credenziali a un abbonamento esistente, seleziona l'abbonamento dall'elenco a discesa e seleziona *Configura*.
+. Per associare le credenziali a un nuovo abbonamento, seleziona *Aggiungi abbonamento > Continua* e segui i passaggi indicati in Azure Marketplace:
++
+.. Se richiesto, accedi al tuo account Azure.
+.. Seleziona *Iscriviti*.
+.. Compila il modulo e seleziona *Iscriviti*.
+.. Una volta completata la procedura di sottoscrizione, seleziona *Configura account ora*.
++
+Verrai reindirizzato alla NetApp Console.
+
+.. Dalla pagina *Assegnazione abbonamento*:
++
+*** Seleziona le organizzazioni o gli account della Console a cui vuoi associare questo abbonamento.
+*** Nel campo *Sostituisci abbonamento esistente*, scegli se vuoi sostituire automaticamente l'abbonamento esistente per un'organizzazione o un account con questo nuovo abbonamento.
++
+La Console sostituisce l'abbonamento esistente per tutte le credenziali nell'organizzazione o nell'account con questo nuovo abbonamento. Se un set di credenziali non è mai stato associato a un abbonamento, questo nuovo abbonamento non sarà associato a tali credenziali.
+
++
+Per tutte le altre organizzazioni o account, devi associare manualmente l'abbonamento ripetendo questi passaggi.
+
+*** Seleziona *Salva*.
++
+Il seguente video mostra i passaggi per abbonarsi tramite Azure Marketplace:
+
++
+.Iscriviti ai NetApp Intelligent Services dal Marketplace di Azure
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
+
+
+
+
+

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-iam-switch-fleets.html 
+keywords: switch fleets, fleets, navigate between fleets, fleet navigation, iam, identity and access management, netapp console local 
+summary: 'Se la tua organizzazione comprende più flotte e hai accesso a tali flotte, puoi passare da una all"altra in qualsiasi momento.' 
+---
+= Passa da una flotta all'altra nella NetApp Console distribuzione locale
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, se hai accesso a più flotte, puoi passare da una all'altra in qualsiasi momento.
+
+
+NOTE: Non puoi passare a un'altra flotta mentre visualizzi una delle pagine *Identità e accesso*.
+
+.Passaggi
+. Nell'intestazione superiore della distribuzione locale della Console, seleziona *Ambito*.
+. Esplora le flotte nella tua organizzazione, seleziona la flotta che vuoi e poi seleziona *Cambia*.
++
+image:screenshot-iam-switch-projects-select.png["Uno screenshot del menu Scope dove puoi selezionare una nuova flotta."]
+
+

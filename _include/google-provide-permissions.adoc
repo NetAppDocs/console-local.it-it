@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+Associa l'account di servizio alla VM dell'agente della Console.
+
+.Passaggi
+. Accedi al portale di Google Cloud e assegna l'account di servizio all'istanza di macchine virtuali dell'agente Console.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["Documentazione di Google Cloud: modifica dell'account di servizio e degli ambiti di accesso per un'istanza"^]
+
+. Se vuoi gestire le risorse in altri progetti, concedi l'accesso aggiungendo l'account di servizio con il ruolo di Console agent a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
+

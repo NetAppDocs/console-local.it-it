@@ -1,0 +1,87 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-manual.html 
+keywords: provisioning, provision storage, create volume, create LUN, ONTAP, storage class, fleet, NAS, SAN, manual provisioning, netapp console 
+summary: Esegui il provisioning delle risorse di storage usando la distribuzione locale di NetApp Console. 
+---
+= Effettua il provisioning dello storage nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esegui il provisioning di volumi e LUN nella distribuzione locale della NetApp Console per rendere disponibili le risorse di storage per i tuoi carichi di lavoro. Durante il provisioning, puoi facoltativamente selezionare una classe di storage per applicare criteri di storage predefiniti e standard organizzativi.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione, amministratore di cartelle o di fleet, oppure amministratore dello storage. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+
+
+[[provision-a-volume]]
+== Effettua il provisioning di un volume
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Fleets*.
+. Seleziona la flotta in cui vuoi effettuare il provisioning.
+. Seleziona *Aggiungi*.
+. Dal menu, seleziona *Volume*.
+. Nella sezione *Dettagli del volume*:
++
+.. Inserisci il nome del volume.
+.. Inserisci la capacità (e scegli le unità se necessario).
+.. (Facoltativo) Seleziona una classe di archiviazione a cui applicare i criteri di classe di archiviazione. Se non ne selezioni una, il volume viene creato senza criteri di classe di archiviazione.
+
+
+. Nella sezione *Dettagli di sistema*:
++
+.. Seleziona un sistema tra quelli idonei per la flotta selezionata.
+.. Seleziona una storage VM.
+
+
+. In *Dettagli host (NAS)*, scegli come gli host accedono al volume:
++
+.. Esportazione tramite NFS (le policy di esportazione controllano quali host NFS possono accedere al volume)
+.. Condividi tramite SMB/CIFS
+
+
+. Seleziona *Aggiungi*.
+
+
+
+
+[[provision-a-lun]]
+== Effettua il provisioning di un LUN
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Fleets*.
+. Seleziona la flotta in cui vuoi effettuare il provisioning.
+. Seleziona *Aggiungi*.
+. Dal menu, seleziona *LUN*.
+. Nella sezione *Dettagli dello storage LUN*:
++
+.. Inserisci un prefisso.
+.. Inserisci il numero di LUN da creare con quel prefisso.
+.. Inserisci la capacità per LUN (e scegli le unità se necessario).
+.. (Facoltativo) Seleziona una classe di archiviazione a cui applicare i criteri di classe di archiviazione. Se non ne selezioni una, le LUN vengono create senza criteri di classe di archiviazione.
+
+
+. Nella sezione *Dettagli di sistema*:
++
+.. Seleziona un sistema (se richiesto).
+.. Seleziona una storage VM.
+
+
+. Nella sezione *Dettagli host (SAN)*, scegli come gli host accedono al volume:
++
+.. Scegli il sistema operativo host (ad esempio, Windows o Linux) per impostare i valori predefiniti consigliati per l'allineamento delle LUN e la dimensione dei blocchi.
+.. Scegli il gruppo di mappatura host per controllare quali iniziatori possono accedere alle LUN.
+
+
+. Seleziona *Aggiungi*.
+

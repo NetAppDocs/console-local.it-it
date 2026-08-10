@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: task-llm-troubleshoot-integration.html 
+keywords: LLM, AI, troubleshooting, openai, openai-compatible, proxy, endpoint, api key, netapp console 
+summary: 'Risolvi i problemi di integrazione di LLM nella NetApp Console distribuzione locale con un flusso di triage rapido per la configurazione, la disponibilità dell"assistente, gli errori di runtime e i problemi di credenziali.' 
+---
+= Risolvi i problemi di integrazione LLM nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza questo flusso di triage rapido per diagnosticare e risolvere i problemi comuni di integrazione LLM nella NetApp Console in una distribuzione locale.
+
+
+NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+
+Se non hai completato la configurazione, consulta link:task-llm-connect.html["Collega il tuo LLM e abilita l'assistente della NetApp Console"].
+
+
+
+[[triage-llm-integration-issues-quickly]]
+== Gestisci rapidamente i problemi di integrazione LLM
+
+. Convalida la configurazione degli strumenti di AI in *Amministrazione > Strumenti di AI*.
++
+Conferma il tipo di provider, l'URL dell'endpoint, la chiave API, il modello selezionato e l'accesso di rete outbound.
+
+. Verifica la disponibilità dell'assistente sulla dashboard.
++
+Conferma che il pulsante *Console assistant* appare per gli utenti e le organizzazioni previsti.
+
+. Convalida il comportamento in fase di esecuzione.
++
+Esegui una semplice richiesta di sola lettura e verifica la raggiungibilità dell'endpoint del provider, la disponibilità del modello e lo stato del servizio del provider.
+
+
+
+
+
+[[troubleshoot-by-symptom]]
+== Risolvi i problemi in base ai sintomi
+
+[cols="1,1,2,2"]
+|===
+| Sintomo | Probabile causa | Cosa controllare | Prossima azione 
+
+
+| Salvataggio o test non riusciti in AI Tools | Mancata corrispondenza di configurazione o connettività | Tipo di provider, URL dell'endpoint, formato della chiave API, modello selezionato e outbound access | Correggi il valore che non supera la convalida e salva di nuovo 
+
+
+| Il pulsante *Assistente console* non è presente | Stato di integrazione non corretto, mancata corrispondenza dell'organizzazione o mancata corrispondenza in base al ruolo (RBAC) | Salvataggio riuscito degli strumenti di AI, stato di integrazione, organizzazione corrente e ruolo di accesso previsto | Aggiorna la sessione e verifica con un account admin noto e funzionante 
+
+
+| L'assistente si apre ma la richiesta fallisce | Problema relativo al provider o al percorso di runtime | Raggiungibilità dell'endpoint, disponibilità del modello su quell'endpoint, limiti del provider e stato temporaneo del provider | Riprova dopo aver risolto i problemi di incompatibilità tra endpoint/modello o i problemi relativi ai limiti lato provider 
+
+
+| La risposta dell'assistente è lenta o incoerente | Dimensioni del prompt, prestazioni dell'endpoint o instabilità della rete/proxy | Breve test di verifica, stato del servizio del provider e stabilità della rete/proxy | Utilizza un prompt più breve, prova un altro modello supportato e stabilizza il routing di rete o proxy 
+|===
+
+
+[[respond-to-llm-credential-exposure-or-misuse]]
+== Rispondi alla divulgazione o all'uso improprio delle credenziali LLM
+
+Se sospetti l'esposizione della chiave API o un utilizzo non autorizzato:
+
+. Revoca la chiave API esistente nel sistema del tuo provider.
+. Crea una nuova chiave API.
+. Aggiorna la chiave in *Amministrazione > Strumenti AI*.
+. Verifica l'avvenuta riconnessione con un test assistente in sola lettura.
+

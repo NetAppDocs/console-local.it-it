@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-cluster-compliance-categories.html 
+keywords: cluster compliance, security compliance, cluster security, ontap cluster security, compliance categories, netapp console local 
+summary: Riferimento per le categorie di conformità alla sicurezza del cluster e le impostazioni consigliate nella distribuzione locale della NetApp Console. 
+---
+= Categorie di conformità alla sicurezza del cluster nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Usa questo riferimento per esaminare le categorie di conformità alla sicurezza del cluster mostrate nella distribuzione locale di NetApp Console, incluso il valore consigliato e se ciascuna categoria influisce sullo stato di conformità complessivo.
+
+Queste categorie si basano sui controlli della postura di sicurezza di ONTAP.
+
+[cols="20,50,15,15"]
+|===
+| Categoria | Cosa controlla la categoria | Valore consigliato | Influisce sulla conformità generale 
+
+
+| FIPS globale | Indica se la modalità FIPS 140-2 è abilitata. Quando è abilitata, TLSv1 e SSLv3 sono disabilitati e sono consentiti solo TLSv1.1 e TLSv1.2. | Abilitato | Sì 
+
+
+| Telnet | Se l'accesso Telnet è abilitato. SSH è il metodo di accesso remoto sicuro consigliato. | Disattivato | Sì 
+
+
+| Impostazioni SSH non sicure | Se SSH è configurato con cifrari non sicuri, come i cifrari che iniziano con `cbc`. | No | Sì 
+
+
+| Banner di accesso | Indica se è configurato un banner per l'accesso al sistema. | Abilitato | Sì 
+
+
+| Peering del cluster | Indica se la comunicazione tra cluster connessi è crittografata. La crittografia deve essere abilitata sia sul cluster di origine che su quello di destinazione. | Crittografato | Sì 
+
+
+| Network Time Protocol | Se uno o più server NTP sono configurati per il cluster. NetApp consiglia almeno tre server NTP per la resilienza. | Configurato | Sì 
+
+
+| OCSP | Indica se la convalida dell'Online Certificate Status Protocol è abilitata per la convalida dei certificati SSL/TLS. | Abilitato | No 
+
+
+| Registrazione remota delle attività di audit | Se l'inoltro dei log (syslog) è crittografato. | Crittografato | Sì 
+
+
+| Trasporto HTTPS AutoSupport | Indica se HTTPS viene utilizzato come protocollo di trasporto predefinito per i messaggi AutoSupport. | Abilitato | Sì 
+
+
+| Utente amministratore predefinito | Se l'account amministratore predefinito integrato è disabilitato. | Disattivato | Sì 
+
+
+| utenti SAML | Se SAML è configurato per single sign-on e autenticazione con funzionalità MFA. | No | No 
+
+
+| utenti Active Directory | Se l'autenticazione di Active Directory è configurata per l'accesso al cluster. | No | No 
+
+
+| utenti LDAP | Indica se l'autenticazione LDAP è configurata per l'accesso al cluster. | No | No 
+
+
+| Utenti certificato | Se gli utenti basati su certificato sono configurati per l'accesso al cluster. | No | No 
+
+
+| Utenti locali | Indica se gli utenti locali sono configurati per l'accesso al cluster. | No | No 
+
+
+| shell remota | Indica se RSH è abilitato. SSH è preferibile per un accesso remoto sicuro. | Disattivato | Sì 
+
+
+| MD5 in uso | Se gli account utente ONTAP utilizzano ancora l'hashing MD5 invece di hash più robusti come SHA-512. | No | Sì 
+
+
+| Tipo di emittente del certificato | Il tipo di emittente del certificato utilizzato dal cluster. | Firmato CA | No 
+|===

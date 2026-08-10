@@ -1,0 +1,193 @@
+= 
+:allow-uri-read: 
+
+
+Host dedicato:: L'agente Console non è supportato su un host condiviso con altre applicazioni. L'host deve essere un host dedicato. L'host può avere qualsiasi architettura che soddisfi i seguenti requisiti di dimensione:
++
+--
+* CPU: 8 core o 8 vCPU
+* RAM: 32 GB
+* Spazio su disco: sono consigliati 165 GB per l'host, con i seguenti requisiti di partizionamento:
++
+** `/opt`: Devono essere disponibili 120 GiB di spazio
++
+L'agente utilizza  `/opt` per installare la directory  `/opt/application/netapp` e il suo contenuto.
+
+** `/var`: Devono essere disponibili 40 GiB di spazio
++
+L'agente della Console richiede questo spazio in `/var` perché Docker o Podman sono progettati per creare i container all'interno di questa directory. Nello specifico, creeranno i container nella directory `/var/lib/containers/storage`. I mount esterni o i collegamenti simbolici non funzionano per questo spazio.
+
+
+
+
+
+--
+
+
+* CPU: 16 core o 16 vCPU
+* RAM: 64 GB
+* Spazio su disco: 596 GB (è consigliato il thick provisioning)
+* vSphere 7.0u3 o superiore, con versione hardware virtuale 19 o superiore
+
+
+
+NOTE: L'agente della Console riserva l'intervallo di UID e GID da 19000 a 19200. Questo intervallo è fisso e non può essere modificato. Se sul tuo host è presente un software di terze parti che utilizza UID o GID all'interno di questo intervallo, l'installazione dell'agente non andrà a buon fine. NetApp consiglia di usare un host privo di software di terze parti per evitare conflitti.
+
+NetApp Console local deployment utilizza uno spazio di indirizzi fisso per la comunicazione tra i servizi. Gli intervalli IP 10.42.0.0/16 e 10.43.0.0/16 sono utilizzati per la rete interna. Prima di distribuire Console local deployment, assicurati che questi intervalli IP non siano assegnati ad altre istanze di macchine virtuali, ambiti DHCP, record DNS o pool VIP del bilanciatore di carico sulle VLAN rese disponibili per Console local deployment.
+
+Vedi l'articolo della Knowledge Base "Agent IP conflict with existing network" per le istruzioni su come cambiare l'indirizzo IP delle interfacce dell'agente.
+
+Hypervisor:: È necessario un hypervisor bare metal o hosted certificato per eseguire un sistema operativo supportato.
+
+
+[[podman-versions]]Requisiti del sistema operativo e del container:: L'agente della Console è supportato dai seguenti sistemi operativi quando usi la Console in modalità standard o in modalità limitata. Prima di installare l'agente, è necessario uno strumento di orchestrazione dei container.
++
+--
+[cols="2a,2a,2a,2a,2a"]
+|===
+| Sistema operativo | Versioni del sistema operativo supportate | Versioni dell'agente supportate | Strumento container richiesto | SELinux a 
+
+
+ a| 
+Red Hat Enterprise Linux
+ a| 
+9.1 a 9.4
+
+Da 8.6 a 8.10
+
+* Solo versioni in lingua inglese.
+* L'host deve essere registrato a Red Hat Subscription Management. Se non è registrato, l'host non può accedere ai repository per aggiornare il software di terze parti necessario durante l'installazione dell'agente.
+
+ a| 
+3.9.50 o versioni successive con la NetApp Console in modalità standard o in modalità limitata
+ a| 
+Podman versione 4.6.1 o 4.9.4
+
+<<podman-configuration,Visualizza i requisiti di configurazione di Podman>>.
+ a| 
+Supportato in modalità di applicazione o modalità permissiva
+
+* La gestione dei sistemi Cloud Volumes ONTAP NON è supportata dagli agenti che hanno SELinux abilitato sul sistema operativo.
+
+
+
+
+ a| 
+Ubuntu
+ a| 
+24.04 LTS
+ a| 
+3.9.45 o versioni successive con la NetApp Console in modalità standard o in modalità limitata
+ a| 
+Docker Engine da 23.06 a 28.0.0.
+ a| 
+Non supportato
+
+
+
+ a| 
+22.04 LTS
+ a| 
+3.9.50 o versioni successive
+ a| 
+Docker Engine da 23.0.6 a 28.0.0.
+ a| 
+Non supportato
+
+|===
+--
+
+
+[[podman-versions]]Requisiti del sistema operativo e del container:: L'agente Console è supportato dai seguenti sistemi operativi quando usi Console in modalità privata. È necessario uno strumento di orchestrazione dei container prima di installare l'agente.
++
+--
+[cols="2a,2a,2a,2a,2a"]
+|===
+| Sistema operativo | Versioni del sistema operativo supportate | Versioni dell'agente supportate | Strumento container richiesto | SELinux 
+
+
+ a| 
+Red Hat Enterprise Linux
+ a| 
+9.1 a 9.4
+
+Da 8.6 a 8.10
+ a| 
+3.9.42 o versioni successive con la Console in modalità privata
+ a| 
+Podman versione 4.6.1 o 4.9.4
+
+<<podman-configuration,Visualizza i requisiti di configurazione di Podman>>.
+ a| 
+Supportato in modalità enforcing o in modalità permissiva ^1^
+
+
+
+ a| 
+Ubuntu
+ a| 
+22.04 LTS
+ a| 
+3.9.29 o versioni successive
+ a| 
+Docker Engine dalla versione 23.0.6 alla 26.0.0
+
+La versione 26.0.0 è supportata con le nuove installazioni dell'agente 3.9.44 o successive
+ a| 
+Non supportato
+
+|===
+Note:
+
+. La gestione dei sistemi Cloud Volumes ONTAP non è supportata dagli agenti che hanno SELinux abilitato sul sistema operativo.
+. L'agente Console è supportato nelle versioni in lingua inglese di questi sistemi operativi.
+. Per RHEL, l'host deve essere registrato con Red Hat Subscription Management. Se non è registrato, l'host non può accedere ai repository per aggiornare il software di terze parti necessario durante l'installazione dell'agente.
+
+
+--
+
+
+CPU:: 8 core o 8 vCPU
+RAM:: 32 GB
+
+
+Tipo di istanza AWS EC2:: Un tipo di istanza che soddisfa i requisiti di CPU e RAM sopra indicati. Consigliamo t3.2xlarge.
+
+
+Coppia di chiavi:: Quando crei l'agente della Console, dovrai selezionare una coppia di chiavi EC2 da utilizzare con l'istanza.
+
+
+Limite di hop della risposta PUT quando usi IMDSv2:: Se IMDSv2 è abilitato sull'istanza EC2 (questa è l'impostazione predefinita per le nuove istanze EC2), devi modificare il limite di hop della risposta PUT sull'istanza a 3. Se non cambi il limite sull'istanza EC2, riceverai un errore di inizializzazione dell'interfaccia utente quando provi a configurare l'agente.
++
+--
+* link:task-require-imdsv2.html["Richiedi l'utilizzo di IMDSv2 sulle istanze Amazon EC2"]
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["Documentazione AWS: Modifica il limite di hop della risposta PUT"^]
+
+
+--
+
+
+dimensione della VM Azure:: Un tipo di istanza che soddisfi i requisiti di CPU e RAM sopra indicati. Consigliamo Standard_D8s_v3.
+
+
+Tipo di macchina Google Cloud:: Un tipo di istanza che soddisfi i requisiti di CPU e RAM sopra indicati. Consigliamo n2-standard-8.
++
+--
+L'agente Console è supportato in Google Cloud su istanze di macchine virtuali con un sistema operativo che supporta https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Funzionalità delle macchine virtuali protette"^]
+
+--
+
+
+Spazio su disco in /opt:: Devono essere disponibili 100 GiB di spazio
++
+--
+L'agente utilizza  `/opt` per installare la directory  `/opt/application/netapp` e il suo contenuto.
+
+--
+Spazio su disco in /var:: Devono essere disponibili 20 GiB di spazio
++
+--
+L'agente della Console richiede questo spazio in `/var` perché Docker o Podman sono progettati per creare i container all'interno di questa directory. Nello specifico, creeranno i container nella directory `/var/lib/containers/storage`. I mount esterni o i collegamenti simbolici non funzionano per questo spazio.
+
+--
+

@@ -1,0 +1,82 @@
+= 
+:allow-uri-read: 
+
+
+Endpoint contattati dall'agente della Console:: L'agente della NetApp Console richiede accesso a Internet outbound per contattare i seguenti endpoint e gestire risorse e processi all'interno del tuo ambiente cloud pubblico per le operazioni quotidiane.
++
+--
+Gli endpoint elencati di seguito sono tutti record CNAME.
+
+--
+
+
+Servizi AWS (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Gestione delle identità e degli accessi (IAM)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+
+Per gestire le risorse AWS. L'endpoint dipende dalla tua regione AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Per maggiori dettagli, consulta la documentazione AWS."^]
+
+| https://management.azure.com https://login.microsoftonline.com https://blob.core.windows.net https://core.windows.net
+
+| Per gestire le risorse nelle regioni pubbliche di Azure.
+
+| https://management.azure.microsoft.scloud https://login.microsoftonline.microsoft.scloud https://blob.core.microsoft.scloud https://core.microsoft.scloud
+
+Per gestire le risorse nell'area geografica Azure IL6.
+
+| https://management.usgovcloudapi.net https://login.microsoftonline.us https://blob.core.usgovcloudapi.net https://core.usgovcloudapi.net
+
+| Per gestire le risorse nelle regioni di Azure Government.
+
+| \https://management.chinacloudapi.cn \https://login.chinacloudapi.cn \https://blob.core.chinacloudapi.cn \https://core.chinacloudapi.cn
+
+| Per gestire le risorse nelle regioni Azure Cina.
+
+| \https://www.googleapis.com/compute/v1/ \https://compute.googleapis.com/compute/v1 \https://cloudresourcemanager.googleapis.com/v1/projects \https://www.googleapis.com/compute/beta \https://storage.googleapis.com/storage/v1 \https://www.googleapis.com/storage/v1 \https://iam.googleapis.com/v1 \https://cloudkms.googleapis.com/v1 \https://www.googleapis.com/deploymentmanager/v2/projects
+
+Per gestire le risorse in Google Cloud.
+
+| https://mysupport.netapp.com | Per ottenere informazioni sulle licenze e per inviare messaggi AutoSupport all'assistenza NetApp. | https://signin.b2c.netapp.com | Per aggiornare le credenziali del NetApp Support Site (NSS) o per aggiungere nuove credenziali NSS alla NetApp Console. | https://support.netapp.com | Per ottenere informazioni sulle licenze e per inviare messaggi AutoSupport all'assistenza NetApp, oltre a ricevere aggiornamenti software per Cloud Volumes ONTAP.
+
+| https://api.bluexp.netapp.com https://netapp-cloud-account.auth0.com https://netapp-cloud-account.us.auth0.com https://console.netapp.com https://components.console.bluexp.netapp.com https://cdn.auth0.com | Per fornire funzionalità e servizi all'interno della NetApp Console.
+
+a| https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io a| Per ottenere le immagini per gli aggiornamenti dell'agente della NetApp Console.
+
+* Quando distribuisci un nuovo agente, il controllo di convalida verifica la connettività agli endpoint correnti. Se usi link:reference-networking-saas-console-previous.html["endpoint precedenti"], il controllo di convalida fallisce. Per evitare questo errore, salta il controllo di convalida.
++
+Sebbene i precedenti endpoint siano ancora supportati, NetApp consiglia di aggiornare le regole del firewall con gli endpoint attuali il prima possibile. link:reference-networking-saas-console-previous.html#update-endpoint-list["Scopri come aggiornare l'elenco dei tuoi endpoint"].
+
+* Quando aggiorni agli endpoint correnti nel tuo firewall, gli agenti esistenti continueranno a funzionare.
+
+
+^1^ NetApp consiglia di consentire gli endpoint dell'Opzione 1 nel tuo firewall perché sono più sicuri e di bloccare gli endpoint dell'Opzione 2. Nota quanto segue su questi endpoint:
+
++ * A partire dalla versione 3.9.47 dell'agente Console, il sistema supporta gli endpoint elencati nell'opzione 1. Le versioni precedenti dell'agente Console non supportano la compatibilità all'indietro. * L'agente Console contatta prima gli endpoint dell'opzione 2. Se tali endpoint non sono accessibili, contatta automaticamente gli endpoint dell'opzione 1. * Se usi l'agente Console con NetApp Backup and Recovery o Ransomware Resilience, il sistema non supporta gli endpoint dell'opzione 1. Consenti gli endpoint dell'opzione 2 e non consentire quelli dell'opzione 1.
+
+| Se l'agente della Console si trova in una regione AWS Government: https://*.blob.core.windows.nethttps://cloudmanagerinfraprod.azurecr.io
+
+| Per ottenere le immagini per gli aggiornamenti dell'agente Console quando l'agente Console è installato in una regione AWS Government.
+
+| Se l'agente della Console si trova in un'area geografica di Azure Government: \https://*.blob.core.windows.net https://occmclientinfragov.azurecr.us
+
+| Per ottenere le immagini per gli aggiornamenti dell'agente Console quando l'agente Console è installato in un'area geografica di Azure Government.
+
+a| Se l'agente della Console si trova in una regione commerciale o in una regione sovrana, puoi scegliere tra due set di endpoint:
+
+* Opzione 1 (consigliata) ^1^
++
+\https://bluexpinfraprod.eastus2.data.azurecr.io \https://bluexpinfraprod.azurecr.io
+
+* Opzione 2
++
+https://*.blob.core.windows.nethttps://cloudmanagerinfraprod.azurecr.io
+
+
+
+Per ottenere le immagini per gli aggiornamenti dell'agente Console quando l'agente Console è installato in una regione commerciale o in una regione sovrana.

@@ -1,0 +1,183 @@
+---
+sidebar: sidebar 
+permalink: concept-folders-fleets-overview.html 
+keywords: folders, fleets, organization, resource hierarchy, access control, IAM, roles, members, netapp console local 
+summary: 'Scopri come utilizzare cartelle e gruppi di archiviazione per organizzare le risorse e controllare l"accesso nella distribuzione locale della NetApp Console.' 
+---
+= Scopri cartelle e gruppi nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, usa cartelle e storage fleet per organizzare le tue risorse NetApp e controllare l'accesso in base alla struttura aziendale, ad esempio per sede, reparto o tipo di workload.
+
+Usa questa pagina per la strategia gerarchica e i modelli di progettazione della flotta. Per un modello IAM completo di membri, ruoli e ambito delle risorse, link:concept-identity-and-access-management.html["Scopri la gestione di identità e accessi nella distribuzione locale di NetApp Console"].
+
+Organizzi le risorse in una gerarchia: l'organizzazione è al vertice, poi ci sono le cartelle (che possono contenere altre cartelle o fleet), e poi le fleet, che contengono i sistemi storage. Assegna i ruoli di accesso a livello di organizzazione, cartella o fleet così gli utenti hanno il giusto accesso alle risorse.
+
+
+NOTE: Devi avere il ruolo di amministratore dell'organizzazione, di cartella o di fleet admin per gestire cartelle e flotte nella distribuzione locale della NetApp Console.
+
+
+
+[[organizational-components]]
+== Componenti organizzative
+
+Le componenti organizzative—organizzazione, cartelle e fleet—formano una gerarchia che determina come vengono raggruppate le risorse e come viene delegato l'accesso.
+
+Organizzazione:: Un'organizzazione è il livello più alto della gerarchia di distribuzione locale della NetApp Console e in genere rappresenta la tua azienda. La tua organizzazione è composta da cartelle, fleet, membri, ruoli e risorse. Le risorse sono associate alle fleet e ai membri vengono assegnati ruoli a livello di organizzazione, cartella o fleet.
+Cartelle:: Le cartelle raggruppano flotte correlate per organizzarle in base a posizione, sito o unità aziendale. Non puoi associare direttamente i sistemi storage alle cartelle, ma assegnando un ruolo a un membro a livello di cartella, questo avrà accesso a tutte le flotte in quella cartella.
++
+--
+
+NOTE: Gli amministratori dell'organizzazione possono aggiungere una risorsa a una cartella per delegare a un amministratore di cartella o di flotta il compito di associare la risorsa alle flotte link:task-iam-manage-resources.html["Associa le risorse a cartelle e fleet"].
+
+--
+Flotte:: I fleet raggruppano i sistemi storage. Assegna risorse ai fleet e concedi ai membri l'accesso a livello di fleet. Le risorse possono appartenere a più fleet. I membri con accesso al fleet possono gestire le risorse in quel fleet.
++
+--
+Ad esempio, puoi associare un sistema ONTAP locale a una singola flotta o a tutte le flotte della tua organizzazione, a seconda delle tue esigenze.
+
+link:task-iam-manage-folders-fleets.html["Scopri come creare cartelle e storage fleet"].
+
+--
+
+
+
+
+[[resources]]
+== Risorse
+
+Una risorsa è un sistema storage di cui la distribuzione locale della Console è a conoscenza e che può essere assegnato a una fleet. Associa una risorsa a una fleet in modo che gli utenti con accesso alla fleet possano gestire la risorsa.
+
+Ad esempio, puoi associare un ONTAP cluster a una flotta o a tutte le flotte della tua organizzazione. Come associ una risorsa dipende dalle esigenze della tua organizzazione.
+
+link:task-iam-manage-resources.html["Scopri come associare le risorse alle flotte"].
+
+
+
+[[members-and-roles]]
+== Membri e ruoli
+
+I membri sono gli utenti e gli account di servizio della tua organizzazione. I ruoli definiscono quali azioni possono eseguire e a quale livello della gerarchia—organizzazione, cartella o flotta.
+
+Membri:: I membri della tua organizzazione sono account utente o account di servizio. Un account di servizio viene in genere utilizzato da un'applicazione per completare attività specifiche senza intervento umano.
++
+--
+Gli utenti con il ruolo di amministratore dell'organizzazione possono aggiungere nuovi membri alla tua organizzazione. Tutti gli utenti (inclusi gli account di servizio e gli utenti di Active Directory) devono essere aggiunti esplicitamente e a ciascuno deve essere assegnato almeno un ruolo per poter accedere alla distribuzione locale della Console.
+
+--
+
+
+link:task-iam-manage-members-permissions.html["Scopri come aggiungere membri alla tua organizzazione"].
+
+Ruoli di accesso:: La distribuzione locale della Console fornisce ruoli di accesso che puoi assegnare ai membri della tua organizzazione.
++
+--
+Quando associ un membro a un ruolo, puoi assegnare quel ruolo all'intera organizzazione, a una cartella specifica o a una specifica fleet. Il ruolo che selezioni dà al membro il permesso di accedere alle risorse nella parte selezionata della gerarchia.
+
+L'implementazione locale della NetApp Console offre ruoli granulari che aderiscono al principio del minimo privilegio, il che significa che i ruoli di accesso sono progettati per dare ai membri accesso solo a ciò di cui hanno bisogno.
+
+Gli utenti possono ricoprire più ruoli man mano che le loro mansioni si espandono.
+
+--
+
+
+
+
+[[role-inheritance]]
+=== Ereditarietà dei ruoli
+
+Quando assegni un ruolo a livello di organizzazione o di cartella, le sottocartelle, le flotte e le risorse sottostanti ereditano quel ruolo, quindi la struttura delle cartelle e delle flotte determina quanto ampiamente si applica ciascuna assegnazione.
+
+link:concept-iam-rbac.html#role-inheritance["Scopri l'ereditarietà dei ruoli nella distribuzione locale di NetApp Console"].
+
+
+
+[[organization-design-examples]]
+== Esempi di progettazione organizzativa
+
+La struttura organizzativa più adatta dipende dalle dimensioni della tua organizzazione e da come sono organizzati i tuoi team. Gli esempi seguenti mostrano come diverse organizzazioni possono utilizzare la gerarchia di cartelle e fleet per gestire l'accesso in modo efficace.
+
+
+
+[[small-organization-strategy]]
+=== Strategia per piccole organizzazioni
+
+Per le organizzazioni con meno di 50 utenti e gestione centralizzata dello storage, considera un approccio semplificato usando i ruoli di Super admin e Super viewer.
+
+*Esempio: ABC Corporation (team di 5 persone)*
+
+* *Struttura*: Organizzazione unica con 3 fleet (Produzione, Sviluppo, Backup)
+* *Ruoli*:
++
+** 2 membri senior: ruolo di super admin per accesso amministrativo completo
+** 3 membri del team: ruolo di super viewer per il monitoraggio senza diritti di modifica
+
+
+* *Vantaggi*: Amministrazione semplificata, complessità dei ruoli ridotta, adatto a team che necessitano di un ampio accesso
+
+
+
+
+[[multi-regional-enterprise-strategy]]
+=== Strategia aziendale multiregionale
+
+Per le grandi organizzazioni con sedi regionali e team specializzati, implementa un approccio gerarchico con cartelle che rappresentano i confini geografici o delle unità aziendali.
+
+*Esempio: XYZ Corporation (società multinazionale)*
+
+* *Struttura*: Organizzazione > Cartelle regionali (North America, Europe, Asia-Pacific) > Flotte per regione
+* *Ruoli della piattaforma*:
++
+** 1 Amministratore dell'organizzazione: supervisione globale e gestione delle policy
+** 3 Amministratori di cartelle o flotte: Controllo regionale (uno per regione)
+** 1 Amministratore della federazione: integrazione del servizio di directory aziendale
+
+
+* *Ruoli di storage per regione*:
++
+** Amministratore dello storage: individua e gestisci i sistemi di storage nelle regioni assegnate
+** Visualizzatore di archiviazione: monitora risorse di storage in diverse regioni
+** Specialista della salute del sistema: Gestisci la salute dello storage senza modificare il sistema
+
+
+* *Vantaggi*: Maggiore sicurezza grazie alla separazione dei ruoli, all'autonomia regionale e alla conformità alle normative locali
+
+
+
+
+[[departmental-specialization-strategy]]
+=== Strategia di specializzazione dipartimentale
+
+Per le organizzazioni con team specializzati che necessitano di accessi specifici, usa assegnazioni di ruoli mirate in base alle responsabilità funzionali.
+
+*Esempio: TechCorp (azienda tecnologica di medie dimensioni)*
+
+* *Struttura*: Organizzazione > Cartelle di reparto (IT, Sicurezza, Sviluppo) > Risorse specifiche della flotta
+* *Ruoli specializzati*:
++
+** Team di sicurezza: ruoli di amministratore della resilienza al ransomware e di visualizzatore della classificazione
+** Team di backup: Super amministratore per il backup e il ripristino per operazioni di backup complete
+** Team di sviluppo: amministratore dello storage per la gestione dell'ambiente di test
+** Team di conformità: analista di supporto operativo per il monitoraggio e la gestione dei casi di supporto
+
+
+* *Vantaggi*: Controllo degli accessi personalizzato, maggiore efficienza operativa e chiara attribuzione di responsabilità per compiti specializzati
+
+
+
+
+[[next-steps]]
+== Prossimi passi
+
+* link:task-iam-manage-folders-fleets.html["Crea cartelle e flotte di storage"]
+* link:task-iam-manage-resources.html["Associa le risorse a cartelle e fleet"]
+* link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta"]
+* link:task-audit-console-activity.html["Monitora o controlla le azioni di distribuzione locale della Console"]
+

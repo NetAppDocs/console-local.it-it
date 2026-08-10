@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-agentic.html 
+keywords: agentic provisioning, AI-assisted provisioning, natural language, conversational provisioning, plan-and-approve, storage class, Console assistant, LLM, RBAC, netapp console local 
+summary: 'Utilizza il provisioning agentico basato sull"IA per soddisfare autonomamente le richieste di storage nella distribuzione locale di NetApp Console.' 
+---
+= Esegui il provisioning dello storage con flussi di lavoro assistiti dall'IA (agentici) nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nel deployment locale di NetApp Console, usa il provisioning assistito dall'IA (agentico) quando vuoi richiedere storage in modo conversazionale, rivedere un piano proposto e approvare la modifica. Questo approccio è utile quando vuoi richieste più rapide con meno navigazione nell'interfaccia utente, mantenendo comunque il provisioning allineato alle classi di storage e all'RBAC.
+
+
+NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+
+.Ruoli di accesso richiesti
+Super admin, admin dell'organizzazione, admin della cartella o della flotta, oppure admin dello storage. Le azioni assistite dall'IA sono limitate dagli stessi privilegi di accesso in base al ruolo delle azioni basate sull'interfaccia utente. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Il provisioning agentic richiede che un'integrazione LLM sia configurata e disponibile nel tuo ambiente di distribuzione locale della NetApp Console.
+
+
+
+[[before-you-begin]]
+== Prima di iniziare
+
+* Assicurati che l'integrazione LLM sia configurata e abilitata per la tua distribuzione locale della NetApp Console.
+* Assicurati che la flotta target contenga sistemi di storage rilevati.
+* Assicurati che le classi di archiviazione siano configurate e associate alla flotta così l'assistente può proporre piani allineati alle classi.
+
+
+.Passaggi (da rivedere)
+. Apri l'assistente NetApp Console.
+. Descrivi in modo semplice ciò di cui hai bisogno (ad esempio, protocollo, dimensioni, ambiente, intento di prestazione e flotta di destinazione, se applicabile).
+. Esamina il piano proposto, inclusi: la flotta selezionata e il posizionamento del sistema di destinazione (se applicabile), la classe di storage selezionata o consigliata, le impostazioni chiave che verranno applicate (comportamento della capacità, pianificazione della protezione, requisiti di sicurezza ed eventuali intenti relativi alla QoS se indicati)
+. Conferma o modifica il piano. Se il piano seleziona una classe o un posizionamento imprevisti, specifica la classe, la flotta o i vincoli desiderati e rigenera il piano.
+. Approva l'esecuzione per predisporre il carico di lavoro.
+. Verifica la risorsa creata nell'inventario di storage e conferma che sia associata alla classe di storage prevista per il monitoraggio continuo delle derive.
+

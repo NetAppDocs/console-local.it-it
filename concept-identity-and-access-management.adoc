@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: concept-identity-and-access-management.html 
+keywords: iam overview, overview, how iam works, iam example, organization, folders, fleets, resources, members, roles, permissions, resource hierarchy, identity and access management, access roles, iam, authentication, directory users, AD, Active Directory, directory services 
+summary: 'Usa la gestione delle identità e degli accessi (IAM) della distribuzione locale di NetApp Console per strutturare e controllare l"accesso alle risorse in base alla gerarchia aziendale, ad esempio per sede, reparto o flotta.' 
+---
+= Scopri la gestione di identità e accessi per la distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La gestione delle identità e degli accessi (IAM) nella distribuzione locale di NetApp Console controlla chi può accedere, come vengono verificate le identità, a quali risorse gli utenti possono accedere e quali azioni possono eseguire. Nella distribuzione locale di NetApp Console, l'IAM include il controllo degli accessi in base al ruolo (RBAC), l'autenticazione a più fattori (MFA) e l'autenticazione basata su directory, oltre alla gerarchia e al modello di audit che supportano l'amministrazione delegata.
+
+Usa questa pagina per capire a grandi linee il modello IAM di distribuzione locale della NetApp Console. Per esempi dettagliati di pianificazione della gerarchia, link:concept-folders-fleets-overview.html["Scopri cartelle e gruppi nella distribuzione locale di NetApp Console"].
+
+
+NOTE: Devi avere i ruoli _Super admin_, _Organization admin_ o _Folder or fleet admin_ per gestire IAM in NetApp Console.
+
+
+
+[[what-iam-means-in-netapp-console-local-deployment]]
+== Cosa significa IAM nella distribuzione locale di NetApp Console
+
+NetApp Console distribuzione locale IAM combina la verifica dell'identità, il controllo degli accessi, la delega e la tracciabilità:
+
+* L'autenticazione determina come accedi, se con credenziali locali o tramite la configurazione della directory.
+* L'autorizzazione determina cosa possono fare i membri dopo aver effettuato l'accesso, in base ai ruoli predefiniti e all'ambito in cui li assegni.
+* La gerarchia e l'ambito determinano a quali cartelle, fleet e risorse un membro puoi accedere.
+* La gestione di membri e credenziali determina come aggiungi utenti, account di servizio e come gestisci MFA e i segreti degli account di servizio.
+* La funzione _Tracciamento di audit e conformità_ registra le attività relative alla gestione delle identità e degli accessi (IAM) così puoi verificare chi ha modificato l'accesso e quando.
+
+
+
+
+[[how-authentication-works]]
+== Come funziona l'autenticazione
+
+NetApp Console la distribuzione locale supporta sia le identità locali che l'integrazione con identità esterne.
+
+Puoi integrare la distribuzione locale di NetApp Console con Active Directory così gli utenti accedono con le loro credenziali aziendali esistenti. Questo elimina la necessità di password separate nella distribuzione locale di Console e permette agli amministratori di cercare gli utenti della directory quando assegnano l'accesso.
+
+Per gli utenti locali, l'autenticazione a più fattori (MFA) aggiunge un ulteriore passaggio di verifica per ridurre il rischio di accesso non autorizzato in caso di compromissione delle credenziali.
+
+Per saperne di più sull'autenticazione e sulle opzioni di accesso sicuro, link:concept-secure-access.html["Scopri l'accesso sicuro nella distribuzione locale di NetApp Console"].
+
+
+
+[[how-authorization-works]]
+== Come funziona l'autorizzazione
+
+Dopo che un utente ha effettuato l'accesso, la distribuzione locale di NetApp Console utilizza RBAC in base al ruolo per determinare cosa puoi vedere e fare.
+
+L'autenticazione viene gestita tramite l'integrazione con Active Directory o LDAP. NetApp Console l'autorizzazione per la distribuzione locale rimane separata: gli amministratori assegnano ruoli predefiniti a livello di organizzazione, cartella o flotta per controllare a cosa può accedere ciascun membro.
+
+Lo stesso ruolo garantisce diversi livelli di accesso effettivo a seconda dell'ambito in cui lo assegni. Questo modello ti permette di dare un ampio accesso agli amministratori centrali, mentre limiti gli amministratori regionali o di team alle flotte che gestiscono.
+
+I ruoli che assegni a livello di organizzazione o di cartella vengono ereditati dagli ambiti secondari. Questo modello di ereditarietà è un elemento chiave del modo in cui NetApp Console delega l'accesso tra cartelle e fleet.
+
+NetApp progetta i ruoli di distribuzione locale della NetApp Console secondo i principi del minimo privilegio, così ogni ruolo include solo le autorizzazioni necessarie per le sue attività.
+
+link:concept-iam-rbac.html#role-inheritance["Scopri il controllo degli accessi in base al ruolo e l'ereditarietà dei ruoli nella distribuzione locale di NetApp Console"].
+
+
+
+[[how-the-iam-hierarchy-works]]
+== Come funziona la gerarchia IAM
+
+NetApp Console local deployment utilizza una gerarchia per raggruppare le risorse e definire l'ambito di accesso. L'organizzazione è al livello superiore, poi ci sono le cartelle, poi le fleet e infine le risorse (incluse le eventuali sottocartelle) associate a quelle fleet.
+
+Questa gerarchia è ciò che rende possibile la delega. Ad esempio, un amministratore dell'organizzazione può gestire l'accesso all'intera organizzazione, mentre un amministratore di cartella o di flotta può gestire solo le risorse e i membri all'interno della parte della gerarchia che possiede.
+
+NetApp Console IAM si basa su tre tipi di componenti: componenti organizzativi che definiscono la gerarchia, risorse che vengono assegnate all'interno di tale gerarchia e membri e ruoli che controllano chi può accedere a cosa.
+
+Poiché i ruoli vengono ereditati attraverso questa gerarchia, la progettazione delle cartelle e della flotta influisce direttamente su quanto ampiamente si applica ciascuna assegnazione di accesso.
+
+link:task-iam-manage-folders-fleets.html["Scopri come aggiungere flotte alla tua organizzazione."^].
+
+
+
+[[member-security-and-credentials]]
+== Sicurezza e credenziali dei membri
+
+IAM nell'implementazione locale di NetApp Console include anche controlli operativi per proteggere l'accesso dei membri dopo che gli account esistono.
+
+Per gli utenti locali, gli amministratori possono aiutare gli utenti a recuperare l'accesso indirizzandoli al reset della password, rimuovendo o disabilitando temporaneamente l'MFA e analizzando il comportamento MFA degli utenti locali. Per gli account di servizio, gli amministratori possono ricreare le credenziali quando i segreti vengono persi o ruotati.
+
+Questi controlli fanno parte di IAM perché determinano come le identità rimangono sicure nel tempo, non solo come viene assegnato l'accesso inizialmente.
+
+link:task-manage-member-security.html["Scopri come gestire la sicurezza dei membri"].
+
+
+
+[[audit-iam-activity]]
+== Verifica l'attività IAM
+
+IAM in NetApp Console distribuzione locale include la possibilità di rivedere ed esportare le attività relative agli accessi.
+
+Dalla pagina Audit, puoi esaminare le azioni relative alla gestione della tua organizzazione, come aggiungere membri, creare flotte e associare risorse. Puoi anche filtrare i record di audit in base al servizio Tenancy per concentrarti sulle modifiche relative a IAM, oppure esportare i log di audit in un sistema esterno.
+
+La tracciabilità è un principio importante dell'IAM perché ti permette di verificare chi ha modificato l'accesso, quando è avvenuta la modifica e se la modifica ha avuto successo.
+
+link:task-audit-console-activity.html["Scopri come controllare l'attività di distribuzione locale della NetApp Console"].
+
+
+
+[[next-steps-with-iam-in-netapp-console]]
+== Prossimi passi con IAM in NetApp Console
+
+* link:task-iam-fleet-mgmt-get-started.html["Inizia a usare identità e accesso in NetApp Console"]
+* link:concept-secure-access.html["Scopri l'accesso sicuro nella distribuzione locale di NetApp Console"]
+* link:concept-iam-rbac.html["Scopri RBAC nella distribuzione locale di NetApp Console"]
+* link:task-audit-console-activity.html["Monitora o controlla l'attività di distribuzione locale della NetApp Console"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri l'API per NetApp Console IAM"^]
+

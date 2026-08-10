@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-folders-fleets.html 
+keywords: folders, fleets, resource hierarchy, create folders, create fleets, iam, identity and access management, fleet id, initial iam setup, fleet hierarchy design, folder hierarchy configuration, rbac setup, tenancy setup, organizational onboarding, team structure alignment, delegated administration model, access governance planning, operational readiness 
+summary: 'Aggiungi cartelle e fleet in base alla struttura della tua azienda. Dopo aver creato cartelle e fleet, puoi associare risorse a esse e gestire l"accesso dei membri a tali fleet.' 
+---
+= Aggiungi cartelle e gruppi alla tua organizzazione di distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crea cartelle e gruppi di risorse che rispecchiano la struttura della tua azienda, controlla l'accesso e organizza le risorse nella distribuzione locale di NetApp Console.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione o amministratore di cartella o di flotta. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+NetApp Console la distribuzione locale crea una fleet predefinita quando crei un'organizzazione. Puoi aggiungere altre fleet e raggrupparle in cartelle. link:concept-identity-and-access-management.html["Scopri la gerarchia delle risorse in NetApp Console"].
+
+
+
+[[using-folders-and-fleets-to-organize-resources]]
+== Usa cartelle e fleet per organizzare le risorse
+
+Cartelle e flotte sono i due elementi costitutivi che usi per dare alla tua organizzazione una forma che rispecchi il modo in cui i tuoi team lavorano davvero. Ad esempio, una cartella per ogni regione, con una flotta di produzione e una di sviluppo all'interno di ciascuna.
+
+* Le cartelle raggruppano flotte correlate e supportano l'amministrazione delegata e l'ereditarietà dei ruoli.
+* Le flotte sono il luogo in cui associ le risorse per la gestione e concedi agli utenti l'accesso operativo.
+
+
+Puoi creare prima cartelle e fleet e aggiungere risorse e accesso ai membri in un secondo momento. Questo ti permette di pianificare la gerarchia delle risorse prima di aggiungere utenti e risorse nella distribuzione locale di NetApp Console. Se la tua struttura è già definita, puoi aggiungere risorse e assegnare l’accesso quando crei la fleet. Puoi aggiornare le fleet in qualsiasi momento.
+
+Ad esempio, metti i cluster di produzione in una flotta Production e i cluster di test in una flotta Test, e concedi a ciascun team l'accesso solo alla flotta che possiede.
+
+
+
+[[folders]]
+=== Cartelle
+
+Le cartelle organizzano le flotte in base alla struttura aziendale, come unità aziendale, regione o team. Puoi annidare le cartelle per rispecchiare la tua organizzazione.
+
+I ruoli assegnati a livello di cartella vengono ereditati dalle sottocartelle e dalle flotte. Puoi anche usare una cartella per delegare le attività di assegnazione delle flotte a un amministratore di cartella o di flotta per quella parte della gerarchia.
+
+
+NOTE: I membri lavorano in fleet, non in cartelle. Una risorsa associata solo a una cartella non è gestibile dai membri finché non viene associata a una fleet.
+
+Ad esempio, un'azienda regionale potrebbe utilizzare le cartelle per organizzare lo storage ONTAP in base all'unità aziendale e al carico di lavoro. Potrebbe creare una cartella di primo livello per North America, sottocartelle per Production e Development, e fleet per i cluster ONTAP che ospitano volumi SAP, VMware e di backup. Gli amministratori dello storage assegnati alla cartella North America ereditano l'accesso a tutte le fleet figlie, mentre i team applicativi ottengono l'accesso solo alle fleet che gestiscono.
+
+
+
+[[fleets]]
+=== Flotte
+
+Associa le risorse alle flotte in modo che i membri possano gestirle. Una flotta può esistere direttamente sotto l'organizzazione o all'interno di una cartella.
+
+Ad esempio, un'azienda del settore sanitario utilizza lo storage ONTAP in flotte di produzione e di sviluppo separate. La flotta di produzione esegue applicazioni cliniche e database di cartelle cliniche dei pazienti, mentre la flotta di sviluppo supporta test e convalida. Questa separazione protegge i dati live, impone un accesso più rigoroso alla produzione, supporta la tracciabilità e i controlli basati sul principio del minimo privilegio e permette ai team di sviluppo di lavorare senza impattare sui carichi di lavoro rivolti ai pazienti.
+
+Gli utenti navigano tra le flotte assegnate nella pagina *Sistemi* per gestire le risorse associate a ciascuna flotta.
+
+
+
+[[add-a-folder-or-fleet]]
+== Aggiungi una cartella o una fleet
+
+Aggiungi una flotta ogni volta che hai bisogno di un nuovo confine per le risorse e l'accesso dei membri, e aggiungi una cartella quando vuoi raggruppare flotte correlate e delegarne l'amministrazione. Ad esempio, aggiungi una `Production` cartella contenente una `Production-US-East` flotta e una `Production-EU-West` flotta, poi assegna a un responsabile regionale il ruolo di amministratore della cartella o della flotta solo sulla propria flotta.
+
+Puoi creare fino a sette livelli gerarchici.
+
+Puoi aggiungere risorse e assegnare l'accesso ai membri quando crei una flotta o una cartella, oppure farlo in seguito.
+
+.Passaggi
+. Seleziona *Amministrazione > Identità e accesso*.
+. Seleziona *Organization*.
+. Dalla pagina *Organizzazione*, seleziona *Aggiungi cartella o flotta*.
+. Seleziona *Folder* o *Fleet*.
+. In *Nome e posizione*: Inserisci un nome e scegli una posizione per la cartella o la flotta.
+
+
+[[associate-resource-folder]]
+. Facoltativo: espandi la sezione *Risorse* per associare le risorse alla flotta o alla cartella.
++
+.. Seleziona la check box accanto alla risorsa che desideri associare e poi seleziona *Associa alla flotta*. Se non hai ancora aggiunto sistemi alla distribuzione locale della NetApp Console, puoi fare questo passaggio più tardi.
++
+
+NOTE: I membri non possono accedere alle risorse in una cartella finché tali risorse non vengono assegnate a una flotta.
+
+
+
+. Opzionale: espandi la sezione *Accesso* per assegnare l'accesso ai membri. Seleziona *Aggiungi un membro* per assegnare l'accesso e un ruolo. Per impostazione predefinita, l'utente che crea la flotta ha accesso a essa.
++
+link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+. Seleziona *Aggiungi*.
+
+
+
+
+[[rename-a-folder-or-fleet]]
+== Rinomina una cartella o un gruppo
+
+Rinomina una cartella o un fleet secondo necessità. La ridenominazione non influisce sulle risorse associate o sull'accesso dei membri.
+
+.Passaggi
+. Dalla pagina *Organizzazione*, vai su una flotta o una cartella nella tabella, seleziona image:icon-action.png["Un'icona con tre puntini"] e poi seleziona *Modifica cartella* o *Modifica flotta*.
+. Nella pagina *Modifica*, inserisci un nuovo nome e seleziona *Applica*.
+
+
+
+
+[[delete-a-folder-or-fleet]]
+== Elimina una cartella o una fleet
+
+Elimina le cartelle e le flotte che non ti servono più, ad esempio dopo una ristrutturazione del team o il completamento di una flotta.
+
+Prima di eliminare una cartella o un gruppo di cartelle, completa i seguenti controlli:
+
+* Verifica che la cartella o il gruppo non contengano risorse. link:task-iam-manage-resources.html#remove-resource["Scopri come rimuovere le associazioni di risorse"].
+* Esamina i membri che hanno ancora accesso alla cartella o al gruppo. link:task-iam-users-fleets-assign.html["Visualizza le assegnazioni di accesso dei membri"].
+* Rimuovi o aggiorna l'accesso dei membri secondo necessità. link:task-iam-users-fleets-assign.html["Modifica le assegnazioni di accesso dei membri"].
+* Se stai eliminando una flotta, sposta prima le risorse sulla flotta di destinazione. link:task-iam-manage-resources.html["Scopri come spostare le risorse tra le flotte"].
+
+
+.Passaggi
+. Dalla pagina *Organizzazione*, vai su una flotta o una cartella nella tabella, seleziona image:icon-action.png["Un'icona con tre puntini"] e poi seleziona *Elimina*.
+. Conferma che vuoi eliminare la cartella o il fleet.
+
+
+
+
+[[manage-fleets-and-folders-in-netapp-console-local-deployment]]
+== Gestisci flotte e cartelle nella distribuzione locale di NetApp Console
+
+Dopo la configurazione iniziale, puoi fare quanto segue:
+
+* *Gestisci le associazioni di risorse per cartelle e fleet*: link:task-iam-manage-resources.html["Scopri come associare le risorse a fleet e cartelle"].
+* *Visualizza o aggiorna l'accesso per una cartella o un fleet*: link:task-iam-users-fleets-assign.html["Scopri come concedere agli utenti l'accesso alle flotte"].
+* *Gestisci un membro su più cartelle e flotte*: link:task-iam-manage-roles.html["Scopri come gestire l'accesso dei membri"].
+* *Aggiungi altri membri e assegna le autorizzazioni iniziali*: link:task-iam-manage-members-permissions.html["Scopri come gestire membri e autorizzazioni"].
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:concept-identity-and-access-management.html["Scopri identità e accesso in NetApp Console"]
+* link:task-iam-fleet-mgmt-get-started.html["Inizia a usare identità e accesso in NetApp Console"]
+* link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri le API di identità e accesso"^]
+

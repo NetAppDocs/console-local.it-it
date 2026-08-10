@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: reference-storage-class-policies.html 
+keywords: storage class policies, performance policy, capacity policy, security policy, data protection policy, netapp console 
+summary: Consulta i criteri di classe di archiviazione definiti dal sistema disponibili nella distribuzione locale di NetApp Console. 
+---
+= Esamina le policy predefinite delle classi di archiviazione nella NetApp Console distribuzione locale
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console deployment locale include criteri definiti dal sistema per tutti e quattro i tipi di criteri. Usa questo riferimento per identificare quale criterio si adatta meglio ai requisiti del tuo carico di lavoro quando crei o personalizzi una classe di archiviazione.
+
+
+
+[[performance-policies]]
+== Policy di performance
+
+Prestazioni estreme:: Usa per carichi di lavoro HPC, AI/ML e di analytics che richiedono un elevato burst di IOPS e una latenza bassa e prevedibile.
+Estremo per i dati del database:: Usa per volumi di dati di database transazionali che richiedono IOPS elevati e latenza sotto il millisecondo.
+Extreme per i log del database:: Usa per i volumi di log delle database transaction che richiedono il massimo livello di IOPS per prevenire colli di bottiglia in scrittura.
+Extreme per i dati condivisi del database:: Usa per volumi di database condivisi accessibili da più host che richiedono throughput elevato e latenza costante.
+Prestazioni:: Usa per applicazioni virtualizzate e aziendali che richiedono prestazioni affidabili senza esigenze estreme di IOPS.
+Valore:: Usa per carichi di lavoro sensibili ai costi, come directory home, condivisioni di file e archivi.
+
+
+
+
+[[capacity-policies]]
+== Politiche di capacità
+
+Crescita automatica della capacità:: Da utilizzare per carichi di lavoro di produzione che devono espandersi automaticamente per evitare errori dovuti all'esaurimento dello spazio.
+
+
+
+
+[[security-policies]]
+== Politiche di sicurezza
+
+Crittografia a riposo:: Usa per carichi di lavoro di produzione in cui la crittografia è richiesta per la conformità.
+Protezione contro i ransomware:: Da utilizzare per carichi di lavoro contenenti dati sensibili o business-critical che richiedono una protezione attiva contro i ransomware.
+Sicurezza standard:: Da utilizzare per carichi di lavoro in cui il comportamento di sicurezza predefinito della piattaforma è accettabile.
+
+
+
+
+[[data-protection-policies]]
+== Politiche di protezione dei dati
+
+predefinito:: Usa per carichi di lavoro standard che richiedono punti di ripristino a breve termine senza l’onere della conservazione a lungo termine.
+orario su 3 mesi:: Da utilizzare per carichi di lavoro regolamentati o critici per l'attività aziendale che richiedono punti di ripristino intraday granulari e tre mesi di conservazione storica.
+Recupero di 30 giorni:: Usa per carichi di lavoro standard che richiedono punti di ripristino a breve termine senza l’onere della conservazione a lungo termine.
+Recupero di 90 giorni:: Da utilizzare per carichi di lavoro regolamentati o critici per l'attività aziendale che richiedono punti di ripristino intraday granulari e tre mesi di conservazione storica.
+

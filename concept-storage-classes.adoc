@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: concept-storage-classes.html 
+keywords: storage classes, storage class policies, standardize, fleet management, provisioning, netapp console local 
+summary: Scopri come le classi di archiviazione e le policy delle classi di archiviazione nella distribuzione locale della NetApp Console definiscono gli standard, regolano il provisioning e supportano il monitoraggio delle discrepanze. 
+---
+= Scopri le classi e le policy di archiviazione nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una classe di archiviazione è un modello riutilizzabile che definisce come deve comportarsi lo storage. Quando esegui il provisioning dello storage utilizzando una classe di archiviazione, NetApp Console local deployment applica automaticamente gli standard codificati in quella classe senza che gli amministratori debbano prendere decisioni di configurazione individuali per ogni workload.
+
+Le classi di storage sono create a partire da policy di classe di storage, che definiscono le singole dimensioni del comportamento di storage. Insieme, ti permettono di definire una sola volta gli standard di storage della tua organizzazione e di applicarli in modo coerente a tutte le flotte.
+
+
+
+[[what-storage-class-policies-are]]
+== Cosa sono le policy delle classi di archiviazione
+
+Una policy di classe di archiviazione definisce una dimensione del comportamento di archiviazione. Le policy sono elementi costitutivi riutilizzabili che combini per creare classi di archiviazione.
+
+Le tipologie di policy più comuni includono:
+
+* *Politiche di performance* - Definisci obiettivi di latenza, IOPS o requisiti di throughput.
+* *Politiche di capacità* - Definisci la modalità di provisioning, gli avvisi di soglia o i limiti di crescita.
+* *Politiche di sicurezza* - Definisci i requisiti di crittografia, conformità o controllo degli accessi.
+* *Politiche di protezione dei dati* - Definisci le pianificazioni degli snapshot, gli obiettivi di replica o i periodi di conservazione.
+
+
+Definisci le policy in modo indipendente e poi le combini quando crei una classe di storage. Questo ti permette di riutilizzare la stessa policy di performance in più classi, oppure di aggiornare una policy di capacità in un solo punto e applicare quella modifica a tutte le classi che la usano.
+
+
+
+[[what-storage-classes-are]]
+== Cosa sono le classi di archiviazione
+
+Una classe di archiviazione è un modello denominato, composto da una o più policy. Rappresenta gli standard di archiviazione della tua organizzazione per uno specifico tipo di carico di lavoro.
+
+Ad esempio, potresti creare una classe di archiviazione *Production Database* che combini dalle performance elevate, alta disponibilità e rigide politiche di protezione dei dati, oppure una classe di archiviazione *Development File Share* che combini prestazioni moderate, capacità flessibile e politiche di protezione dei dati di base.
+
+Gli amministratori dello storage definiscono le classi di storage per codificare i requisiti aziendali. Tutte le attività di provisioning, sia che vengano eseguite manualmente, tramite flussi di lavoro guidati o con l'automazione, attingono alla libreria di classi approvate da tali amministratori.
+
+
+
+[[how-storage-classes-enforce-standards]]
+== Come le classi di archiviazione applicano gli standard
+
+Quando esegui il provisioning dello storage, selezioni una classe di storage invece di configurare singole impostazioni. La distribuzione locale tramite NetApp Console utilizza i criteri di quella classe per identificare quali cluster nella tua flotta hanno la capacità e il margine di performance per supportare il carico di lavoro, consigliare la migliore opzione di posizionamento e applicare automaticamente le impostazioni guidate dalla classe al momento del provisioning.
+
+Dopo il provisioning, la distribuzione locale di NetApp Console valuta continuamente ogni workload rispetto agli standard della sua classe di storage.
+
+
+
+[[storage-class-drift-and-compliance]]
+== Deriva e conformità della storage class
+
+Quando un carico di lavoro non corrisponde più all'intento della sua classe di archiviazione, la distribuzione locale della Console lo segnala per analisi e correzione.
+
+Le problematiche si suddividono in due categorie:
+
+* *Deviazione di configurazione*: le impostazioni di storage gestite dalla policy della storage class non corrispondono più alla configurazione prevista. Questo può succedere quando vengono apportate modifiche direttamente sull'ONTAP cluster o al di fuori dei flussi di lavoro di provisioning standard.
+* *Non conformità delle performance*: il comportamento in fase di esecuzione del carico di lavoro non soddisfa più l'intento di performance della classe di storage (ad esempio, pressione prolungata in prossimità di un limite QoS o aumento della latenza di coda).
+
+
+Una vista di analisi spiega cosa è cambiato e perché. Potrebbero essere disponibili azioni di correzione guidate (ad esempio, *Correggi*) per aiutarti a ripristinare la conformità. Alcune correzioni possono essere applicate sul posto, mentre altre potrebbero richiedere l'allineamento del carico di lavoro a una diversa classe di storage per ripristinare il comportamento previsto.
+
+.Dove indagare
+Di solito puoi analizzare le deviazioni e le non conformità da una di queste posizioni (la disponibilità dipende dalla tua configurazione e dalle autorizzazioni):
+
+* *Classi di storage:* Drift / Compliance
+* *Avvisi:* Analizza
+
+
+Per istruzioni dettagliate, vedi xref:task-storage-class-drift-remediate.adoc[Correggi la deriva della storage class].
+
+
+
+[[end-to-end-workflow]]
+== Flusso di lavoro end-to-end
+
+I seguenti passaggi descrivono il processo per utilizzare le classi di archiviazione per standardizzare e governare lo storage nel tuo ambiente:
+
+. *Crea criteri per le classi di archiviazione* - I criteri definiscono le singole dimensioni del comportamento dello storage (obiettivi di performance, impostazioni di capacità, requisiti di sicurezza, pianificazioni di protezione dei dati). Crea i criteri prima di creare una classe di archiviazione.
+. *Crea una classe di archiviazione* - Assembla una classe di archiviazione combinando una policy per ogni categoria applicabile. Puoi utilizzare una classe di archiviazione predefinita o crearne una personalizzata in base agli standard della tua organizzazione.
+. *Associa la classe di archiviazione a una flotta* - Dopo aver creato una classe di archiviazione, associala alla flotta in cui verrà utilizzata per il provisioning e il monitoraggio della conformità.
+. *Provisioning dello storage tramite la classe di storage* - Quando esegui il provisioning di un volume o di una LUN, seleziona una classe di storage invece di configurare le singole impostazioni. Il deployment locale di NetApp Console utilizza la classe per consigliare il posizionamento nel cluster più adatto, quindi esegue il provisioning con le impostazioni definite nella classe.
+. *Monitora i carichi di lavoro per rilevare eventuali deviazioni* - Il deployment locale della Console valuta continuamente ciascun carico di lavoro rispetto agli standard codificati nella sua storage class. Se si verifica una deviazione della configurazione o una non conformità delle performance, il problema viene segnalato e potrebbe essere generato un avviso.
+. *Correggi la deriva per ripristinare la conformità* - Quando viene rilevata una deriva o una non conformità delle performance, puoi seguire i passaggi guidati per correggere manualmente il problema, lasciare che la distribuzione locale della Console risolva automaticamente le condizioni di deriva comuni oppure dissociare un workload dalla sua storage class se devi modificarne le impostazioni.
+
+
+
+
+[[how-storage-classes-work-with-fleets]]
+== Come funzionano le classi di archiviazione con le flotte
+
+Le classi di storage sono associate alle fleet. Quando associ una classe di storage a una fleet, quella classe diventa disponibile per tutto il provisioning all'interno della fleet. Questo garantisce che ogni workload sottoposto a provisioning nella fleet segua gli stessi standard, rendendo le fleet il modo principale per imporre un comportamento di storage coerente tra cluster correlati.
+
+Per informazioni dettagliate su come organizzare le flotte, vedi link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
+
+
+
+[[where-to-go-next]]
+== Dove andare dopo
+
+* Per comprendere l'organizzazione della flotta, vedi link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
+* Per creare criteri e classi di archiviazione, vedi link:task-storage-class-manage.html["Gestisci classi e criteri di archiviazione"].
+* link:task-provisioning-manual.html["Effettua il provisioning dello storage manualmente"]
+* link:task-provisioning-automated.html["Effettua il provisioning dello storage automaticamente"]
+* link:task-provisioning-agentic.html["Effettua il provisioning dello storage con l'assistenza dell'IA"]
+* Per analizzare e correggere la deriva, vedi link:task-storage-class-drift-remediate.html["Correggi la deriva della storage class"]
+

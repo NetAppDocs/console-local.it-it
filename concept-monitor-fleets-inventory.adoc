@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: concept-monitor-fleets-inventory.html 
+keywords: inventory, fleet inventory, systems, volumes, capacity, security, performance, monitoring, ONTAP, clusters, fleet visibility, capacity planning, storage governance, netapp console local 
+summary: 'Utilizza l"inventario per monitorare lo stato della flotta e analizzare le risorse di storage nella distribuzione locale di NetApp Console.' 
+---
+= Monitora le flotte utilizzando l'inventario nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, usa l'inventario per monitorare lo stato di salute della flotta e analizzare le risorse di storage nel tuo ambiente. L'inventario offre viste su capacità, sicurezza e prestazioni che ti aiutano a identificare i problemi, comprendere l'utilizzo delle risorse e monitorare i sistemi storage gestiti.
+
+L'inventario è principalmente un'area di lavoro informativa e diagnostica. Dall'inventario puoi esaminare sistemi, volumi e altri oggetti di storage in tutte le tue flotte ed eseguire azioni comuni come il provisioning delle risorse di storage. Per operazioni avanzate di gestione dello storage, la distribuzione locale di NetApp Console ti reindirizza a System Manager.
+
+
+
+[[access-inventory]]
+== Accesso all'inventario
+
+Puoi accedere a *Inventario* da diverse aree della distribuzione locale della Console, tra cui:
+
+* La pagina iniziale
+* Pagine di panoramica della flotta
+* Schede di stato della flotta e relative visualizzazioni dell'inventario
+
+
+A seconda di dove accedi a *Inventario*, l'ambito visualizzato può essere a livello di organizzazione o a livello di flotta.
+
+
+
+[[inventory-views]]
+== Visualizzazioni dell'inventario
+
+*Inventario* offre diverse visualizzazioni che ti aiutano ad analizzare diversi aspetti del tuo ambiente di storage.
+
+Capacità:: Visualizza l'utilizzo della capacità e identifica sistemi, volumi e altri oggetti di storage che consumano risorse di storage.
+Sicurezza:: Esamina le informazioni relative alla sicurezza e lo stato di conformità delle risorse di storage gestite.
+Prestazioni:: Analizza le metriche relative alle prestazioni e identifica le risorse che potrebbero richiedere ulteriori indagini.
+
+
+Le informazioni visualizzate variano a seconda della vista selezionata e del tipo di oggetto.
+
+
+
+[[investigate-storage-resources]]
+== Esamina risorse di storage
+
+Usa *Inventario* per:
+
+* Monitora lo stato di salute della flotta
+* Rivedi l'utilizzo della capacità di storage
+* Tieni traccia dei sistemi storage gestiti
+* Identifica i volumi e gli altri oggetti che consumano capacità
+* Indaga su potenziali problemi di sicurezza o di prestazioni
+* Individua le risorse che richiedono attenzione amministrativa
+
+
+*Inventario* ti aiuta a passare da una visione high-level del tuo ambiente a un'analisi più dettagliata di specifiche risorse di storage.
+
+
+
+[[provision-storage-resources]]
+== Effettua il provisioning delle risorse di storage
+
+L'inventario include flussi di lavoro che ti permettono di effettuare il provisioning di risorse di storage come volumi e LUN.
+
+Quando effettui il provisioning delle risorse, selezioni un sistema storage gestito esistente e fornisci le impostazioni di configurazione richieste per il carico di lavoro.
+
+
+
+[[inventory-and-alerts]]
+== Inventario e avvisi
+
+Vengono generati avvisi per specifici oggetti di storage e condizioni all'interno del tuo ambiente.
+
+Quando selezioni un avviso, la distribuzione locale della Console potrebbe indirizzarti a System Manager per ulteriori indagini o azioni di gestione. *Inventory* integra gli avvisi fornendo una visibilità più ampia sullo stato generale dell'ambiente di storage e delle risorse gestite.
+
+
+
+[[advanced-management-tasks]]
+== Attività di gestione avanzata
+
+*Inventory* ti aiuta a identificare le risorse che richiedono un intervento, ma alcune operazioni avanzate di gestione dello storage si eseguono in System Manager.
+
+Esempi includono:
+
+* Gestione avanzata del carico di lavoro
+* Attività di riallocazione e ottimizzazione delle risorse
+* Attività dettagliate di amministrazione del sistema
+
+
+Utilizza *Inventario* per identificare e analizzare i problemi, quindi usa System Manager quando servono funzionalità di gestione più avanzate.

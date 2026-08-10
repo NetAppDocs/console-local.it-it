@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept-secure-access.html 
+keywords: security, access control, MFA, multi-factor authentication, AD, Active Directory, LDAP, LDAPS, directory services, authentication, zero trust, secure access governance, reduce attack surface, netapp console local 
+summary: 'Scopri le opzioni di sicurezza disponibili nella distribuzione locale della NetApp Console, tra cui l"integrazione con Active Directory e l"autenticazione a più fattori.' 
+---
+= Scopri l'accesso sicuro alla distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console la distribuzione locale offre più livelli di sicurezza per proteggere il tuo ambiente di gestione dello storage e controllare chi può accedervi.
+
+
+
+[[active-directory-integration]]
+== Integrazione con Active Directory
+
+Collega la distribuzione locale di NetApp Console al tuo Active Directory così gli utenti possono accedere con le loro credenziali aziendali esistenti. Questo elimina la necessità di password separate nella distribuzione locale di Console e supporta l'accesso basato su directory per gli utenti che aggiungi alla tua organizzazione.
+
+link:task-iam-active-directory-integrate.html["Integra Active Directory con la distribuzione locale di NetApp Console"].
+
+
+
+[[multi-factor-authentication]]
+== Autenticazione a più fattori
+
+Puoi abilitare l'autenticazione a più fattori (MFA) per aggiungere un ulteriore livello di verifica e prevenire accessi non autorizzati, anche se le credenziali vengono compromesse.
+
+link:task-user-settings.html["Abilita MFA per la distribuzione locale della NetApp Console"].
+
+
+
+[[identity-and-access-management]]
+== Gestione delle identità e degli accessi
+
+Dopo aver autenticato gli utenti, controlla e monitora ciò che possono fare all'interno della distribuzione locale di NetApp Console.
+
+Utilizza il controllo degli accessi in base al ruolo per definire cosa ogni membro può vedere e gestire. Assegna i membri a fleet specifiche così possono accedere solo alle risorse di storage rilevanti per le loro responsabilità.
+
+* link:concept-identity-and-access-management.html["Scopri la gestione di identità e accessi per la distribuzione locale di NetApp Console"]
+* link:concept-iam-rbac.html["Scopri il controllo degli accessi in base al ruolo per la distribuzione locale della NetApp Console"]
+* link:task-iam-manage-members-permissions.html["Aggiungi membri e assegna ruoli nella distribuzione locale di NetApp Console"]
+* link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta nella distribuzione locale di NetApp Console"]
+
+
+
+
+[[audit-logging]]
+== Registrazione degli eventi di controllo
+
+Monitora tutte le attività degli utenti (inclusi gli utenti API e degli account di servizio) nella distribuzione locale della NetApp Console per indagini di conformità e sicurezza.
+
+link:task-audit-console-activity.html["Visualizza i registri di controllo per la distribuzione locale di NetApp Console"].

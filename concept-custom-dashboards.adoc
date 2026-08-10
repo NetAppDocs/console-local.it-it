@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: concept-custom-dashboards.html 
+keywords: dashboards, predefined dashboards, custom dashboards, cards, card templates, metrics, KPI, fleet health, performance monitoring, capacity monitoring, storage visibility, netapp console local, monitoring 
+summary: Scopri come interagiscono i dashboard predefiniti della pagina iniziale e i dashboard personalizzati in NetApp Console con una distribuzione locale. 
+---
+= Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza dashboard personalizzate nella distribuzione locale della NetApp Console per creare visualizzazioni di monitoraggio mirate per team, flotte, carichi di lavoro e obiettivi operativi specifici. Le dashboard personalizzate integrano la dashboard della pagina iniziale, aggiungendo visibilità mirata al monitoraggio generale sempre disponibile.
+
+
+
+[[how-dashboard-types-work-together]]
+== Come funzionano insieme i tipi di dashboard
+
+dashboard della home page:: Pannelli di monitoraggio pronti all'uso per capacità, avvisi, capacità delle prestazioni, licenze e stato di protezione dei dati. Le visualizzazioni sono preconfigurate e si aggiornano automaticamente. link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"].
+dashboard personalizzate:: Viste di monitoraggio specifiche per ruolo, create a partire da schede predefinite, inclusi ambito selezionabile, metriche, risorse target e finestre temporali.
+
+
+Utilizzali entrambi insieme: * Inizia dalla Home page per il monitoraggio quotidiano dei parametri di base. * Usa dashboard personalizzate per indagini mirate per team, flotta, workload o quesito operativo.
+
+Puoi aggiungere un solo dashboard personalizzato alla pagina iniziale alla volta.
+
+
+
+[[understand-custom-dashboards]]
+== Comprendi i dashboard personalizzati
+
+Una dashboard personalizzata è una raccolta salvata di schede che disponi su una griglia. Ogni scheda si basa su un modello predefinito di scheda con una metrica e un tipo di grafico. Quando aggiungi una scheda, configuri l'ambito, gli oggetti di destinazione, l'aggregazione e la finestra temporale.
+
+Le dashboard e le schede personalizzate sono private per te. Ogni scheda mostra i dati solo per le risorse di storage che sei autorizzato a visualizzare.
+
+Puoi rimuovere la dashboard personalizzata dalla tua Home page e aggiungerne un'altra man mano che cambiano le priorità di monitoraggio.
+
+
+
+[[monitor-what-matters]]
+== Monitora ciò che conta
+
+I modelli di schede sono organizzati per tipo di metrica, così puoi focalizzare una dashboard su una specifica area operativa. Ad esempio, usa le schede di capacità per monitorare un volume che cresce più velocemente del previsto, oppure usa le schede di avviso per tenere traccia dei guasti ripetuti su un cluster occupato:
+
+Prestazioni:: Latenza, IOPS, throughput, utilizzo e capacità prestazionale su tutta la flotta, i sistemi, gli SVM, i volumi e i LUN.
+Capacità:: Capacità utilizzata, capacità libera, % di capacità utilizzata e capacità degli snapshot su tutta la flotta, i sistemi, gli SVM, i volumi, i LUN e i livelli locali.
+Salute:: Stato di salute, numero di oggetti degradati o critici, dischi guasti, errori dell'interfaccia di rete e oggetti hot.
+Avvisi:: Conteggi degli avvisi critici, avvisi per gravità, avvisi per area di impatto, avvisi recenti e tendenze degli avvisi nel tempo.
+
+
+Per un catalogo completo di schede predefinite e metriche, vedi link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"].
+
+
+
+[[resource-types]]
+== Tipi di risorse
+
+Puoi definire l'ambito delle schede a qualsiasi livello della gerarchia di storage ONTAP: flotta, cluster, sistema (nodo), SVM, volume, LUN e livello locale (aggregato). I tipi di risorse disponibili dipendono dal modello di scheda che selezioni.
+
+
+
+[[plan-dashboard-views]]
+== Visualizzazioni dashboard del piano
+
+Organizza dashboard personalizzate in base agli obiettivi di amministrazione dello storage, come la valutazione delle prestazioni dei carichi di lavoro, la pianificazione della capacità, il rilevamento dei rischi e la prioritizzazione degli avvisi.
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-dashboard-get-started.html["Inizia a utilizzare le dashboard nella distribuzione locale di NetApp Console"]
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"]
+

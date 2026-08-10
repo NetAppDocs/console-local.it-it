@@ -1,0 +1,125 @@
+---
+sidebar: sidebar 
+permalink: concept-netapp-console-local.html 
+keywords: netapp console local, overview, self-hosted, data sovereignty, storage management, ONTAP, fleet management, RBAC, policy enforcement, storage governance 
+summary: Scopri la distribuzione locale di NetApp Console, una piattaforma di gestione dello storage self-hosted che puoi implementare nel tuo ambiente. 
+---
+= Scopri la distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console deployment locale ti permette di ospitare ed eseguire il piano di controllo autonomo di NetApp Console nella tua infrastruttura.
+
+Ottieni una gestione unificata dello storage, l'applicazione delle policy, l'automazione su larga scala e le operazioni assistite dall'intelligenza artificiale. Nessun dato, metadati o traffico di gestione esce dal tuo ambiente.
+
+
+
+[[deploy-and-operate-console-in-your-own-infrastructure]]
+== Distribuisci e gestisci Console nella tua infrastruttura
+
+NetApp Console distribuzione locale viene eseguita nella tua infrastruttura, quindi il tuo team controlla la distribuzione, la connettività e le operazioni quotidiane. Distribuisci l'agente Console, mantieni la macchina virtuale Console e gestisci i percorsi di rete necessari per il monitoraggio e il traffico di gestione. Questo offre agli amministratori aziendali il pieno controllo dei confini operativi, mantenendo i dati di gestione all'interno dell'ambiente.
+
+* link:task-install-agent-on-prem-ova.html["Installa la distribuzione locale di NetApp Console usando un OVA in vCenter"].
+* link:task-console-local-vm-config.html["Gestisci il tuo vCenter o host ESXi per la distribuzione locale della NetApp Console"].
+* link:reference-ports-on-prem.html["Scopri le porte per l'agente Console on-premises nella distribuzione locale di NetApp Console"].
+
+
+
+
+[[automate-storage-operations-with-apis-and-service-accounts]]
+== Automatizza le operazioni di storage con API e account di servizio
+
+NetApp Console local deployment supporta integrazioni basate su API, così la tua organizzazione può automatizzare operazioni di storage ripetibili. Gli account di servizio permettono alle applicazioni di autenticarsi e operare con i ruoli assegnati. Gli stessi controlli di accesso in base al ruolo e di audit che si applicano agli utenti interattivi regolano queste azioni. Questo supporta l'automazione aziendale mantenendo l'accesso circoscritto e responsabile.
+
+* link:task-iam-manage-members-permissions.html["Aggiungi membri alla tua organizzazione di distribuzione locale di NetApp Console"].
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri l'API per NetApp Console IAM"^]
+
+
+
+
+[[control-access-with-rbac-and-active-directory-integration]]
+== Controlla l'accesso con RBAC e integrazione con Active Directory
+
+NetApp Console deployment locale offre un controllo degli accessi in base al ruolo (RBAC) a zero trust che limita ciò che gli utenti possono vedere e fare all'interno delle flotte e delle risorse che gestiscono. Puoi integrarti con Active Directory così gli utenti accedono con le loro credenziali aziendali esistenti, e gli utenti locali possono aggiungere l'autenticazione a più fattori (MFA) per un ulteriore livello di verifica. La governance degli accessi resta allineata alle pratiche più ampie di gestione delle identità e degli accessi della tua organizzazione.
+
+* link:concept-identity-and-access-management.html["Scopri la gestione di identità e accessi nella distribuzione locale di NetApp Console"].
+* link:concept-secure-access.html["Scopri l'accesso sicuro alla distribuzione locale della NetApp Console"].
+
+
+
+
+[[organize-fleets-and-delegate-storage-administration]]
+== Organizza le flotte e delega l'amministrazione dello storage
+
+NetApp Console deployment locale scala l'amministrazione organizzando le risorse in cartelle e fleet. Puoi mappare le fleet su ambienti, unità di business o regioni, poi delegare l'amministrazione a livello di organizzazione, cartella o fleet per mantenere chiara la proprietà. Questa struttura aiuta i team di storage di grandi dimensioni a distribuire il lavoro senza perdere coerenza delle policy o governance.
+
+* link:concept-folders-fleets-overview.html["Scopri cartelle e gruppi nella distribuzione locale di NetApp Console"].
+* link:concept-storage-fleets.html["Scopri le flotte di storage nella distribuzione locale della NetApp Console"].
+
+
+
+
+[[track-and-export-administrative-activity-for-compliance]]
+== Traccia ed esporta le attività amministrative ai fini della conformità
+
+Ogni azione amministrativa genera un record di audit. I team di sicurezza e conformità possono utilizzare questi record per indagare sugli incidenti, dimostrare l'efficacia dei controlli e soddisfare i requisiti di audit. Esporta i log di audit sul tuo server syslog tramite un webhook per un monitoraggio centralizzato, una conservazione più lunga e l'analisi. Poiché la distribuzione locale di NetApp Console viene eseguita nel tuo ambiente, i dati di log non lasciano mai la tua infrastruttura.
+
+* link:task-audit-console-activity.html["Verifica l'attività di distribuzione locale della NetApp Console"].
+
+
+
+
+[[provision-storage-consistently-with-storage-class-policies]]
+== Eroga storage in modo coerente con le policy della storage class
+
+NetApp Console distribuzione locale impone un comportamento di storage coerente tramite le storage class—modelli che raggruppano policy di prestazioni, capacità e tiering in definizioni riutilizzabili. Gli amministratori definiscono gli standard di storage una sola volta. Gli amministratori e i flussi di lavoro automatizzati usano queste classi approvate per tutte le attività di provisioning nell'ambiente. Questo impedisce la deriva della configurazione, riduce il tempo che gli amministratori junior dedicano alle decisioni di provisioning e garantisce che ogni workload soddisfi subito gli standard dell'organizzazione. Dopo il provisioning, Console distribuzione locale continua a monitorare ogni workload per verificarne la conformità.
+
+* link:concept-manage-storage.html["Scopri come gestire lo storage con NetApp Console distribuzione locale"].
+
+
+
+
+[[monitor-storage-class-compliance-and-remediate-drift-automatically]]
+== Monitora la conformità della storage class e correggi automaticamente le deviazioni
+
+La distribuzione locale di NetApp Console monitora ogni workload rispetto alla storage class utilizzata per il provisioning. Quando un workload si discosta—per una modifica diretta della configurazione del cluster o per un degrado delle prestazioni—la distribuzione locale di NetApp Console segnala immediatamente la violazione. Gli amministratori possono seguire i passaggi guidati per la correzione oppure configurare la correzione automatica per risolvere le condizioni di drift più comuni senza intervento manuale. Questa applicazione continua riduce il rischio di audit e mantiene il tuo ambiente conforme tra una revisione programmata e l'altra.
+
+
+
+[[monitor-storage-health-and-receive-alerts-across-fleets]]
+== Monitora lo stato di salute dello storage e ricevi avvisi su tutte le flotte
+
+NetApp Console distribuita localmente ti offre un unico posto per monitorare lo stato di salute e le prestazioni di ogni cluster che gestisci. Le dashboard a livello di fleet mostrano i cluster e i volumi che richiedono attenzione. Le dashboard personalizzate permettono agli amministratori di creare viste di monitoraggio che corrispondono alle loro responsabilità. Il Workload Analyzer correla latenza, throughput, utilizzo delle risorse e modifiche alla configurazione nel tempo per aiutarti a individuare le cause principali prima che i problemi influiscano sui workload.
+
+Configura i canali di consegna tramite email e webhook così gli avvisi raggiungono i team giusti quando cambiano le condizioni. Gli admin dell'organizzazione impostano le destinazioni e gli admin dello storage le applicano nelle regole di avviso così i percorsi di risposta corrispondono al tuo modello operativo. Questo aiuta i team enterprise a rispondere più velocemente agli eventi di capacità, prestazioni e protezione.
+
+* link:concept-monitor-storage.html["Scopri come monitorare l'integrità dello storage nella NetApp Console distribuzione locale"].
+* link:task-console-configure-notifications-delivery.html["Configura i canali di consegna delle notifiche nella distribuzione locale di NetApp Console"].
+* link:task-alert-rules-manage.html["Configura le regole di notifica per gli avvisi nella distribuzione locale di NetApp Console"].
+
+
+
+
+[[provision-storage-and-investigate-alerts-with-natural-language]]
+== Effettua il provisioning dello storage e analizza gli avvisi con linguaggio naturale
+
+NetApp Console distribuzione locale può connettersi al tuo large language model (LLM) per offrire una gestione dello storage assistita dall'IA. Puoi descrivere un carico di lavoro in linguaggio naturale per ottenere un piano di provisioning, chiedere alla Console di esaminare un avviso attivo o ottenere risposte contestuali sul tuo ambiente di storage. Ogni azione dell'IA rimane entro i limiti delle tue classi di storage e dei controlli di accesso in base al ruolo applicati al tuo account, e devi confermare le operazioni sensibili prima che vengano eseguite. La distribuzione locale della Console invia richieste solo all'endpoint LLM configurato dai tuoi amministratori.
+
+* link:concept-llm-integration.html["Scopri l'integrazione di LLM nella distribuzione locale di NetApp Console"].
+
+
+
+
+[[back-up-and-restore-storage-with-netapp-backup-and-recovery]]
+== Esegui il backup e ripristina lo storage con NetApp Backup and Recovery
+
+Oltre al provisioning e al monitoraggio, la distribuzione locale della NetApp Console ti dà accesso a NetApp Backup and Recovery così puoi proteggere i tuoi dati dalla stessa interfaccia. Puoi eseguire il backup e il ripristino dei tuoi dati per soddisfare i requisiti di protezione e ripristino. Gestire la protezione dei dati insieme allo storage mantiene coerente la governance e riduce il numero di strumenti di cui il tuo team ha bisogno per operare.
+
+* link:concept-data-services.html["Scopri i servizi dati nella distribuzione locale di NetApp Console"].
+

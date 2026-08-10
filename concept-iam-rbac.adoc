@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept-iam-rbac.html 
+keywords: roles, permissions, role-based access control, rbac, iam, identity and access management, least privilege, access control, NetApp Console local access, organization access, folder access, fleet access, resource access, directory users, AD, Active Directory, directory services 
+summary: 'Gestisci l"accesso degli utenti alla distribuzione locale della NetApp Console con il controllo degli accessi in base al ruolo (RBAC), assegnando ruoli predefiniti a livello di organizzazione, cartella o flotta. Ogni ruolo concede autorizzazioni specifiche che definiscono quali azioni gli utenti possono eseguire nell"ambito assegnato.' 
+---
+= Scopri il controllo degli accessi in base al ruolo nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gestisci l'accesso degli utenti alla distribuzione locale della NetApp Console con il controllo degli accessi in base al ruolo (RBAC), assegnando ruoli predefiniti a livello di organizzazione, cartella o flotta. Ogni ruolo concede autorizzazioni specifiche che definiscono quali azioni gli utenti possono eseguire nell'ambito assegnato.
+
+NetApp progetta i ruoli di distribuzione locale della Console con il principio del minimo privilegio, così ogni ruolo include solo le autorizzazioni necessarie per le sue attività. Questo approccio migliora la sicurezza limitando l'accesso a ciò di cui ogni membro ha bisogno.
+
+Dopo aver organizzato le risorse in cartelle e fleet, assegna ai membri dell'organizzazione uno o più ruoli per cartelle o fleet specifici, che permettono loro di svolgere solo le proprie responsabilità.
+
+Ad esempio, puoi assegnare a un membro il ruolo di Backup and Recovery admin per uno specifico livello di flotta, permettendogli di eseguire operazioni di Backup and Recovery per le risorse all'interno di quella flotta, senza concedergli un accesso più ampio all'intera organizzazione. A questo stesso utente puoi assegnare il ruolo per diverse flotte all'interno della tua organizzazione.
+
+Puoi assegnare ai membri più ruoli per lo stesso ambito o per ambiti diversi, a seconda delle loro responsabilità. Ad esempio, un'organizzazione di piccole dimensioni potrebbe assegnare allo stesso membro sia il ruolo di Storage admin che quello di Backup and Recovery admin a livello di organizzazione, mentre un'organizzazione più grande potrebbe assegnare a membri diversi ciascun ruolo a livello di fleet.
+
+
+
+[[types-of-console-organization-members]]
+== Tipi di membri dell'organizzazione Console
+
+NetApp Console la distribuzione locale supporta i seguenti tipi di membri:
+
+* _Utenti_: I singoli utenti possono essere utenti locali che aggiungi alla distribuzione locale della NetApp Console e che usano credenziali locali, oppure utenti di directory che si autenticano tramite il tuo servizio Active Directory o LDAP integrato. A entrambi i tipi di utenti possono essere assegnati ruoli nella distribuzione locale della NetApp Console per accedere alle risorse.
+* _Account di servizio_: account non umani che applicazioni o servizi utilizzano per interagire con NetApp Console distribuzione locale tramite API. Puoi aggiungere account di servizio direttamente all'organizzazione della distribuzione locale della Console.
+
+
+link:task-iam-manage-members-permissions.html#add-members["Scopri come aggiungere membri alla tua organizzazione."]
+
+
+
+[[predefined-roles-in-netapp-console-local-deployment]]
+== Ruoli predefiniti nella distribuzione locale di NetApp Console
+
+NetApp Console deployment locale include ruoli predefiniti che puoi assegnare ai membri dell'organizzazione. Ogni ruolo include autorizzazioni che specificano quali azioni un membro può eseguire nell'ambito assegnato (organizzazione, cartella o fleet).
+
+NetApp Console
+
+* Ruoli della piattaforma: Fornisci le autorizzazioni di amministrazione della distribuzione locale della Console
+* Ruoli dei servizi dati: Fornisci le autorizzazioni per gestire servizi dati specifici, come Ransomware Resilience e Backup and Recovery
+* Ruoli dell'applicazione: Fornisci autorizzazioni per gestire lo storage e per controllare nella Console gli eventi e gli avvisi di distribuzione locale
+
+
+Puoi assegnare più ruoli a un membro in base alle sue responsabilità. Ad esempio, potresti assegnare a un membro sia il ruolo di Storage admin che quello di Backup and Recovery admin per una specifica fleet.
+
+Per scegliere i permessi di accesso per un membro, associa la categoria di ruolo alle responsabilità del membro, quindi assegna il ruolo all'ambito (organizzazione, cartella o fleet) che corrisponde a quanto ampio dovrebbe essere l'accesso per quel membro. link:concept-folders-fleets-overview.html#organization-design-examples["Scopri come diverse organizzazioni strutturano ruoli e ambiti nella distribuzione locale della NetApp Console"].
+
+link:reference-iam-predefined-roles.html["Scopri i ruoli predefiniti che puoi assegnare ai membri in NetApp Console distribuzione locale"].
+
+
+
+[[how-role-inheritance-works]]
+[[role-inheritance]]
+== Come funziona l'ereditarietà dei ruoli
+
+Quando assegni un ruolo a livello di organizzazione o di cartella, quel ruolo viene ereditato dagli ambiti secondari all'interno di quella parte della gerarchia. Questo significa che i ruoli a livello di organizzazione si applicano all'organizzazione, i ruoli a livello di cartella si applicano a tutte le cartelle secondarie e alle flotte in quella cartella, e i ruoli a livello di flotta si applicano solo alle risorse in quella flotta.
+
+Usa l'ambito che corrisponde all'accesso che vuoi che il membro mantenga. Ad esempio, assegna un ruolo a livello di cartella quando il membro ha bisogno dello stesso accesso su più flotte in una regione. Assegna il ruolo a livello di flotta quando il membro deve accedere solo a una flotta.
+
+Non puoi sovrascrivere l'accesso ereditato a un livello inferiore. Se un membro eredita un ruolo dall'organizzazione o da una cartella, modifica quell'assegnazione al livello superiore in cui l'hai concessa originariamente.
+
+link:concept-folders-fleets-overview.html["Scopri cartelle e gruppi nella distribuzione locale di NetApp Console"]. link:task-iam-manage-roles.html["Gestisci l'accesso dei membri"]. link:task-iam-users-fleets-assign.html["Gestisci le assegnazioni di accesso alla flotta"].

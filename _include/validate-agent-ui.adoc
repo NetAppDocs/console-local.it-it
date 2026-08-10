@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+Se hai selezionato la check box *Convalida configurazione agente* nella pagina *Revisione*, la Console verifica la configurazione dell'agente della Console dopo che è stato creato. Se la Console non riesce a distribuire l'agente, fornisce un report scaricabile per aiutarti nella risoluzione dei problemi.
+
+
+NOTE: Se la Console distribuisce correttamente l'agente, non genera un report e viene visualizzata una finestra di dialogo di conferma che verifica l'avvenuta distribuzione.
+
+.Passaggi
+. Nella finestra di dialogo *Distribuzione agente non riuscita*, seleziona *Scarica report* per scaricare un file PDF che contiene il report di convalida.
+. In alternativa, puoi selezionare *Ricomincia* per tornare alla procedura guidata *Deploy agent* e riprovare.
++
+Se vuoi provare a distribuire di nuovo l'agente, devi ricominciare l'intera procedura da capo.
+
+
+
+Accedi al report e ai log dall'host dell'agente della Console

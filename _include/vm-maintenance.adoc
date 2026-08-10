@@ -1,0 +1,9 @@
+= 
+:allow-uri-read: 
+
+
+La manutenzione del sistema operativo sull'host dell'agente Console è tua (del cliente) responsabilità. Ad esempio, tu (cliente) dovresti applicare gli aggiornamenti di sicurezza al sistema operativo sull'host dell'agente Console seguendo le procedure standard della tua azienda per la distribuzione del sistema operativo.
+
+Tieni presente che tu (cliente) non devi interrompere alcun servizio sull'host Console gent quando applichi aggiornamenti di sicurezza minori.
+
+Se (cliente) hai bisogno di arrestare e poi avviare la macchina virtuale dell'agente della Console, dovresti farlo dalla console del tuo cloud provider oppure utilizzando le procedure standard per la gestione on-premises.

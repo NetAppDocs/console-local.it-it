@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-manage.html 
+keywords: manage dashboard, view dashboards, edit dashboard, clone dashboard, delete dashboard, netapp console local 
+summary: Visualizza e gestisci i dashboard nella distribuzione locale della NetApp Console aprendo, modificando, clonando ed eliminando i dashboard personalizzati. 
+---
+= Gestisci i dashboard nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gestisci dashboard personalizzate nella distribuzione locale della NetApp Console per mantenere le visualizzazioni allineate alle operazioni. Puoi modificare, duplicare ed eliminare dashboard in base all'evoluzione di team, flotte e priorità.
+
+Questa procedura si applica solo alle dashboard personalizzate che si trovano in *Archiviazione > Dashboard*. Le dashboard predefinite della pagina iniziale non possono essere modificate allo stesso modo.
+
+
+
+[[view-dashboards]]
+== Visualizza le dashboard
+
+Visualizza i dashboard personalizzati e predefiniti per trovare il dashboard che vuoi aprire, modificare, duplicare o eliminare.
+
+
+TIP: Puoi duplicare una dashboard predefinita per creare una versione personalizzata che puoi modificare.
+
+.Passaggi
+. Seleziona *Storage > Dashboards*.
+. Consulta la tabella del dashboard per trovare il dashboard che vuoi aprire.
+. Seleziona il nome della dashboard per aprirla e visualizzarne le metriche.
+. Se necessario, utilizza le azioni disponibili per modificare, duplicare o eliminare dashboard personalizzate.
+
+
+
+
+[[update-a-dashboard-as-priorities-change]]
+== Aggiorna una dashboard quando cambiano le priorità
+
+Modifica una dashboard quando cambiano le tue priorità operative e devi regolare quali schede e metriche sono visibili.
+
+.Passaggi
+. Seleziona *Storage > Dashboards*.
+. Apri la dashboard che desideri modificare.
+. Modifica una scheda esistente nella dashboard selezionando Modifica dal menu delle azioni della scheda.
+. Aggiungi una nuova scheda alla dashboard selezionando *Aggiungi scheda*.
++
+link:task-customize-dashboard-cards.html["Personalizza le schede nella distribuzione locale di NetApp Console"].
+
+. Seleziona *Salva modifiche* per salvare la dashboard.
++
+** Puoi anche scegliere di salvare le modifiche come nuova dashboard selezionando *Salva come nuova dashboard* dal menu delle azioni. Questa opzione è utile quando vuoi mantenere la dashboard originale per altri team o flotte mentre crei una nuova versione per le tue attuali esigenze di monitoraggio.
+** Puoi anche scegliere di scartare le modifiche selezionando *Scarta modifiche* dal menu delle azioni. Questa opzione è utile quando vuoi tornare all'ultima versione salvata della dashboard.
+
+
+
+
+
+
+[[reuse-a-custom-dashboard-for-another-resource-or-fleet]]
+== Riutilizza una dashboard personalizzata per un'altra risorsa o flotta
+
+Duplica una dashboard quando vuoi riutilizzare un layout collaudato per un altro team, flotta o scenario di monitoraggio senza ricostruirlo da zero.
+
+
+TIP: Puoi duplicare una dashboard predefinita per creare una versione personalizzata che puoi modificare.
+
+.Passaggi
+. Seleziona *Storage > Dashboards*.
+. Per la dashboard che vuoi duplicare, seleziona *Duplica* dal menu delle azioni.
++
+La distribuzione locale della Console crea una copia che include tutte le schede della dashboard originale.
+
+. Fornisci un nome e una descrizione per la dashboard duplicata.
+. Seleziona la dashboard duplicata che hai appena creato. Modifica le metriche, le risorse e i tipi di schede in base al tuo nuovo scenario di monitoraggio.
++
+link:task-customize-dashboard-cards.html["Personalizza le schede nella distribuzione locale di NetApp Console"].
+
+
+
+
+
+[[remove-dashboards-you-no-longer-use]]
+== Rimuovi le dashboard che non utilizzi più
+
+Elimina una dashboard quando non supporta più le operazioni correnti e vuoi mantenere l'elenco delle dashboard incentrato sui casi d'uso attivi.
+
+.Passaggi
+. Seleziona *Storage > Dashboards*.
+. Per la dashboard che vuoi rimuovere, seleziona *Elimina*.
+. Conferma l'eliminazione.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-get-started.html["Inizia a utilizzare le dashboard nella distribuzione locale di NetApp Console"]
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-create.html["Crea una dashboard personalizzata"]
+* link:task-customize-dashboard-cards.html["Personalizza le schede del dashboard nella distribuzione locale di NetApp Console"]
+

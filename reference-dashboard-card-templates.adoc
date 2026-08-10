@@ -1,0 +1,265 @@
+---
+sidebar: sidebar 
+permalink: reference-dashboard-card-templates.html 
+keywords: card templates, dashboard cards, metric types, chart types, performance, capacity, health, alerts, netapp console local 
+summary: Riferimento per dashboard predefinite, schede dashboard personalizzate e metriche nella distribuzione locale di NetApp Console. 
+---
+= Riferimento a dashboard predefinite e schede dashboard personalizzate nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, i dashboard predefiniti e i modelli di schede dashboard personalizzati forniscono una copertura di monitoraggio per le prestazioni, la capacità, lo stato di salute e le operazioni di avviso di ONTAP.
+
+
+
+[[predefined-dashboards]]
+== dashboard predefinite
+
+Le seguenti dashboard predefinite sono disponibili fin da subito.
+
+[cols="35,65"]
+|===
+| Nome | Descrizione 
+
+
+| Volumi | Prestazioni del volume, capacità, QoS, FabricPool, tasso di crescita e metriche di previsione. 
+
+
+| Tempo rimanente fino al completamento | Previsioni ONTAP sul tempo necessario per il riempimento di cluster, volumi e aggregati. 
+
+
+| Sicurezza | Panoramica su conformità alla sicurezza, crittografia, protezione autonoma contro i ransomware e autenticazione. 
+
+
+| SVM | Monitoraggio tramite heatmap di prestazioni, capacità, volume, LIF, protocollo (CIFS, FCP, iSCSI, NFS, NVMe/FC), QoS e latenza di ONTAP SVM. 
+
+
+| Energia | Monitoraggio del consumo di energia, della temperatura e della velocità delle ventole del cluster ONTAP per nodi, shelf e aggregati. 
+
+
+| Nodi | Prestazioni del nodo ONTAP, monitoraggio di CPU, rete e backend. 
+
+
+| Rete | Metriche delle prestazioni di rete, inclusi Ethernet, FibreChannel, NVMe/FC, Link Aggregation Groups e Routes. 
+
+
+| LUN | Monitoraggio delle prestazioni, della capacità e dell'efficienza delle LUN ONTAP. 
+
+
+| Salute | Monitoraggio dello stato di salute del cluster ONTAP, inclusi errori, avvisi, notifiche EMS, problemi HA, stato di salute di nodi/dischi/shelf, volumi, licenze e porte di rete. 
+
+
+| Aggregati | Monitoraggio della capacità aggregata, dei rapporti di efficienza e del tasso di crescita di ONTAP. 
+|===
+
+
+[[dashboard-level-time-windows-and-aggregation]]
+== Finestre temporali e aggregazione a livello di dashboard
+
+Le finestre temporali disponibili sono 30 minuti, 1 ora, 24 ore, 48 ore, 7 giorni e 30 giorni. Le opzioni di aggregazione variano a seconda del template e includono visualizzazioni come il riepilogo dell'intera fleet o risultati in stile top-N. La finestra temporale e l'aggregazione si configurano a livello di dashboard e si applicano a tutte le card nella dashboard.
+
+
+
+[[dashboard-card-templates-and-metrics]]
+== Modelli di schede dashboard e metriche
+
+Le schede sono gli elementi costitutivi delle dashboard personalizzate. Ogni scheda utilizza un modello predefinito con una metrica e un tipo di grafico, quindi associa quella visualizzazione a specifici oggetti ONTAP e obiettivi di monitoraggio.
+
+
+NOTE: I modelli delle carte sono predefiniti e non sono creati dall'utente.
+
+
+
+[[storage-operations-metric-index-at-a-glance]]
+[[metrics-list]]
+=== Indice delle metriche delle operazioni di storage (a colpo d'occhio)
+
+Le tipologie di metriche corrispondono ai risultati comuni dell'amministrazione dello storage, tra cui colli di bottiglia nelle prestazioni, pressione sulla capacità, rischio per la salute e volume degli avvisi.
+
+[cols="18,37,30,15"]
+|===
+| Tipo di metrica | Metriche supportate | Caso d'uso per l'amministratore dello storage | Modelli dettagliati 
+
+
+| Prestazioni | Latenza media, latenza di picco, IOPS, throughput (MB/s), utilizzo, capacità prestazionale | Identifica i colli di bottiglia, la pressione costante e il margine di prestazione | <<performance-templates,Vai ai modelli>> 
+
+
+| Capacità | Capacità utilizzata, capacità libera, capacità utilizzata (%), capacità snapshot utilizzata | Tieni traccia della crescita, identifica le aree con bassa capacità disponibile e monitora l'impatto delle snapshot | <<capacity-templates,Vai ai modelli>> 
+
+
+| Salute | Stato di salute, oggetti degradati/critici, dischi guasti, errori dell'interfaccia di rete, oggetti hot (per latenza) | Individua i peggioramenti dello stato di salute e dai priorità al triage operativo | <<health-templates,Vai ai modelli>> 
+
+
+| Avvisi | Avvisi (critici), avvisi per gravità, avvisi per area di impatto, avvisi recenti, andamento degli avvisi | Monitora gli incidenti attivi e l'andamento del volume degli avvisi nel tempo | <<alerts-templates,Vai ai modelli>> 
+|===
+
+
+[[supported-ontap-object-hierarchy-resource-types]]
+=== Gerarchia degli oggetti ONTAP supportata (tipi di risorse)
+
+I dati delle schede possono essere rappresentati a diversi livelli di oggetto ONTAP, dalla visibilità a livello di flotta alla risoluzione dei problemi a livello di singolo oggetto.
+
+Le impostazioni del *tipo di risorsa* corrispondono a uno o più dei seguenti livelli di risorsa:
+
+* Flotta
+* Cluster
+* Sistema (nodo)
+* SVM
+* Volume
+* LUN
+* Livello locale (aggregato)
+
+
+I livelli di risorse disponibili dipendono dal modello e dalla metrica che scegli.
+
+
+
+[[chart-types-for-operational-analysis]]
+=== Tipi di grafici per l'analisi operativa
+
+Il tipo di grafico influisce su quanto velocemente puoi interpretare tendenze, confronti, distribuzioni e valori point-in-time.
+
+[cols="25,75"]
+|===
+| Tipo di grafico | Ideale per 
+
+
+| Grafico a linee | Andamenti delle serie temporali, come latenza, IOPS, throughput, utilizzo e trend degli avvisi nel tempo. 
+
+
+| Grafico a barre | Confronto e distribuzione per categorie, ad esempio avvisi in base alla gravità o all'area di impatto. 
+
+
+| Torta o doughnut | Distribuzione proporzionale, come la percentuale di capacità utilizzata. 
+
+
+| Tabella | Dati dettagliati e strutturati su più colonne, come capacità utilizzata, stato di salute e avvisi recenti. 
+
+
+| Numero singolo (stat) | Un singolo valore chiave a colpo d'occhio, come il numero di avvisi critici o di dischi guasti. 
+|===
+
+
+[[performance-templates-for-workload-triage]]
+[[performance-templates]]
+=== Modelli di prestazioni per la valutazione del carico di lavoro
+
+I modelli di prestazioni si concentrano su latenza, throughput e segnali di utilizzo che indicano la pressione del carico di lavoro.
+
+[cols="25,20,55"]
+|===
+| Modello | Tipo di grafico | Descrizione 
+
+
+| Latenza media | Linea | Latenza media tra i target selezionati nell'intervallo di tempo scelto. 
+
+
+| Latenza di picco | Linea | Latenza massima osservata sui target selezionati nell'intervallo di tempo scelto. 
+
+
+| IOPS | Linea | Somma delle operazioni di I/O al secondo sui target selezionati. 
+
+
+| Throughput (MB/s) | Linea | Somma del throughput dei dati tra le destinazioni selezionate. 
+
+
+| Utilizzo | Linea | Utilizzo medio della CPU o del disco sui target selezionati. 
+
+
+| Capacità di performance | Tabella | Analisi del margine di capacità confrontando l'utilizzo attuale con il punto ottimale. 
+|===
+
+
+[[capacity-templates-for-growth-and-headroom]]
+[[capacity-templates]]
+=== Modelli di capacità per la crescita e il margine di manovra
+
+I modelli di capacità si concentrano sullo spazio consumato e disponibile per supportare la pianificazione della crescita e il rilevamento dei rischi.
+
+[cols="25,20,55"]
+|===
+| Modello | Tipo di grafico | Descrizione 
+
+
+| Capacità utilizzata | Tabella | Somma della capacità utilizzata tra i target selezionati. 
+
+
+| Capacità libera | Tabella | Somma della capacità libera o disponibile tra i target selezionati. 
+
+
+| Capacità utilizzata (%) | Torta o doughnut | Rapporto medio tra utilizzato e totale per i target selezionati. 
+
+
+| Capacità Snapshot utilizzata | Tabella | Somma dello spazio occupato dagli snapshot sui target selezionati. 
+|===
+
+
+[[health-templates-for-risk-detection]]
+[[health-templates]]
+=== Modelli sanitari per rilevamento dei rischi
+
+I modelli di salute si concentrano sullo stato degli oggetti e sugli indicatori di guasto per supportare il triage operativo.
+
+[cols="25,20,55"]
+|===
+| Modello | Tipo di grafico | Descrizione 
+
+
+| Stato di salute | Tabella | Ultimo stato di salute per ciascun oggetto target selezionato. 
+
+
+| Oggetti degradati/critici | Numero singolo | Numero di oggetti il cui stato di salute non è OK. 
+
+
+| Dischi guasti | Numero singolo | Somma dei dischi guasti nei sistemi selezionati. 
+
+
+| Errori dell'interfaccia di rete | Torta o doughnut | Somma dei contatori degli errori dell'interfaccia di rete sui target selezionati. 
+
+
+| Oggetti caldi (per latenza) | Tabella | Risorse classificate in base alla latenza di picco, in ordine decrescente. 
+|===
+
+
+[[alerts-templates-for-incident-prioritization]]
+[[alerts-templates]]
+=== Modelli di avviso per la prioritizzazione degli incidenti
+
+I modelli di avviso si concentrano sul volume degli incidenti, sulla gravità e sull'area di impatto per supportare il monitoraggio e la definizione delle priorità.
+
+[cols="25,20,55"]
+|===
+| Modello | Tipo di grafico | Descrizione 
+
+
+| Avvisi (critici) | Numero singolo | Conteggio degli avvisi di gravità critica all'interno dell'intervallo di tempo. 
+
+
+| Avvisi per gravità | Barra | Avvisi raggruppati per livello di gravità. 
+
+
+| Avvisi per area di impatto | Barra | Avvisi raggruppati per area di impatto, come capacità, prestazioni o sicurezza. 
+
+
+| Avvisi recenti | Tabella | Avvisi più recenti, ordinati per ora in ordine decrescente. 
+
+
+| Tendenza degli alert | Linea | Numero di avvisi per intervallo di tempo nell'arco temporale selezionato. 
+|===
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-create.html["Crea una dashboard personalizzata"]
+* link:task-customize-dashboard-cards.html["Personalizza le schede del dashboard nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-manage.html["Gestisci dashboard personalizzate"]
+

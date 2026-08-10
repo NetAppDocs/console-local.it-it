@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: reference-llm-supported-models.html 
+keywords: LLM, supported models, OpenAI, OpenAI-compatible, model selection, netapp console 
+summary: Esamina i tipi e i modelli di provider LLM che puoi utilizzare nella distribuzione locale di NetApp Console. 
+---
+= Provider e modelli LLM supportati nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console la distribuzione locale supporta i tipi di provider OpenAI, OpenAI-compatible e Anthropic LLM. I modelli che puoi selezionare dipendono dal tipo di provider e dall'endpoint che configuri.
+
+
+NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+
+Scegli un modello che corrisponda alle tue esigenze in termini di prestazioni, costi e governance.
+
+
+
+[[see-how-provider-type-affects-model-availability]]
+== Scopri come il tipo di provider influisce sulla disponibilità del modello
+
+Il tipo di provider che scegli determina quali modelli vengono visualizzati nell'elenco dei modelli di distribuzione locale della Console:
+
+* *OpenAI* — fornisce modelli per l'integrazione diretta con OpenAI.
+* *Compatibile con OpenAI* — fornisce modelli che l'endpoint compatibile della tua organizzazione espone.
+* *Anthropic* — fornisce modelli per l'integrazione diretta di Anthropic.
+
+
+I modelli visualizzati possono variare in base alla configurazione dell'endpoint, al comportamento del proxy o del gateway e alle policy aziendali. I tipi di provider differiscono in base all'endpoint a cui ti connetti e ai modelli che quell'endpoint espone, non al protocollo di trasporto.
+
+
+
+[[supported-openai-models]]
+== Modelli OpenAI supportati
+
+* GPT-5.4
+* GPT-5.5
+
+
+
+
+[[supported-anthropic-models]]
+== Modelli Anthropic supportati
+
+* Claude Sonnet 4.6
+* Claude Opus 4.6, 4.7 e 4.8
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-llm-connect.html["Collega il tuo LLM e abilita l'assistente della NetApp Console"].
+* link:concept-llm-integration.html["Scopri l'integrazione di LLM nella distribuzione locale di NetApp Console"].
+

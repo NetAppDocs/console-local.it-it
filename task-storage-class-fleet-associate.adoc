@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task-storage-class-fleet-associate.html 
+keywords: associate, storage class, fleet, assign, netapp console 
+summary: Associa una classe di archiviazione a una flotta nella distribuzione locale di NetApp Console per applicare criteri di archiviazione coerenti. 
+---
+= Associa le classi di archiviazione alle flotte nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Associa le classi di archiviazione alle flotte nella distribuzione locale della NetApp Console per applicare standard specifici dell'ambiente, controllare quali opzioni possono utilizzare gli operatori e semplificare i controlli di conformità rispetto alle classi assegnate.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione, amministratore di cartelle o di fleet, oppure amministratore dello storage. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+
+
+[[associate-a-storage-class-with-a-fleet]]
+== Associa una classe di archiviazione a una flotta
+
+Associa una classe di archiviazione a una flotta in modo che sia disponibile per il provisioning e il monitoraggio continuo della conformità all'interno di tale flotta.
+
+.Passaggi
+. Apri la flotta che desideri gestire.
+. Individua l'area di configurazione della fleet per le classi di storage.
+. Seleziona una o più classi di archiviazione da associare alla flotta.
+. Seleziona *Salva*.
+
+
+.Verificare
+. Avvia un flusso di lavoro di provisioning nella flotta e conferma che la storage class sia disponibile per la selezione.
+

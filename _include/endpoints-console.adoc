@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+Endpoint contattati dai computer durante l'utilizzo della NetApp Console basata sul web::
++
+--
+I computer che accedono alla Console tramite un browser web devono essere in grado di contattare diversi endpoint. Devi usare la Console per configurare l'agente della Console e per l'uso quotidiano della Console.
+
+link:reference-networking-saas-console.html["Prepara la rete per la NetApp Console"].
+
+--
+

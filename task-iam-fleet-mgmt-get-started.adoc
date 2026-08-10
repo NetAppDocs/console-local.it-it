@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: task-iam-fleet-mgmt-get-started.html 
+keywords: iam, quick start, get started, get started with iam, identity and access management 
+summary: Configura identità e accesso nella distribuzione locale di NetApp Console creando la tua gerarchia di cartelle e flotte, aggiungendo membri, aggiungendo risorse e posizionando tali risorse nelle flotte corrette. 
+---
+= Inizia a utilizzare identità e accesso nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, configura la gerarchia di cartelle e flotte, aggiungi membri e autorizzazioni iniziali, e aggiungi e posiziona le risorse nelle flotte corrette in modo che i team giusti possano accedervi e gestirle.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione o amministratore di cartella o di flotta. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+Hai bisogno del ruolo di *Organization admin* o *Super admin* per completare la configurazione iniziale. Dopo la configurazione, gestisci risorse, accesso dei membri e accesso alla fleet man mano che la tua organizzazione cambia.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Aggiungi o scopri risorse
+[role="quick-margin-para"]
+Aggiungi i sistemi alla distribuzione locale di NetApp Console. Durante la configurazione iniziale, in genere aggiungi i sistemi mentre è selezionata la flotta predefinita.
+
+[role="quick-margin-para"]
+Scopri come creare o individuare risorse:
+
+[role="quick-margin-list"]
+* https://docs.netapp.com/us-en/storage-management-ontap-onprem/index.html["Cluster ONTAP on-premises"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Crea la tua gerarchia di cartelle e flotte
+[role="quick-margin-para"]
+Crea ulteriori fleet e cartelle che corrispondano alla gerarchia della tua azienda.
+
+[role="quick-margin-para"]
+link:task-iam-manage-folders-fleets.html["Scopri come organizzare le tue risorse con cartelle e fleet"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Associa le risorse alle flotte corrette
+[role="quick-margin-para"]
+L'aggiunta o la scoperta di un sistema nella distribuzione locale di NetApp Console associa automaticamente la risorsa alla fleet attualmente selezionata. Per rendere un sistema disponibile ai team giusti, associane uno alle fleet appropriate nella tua gerarchia.
+
+[role="quick-margin-list"]
+* link:task-iam-manage-resources.html["Scopri come gestire le risorse in cartelle e fleet"].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Aggiungi membri e assegna le autorizzazioni iniziali
+[role="quick-margin-para"]
+Aggiungi membri e assegna loro ruoli a livello di organizzazione, cartella o flotta in base a ciò che gestiscono.
+
+[role="quick-margin-para"]
+link:task-iam-manage-members-permissions.html["Scopri come gestire i membri e le loro autorizzazioni"].
+
+
+
+[[after-initial-setup]]
+== Dopo la configurazione iniziale
+
+Una volta completata la configurazione iniziale, gestisci l'accesso e l'assegnazione delle risorse man mano che la tua organizzazione cambia:
+
+* link:task-iam-manage-resources.html["Gestisci le risorse in cartelle e fleet"]
+* link:task-iam-manage-roles.html["Gestisci l'accesso dei membri tra flotte e cartelle (approccio incentrato sul membro)"]
+* link:task-iam-users-fleets-assign.html["Gestisci chi può accedere a una flotta o a una cartella specifica (approccio incentrato sulla flotta)"]
+* link:task-iam-manage-folders-fleets.html#delete-a-folder-or-fleet["Elimina cartelle e gruppi di cartelle quando non sono più necessari"]
+
+
+.Informazioni correlate
+* link:concept-identity-and-access-management.html["Scopri la gestione di identità e accessi in NetApp Console"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri le API per l'identità e l'accesso"^]
+

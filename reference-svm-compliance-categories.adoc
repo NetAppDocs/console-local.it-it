@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: reference-svm-compliance-categories.html 
+keywords: svm compliance, storage vm compliance, security compliance, svm security, compliance categories, netapp console local 
+summary: Riferimento per le categorie di conformità alla sicurezza delle macchine virtuali di archiviazione e le impostazioni consigliate nella distribuzione locale della NetApp Console. 
+---
+= Categorie di conformità alla sicurezza delle macchine virtuali di archiviazione nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Usa questo riferimento per esaminare le categorie di conformità di sicurezza delle storage VM (SVM) mostrate nella distribuzione locale della NetApp Console, incluso il valore consigliato e se ciascuna categoria influisce sullo stato di conformità complessivo.
+
+Queste categorie si basano sui controlli della postura di sicurezza di ONTAP.
+
+[cols="20,50,15,15"]
+|===
+| Categoria | Cosa controlla la categoria | Valore consigliato | Influisce sulla conformità generale 
+
+
+| registro di controllo | Indica se la registrazione degli audit di SVM è abilitata. | Abilitato | Sì 
+
+
+| Impostazioni SSH non sicure | Se SSH è configurato con cifrari non sicuri, come i cifrari che iniziano con `cbc`. | No | Sì 
+
+
+| Banner di accesso | Indica se è configurato un banner di accesso per gli utenti che accedono agli SVM. | Abilitato | Sì 
+
+
+| Crittografia LDAP | Indica se la crittografia LDAP è abilitata. | Abilitato | No 
+
+
+| Autenticazione NTLM | Se l'autenticazione NTLM è abilitata. | Abilitato | No 
+
+
+| Firma del payload LDAP | Se la firma del payload LDAP è abilitata. | Abilitato | No 
+
+
+| Impostazioni CHAP | Indica se CHAP è abilitato. | Abilitato | No 
+
+
+| Kerberos V5 | Indica se l'autenticazione Kerberos V5 è abilitata. | Abilitato | No 
+
+
+| Autenticazione NIS | Se l'autenticazione NIS è configurata. | Disattivato | No 
+
+
+| Stato FPolicy attivo | Se FPolicy è stata creata ed è attiva. | Sì | No 
+
+
+| Crittografia SMB abilitata | Se la firma e la sigillatura SMB sono abilitate. | Sì | No 
+
+
+| Firma SMB abilitata | Indica se la firma SMB è abilitata. | Sì | No 
+|===

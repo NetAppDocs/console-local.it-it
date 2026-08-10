@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: faq-netapp-console-local.html 
+keywords: faq, frequently asked questions, frequently asked questions about netapp console local, netapp console local, storage classes, storage class policies, storage fleets, folders, rbac, role inheritance, active directory, mfa, workload analyzer, alerts, custom dashboards, llm, ai-assisted management, backup and recovery, audit, ontap 
+summary: 'Domande frequenti sulla distribuzione locale della NetApp Console, tra cui distribuzione, classi di archiviazione, flotte, RBAC, monitoraggio, gestione assistita dall"IA e protezione dei dati.' 
+---
+= Domande frequenti sulla distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Questa FAQ risponde alle domande più comuni sulla distribuzione locale della NetApp Console. Si concentra su concetti, prerequisiti e comportamenti del sistema utili quando distribuisci, configuri e gestisci la distribuzione locale della Console.
+
+
+
+[[get-started-with-netapp-console-local-deployment]]
+== Inizia con la distribuzione locale di NetApp Console
+
+.Che cos'è la distribuzione locale di NetApp Console e perché dovresti usare l'opzione self-hosted?
+NetApp Console distribuzione locale è un'opzione di distribuzione self-hosted che esegue il piano di controllo della Console nel tuo ambiente on-premises. Offre gestione e automazione unificate dello storage—provisioning, applicazione delle policy, rilevamento delle discrepanze e correzione—mantenendo dati, metadati e traffico di gestione interamente all'interno della tua infrastruttura, così ottieni vantaggi operativi senza sacrificare la sovranità dei dati. link:concept-netapp-console-local.html["Scopri la distribuzione locale di NetApp Console"].
+
+.Come effettuo il deployment locale di NetApp Console?
+Distribuisci NetApp Console local deployment come appliance virtuale nel tuo ambiente VMware vCenter utilizzando un'immagine OVA preconfigurata. Dopo la distribuzione, scopri lo storage, aggiungi membri e assegna ruoli per iniziare. link:concept-deploy-netapp-console-local.html["Scopri le opzioni di implementazione"].
+
+.Ho bisogno di una licenza o di un abbonamento per usare la distribuzione locale di NetApp Console?
+No. Non hai bisogno di una licenza o di un abbonamento per iniziare a usare la distribuzione locale di NetApp Console. Tuttavia, alcuni servizi dati NetApp accessibili dalla distribuzione locale della Console, come NetApp Backup and Recovery, sono soggetti a licenza o abbonamento e potrebbero avere un costo associato.
+
+.Qual è la sequenza di configurazione consigliata per la gestione dello storage nella distribuzione locale di NetApp Console?
+Il flusso di lavoro tipico prevede di individuare i sistemi di storage nei gruppi corretti, definire le policy delle classi di storage, creare classi di storage a partire da tali policy, associare le classi ai gruppi a cui si applicano, eseguire il provisioning di volumi o LUN utilizzando una classe e poi monitorare le discrepanze e intervenire per mantenere allineati i carichi di lavoro. link:concept-manage-storage.html["Scopri come gestire lo storage"].
+
+
+
+[[storage-classes-and-policies]]
+== Classi e policy di archiviazione
+
+.Che cos'è una classe di archiviazione e perché dovresti usarne una?
+Una storage class è un modello riutilizzabile che racchiude gli standard di archiviazione della tua organizzazione—prestazioni, capacità, sicurezza e protezione dei dati—in un singolo oggetto denominato, creato a partire dalle policy della storage class. Quando effettui il provisioning utilizzando una storage class, la distribuzione locale della Console applica automaticamente questi standard senza dover configurare ogni singolo workload e poi monitora il workload rispetto alla classe, avvisandoti se esce dalla conformità. link:concept-storage-classes.html["Scopri le classi di archiviazione"].
+
+.Che cosa sono le policy delle classi di archiviazione e come sono correlate alle classi di archiviazione?
+Le policy delle classi di storage sono i blocchi costitutivi che combini per costruire una classe di storage. Ogni policy governa una dimensione del comportamento di storage, quindi definisci le policy in modo indipendente e poi le assembli in una classe. Questo ti permette di riutilizzare la stessa policy in più classi o di aggiornare una policy in un unico punto e applicare quella modifica a tutte le classi che la usano. link:concept-storage-class-policies.html["Scopri le policy delle classi di archiviazione"].
+
+.Che tipi di policy di classe di storage puoi creare?
+NetApp Console distribuzione locale include quattro tipi di policy di storage class:
+
+* *Policy di prestazioni*: Imposta IOPS/TB previsti, IOPS/TB di picco, IOPS minimi assoluti e obiettivi di latenza previsti utilizzati per il posizionamento e il rilevamento delle derive.
+* *Politica di capacità*: Controlla space reservation, l'autogrow, il tiering FabricPool e il provisioning FlexVol o FlexGroup per NAS.
+* *Politica di sicurezza*: imposta la crittografia, la protezione contro i ransomware e i requisiti FIPS.
+* *Policy di protezione*: Imposta il numero di snapshot da conservare a ogni intervallo per una pianificazione di backup coerente.
+
+
+link:concept-storage-class-policies.html["Scopri le policy delle classi di archiviazione"].
+
+.Devo creare classi e policy di archiviazione da zero?
+No. La distribuzione locale della Console include policy definite dal sistema per tutti e quattro i tipi di policy e classi di storage predefinite. Puoi usarle così come sono oppure copiarle come punto di partenza per policy e classi personalizzate, adattate alle esigenze della tua organizzazione. link:concept-storage-class-policies.html["Scopri le policy delle classi di archiviazione"].
+
+.Cosa devo configurare prima di poter creare una storage class?
+Prima di creare una classe di archiviazione, assicurati di:
+
+* Individua almeno un ONTAP cluster così la distribuzione locale della NetApp Console ha destinazioni di archiviazione da valutare durante il posizionamento.
+* Devi avere il ruolo di amministratore dell'organizzazione.
+* Crea le policy per le classi di archiviazione che tengono conto delle tue esigenze in termini di prestazioni, capacità e altri requisiti, perché le classi sono assemblate dalle policy.
+
+
+link:concept-storage-classes.html["Scopri le classi di archiviazione"].
+
+.Cosa succede quando un carico di lavoro non è più conforme alla sua classe di archiviazione?
+Dopo il provisioning, la distribuzione locale della Console valuta continuamente ogni carico di lavoro rispetto alla sua classe di storage. Quando un carico di lavoro si discosta—a causa di una modifica diretta della configurazione del cluster o di un degrado delle prestazioni—la Console segnala immediatamente la violazione e genera un avviso. Puoi seguire i passaggi guidati per la correzione oppure configurare la correzione automatica per risolvere le condizioni di drift più comuni. link:concept-storage-classes.html["Scopri le classi di archiviazione"].
+
+
+
+[[storage-fleets-and-folders]]
+== Flotte di archiviazione e cartelle
+
+.Che cos'è una storage fleet e perché dovresti usarne una?
+Un gruppo di storage raggruppa i sistemi di storage che gestisci insieme. Invece di configurare policy o accedere cluster per cluster, le applichi una sola volta a livello di gruppo, così ogni cluster del gruppo opera secondo gli stessi standard, riducendo il lavoro ripetitivo e mantenendo un comportamento coerente. link:concept-storage-fleets.html["Scopri le flotte di storage"].
+
+.Qual è la differenza tra cartelle e fleet?
+Le cartelle raggruppano flotte correlate (ad esempio, per regione o unità aziendale) e non possono avere sistemi di storage associati direttamente, mentre le flotte raggruppano i sistemi di storage che gestisci insieme. Le cartelle sono uno strumento organizzativo e di delega degli accessi che non è visibile ai membri senza autorizzazioni IAM: i membri accedono alle flotte, non alle cartelle. link:concept-folders-fleets-overview.html["Scopri cartelle e flotte"].
+
+.In che modo l'associazione di una storage class a una fleet influisce sul provisioning?
+Quando associ una classe di storage a una fleet, la distribuzione locale della Console applica i criteri di quella classe a tutto il provisioning all'interno della fleet. I carichi di lavoro di cui viene eseguito il provisioning nella fleet ereditano automaticamente le regole di prestazioni, capacità e tiering senza che gli amministratori debbano selezionare o verificare le impostazioni, rendendo l'associazione fleet-classe il modo principale per applicare standard coerenti tra i cluster. link:concept-storage-fleets.html["Scopri le flotte di storage"].
+
+
+
+[[provisioning-storage]]
+== Provisioning dello storage
+
+.Quali metodi di provisioning supporta la distribuzione locale di NetApp Console?
+NetApp Console la distribuzione locale supporta tre flussi di lavoro di provisioning, tutti i quali impongono le classi di storage e restano regolati da RBAC e dalla registrazione degli audit log:
+
+* *Provisioning manuale*: Scegli tu il sistema di destinazione e i dettagli di configurazione per un controllo esplicito.
+* *Provisioning automatizzato*: Fornisci i dati relativi al carico di lavoro e una classe di storage opzionale, e la Console consiglia il posizionamento migliore.
+* *Provisioning assistito dall'AI (agentico)*: Descrivi ciò di cui hai bisogno in linguaggio naturale e la Console propone un piano che puoi rivedere e approvare prima che venga effettuato il provisioning.
+
+
+link:concept-manage-storage.html["Scopri come gestire lo storage"].
+
+
+
+[[monitoring-and-alerts]]
+== Monitoraggio e avvisi
+
+.Come posso monitorare lo stato e le prestazioni del mio storage?
+NetApp Console distribuzione locale fornisce dashboard di stato e prestazioni dell'intera flotta per individuare cluster o volumi che necessitano di attenzione, il Workload Analyzer per un'analisi approfondita dei volumi, avvisi e notifiche configurabili e soluzioni guidate o automatizzate. link:concept-monitor-storage.html["Scopri il monitoraggio dello storage"].
+
+.Cosa fa il Workload Analyzer?
+Workload Analyzer mostra il comportamento di un singolo volume nel tempo, correlando latenza, throughput, IOPS, utilizzo delle risorse, capacità e modifiche di configurazione nella stessa finestra così puoi individuare le cause principali. Può aiutarti a determinare se l'origine di un problema dell'applicazione risiede nello storage o in un altro livello, come il networking, e puoi agire direttamente sui suggerimenti di Fix-It dall'analizzatore. link:concept-workload-analyzer.html["Scopri l'analizzatore di carico di lavoro"].
+
+.Perché un volume potrebbe presentare un'elevata latenza anche quando i grafici delle prestazioni sembrano normali?
+La scarsa capacità disponibile può esserne la causa. Quando un sistema ONTAP è pieno per oltre l'85%, l'elevato utilizzo può di per sé causare problemi di prestazioni, quindi la sezione sulla capacità di Workload Analyzer può spiegare la latenza che i soli grafici delle prestazioni non riescono a giustificare. link:concept-workload-analyzer.html["Scopri l'analizzatore di carico di lavoro"].
+
+.Da dove provengono gli avvisi nella distribuzione locale di NetApp Console e come vengono categorizzati?
+Gli avvisi provengono dal sistema di gestione degli eventi ONTAP (EMS) sui cluster rilevati e dalle operazioni di NetApp Backup and Recovery, consolidati in un'unica visualizzazione a livello di organizzazione. Ogni avviso identifica il sistema interessato, una gravità (come critico, avviso o informativo) e un'area di impatto (capacità, connettività, protezione dei dati, prestazioni o sicurezza). La Console mostra gli avvisi solo per le fleet per cui hai i permessi. link:concept-console-alerts.html["Scopri gli avvisi"].
+
+.Come fanno le regole di notifica degli avvisi a decidere chi viene avvisato?
+Una regola di notifica associa gli avvisi in base al servizio, alla gravità, all'area di impatto e al sistema di destinazione, poi invia le notifiche agli utenti con ruoli di accesso specificati tramite email o webhook. Tieni presente che le regole si applicano a sistemi specifici, non alle flotte, e possono essere disattivate durante le finestre di manutenzione programmata. La Console include regole predefinite e ti permette di crearne di personalizzate. link:concept-console-alerts.html["Scopri gli avvisi"].
+
+.Cosa posso fare con le dashboard personalizzate?
+Le dashboard personalizzate ti permettono di creare viste di monitoraggio personalizzate assemblando schede da modelli predefiniti, scegliendo l'ambito, le metriche, l'aggregazione, le risorse di destinazione e l'intervallo di tempo. I modelli coprono prestazioni, capacità, stato di salute e avvisi, e puoi estendere l'ambito delle schede a qualsiasi livello della gerarchia ONTAP. Ogni dashboard e scheda è privata per te e mostra i dati solo per le risorse che sei autorizzato a visualizzare. link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"].
+
+
+
+[[identity-and-access]]
+== Identità e accesso
+
+.Come funziona il controllo degli accessi in base al ruolo nella distribuzione locale di NetApp Console?
+Il controllo degli accessi basato sui ruoli (RBAC) ti permette di assegnare ruoli predefiniti con privilegi minimi ai membri a livello di organizzazione, cartella o flotta, e lo stesso ruolo garantisce un accesso effettivo diverso a seconda dell'ambito in cui lo assegni. Questo ti permette di dare ampio accesso agli amministratori centrali, limitando invece gli amministratori regionali o di team alle flotte che gestiscono. link:concept-iam-rbac.html["Scopri il controllo degli accessi in base al ruolo"].
+
+.Come funziona l'eredità dei ruoli e posso sovrascriverla a un livello inferiore?
+Un ruolo assegnato a livello di organizzazione o di cartella viene ereditato da tutte le cartelle, le flotte e le risorse sottostanti, quindi la struttura delle cartelle e delle flotte determina quanto ampiamente si applica un'assegnazione. Non puoi sovrascrivere l'accesso ereditato a un livello inferiore: per cambiarlo, modifica l'assegnazione al livello superiore dove l'hai concessa originariamente. link:concept-iam-rbac.html#role-inheritance["Scopri l'ereditarietà dei ruoli nella distribuzione locale di NetApp Console"].
+
+.Quali categorie di ruoli predefiniti sono disponibili?
+NetApp Console la distribuzione locale raggruppa i ruoli predefiniti in tre categorie:
+
+* *Ruoli della piattaforma*: autorizzazioni di amministrazione della Console, come Organization admin, Folder o fleet admin, Federation admin e Super admin o Super viewer.
+* *Ruoli dell'applicazione*: autorizzazioni di archiviazione e monitoraggio, come Storage admin, Storage viewer e Operations support analyst.
+* *Ruoli del servizio dati*: Autorizzazioni per servizi dati specifici, come i ruoli di Backup and Recovery e il visualizzatore di classificazione.
+
+
+link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso predefiniti"].
+
+.Perché dovrei integrare la distribuzione locale di NetApp Console con Active Directory?
+L'integrazione con Active Directory ti permette di accedere con le tue credenziali aziendali esistenti, eliminando la necessità di password separate per la Console e consentendo agli amministratori di cercare gli utenti della directory quando assegnano l'accesso. L'autorizzazione rimane separata: la Console usa comunque i propri ruoli per controllare cosa può fare ogni membro. link:concept-secure-access.html["Scopri l'accesso sicuro"]
+
+.Come funziona l'autenticazione a più fattori per gli utenti della Console?
+Gli utenti locali possono abilitare l'autenticazione a più fattori (MFA) per aggiungere un ulteriore passaggio di verifica che riduce il rischio di accesso non autorizzato in caso di compromissione delle credenziali. Gli utenti autenticati tramite directory non possono abilitare l'MFA tramite la distribuzione locale della Console. link:concept-secure-access.html["Scopri l'accesso sicuro"].
+
+
+
+[[ai-assisted-management]]
+== Gestione assistita dall'intelligenza artificiale
+
+.Quali provider LLM sono supportati dalla distribuzione locale di NetApp Console per la gestione assistita dall'IA?
+Porti il tuo abbonamento o l’accesso al servizio per un tipo di provider supportato: OpenAI o compatibile con OpenAI. Poi fornisci una chiave API valida durante la configurazione. Hai anche bisogno della Console distribuita con accesso al cluster, connettività di rete outbound verso l’endpoint configurato, del ruolo di admin dell’organizzazione e delle classi di storage che guidano il provisioning. link:concept-llm-integration.html["Scopri l'integrazione di LLM"].
+
+.L'attivazione dell'integrazione con LLM comporta l'invio dei miei dati di archiviazione o delle mie query a un servizio di terze parti?
+La Console invia prompt e contesto correlato solo all'endpoint LLM che configuri. Se quell'endpoint è un servizio cloud di terze parti, i dati vengono inviati a quel servizio tramite HTTPS. Se quell'endpoint è un servizio interno compatibile con OpenAI, i dati restano sul tuo percorso interno per quell'integrazione. Tutte le azioni di AI rispettano anche il tuo RBAC e le operazioni sensibili richiedono la tua conferma. link:concept-llm-integration.html["Scopri l'integrazione di LLM"].
+
+.Cosa può fare l'Assistente Console e come puoi controllare se modifica lo storage?
+Una volta collegato un LLM, l'assistente Console ti permette di effettuare il provisioning dello storage, indagare sugli avvisi e ottenere risposte usando il linguaggio naturale. Puoi scegliere una modalità di accesso: in modalità *sola lettura* l'assistente risponde e ti guida senza apportare modifiche, mentre in modalità *lettura/scrittura* può agire sull'infrastruttura di storage ma mostra i dettagli per farteli esaminare e confermare prima di ogni modifica. link:task-llm-connect.html["Collega il tuo LLM e abilita l'assistente della NetApp Console"].
+
+
+
+[[data-protection-and-auditing]]
+== Protezione dei dati e auditing
+
+.Quali funzionalità di protezione dei dati sono disponibili con la distribuzione locale di NetApp Console?
+La distribuzione locale della NetApp Console ti dà accesso a NetApp Backup and Recovery, così puoi eseguire backup e ripristino dei dati dalla stessa interfaccia, mantenendo la governance coerente e riducendo il numero di strumenti utilizzati dai tuoi team. link:concept-data-services.html["Scopri i servizi dati"].
+
+.In che modo la distribuzione locale di NetApp Console supporta l'auditing e la conservazione dei log?
+Ogni azione amministrativa genera un record di audit che puoi esaminare e filtrare dalla pagina Audit. Puoi esportare i log di audit sul tuo syslog server tramite un webhook, così raggiungono i tuoi strumenti di monitoraggio centralizzato o SIEM per una conservazione e un'analisi più lunghe e, poiché la Console viene eseguita nel tuo ambiente, i dati di log non lasciano mai la tua infrastruttura. link:task-audit-console-activity.html["Verifica l'attività di distribuzione locale della NetApp Console"].

@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: concept-storage-class-policies.html 
+keywords: storage class policies, policies, storage class, IOPS, latency, throughput, capacity, security, data protection, performance policy, tiering, encryption, ransomware protection, storage standardization, policy enforcement, compliance monitoring, netapp console local 
+summary: Scopri le policy che costituiscono gli elementi base per le classi di archiviazione nella distribuzione locale della NetApp Console. 
+---
+= Comprendere le policy delle classi di archiviazione nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le policy delle classi di storage sono i componenti di base che usi per costruire una classe di storage. Ogni policy controlla un aspetto specifico del comportamento dello storage. Quando combini le policy in una classe di storage, crei un modello riutilizzabile che la NetApp Console local deployment applica automaticamente al momento del provisioning e monitora continuamente durante l'intero ciclo di vita di un workload.
+
+
+
+[[policies-as-building-blocks]]
+== Le policy come elementi costitutivi
+
+Una classe di storage è composta da una o più policy, ognuna delle quali regola una diversa dimensione del comportamento dello storage. Gli amministratori dello storage definiscono le policy per codificare gli standard aziendali—aspettative di prestazioni, soglie di capacità, regole di posizionamento dei dati—e poi assemblano queste policy in modelli di classi di storage. Quando un carico di lavoro viene fornito utilizzando una classe di storage, eredita tutte le policy di quella classe. Questa architettura separa la responsabilità della definizione degli standard dall’atto di provisioning, così lo storage può essere fornito in modo coerente tramite workflow automatizzati senza dover prendere decisioni di configurazione individuali.
+
+
+
+[[types-of-storage-class-policies]]
+== Tipi di policy di classe di storage
+
+NetApp Console deployment locale include quattro tipi di policy che puoi usare per costruire classi di storage:
+
+Policy di performance:: Una policy di prestazioni definisce i valori target di IOPS/TB previsti, IOPS/TB di picco, IOPS minimi assoluti e latenza prevista per un carico di lavoro. La distribuzione locale della Console utilizza questi valori per consigliare cluster con margine sufficiente al momento del provisioning e per rilevare variazioni di IOPS o latenza dopo il provisioning.
+Policy di capacità:: Una policy di capacità controlla come un volume consuma e gestisce lo spazio. Imposta la space reservation (thick, thin o predefinita di sistema), il comportamento di crescita automatica, il tiering FabricPool e se eseguire il provisioning dei carichi di lavoro NAS come volumi FlexVol o FlexGroup.
+Policy di sicurezza:: Una policy di sicurezza definisce i requisiti di crittografia, protezione contro i ransomware e conformità FIPS per un carico di lavoro. Ciascun attributo può essere impostato su un valore obbligatorio oppure lasciato su "any" per accettare l'impostazione predefinita del sistema.
+policy di protezione:: Una policy di protezione dei dati definisce il numero di snapshot conservati a ogni intervallo per garantire che i carichi di lavoro che utilizzano la policy abbiano una pianificazione di backup coerente.
+
+
+
+
+[[default-policies]]
+== Politiche predefinite
+
+La distribuzione locale della Console include policy definite dal sistema per tutti e quattro i tipi di policy. Puoi usare queste policy così come sono quando crei una storage class, oppure copiarle come punto di partenza per policy personalizzate adattate alle esigenze della tua organizzazione.
+
+
+
+[[performance-policies]]
+=== Policy di performance
+
+[cols="2,1,1,1,1,1,3"]
+|===
+| Nome | Tipo | IOPS/TB previsti | Picco IOPS/TB | IOPS minimi assoluti | Latenza prevista (ms) | Riepilogo 
+
+
+| Estremo per i dati del database | Definito dal sistema | 12.288 | 24.576 | 2.000 | 1 | Usa per volumi di dati di database transazionali che richiedono IOPS elevati e latenza sotto il millisecondo. 
+
+
+| Extreme per i log del database | Definito dal sistema | 22.528 | 45.056 | 4.000 | 1 | Usa per i volumi di log delle database transaction che richiedono il massimo livello di IOPS per prevenire colli di bottiglia in scrittura. 
+
+
+| Extreme per i dati condivisi del database | Definito dal sistema | 16.384 | 32.768 | 2.000 | 1 | Usa per volumi di database condivisi accessibili da più host che richiedono throughput elevato e latenza costante. 
+
+
+| Prestazioni estreme | Definito dal sistema | 6.144 | 12.288 | 1.000 | 1 | Usa per carichi di lavoro HPC, AI/ML e di analytics che richiedono un elevato burst di IOPS e una latenza bassa e prevedibile. 
+
+
+| Prestazioni | Definito dal sistema | 2.048 | 4.096 | 500 | 2 | Usa per applicazioni virtualizzate e aziendali che richiedono prestazioni affidabili senza esigenze estreme di IOPS. 
+
+
+| Valore | Definito dal sistema | 128 | 512 | 75 | 17 | Usa per carichi di lavoro sensibili ai costi, come directory home, condivisioni di file e archivi. 
+|===
+
+
+[[capacity-policies]]
+=== Politiche di capacità
+
+[cols="2,1,1,1,1,1,3"]
+|===
+| Nome | Tipo | Riserva di spazio | Modalità di crescita automatica | Policy di tiering | Tipo di volume (NAS) | Riepilogo 
+
+
+| predefinito | Definito dal sistema | Impostazione predefinita di sistema | Impostazione predefinita di sistema | nessuno | Impostazione predefinita di sistema | Da utilizzare per carichi di lavoro generici in cui il comportamento predefinito della piattaforma in termini di capacità è accettabile. 
+
+
+| produzione | Definito dal sistema | Impostazione predefinita di sistema | crescere | nessuno | Impostazione predefinita di sistema | Da utilizzare per carichi di lavoro di produzione che devono espandersi automaticamente per evitare errori dovuti all'esaurimento dello spazio. 
+|===
+
+
+[[security-policies]]
+=== Politiche di sicurezza
+
+[cols="2,1,1,1,1,3"]
+|===
+| Nome | Tipo | Crittografia | Protezione contro i ransomware | FIPS | Riepilogo 
+
+
+| predefinito | Definito dal sistema | qualsiasi | qualsiasi | qualsiasi | Da utilizzare per carichi di lavoro in cui il comportamento di sicurezza predefinito della piattaforma è accettabile. 
+
+
+| anti-ransomware | Definito dal sistema | qualsiasi | su | qualsiasi | Da utilizzare per carichi di lavoro contenenti dati sensibili o business-critical che richiedono una protezione attiva contro i ransomware. 
+
+
+| produzione | Definito dal sistema | abilitato | qualsiasi | qualsiasi | Usa per carichi di lavoro di produzione in cui la crittografia è richiesta per la conformità. 
+|===
+
+
+[[data-protection-policies]]
+=== Politiche di protezione dei dati
+
+[cols="2,1,1,1,1,1,3"]
+|===
+| Nome | Tipo | Istantanee orarie | Istantanee giornaliere | Snapshot settimanali | Snapshot mensili | Riepilogo 
+
+
+| predefinito | Definito dal sistema | 6 | 2 | 2 | 0 | Usa per carichi di lavoro standard che richiedono punti di ripristino a breve termine senza l’onere della conservazione a lungo termine. 
+
+
+| orario su 3 mesi | Definito dal sistema | 23 | 6 | 4 | 3 | Da utilizzare per carichi di lavoro regolamentati o critici per l'attività aziendale che richiedono punti di ripristino intraday granulari e tre mesi di conservazione dei dati storici. 
+|===

@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: task-install-agent-on-prem-ova.html 
+keywords: install agent, on-premises agent installation, vCenter, ESXi, VMware, OVA, deploy Console local deployment, agent deployment, netapp console local 
+summary: 'Se sei un utente VMWare, puoi utilizzare un file OVA per installare un agente Console nel tuo vCenter. Il download del file OVA o l"URL è disponibile tramite la distribuzione locale della NetApp Console.' 
+---
+= Installa la distribuzione locale di NetApp Console usando un OVA in vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Usi un file OVA per installare una distribuzione locale della NetApp Console nel tuo VCenter. Il download dell'OVA o l'URL sono disponibili tramite il sito di supporto NetApp.
+
+
+
+[[prepare-to-install-netapp-console-local-deployment]]
+== Preparati a installare la distribuzione locale di NetApp Console
+
+Prima dell'installazione, assicurati che l'host della macchina virtuale soddisfi i requisiti e che la distribuzione locale della NetApp Console possa accedere a internet e alle reti di destinazione. Per utilizzare i servizi dati NetApp come NetApp Backup and Recovery, crea le credenziali del cloud provider per la distribuzione locale della NetApp Console, così da poter eseguire azioni per tuo conto.
+
+
+
+[[review-netapp-console-local-deployment-host-requirements]]
+=== Esamina i requisiti host per la distribuzione locale della NetApp Console
+
+Assicurati che la macchina host soddisfi i requisiti di installazione prima di installare la distribuzione locale della NetApp Console.
+
+* CPU: 16 core o 16 vCPU
+* RAM: 64 GB
+* Spazio su disco: 596 GB (è consigliato il thick provisioning)
+* vSphere 7.0u3 o superiore, con versione hardware virtuale 19 o superiore
+
+
+
+NOTE: Installa la distribuzione locale di NetApp Console in un ambiente vCenter invece che direttamente su un host ESXi.
+
+
+
+[[set-up-network-access-for-the-netapp-console-local-deployment]]
+[[network-access-agent]]
+=== Configura l'accesso di rete per la distribuzione locale della NetApp Console
+
+NetApp Console local deployment utilizza uno spazio di indirizzi fisso per la comunicazione tra i servizi. Gli intervalli IP 10.42.0.0/16 e 10.43.0.0/16 sono utilizzati per la rete interna. Prima di distribuire Console local deployment, assicurati che questi intervalli IP non siano assegnati ad altre istanze di macchine virtuali, ambiti DHCP, record DNS o pool VIP del bilanciatore di carico sulle VLAN rese disponibili per Console local deployment.
+
+Vedi l'articolo della Knowledge Base "Agent IP conflict with existing network" per le istruzioni su come cambiare l'indirizzo IP delle interfacce dell'agente.
+
+
+
+[[install-netapp-console-local-deployment-in-your-vcenter-environment]]
+== Installa la distribuzione locale di NetApp Console nel tuo ambiente vCenter
+
+NetApp supporta l'installazione della distribuzione locale della NetApp Console nel tuo ambiente VCenter. Il file OVA include un'immagine di VM preconfigurata che puoi distribuire nel tuo ambiente VMware.
+
+
+
+[[download-the-ova-or-copy-the-url]]
+=== Scarica il file OVA o copia l'URL
+
+Scarica l'OVA.
+
+. Scarica il software di distribuzione locale della Console dal sito di supporto NetApp.
+
+
+
+
+[[deploy-netapp-console-local-deployment-in-your-vcenter]]
+=== Distribuisci la NetApp Console in locale nel tuo vCenter
+
+Accedi al tuo ambiente VCenter per distribuire Console local deployment.
+
+.Passaggi
+. Se richiesto dal tuo ambiente, carica il certificato autofirmato nell'elenco dei certificati attendibili. Puoi sostituire questo certificato dopo l'installazione.
+. Distribuisci il file OVA dall'archivio di contenuti o dal sistema locale.
++
+|===
+
+
+| Dal sistema locale | Dall'archivio di contenuti 
+
+
+| a. Fai clic con il pulsante destro del mouse e seleziona *Deploy OVF template...*. b. Scegli il file OVA dall'URL o individua la sua posizione, quindi seleziona *Next*. | a. Vai al tuo archivio di contenuti e seleziona la Console OVA. b. Seleziona *Azioni* > *Nuova VM da questo modello* 
+|===
+. Completa la procedura guidata di distribuzione del modello OVF per distribuire la Console.
+. Seleziona un nome e una cartella per la macchina virtuale, quindi seleziona *Avanti*.
+. Seleziona una risorsa di calcolo, quindi seleziona *Avanti*.
+. Esamina i dettagli del modello, quindi seleziona *Avanti*.
+. Accetta il contratto di licenza, quindi seleziona *Avanti*.
+. Scegli il tipo di configurazione proxy che vuoi usare: proxy esplicito, proxy trasparente o nessun proxy.
+. Seleziona il datastore in cui desideri distribuire la VM, quindi seleziona *Avanti*. Assicurati che soddisfi i requisiti dell'host.
+. Seleziona la rete a cui vuoi connettere la VM, poi seleziona *Avanti*. Assicurati che la rete sia IPv4 e che abbia accesso outbound a Internet verso gli endpoint richiesti.
+. Nella finestra *Personalizza modello*, compila i seguenti campi:
++
+** *Informazioni sul proxy*
++
+*** Se hai selezionato proxy esplicito, inserisci il nome host o l'indirizzo IP del proxy server e il numero di porta, oltre a nome utente e password.
+*** Se hai selezionato proxy trasparente, carica il relativo certificato.
+
+
+** *Configurazione della macchina virtuale*
++
+*** *Salta il controllo della configurazione*: questa check box è deselezionata per impostazione predefinita, il che significa che la NetApp Console distribuzione locale esegue un controllo della configurazione per convalidare l'accesso alla rete.
++
+**** NetApp consiglia di lasciare questa check box deselezionata in modo che l'installazione includa un controllo di configurazione della NetApp Console distribuzione locale. Il controllo di configurazione verifica che la NetApp Console distribuzione locale abbia accesso di rete agli endpoint richiesti. Se la distribuzione non riesce a causa di problemi di connettività, puoi accedere al report di convalida e ai log dall'host della NetApp Console distribuzione locale. In alcuni casi, se sei sicuro che la NetApp Console distribuzione locale abbia accesso di rete, puoi scegliere di saltare il controllo.
+
+
+*** *Password di manutenzione*: Imposta la password per l’ `maint`utente che consente l’accesso alla console di manutenzione della distribuzione locale della NetApp Console.
+*** *Server NTP*: Specifica uno o più server NTP per la sincronizzazione dell'ora.
+*** *Nome host*: Imposta il nome host per questa VM. Non deve includere il domain name di ricerca. Ad esempio, un FQDN come console10.searchdomain.company.com deve essere inserito come console10.
+*** *Primary DNS*: Specifica il DNS server primario da utilizzare per la risoluzione dei nomi.
+*** *Secondary DNS*: Specifica il DNS server secondario da utilizzare per la risoluzione dei nomi.
+*** Domini di ricerca: specifica il domain name da usare quando risolvi il nome host. Ad esempio, se il FQDN è console10.searchdomain.company.com, inserisci searchdomain.company.com.
+*** *Indirizzo IPv4*: L'indirizzo IP mappato al nome host.
+*** *Maschera di sottorete IPv4*: La maschera di sottorete per l'indirizzo IPv4.
+*** *Indirizzo gateway IPv4*: L'indirizzo gateway per l'indirizzo IPv4.
+
+
+
+
+. Seleziona *Avanti*.
+. Rivedi i dettagli nella finestra *Pronto per completare*, seleziona *Fine*.
++
+La barra delle applicazioni di vSphere mostra l'avanzamento mentre viene distribuita la distribuzione locale della NetApp Console.
+
+. Accendi la macchina virtuale.
+

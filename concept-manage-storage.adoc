@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: concept-manage-storage.html 
+keywords: fleet management, folders, fleets, storage management, storage classes, provisioning, netapp console local 
+summary: Scopri come funzionano la gestione della flotta e la gestione dello storage nella distribuzione locale di NetApp Console, inclusi gerarchia, controllo degli accessi, standard e metodi di provisioning. 
+---
+= Scopri la gestione della flotta nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La gestione della flotta nella distribuzione locale di NetApp Console è la pratica di organizzare i sistemi di storage in gruppi logici così puoi applicare criteri coerenti, controllare l'accesso e monitorare lo stato di salute tra i cluster correlati. Invece di gestire ogni cluster in modo indipendente, la gestione della flotta ti permette di trattare la flotta come un pool comune di risorse per supportare i tuoi obiettivi di storage dei dati.
+
+Con la crescita del tuo ambiente di storage, la gestione dei singoli cluster diventa impraticabile. La gestione della flotta risolve questo problema offrendoti un modo strutturato per raggruppare i sistemi correlati, delegare le responsabilità e garantire che ogni cluster operi secondo gli stessi standard.
+
+
+
+[[why-fleet-management-matters]]
+== Perché la gestione della flotta è importante
+
+La gestione della flotta affronta tre sfide principali:
+
+* *Semplificazione tramite astrazione* - La gestione della flotta elimina la complessità della gestione delle singole infrastrutture di storage. Invece di dover gestire la configurazione cluster per cluster, gestisci il tuo parco storage come un'unica entità, riducendo i costi operativi e la fatica decisionale.
+* *Coerenza e scalabilità* - Senza un'organizzazione chiara, team diversi prendono decisioni diverse per carichi di lavoro simili, con conseguenti configurazioni frammentate. La gestione della flotta ti permette di applicare standard a decine di sistemi contemporaneamente, assicurando che i nuovi carichi di lavoro partano dalla stessa base per team e flotte.
+* *Governance e controllo* - Con la crescita dei team, hai bisogno di confini chiari su chi può gestire cosa. La gestione della flotta fornisce questi confini attraverso la struttura organizzativa e il controllo degli accessi, assicurando che le decisioni relative allo storage rimangano governate e verificabili.
+
+
+
+
+[[how-fleets-organize-your-resources]]
+== Come le flotte organizzano le tue risorse
+
+La gerarchia delle risorse della tua organizzazione è composta da cartelle e fleet:
+
+Per una panoramica dettagliata della gerarchia e del modello di accesso, vedi link:concept-folders-fleets-overview.html["Scopri cartelle e gruppi nella distribuzione locale di NetApp Console"].
+
+* *Organizzazione* - Il livello più alto che rappresenta la tua azienda.
+* *Cartelle* - Ti aiutano a organizzare le flotte correlate. Ad esempio, potresti creare una cartella per ogni regione o unità aziendale, poi creare flotte all'interno di ciascuna cartella. Le cartelle possono contenere altre cartelle o flotte. Quando assegni un ruolo a livello di cartella, i membri ereditano quel ruolo per tutte le flotte all'interno della cartella.
+* *Flotte* - Raggruppa i sistemi di archiviazione che gestisci insieme. Associ i sistemi di archiviazione alle flotte e assegni i membri alle flotte per concedere loro accesso.
+
+
+
+NOTE: Le cartelle sono uno strumento organizzativo e non sono visibili ai membri che non hanno autorizzazioni IAM, come i ruoli di Organization admin, Folder admin o Fleet admin. I membri accedono alle flotte, non alle cartelle.
+
+
+
+[[common-fleet-organization-patterns]]
+== Modelli comuni di organizzazione della flotta
+
+Il modo in cui organizzi le flotte dipende dal tuo modello operativo:
+
+* *Per ambiente* - Crea flotte separate per i carichi di lavoro di produzione, sviluppo e test. Questo mantiene lo storage di produzione soggetto a policy più restrittive, consentendo al contempo maggiore flessibilità negli ambienti di livello inferiore.
+* *Per unità aziendale* - Raggruppa i cluster che servono un reparto specifico, come finanza, ingegneria o risorse umane, in una flotta dedicata. Puoi quindi assegnare le responsabilità di gestione dello storage ai membri del team all'interno di tale unità aziendale senza esporre loro altre flotte.
+* *Per posizione o data center* - Quando i cluster sono distribuiti su più siti, organizzare per posizione ti permette di monitorare lo stato di salute a livello di sito, applicare criteri specifici per regione e tenere traccia del consumo di capacità per sito.
+* *Per tier applicativo* - Raggruppa i cluster che ospitano una specifica classe di carico di lavoro, come database, condivisioni di file o macchine virtuali, così puoi applicare standard coerenti ottimizzati per quel tipo di carico di lavoro all'intera flotta.
+
+
+
+TIP: Utilizza le cartelle per aggiungere un ulteriore livello di organizzazione. Ad esempio, crea una cartella per ogni regione e poi crea fleet basate sull'ambiente all'interno di ciascuna cartella regionale.
+
+
+
+[[how-fleet-management-enables-access-control]]
+== Come la gestione della flotta consente il controllo degli accessi
+
+Fleet e cartelle fungono da limiti per l'accesso degli utenti e la responsabilità amministrativa:
+
+* *Accesso a livello di cartella* - Quando assegni un ruolo a livello di cartella, il membro eredita quel ruolo per tutte le flotte e le risorse all'interno della cartella. Questo ti permette di delegare le responsabilità amministrative senza concedere l'accesso all'intera organizzazione.
+* *Accesso a livello di flotta* - Quando assegni un ruolo a livello di flotta, il membro ha accesso solo ai sistemi di storage all'interno di quella flotta. Questo ti permette di delegare la gestione dello storage ai membri del team o ai responsabili delle applicazioni senza esporre parti non correlate della tua infrastruttura.
+
+
+La distribuzione locale della Console offre il monitoraggio dello stato e delle prestazioni a livello di flotta, così puoi vedere lo stato di tutti i cluster di una flotta da un'unica vista, identificare i problemi in anticipo e agire prima che influiscano sui carichi di lavoro.
+
+
+
+[[how-storage-management-works]]
+== Come funziona la gestione dello storage
+
+La gestione dello storage consiste nel definire gli standard di storage, applicarli in modo coerente e gestire i carichi di lavoro in modo che rimangano allineati nel tempo. Nella distribuzione locale di Console, questi standard sono espressi come policy di classe di storage e classi di storage, con ambito alle fleet, e applicati tramite flussi di lavoro di provisioning gestiti da RBAC e audit logging.
+
+La distribuzione locale della Console collega quattro concetti in un unico flusso di lavoro:
+
+* Le *flotte* definiscono l'ambito in cui gestisci lo storage. Una flotta raggruppa i sistemi così puoi controllare l'accesso, applicare standard in modo coerente e gestire le risorse come un'unica unità.
+* Le *politiche di classe di storage* definiscono gli standard come elementi costitutivi riutilizzabili (prestazioni, capacità, sicurezza, protezione dei dati).
+* *Storage classes* esprimono l'intento del carico di lavoro. Una storage class è un modello denominato assemblato da una o più policy.
+* I flussi di lavoro di provisioning creano storage entro limiti predefiniti. Flussi di lavoro diversi prendono decisioni di configurazione in modo differente, ma tutti possono imporre classi di storage e restano governati da RBAC e audit logging.
+
+
+
+
+[[provisioning-approaches]]
+== Approcci di provisioning
+
+La distribuzione locale della console supporta tre approcci di provisioning, tutti regolati da RBAC, audit logging e standard di storage class:
+
+* *Provisioning manuale* - Selezioni il sistema di destinazione e specifichi direttamente i dettagli di configurazione. Usa questa opzione quando hai bisogno di un controllo esplicito sulla selezione e configurazione del sistema.
+* *Provisioning automatizzato* - Fornisci i dati relativi al carico di lavoro e, facoltativamente, selezioni una classe di storage. La distribuzione locale tramite NetApp Console consiglia il posizionamento più adatto e applica le impostazioni basate sulla classe per ridurre le decisioni manuali.
+* *Provisioning assistito dall'AI (agentic)* - Descrivi ciò di cui hai bisogno in linguaggio naturale. La distribuzione locale tramite NetApp Console propone un piano vincolato da RBAC e classi di storage, quindi esegue il provisioning solo dopo che hai revisionato e approvato.
+
+
+
+
+[[where-to-go-next]]
+== Dove andare dopo
+
+* Per capire gli standard di storage, vedi link:concept-storage-classes.html["Scopri le classi e le policy di archiviazione nella distribuzione locale di NetApp Console"].
+* Per creare e gestire flotte, vedi link:task-iam-manage-folders-fleets.html["Gestisci cartelle e flotte"].
+* link:task-provisioning-manual.html["Effettua il provisioning dello storage manualmente"]
+* link:task-provisioning-automated.html["Effettua il provisioning dello storage automaticamente"]
+* link:task-provisioning-agentic.html["Effettua il provisioning dello storage con l'assistenza dell'IA"]
+

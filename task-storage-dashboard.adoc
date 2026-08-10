@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task-storage-dashboard.html 
+keywords: storage dashboard, home page, fleet health, capacity monitoring, IOPS, performance metrics, alerts, storage KPIs, monitoring, netapp console local 
+summary: 'All"interno della distribuzione locale di NetApp Console, puoi visualizzare le metriche nella pagina Home.' 
+---
+= Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza la dashboard della pagina iniziale nella distribuzione locale di NetApp Console come punto di partenza predefinito per monitorare lo stato e le prestazioni dello storage. Fornisce metriche high-level relative allo stato del parco storage, agli avvisi, alla sicurezza, all'utilizzo della capacità, alla latenza, al throughput e agli IOPS.
+
+La dashboard della pagina iniziale viene automaticamente limitata solo alle flotte e ai sistemi che sei autorizzato a visualizzare. Puoi anche aggiungere una dashboard personalizzata alla pagina iniziale per il monitoraggio specifico del ruolo.
+
+Utilizza le schede come flusso di lavoro di triage a livelli. Inizia con *Fleet health* e *Alerts* per individuare i punti critici di rischio. Utilizza *System health status* e *Recommended remediations* per identificare le risorse interessate. Utilizza *Capacity usage*, *Latenza*, *Throughput* e *IOPS* per indagare sulle cause principali.
+
+
+
+[[fleet-health]]
+== Salute della flotta
+
+La scheda *Stato della flotta* mostra un high-level riepilogo dello stato delle cinque flotte principali, inclusi il numero di sistemi, la capacità utilizzata, la conformità alla sicurezza e gli avvisi critici. Usa questa scheda per identificare quali flotte necessitano di attenzione immediata. Seleziona il nome della flotta per visualizzare una dashboard solo per la flotta selezionata.
+
+
+
+[[recommended-remediations]]
+== Interventi di bonifica raccomandati
+
+La scheda *Interventi correttivi consigliati* elenca i problemi attivi e le azioni suggerite. La scheda assegna priorità agli interventi correttivi in base alla pressione sulla capacità, alle risorse offline e ai rischi relativi alla protezione.
+
+
+
+[[alerts]]
+== Avvisi
+
+La scheda *Avvisi* riassume il volume degli avvisi nell'intervallo di tempo selezionato e li raggruppa per gravità. Usa questa scheda per capire il carico attuale degli incidenti e per individuare le modifiche recenti agli avvisi critici, di avviso o informativi.
+
+
+
+[[security]]
+== Sicurezza
+
+La scheda *Sicurezza* riassume le metriche di conformità e protezione, come la conformità del sistema e i controlli relativi ai ransomware. Usa questa visualizzazione per monitorare le tendenze di sicurezza delle tue risorse.
+
+
+
+[[capacity-usage]]
+== Utilizzo della capacità
+
+La scheda *Utilizzo della capacità* mostra le tendenze di utilizzo previste e storiche per flotte o sistemi selezionati. Usa questa scheda per identificare i modelli di crescita e pianificare capacità aggiuntiva.
+
+
+
+[[latency]]
+== Latenza
+
+La scheda *Latenza* tiene traccia dell'andamento dei tempi di risposta nel tempo sui sistemi selezionati. Usa questa tendenza per individuare eventuali ritardi nelle prestazioni e confrontare la latenza tra le diverse risorse.
+
+
+
+[[throughput]]
+== Throughput
+
+La scheda *Throughput* mostra le velocità di trasferimento dati nel tempo per i sistemi selezionati. Usa questa scheda per capire l'intensità del carico di lavoro e monitorare le variazioni della domanda di throughput.
+
+
+
+[[iops]]
+== IOPS
+
+La scheda *IOPS* mostra i tassi di operazioni di input/output nel tempo. Usa questa scheda per confrontare i livelli di attività tra i sistemi e identificare la domanda di I/O continua o intermittente.
+
+
+
+[[dashboard-card-example-metric-card]]
+== Scheda dashboard (esempio di scheda metrica)
+
+L'area inferiore *Dashboard* può contenere una dashboard personalizzata selezionata dall'utente, come la latenza media per un ambito di produzione selezionato. Usa queste schede per un monitoraggio mirato per team, carico di lavoro o obiettivo.
+
+
+
+[[system-health-status]]
+== stato di salute del sistema
+
+La scheda *Stato di salute del sistema* elenca i singoli sistemi con il loro stato di salute attuale. Usa questa scheda per identificare rapidamente i sistemi non in salute e correlare le variazioni di stato con avvisi e segnali di performance.
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"]
+

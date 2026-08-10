@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: concept-workload-analyzer.html 
+keywords: workload analyzer, volume analysis, latency, throughput, capacity, performance, netapp console 
+summary: Scopri come Workload Analyzer ti aiuta a esaminare i problemi relativi a performance, capacità e protezione dei dati a livello di volume. 
+---
+= Scopri il Workload Analyzer per la distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza lo strumento Workload Analyzer per le distribuzioni locali di NetApp Console per visualizzare il comportamento di un singolo volume nel tempo. Puoi esaminare il peggioramento delle performance, le tendenze di capacità e i problemi di contesa delle risorse dal volume stesso, da un avviso o dall'inventario.
+
+
+
+[[how-workload-analyzer-identifies-root-causes]]
+== Come Workload Analyzer identifica le cause principali
+
+Utilizza Workload Analyzer per correlare le metriche di un singolo volume in sei sezioni così puoi identificare rapidamente le cause principali. Seleziona un volume e un intervallo di tempo per visualizzare eventi, performance e capacità insieme nella stessa finestra. Questa visualizzazione può aiutarti a capire se lo storage è la probabile fonte di un problema dell'applicazione o se un altro layer, come il networking, sta causando il problema.
+
+L'analizzatore è più utile quando sai già quale volume è interessato. Se lo apri da un avviso o dall'inventario dei volumi, la distribuzione locale di NetApp Console apre l'analizzatore con il volume selezionato così puoi concentrarti sulla finestra di analisi e sui grafici.
+
+L'analizzatore tiene traccia di un volume alla volta, quindi usalo per indagare su un problema specifico invece di confrontare più volumi.
+
+Esamina la sezione relativa alla capacità come parte di questa valutazione. Quando un sistema ONTAP è pieno per oltre l'85%, l'elevato utilizzo può di per sé causare problemi di performance, quindi una capacità disponibile bassa può spiegare una latenza che i soli grafici delle performance non riescono a giustificare.
+
+Dopo che hai identificato la causa principale, puoi agire direttamente dall'analizzatore. Quando sono disponibili opzioni automatizzate, la distribuzione locale di NetApp Console fornisce suggerimenti Fix-It con passaggi guidati o risoluzione con un solo clic.
+
+
+NOTE: I grafici del carico di lavoro per le LUN non forniscono lo stesso livello di dettaglio dei grafici per i volumi, quindi vedrai meno statistiche quando analizzi una LUN.
+
+
+
+[[access-workload-analyzer]]
+== Accedi a Workload Analyzer
+
+Puoi aprire Workload Analyzer in diversi modi:
+
+* Dal menu *Salute*, seleziona *Analizzatore di carico di lavoro*, quindi cerca e seleziona il volume che vuoi analizzare nel campo *Volume*.
+* Dalla pagina *Storage > Fleets > Inventory*, individua un volume che vuoi analizzare e seleziona *Analizza* dal menu delle azioni.
+* Dalla pagina *Avvisi > Panoramica*, seleziona un avviso relativo al volume che vuoi analizzare, quindi seleziona *Analizza* dai dettagli dell'avviso.
+
+
+Puoi anche analizzare le LUN, ma queste mostrano meno statistiche rispetto ai volumi.
+
+
+
+[[analyze-latency-throughput-and-storage-capacity]]
+== Analizza latenza, throughput e capacità di archiviazione
+
+Utilizza queste sei sezioni per analizzare un volume:
+
+Selezione del volume:: Scegli il volume e l'intervallo di tempo da analizzare così tutti i grafici e gli eventi sono allineati allo stesso carico di lavoro e alla stessa finestra di analisi.
+Cronologia degli eventi:: Visualizza le modifiche di configurazione attuali e storiche, gli avvisi di avviso e gli avvisi critici per il volume selezionato durante la finestra di analisi. Usa questa sezione per correlare "cosa è cambiato" con le variazioni di performance o di comportamento della capacità.
+Analisi della latenza:: Visualizza la latenza del volume nel tempo, sia come valore totale che suddivisa per centro di ritardo—rete, elaborazione dati, operazioni aggregate, interconnessione del cluster e altri. Se il volume utilizza una policy QoS, l'analizzatore mostra i limiti massimi e minimi di latenza della policy come linee di riferimento, così puoi vedere quanto il carico di lavoro si avvicina a una soglia di limitazione. Attiva o disattiva la previsione per vedere se la latenza sta andando verso una soglia di avviso o critica.
+Analisi del throughput:: Visualizza IOPS e MB/s nel tempo, con una suddivisione opzionale tra lettura, scrittura e altro. Se il volume utilizza una policy QoS, l'analizzatore visualizza le linee di limite di IOPS e di throughput. Attiva o disattiva la previsione per vedere se la domanda sta andando verso i limiti QoS.
+Utilizzo delle risorse:: Guarda quanto sono occupati i nodi e gli aggregati che servono il volume durante la finestra di analisi. L'analizzatore traccia ogni risorsa come una linea indipendente invece di sovrapporre i valori, così puoi capire se un nodo o un aggregato specifico è una fonte di contesa. Attiva la previsione per vedere se qualche risorsa sta andando verso una soglia di utilizzo elevato.
+Analisi della capacità:: Visualizza come lo spazio fisico e lo spazio disponibile nel volume sono cambiati nel tempo. Passa il mouse sopra per vedere una ripartizione dell'efficienza di archiviazione, inclusi i risparmi derivanti da deduplica, compressione e compaction. Attiva o disattiva la previsione per vedere quando il volume raggiungerà le soglie di capacità di avviso o critiche. Passa alla visualizzazione snapshot per vedere come lo spazio snapshot si confronta con la riserva snapshot configurata.
+
+
+
+
+[[forecast-capacity-and-performance-trends]]
+== Prevedi le tendenze di capacità e prestazioni
+
+Usa l'interruttore di previsione in ogni sezione di analisi per estendere la timeline del grafico oltre il momento attuale e proiettare i valori futuri in base alla tendenza osservata. Una linea tratteggiata distingue i valori previsti dai dati reali. L'analizzatore mostra anche un messaggio di insight quando la previsione indica che è probabile il superamento di una soglia, insieme a una stima del tempo al superamento.
+
+.Informazioni correlate
+link:task-analyzer-volume-latency-investigate.html["Indaga sull'alta latenza su un volume"]. link:task-analyzer-volume-throughput-investigate.html["Analizza la domanda di throughput elevato su un volume"]. link:task-analyzer-volume-capacity-investigate.html["Esamina la crescita della capacità su un volume"]. link:reference-workload-analyzer-metrics.html["Scopri le metriche di Workload Analyzer nella distribuzione locale di NetApp Console"].

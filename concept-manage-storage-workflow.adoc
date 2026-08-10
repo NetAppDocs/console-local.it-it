@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept-manage-storage-workflow.html 
+keywords: storage management workflow, storage classes, provisioning, storage class policies, ONTAP, fleet, drift detection, compliance monitoring, storage governance, operational efficiency, netapp console local 
+summary: Scopri come gestire lo storage nella distribuzione locale di NetApp Console, incluse le classi di storage, le policy e i metodi di provisioning. 
+---
+= Panoramica del flusso di lavoro di gestione dello storage nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nel deployment locale di NetApp Console, netApp Console (locale) ti aiuta a gestire lo storage ONTAP su larga scala usando standard coerenti e riutilizzabili. Invece di prendere decisioni una tantum per ogni volume o LUN, definisci il comportamento approvato una sola volta e lo applichi a tutte le flotte, sia che esegui il provisioning manualmente, usi il posizionamento automatizzato o utilizzi flussi di lavoro di pianificazione e approvazione assistiti dall'AI.
+
+Questa pagina è il punto di partenza per gli admin dello storage che gestiscono lo storage ONTAP utilizzando fleet, storage class policy e storage class. Organizza il workflow end-to-end e include link a procedure dettagliate.
+
+Se non hai familiarità con questi concetti, inizia con [Scopri come gestire lo storage con NetApp Console local deployment](concept-manage-storage.html).
+
+
+
+[[prerequisites-and-dependencies]]
+== Prerequisiti e dipendenze
+
+Amministratore dell'organizzazione: assicurati che i sistemi di storage vengano rilevati e assegnati alle flotte corrette. Gli amministratori dello storage non possono applicare standard o eseguire il provisioning in una flotta finché i sistemi non sono disponibili in quella flotta e l'accesso non è concesso tramite RBAC.
+
+Accesso RBAC richiesto. Conferma di avere accesso alle flotte in cui definirai gli standard e fornirai lo storage.
+
+
+
+[[typical-workflow]]
+== Flusso di lavoro tipico
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Esamina le flotte e l'accesso
+[role="quick-margin-list"]
+* Esamina le flotte disponibili e verifica di avere accesso alle flotte in cui desideri gestire lo storage.
+* Verifica le autorizzazioni e l'ambito prima di creare o assegnare standard di archiviazione.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Definisci le policy delle classi di archiviazione
+[role="quick-margin-list"]
+* Definisci criteri per le classi di archiviazione che rispecchiano i tuoi standard.
+* Acquisisci i requisiti (prestazioni, protezione, collocazione) in policy riutilizzabili.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Crea classi di archiviazione
+[role="quick-margin-list"]
+* Crea classi di archiviazione combinando le policy in modelli di workload.
+* Utilizza modelli coerenti per garantire che i carichi di lavoro siano forniti secondo i tuoi standard.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Associa le classi di storage alle flotte
+[role="quick-margin-list"]
+* Associa le classi di storage alle flotte in cui si applicano.
+* Assegna le classi di ambito alle flotte corrette così che vengano visualizzate le opzioni giuste durante il provisioning.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"]Effettua il provisioning di volumi o LUN
+[role="quick-margin-list"]
+* Effettua il provisioning dei volumi o delle LUN utilizzando il metodo che corrisponde al tuo modello operativo.
+* Scegli il flusso di lavoro che si adatta a come i tuoi team richiedono, approvano e forniscono lo storage.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sei"]Monitora i carichi di lavoro e correggi le deviazioni
+[role="quick-margin-list"]
+* Monitora i carichi di lavoro per rilevare deviazioni dalle policy definite.
+* Correggi le configurazioni non conformi per ripristinare l'allineamento con le policy.
+

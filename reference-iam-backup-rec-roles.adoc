@@ -1,0 +1,499 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-backup-rec-roles.html 
+keywords: backup and recovery roles, NetApp Backup and Recovery, backup admin, restore admin, clone admin, backup and recovery viewer, backup and recovery super admin, roles, permissions, rbac, access control, identity and access management, netapp console local 
+summary: 'Puoi assegnare i seguenti ruoli agli utenti per fornire loro accesso a NetApp Backup and Recovery all"interno della Console. I ruoli di Backup and Recovery ti danno la flessibilità di assegnare agli utenti un ruolo specifico per le attività che devono svolgere nella tua organizzazione. Come assegni i ruoli dipende dalle tue pratiche aziendali e di gestione dello storage.' 
+---
+= NetApp Backup and Recovery ruoli nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, puoi assegnare i seguenti ruoli agli utenti per fornire loro l'accesso a NetApp Backup and Recovery all'interno della Console. I ruoli di Backup and Recovery ti danno la flessibilità di assegnare agli utenti un ruolo specifico per le attività che devono svolgere all'interno della tua organizzazione. Come assegni i ruoli dipende dalle tue pratiche aziendali e di gestione dello storage.
+
+Il servizio utilizza i seguenti ruoli specifici per NetApp Backup and Recovery.
+
+* *Super amministratore di NetApp Backup and Recovery*: Puoi eseguire qualsiasi operazione in NetApp Backup and Recovery.
+* *Amministratore del backup e del ripristino*: Esegui backup su snapshot locali, replica su storage secondario ed esegui backup su storage a oggetti nelle azioni di NetApp Backup and Recovery.
+* *Backup and recovery restore admin*: Ripristina i carichi di lavoro utilizzando NetApp Backup and Recovery.
+* *Amministratore della clonazione di backup e recovery*: Clona applicazioni e dati utilizzando NetApp Backup and Recovery.
+* *Visualizzatore di backup e recovery*: Visualizza le informazioni in NetApp Backup and Recovery, ma non puoi eseguire alcuna azione.
+
+
+Per dettagli su tutti i ruoli di accesso alla NetApp Console, vedi  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["la documentazione relativa alla configurazione e all'amministrazione della Console"^].
+
+
+
+[[roles-used-for-common-actions]]
+== Ruoli utilizzati per azioni comuni
+
+La tabella seguente indica le azioni che ciascun ruolo di NetApp Backup and Recovery può eseguire per tutti i carichi di lavoro.
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| Caratteristica e azione | Super admin di backup e recovery | Amministratore di backup e ripristino | Backup and recovery ripristino admin | Admin del clone di backup e ripristino | Visualizzatore di backup e ripristino 
+
+
+| Aggiungi, modifica o elimina host | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Installa i plugin | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Aggiungi le credenziali (host, istanza, vCenter) | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Visualizza la dashboard e tutte le schede | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Inizia la prova gratuita | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Avvia la scoperta dei carichi di lavoro | No | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza le informazioni sulla licenza | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Attiva licenza | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Visualizza gli host | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+6+| *Pianificazioni*: 
+
+
+| Attiva gli orari | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Sospendi le pianificazioni | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+6+| *Politiche e protezione*: 
+
+
+| Visualizza i piani di protezione | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea, modifica o elimina i piani di protezione | Sì | Sì  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Ripristina i carichi di lavoro | Sì | No  a| 
+Sì
+ a| 
+No
+ a| 
+No
+
+
+
+| Crea, dividi o elimina cloni | Sì | No  a| 
+No
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Crea, modifica o elimina una policy | Sì | Sì  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Report*: 
+
+
+| Visualizza i report | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea report | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+No
+
+
+
+| Elimina report | Sì | No  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Importa da SnapCenter e gestisci l'host*: 
+
+
+| Visualizza i dati importati di SnapCenter | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Importa dati da SnapCenter | Sì | Sì  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Gestisci (migra) host | Sì | Sì  a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Configura le impostazioni*: 
+
+
+| Configura la directory dei log | Sì | Sì  a| 
+Sì
+ a| 
+No
+ a| 
+No
+
+
+
+| Associa o rimuovi le credenziali dell'istanza | Sì | Sì  a| 
+Sì
+ a| 
+No
+ a| 
+No
+
+
+
+6+| *Bucket*: 
+
+
+| Visualizza i bucket | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea, modifica o elimina bucket | Sì | Sì  a| 
+No
+ a| 
+No
+ a| 
+No
+
+|===
+
+
+[[roles-used-for-workload-specific-actions]]
+== Ruoli utilizzati per azioni specifiche del workload
+
+La tabella seguente indica le azioni che ciascun ruolo di NetApp Backup and Recovery può eseguire per specifici carichi di lavoro.
+
+
+
+[[kubernetes-workloads]]
+=== Carichi di lavoro Kubernetes
+
+Questa tabella indica le azioni che ciascun ruolo di NetApp Backup and Recovery può eseguire per le azioni specifiche dei carichi di lavoro Kubernetes.
+
+[cols="20,20,15,15a,15a"]
+|===
+| Caratteristica e azione | Super admin di backup e recovery | Amministratore di backup e ripristino | Backup and recovery ripristino admin | Visualizzatore di backup e ripristino 
+
+
+| Visualizza cluster, namespace, classi di archiviazione e risorse API | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Aggiungi nuovi cluster Kubernetes | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Aggiorna le configurazioni del cluster | Sì | No  a| 
+No
+ a| 
+No
+
+
+
+| Rimuovi i cluster dalla gestione | Sì | No  a| 
+No
+ a| 
+No
+
+
+
+| Visualizza le applicazioni | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea e definisci nuove applicazioni | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Aggiorna le configurazioni dell'applicazione | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Rimuovi le applicazioni dalla gestione | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Visualizza le risorse protette e lo stato del backup | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea backup e proteggi le applicazioni con le policy | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Rimuovi la protezione dalle app e cancella i backup | Sì | Sì  a| 
+No
+ a| 
+No
+
+
+
+| Visualizza i punti di ripristino e i risultati del visualizzatore di risorse | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Ripristina le applicazioni dai punti di ripristino | Sì | No  a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza le policy di backup di Kubernetes | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea policy di backup per Kubernetes | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Aggiorna le politiche di backup | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Elimina le policy di backup | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza gli hook di esecuzione e le sorgenti degli hook | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea hook di esecuzione e sorgenti di hook | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Aggiorna gli hook di esecuzione e le relative sorgenti | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Elimina gli hook di esecuzione e le relative sorgenti | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza i modelli di hook di esecuzione | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Crea modelli di hook di esecuzione | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Aggiorna i modelli degli hook di esecuzione | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Elimina i modelli di hook di esecuzione | Sì | Sì  a| 
+Sì
+ a| 
+No
+
+
+
+| Visualizza il riepilogo del carico di lavoro e le dashboard di analisi | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+
+
+| Visualizza i bucket e le destinazioni di archiviazione StorageGRID | Sì | Sì  a| 
+Sì
+ a| 
+Sì
+
+|===

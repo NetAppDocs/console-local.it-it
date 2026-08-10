@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: concept-administer-netapp-console-local.html 
+keywords: administer Console local deployment, audit, audit log, compliance, SIEM, webhook, VM maintenance, access management, demonstrate compliance, operational visibility, netapp console local 
+summary: 'Scopri come amministrare e monitorare l"implementazione locale di NetApp Console, incluse le attività di audit, le subscriptions, la manutenzione, la risoluzione dei problemi e l"accesso dei membri.' 
+---
+= Scopri l'amministrazione e il monitoraggio nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo che hai distribuito la NetApp Console in locale, usa gli strumenti di amministrazione e monitoraggio per esaminare l'attività, mantenere la VM e gestire l'accesso dei membri.
+
+
+
+[[audit-activity]]
+== Attività di audit
+
+Esamina l'attività degli utenti e delle API, monitora lo stato delle operazioni della Console, scarica i log di controllo ed esporta i log verso strumenti esterni quando hai bisogno di una conservazione più lunga o di analisi aggiuntive.
+
+* link:task-audit-console-activity.html["Verifica l'attività di distribuzione locale della NetApp Console"]
+* link:task-console-configure-notifications-delivery.html["Configura i canali di consegna delle notifiche nella distribuzione locale di NetApp Console"]
+
+
+
+
+[[licenses-and-subscriptions]]
+== Licenses and subscriptions
+
+Utilizza le informazioni relative a Licenses and subscriptions per comprendere i diritti di servizio e lo stato dell'abbonamento per il tuo ambiente NetApp Console.
+
+link:https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html["Scopri di più su Licenses and subscriptions"^].
+
+
+
+[[maintain-and-troubleshoot-the-console-local-deployment-vm]]
+== Gestisci e risolvi i problemi della VM di distribuzione locale della Console
+
+Gestisci la VM che ospita la distribuzione locale della Console, rivedi le impostazioni di rete e di sistema, accedi agli strumenti di diagnostica e risolvi i problemi quando il servizio o l'agente non si comporta come previsto.
+
+link:task-console-local-vm-config.html["Esegui la manutenzione del tuo vCenter o host ESXi per la distribuzione locale della Console"].
+
+
+
+[[manage-users-and-access]]
+== Gestisci utenti e accessi
+
+Rivedi l'accesso dei membri in tutta l'organizzazione, regola l'accesso a livello di flotta e gestisci le impostazioni di sicurezza come il recupero MFA e le credenziali dell'account di servizio.
+
+* link:task-iam-manage-roles.html["Gestisci l'accesso dei membri in NetApp Console"]
+* link:task-iam-users-fleets-assign.html["Visualizza o modifica le assegnazioni di accesso alla flotta nella distribuzione locale di NetApp Console"]
+* link:task-manage-member-security.html["Gestisci la sicurezza dei membri nella distribuzione locale di NetApp Console"]
+

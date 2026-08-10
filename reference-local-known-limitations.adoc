@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: reference-local-known-limitations.html 
+keywords: console local deployment, known limitations, unsupported platforms, unsupported devices, unsupported functions, IP range 
+summary: Riferimento per le limitazioni note nella distribuzione locale di NetApp Console. 
+---
+= Limitazioni note nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le limitazioni note identificano le piattaforme, i dispositivi o le funzioni non supportati da questa versione del prodotto o che non interagiscono correttamente con essa. Esaminare attentamente queste limitazioni.
+
+Queste limitazioni sono specifiche della configurazione della NetApp Console e dell'amministrazione: l'agente, la piattaforma software as a service (SaaS) e altro ancora.
+
+
+
+[[console-vm-limitations]]
+== Limitazioni della console VM
+
+
+
+[[possible-conflict-with-ip-addresses-in-the-10-42-0-016-and-10-43-0-016-ranges]]
+=== Possibile conflitto con indirizzi IP negli intervalli 10.42.0.0/16 e 10.43.0.0/16
+
+NetApp Console local deployment utilizza uno spazio di indirizzi fisso per la comunicazione tra i servizi. Gli intervalli IP 10.42.0.0/16 e 10.43.0.0/16 sono utilizzati per la rete interna. Prima di distribuire Console local deployment, assicurati che questi intervalli IP non siano assegnati ad altre istanze di macchine virtuali, ambiti DHCP, record DNS o pool VIP del bilanciatore di carico sulle VLAN rese disponibili per Console local deployment.
+
+Vedi l'articolo della Knowledge Base "Agent IP conflict with existing network" per le istruzioni su come cambiare l'indirizzo IP delle interfacce dell'agente.
+
+
+
+[[shared-linux-hosts-are-not-supported]]
+=== Gli host Linux condivisi non sono supportati
+
+L'agente non è supportato su una macchina virtuale condivisa con altre applicazioni. La macchina virtuale deve essere dedicata al software dell'agente.
+
+
+
+[[third-party-agents-and-extensions]]
+=== Agenti ed estensioni di terze parti
+
+Gli agenti di terze parti o le estensioni di VM non sono supportati sulla VM dell'agente.

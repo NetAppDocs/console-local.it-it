@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Abbonati ai NetApp Intelligent Services dal marketplace del tuo cloud provider per pagare i servizi dati a tariffa oraria (PAYGO) o tramite un contratto annuale. Se hai acquistato una licenza da NetApp (BYOL), devi anche abbonarti all'offerta del marketplace. La tua licenza viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria se superi la capacità concessa in licenza o se il termine della licenza scade.

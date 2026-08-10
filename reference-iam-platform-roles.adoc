@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-platform-roles.html 
+keywords: predefined roles, iam roles, Organization admin, Folder or fleet admin, Super admin, Federation admin, platform roles, role, iam, identity and access management, netapp console local 
+summary: Assegna ruoli di piattaforma agli utenti per concedere le autorizzazioni per gestire la distribuzione locale di NetApp Console, assegnare ruoli, aggiungere utenti e gestire le federazioni. 
+---
+= NetApp Console ruoli di accesso alla piattaforma di distribuzione locale
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Assegna ruoli di piattaforma agli utenti per concedere le autorizzazioni per gestire la distribuzione locale della NetApp Console, assegnare ruoli, aggiungere utenti, creare fleet e gestire l'autenticazione degli utenti.
+
+.Esempio di ruoli organizzativi per una grande organizzazione multinazionale
+XYZ Corporation organizza l'accesso allo storage per regione—Nord America, Europa e Asia-Pacifico—fornendo un controllo regionale con supervisione centralizzata.
+
+L'*Organization admin* nella distribuzione locale della Console di XYZ Corporation crea un'organizzazione iniziale e cartelle separate per ogni regione. Il *Folder o fleet admin* per ciascuna regione organizza le fleet (con le risorse associate) all'interno della cartella della regione.
+
+Gli amministratori regionali con il ruolo di *Folder o fleet admin* gestiscono attivamente le proprie cartelle aggiungendo risorse e utenti. Questi amministratori regionali possono anche aggiungere, rimuovere o rinominare le cartelle e le flotte che gestiscono. L'*Organization admin* eredita le autorizzazioni per tutte le nuove risorse, mantenendo la visibilità sull'utilizzo dello storage in tutta l'organizzazione.
+
+All'interno della stessa organizzazione, a un utente viene assegnato il ruolo di *Federation admin* per gestire la federazione dell'organizzazione con il proprio IdP aziendale. Questo utente può aggiungere o rimuovere organizzazioni federate, ma non può gestire utenti o risorse all'interno dell'organizzazione. L'*Organization admin* assegna a un utente il ruolo di *Federation viewer* per verificare lo stato della federazione e visualizzare le organizzazioni federate.
+
+Le tabelle seguenti indicano le azioni che ciascun ruolo della piattaforma di distribuzione locale della Console può eseguire.
+
+
+
+[[organization-administration-roles]]
+[[organization-admin-roles]]
+== Ruoli di amministrazione dell'organizzazione
+
+[cols="2,1,1"]
+|===
+| Attività | Amministratore dell'organizzazione | Amministratore di cartelle o flotte 
+
+
+| Crea, modifica o elimina sistemi dalla distribuzione locale della Console (aggiungi o individua sistemi) | Sì | Sì 
+
+
+| Crea cartelle e flotte, inclusa l'eliminazione | Sì | No 
+
+
+| Rinomina le cartelle e i gruppi esistenti | Sì | Sì 
+
+
+| Assegna ruoli e aggiungi utenti | Sì | Sì 
+
+
+| Associa le risorse a cartelle e fleet | Sì | Sì 
+
+
+| Registrati per ricevere assistenza e invia le richieste tramite la Console | Sì | Sì 
+
+
+| Usa servizi dati non associati a un ruolo di accesso esplicito | Sì | Sì 
+
+
+| Visualizza la pagina Audit e le notifiche | Sì | Sì 
+|===
+
+
+[[federation-roles]]
+== ruoli della federazione
+
+[cols="2,1,1"]
+|===
+| Attività | Amministratore della federazione | Visualizzatore della Federation 
+
+
+| Crea e aggiorna le integrazioni del servizio di directory | Sì | No 
+
+
+| Visualizza le federazioni e i relativi dettagli | Sì | Sì 
+|===
+
+
+[[super-admin-and-viewer-roles]]
+[[super-admin-roles]]
+== Ruoli di super amministratore e spettatore
+
+Il ruolo di *Super amministratore* offre accesso completo per gestire le funzionalità della Console, lo storage e i servizi dati. Questo ruolo è adatto a chi si occupa di amministrazione e governance. Al contrario, il ruolo di *Super visualizzatore* offre accesso in sola lettura, ideale per revisori o stakeholder che necessitano di visibilità senza poter apportare modifiche.
+
+Le organizzazioni dovrebbero utilizzare l'accesso *Super admin* con parsimonia per ridurre al minimo i rischi per la sicurezza e allinearsi al principio del minimo privilegio. La maggior parte delle organizzazioni dovrebbe assegnare ruoli granulari con solo le autorizzazioni necessarie per ridurre i rischi e migliorare la tracciabilità.
+
+.Esempio di super ruoli
+ABC Corporation ha un piccolo team di cinque persone che utilizza la NetApp Console per i servizi dati e la gestione dello storage. Invece di distribuire più ruoli, assegnano il ruolo di *Super admin* a due membri senior del team che gestiscono tutte le attività amministrative, inclusa la gestione degli utenti e la configurazione delle risorse. I restanti tre membri del team ricevono il ruolo di *Super viewer*, che permette loro di monitorare lo stato dello storage e dei servizi dati senza poter modificare le impostazioni.
+
+[cols="2,1"]
+|===
+| Ruolo | Ruoli ereditati 
+
+
+ a| 
+Super amministratore
+ a| 
+* Amministratore dell'organizzazione
+* Amministratore di cartelle o flotte
+* Super admin di backup e recovery
+* Amministratore dello storage
+
+
+
+
+ a| 
+Super visualizzatore
+ a| 
+* Visualizzatore dell'organizzazione
+* Visualizzatore di backup
+* Visualizzatore di storage
+
+
+|===

@@ -1,0 +1,138 @@
+= 
+:allow-uri-read: 
+
+
+. Assicurati di avere le autorizzazioni in Azure per creare un'applicazione Active Directory e assegnare l'applicazione a un ruolo.
++
+Per i dettagli, consulta https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Microsoft Azure Documentazione: autorizzazioni richieste"^]
+
+. Dal portale di Azure, apri il servizio *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Mostra il servizio Active Directory in Microsoft Azure."]
+
+. Nel menu, seleziona *Registrazioni app*.
+. Seleziona *Nuova registrazione*.
+. Specifica i dettagli relativi all'applicazione:
++
+** *Nome*: Inserisci un nome per l'applicazione.
+** *Tipo di account*: Seleziona un tipo di account (qualsiasi funzionerà con la NetApp Console).
+** *URI di reindirizzamento*: Puoi lasciare questo campo vuoto.
+
+
+. Seleziona *Register*.
++
+Hai creato l'applicazione e l'entità servizio di Active Directory.
+
+
+
+. Crea un ruolo personalizzato:
++
+Tieni presente che puoi creare un ruolo personalizzato di Azure utilizzando il portale di Azure, Azure PowerShell, Azure CLI o REST API. I passaggi seguenti mostrano come creare il ruolo utilizzando Azure CLI. Se preferisci utilizzare un metodo diverso, consulta https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentazione di Azure"^]
+
++
+.. Copia il contenuto del link:reference-permissions-azure.html["autorizzazioni di ruolo personalizzate per l'agente della Console"] e salvalo in un file JSON.
+.. Modifica il file JSON aggiungendo gli ID di sottoscrizione di Azure all'ambito assegnabile.
++
+Dovresti aggiungere l'ID per ogni sottoscrizione di Azure da cui gli utenti creeranno i sistemi Cloud Volumes ONTAP.
+
++
+*Esempio*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. Utilizza il file JSON per creare un ruolo personalizzato in Azure.
++
+I seguenti passaggi descrivono come creare il ruolo usando Bash in Azure Cloud Shell.
+
++
+*** Avvia  https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] e scegli l'ambiente Bash.
+*** Carica il file JSON.
++
+image:screenshot_azure_shell_upload.png["Uno screenshot di Azure Cloud Shell in cui puoi scegliere l'opzione per caricare un file."]
+
+*** Utilizza l'interfaccia a riga di comando di Azure (Azure CLI) per creare il ruolo personalizzato:
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+Ora dovresti avere un ruolo personalizzato chiamato Console Operator che puoi assegnare alla macchina virtuale dell'agente Console.
+
+
+
+
+
+. Assegna l'applicazione al ruolo:
++
+.. Dal portale di Azure, apri il servizio *Subscriptions*.
+.. Seleziona l'abbonamento.
+.. Seleziona *Controllo degli accessi (IAM) > Aggiungi > Aggiungi assegnazione ruolo*.
+.. Nella scheda *Ruolo*, seleziona il ruolo *Operatore console* e seleziona *Avanti*.
+.. Nella scheda *Membri*, completa i seguenti passaggi:
++
+*** Mantieni selezionata l'opzione *Utente, gruppo o entità servizio*.
+*** Seleziona *Select members*.
++
+image:screenshot-azure-service-principal-role.png["Uno screenshot del portale Azure che mostra la pagina Membri quando aggiungi un ruolo a un'applicazione."]
+
+*** Cerca il nome dell'applicazione.
++
+Ecco un esempio:
+
++
+image:screenshot_azure_service_principal_role.png["Uno screenshot del portale di Azure che mostra il modulo \"Aggiungi assegnazione ruolo\" nel portale di Azure."]
+
+*** Seleziona l'applicazione e seleziona *Seleziona*.
+*** Seleziona *Avanti*.
+
+
+.. Seleziona *Rivedi + assegna*.
++
+L'entità servizio ora ha le autorizzazioni Azure necessarie per distribuire l'agente della Console.
+
++
+Se vuoi distribuire Cloud Volumes ONTAP da più sottoscrizioni di Azure, devi associare l'entità servizio a ciascuna di esse. Nella NetApp Console, puoi selezionare la sottoscrizione che vuoi usare quando distribuisci Cloud Volumes ONTAP.
+
+
+
+
+
+. Nel servizio *Microsoft Entra ID*, seleziona *Registrazioni app* e seleziona l'applicazione.
+. Seleziona *Autorizzazioni API > Aggiungi un'autorizzazione*.
+. Nella sezione *API Microsoft*, seleziona *Gestione dei servizi Azure*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Uno screenshot del portale di Azure che mostra le autorizzazioni dell'API di Azure Service Management."]
+
+. Seleziona *Accedi ad Azure Service Management come utenti dell'organizzazione* e poi seleziona *Aggiungi autorizzazioni*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Uno screenshot del portale di Azure che mostra l'aggiunta delle API di Azure Service Management."]
+
+
+
+. Nel servizio *Microsoft Entra ID*, seleziona *Registrazioni app* e seleziona l'applicazione.
+. Copia l'ID dell'applicazione (client) e l'ID della directory (tenant).
++
+image:screenshot_azure_app_ids.gif["Uno screenshot che mostra l'ID dell'applicazione (client) e l'ID della directory (tenant) per un'applicazione in Microsoft Entra IDy."]
+
++
+Quando aggiungi l'account Azure alla Console, devi fornire l'ID dell'applicazione (client) e l'ID della directory (tenant) per l'applicazione. La Console utilizza gli ID per accedere in modo programmatico.
+
+
+
+. Apri il servizio *Microsoft Entra ID*.
+. Seleziona *Registrazioni app* e seleziona la tua applicazione.
+. Seleziona *Certificates & secrets > New client secret*.
+. Fornisci una descrizione del segreto e una durata.
+. Seleziona *Aggiungi*.
+. Copia il valore del client secret.
++
+image:screenshot_azure_client_secret.gif["Uno screenshot del portale di Azure che mostra un client secret per il service principal Microsoft Entra."]
+
+

@@ -1,0 +1,31 @@
+= 
+:allow-uri-read: 
+
+
+. Seleziona *Aggiungi carta*.
+. Seleziona il *tipo di risorsa* per la scheda, ad esempio flotta, sistema o volume e poi scegli le risorse dall'elenco delle risorse disponibili.
+. Seleziona *Avanti* per continuare a scegliere una metrica e un tipo di scheda.
+. Scegli una metrica da visualizzare. Puoi filtrare le metriche disponibili per tipo: il *Tipo di metrica*: *Prestazioni*, *Capacità*, *Stato di salute* o *Avvisi*, oppure cercare una metrica specifica per nome. Le metriche disponibili dipendono dal tipo di risorsa che hai selezionato.
++
+link:reference-dashboard-card-templates.html#metrics-list["Scopri le metriche disponibili."]
+
+. Seleziona una scheda da includere nella dashboard e seleziona *Avanti*.
++
+Puoi selezionare solo una scheda alla volta. L'anteprima della scheda mostra dati in tempo reale per la metrica e il tipo di risorsa selezionati.
+
+. Dai un nome alla tua scheda. Il nome deve essere univoco all'interno della dashboard.
+. Rivedi l'anteprima della scheda, inserisci un nome e una descrizione per la scheda, quindi seleziona *Aggiungi*.
+. Ripeti questi passaggi per le altre schede.
+
+
+. Seleziona *Storage > Dashboards > Card Templates*.
+. Esplora, ordina o filtra i modelli in base al tipo di metrica, alla metrica o al tipo di risorsa di destinazione.
+. Seleziona un modello, poi seleziona *Crea biglietto da modello*.
++
+L'intervallo temporale e l'aggregazione vengono configurati a livello di dashboard. I valori che imposti si applicano a tutte le schede della dashboard.
+
+. Personalizza l'ambito, l'aggregazione, il tipo di risorsa di destinazione, le risorse di destinazione e l'intervallo di tempo.
+. Visualizza l'anteprima della carta e inserisci un nome e una descrizione.
+. Aggiungi la scheda a una dashboard esistente oppure crea una nuova dashboard.
+. Salva la dashboard.
+

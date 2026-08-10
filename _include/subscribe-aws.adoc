@@ -1,0 +1,43 @@
+= 
+:allow-uri-read: 
+
+
+Il seguente video mostra i passaggi per abbonarsi a NetApp Intelligent Services tramite AWS Marketplace:
+
+.Abbonati ai NetApp Intelligent Services tramite AWS Marketplace
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
+.Passaggi
+. Seleziona *Amministrazione > Credenziali*.
+. Seleziona *Credenziali dell'organizzazione*.
+. Seleziona il menu delle azioni per un set di credenziali associate a un agente della Console e quindi seleziona *Configura abbonamento*.
++
+Devi selezionare credenziali associate a un agente della Console. Non puoi associare un abbonamento al marketplace a credenziali associate alla NetApp Console.
+
++
+image:screenshot_aws_configure_subscription.png["Uno screenshot del menu delle azioni per un set di credenziali esistenti."]
+
+. Per associare le credenziali a un abbonamento esistente, seleziona l'abbonamento dall'elenco a discesa e seleziona *Configura*.
+. Per associare le credenziali a un nuovo abbonamento, seleziona *Aggiungi abbonamento > Continua* e segui i passaggi indicati nell'AWS Marketplace:
++
+.. Seleziona *Visualizza le opzioni di acquisto*.
+.. Seleziona *Iscriviti*.
+.. Seleziona *Configura il tuo account*.
++
+Verrai reindirizzato alla NetApp Console.
+
+.. Dalla pagina *Assegnazione abbonamento*:
++
+*** Seleziona le organizzazioni o gli account della Console a cui vuoi associare questo abbonamento.
+*** Nel campo *Sostituisci abbonamento esistente*, scegli se vuoi sostituire automaticamente l'abbonamento esistente per un'organizzazione o un account con questo nuovo abbonamento.
++
+La Console sostituisce l'abbonamento esistente per tutte le credenziali nell'organizzazione o nell'account con questo nuovo abbonamento. Se un set di credenziali non è mai stato associato a un abbonamento, questo nuovo abbonamento non sarà associato a tali credenziali.
+
++
+Per tutte le altre organizzazioni o account, devi associare manualmente l'abbonamento ripetendo questi passaggi.
+
+*** Seleziona *Salva*.
+
+
+
+
+

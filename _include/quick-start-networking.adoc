@@ -1,0 +1,8 @@
+= 
+:allow-uri-read: 
+
+
+* Una connessione di rete alle reti in cui prevedi di creare e gestire i sistemi
+* Accesso a Internet in uscita verso endpoint specifici per le operazioni quotidiane
+* L'indirizzo IP, le credenziali e il certificato HTTPS di un proxy server, se è necessario un proxy server per outbound internet
+

@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-analyzer-volume-capacity-investigate.html 
+keywords: capacity, snapshot, storage efficiency, forecast, almost full, workload analyzer, netapp console local deployment 
+summary: 'Analizza la crescita della capacità e degli snapshot su un volume utilizzando Workload Analyzer per capire lo spazio fisico, l"efficienza dello storage e le tendenze delle riserve degli snapshot.' 
+---
+= Analizza la crescita della capacità su un volume nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza Workload Analyzer nella distribuzione locale di NetApp Console per capire perché un volume sta esaurendo lo spazio.
+
+Quando un volume si sta riempiendo o le copie Snapshot occupano più spazio del previsto, esamina l'andamento della capacità e delle Snapshot nel tempo. La sezione di analisi della capacità mostra come cambiano lo spazio fisico e quello disponibile, illustra i risparmi in termini di efficienza di archiviazione e prevede quando il volume raggiungerà una soglia di capacità.
+
+Se apri l'analizzatore da un avviso o dall'inventario dei volumi, il volume è già selezionato e puoi concentrarti sulle tendenze della capacità e sulla finestra di previsione.
+
+.Passaggi
+. Apri Workload Analyzer utilizzando uno dei seguenti metodi:
++
+** Dal menu *Salute*, seleziona *Analizzatore di carico di lavoro*, quindi cerca e seleziona il volume che vuoi analizzare nel campo *Volume*.
+** Dalla pagina *Storage > Fleets > Inventory*, individua un volume che vuoi analizzare e seleziona *Analizza* dal menu delle azioni.
+** Dalla pagina *Avvisi > Panoramica*, seleziona un avviso relativo al volume che vuoi analizzare, quindi seleziona *Analizza* dai dettagli dell'avviso.
+
+
+. Imposta l'intervallo di tempo in modo che copra il periodo di crescita della capacità, poi seleziona "Analizza".
+. Scorri fino alla sezione *Analisi della capacità*.
+. Seleziona *Vista capacità* dal menu a discesa *Vista*.
++
+Il grafico mostra la capacità fisica come area impilata inferiore e la capacità disponibile come area impilata superiore. Insieme corrispondono alla dimensione totale del volume, così puoi vedere quanto rapidamente lo spazio disponibile si sta riducendo.
+
+. Passa il mouse su un punto del grafico per vedere la ripartizione dell'efficienza di archiviazione, inclusi i risparmi derivanti da deduplica, compressione e compaction, e il rapporto complessivo di efficienza di archiviazione.
++
+Un rapporto di efficienza decrescente a fronte di un aumento della capacità fisica può indicare che i dati appena scritti non vengono deduplicati o compressi con la stessa efficacia dei dati esistenti.
+
+. Per analizzare il consumo di snapshot, seleziona *Snapshot View* dal menu a discesa *View*.
++
+Il grafico mostra la riserva di Snapshot come una linea di riferimento orizzontale e la capacità di Snapshot utilizzata come un'area sottostante. Passa il mouse sopra per visualizzare lo spazio Snapshot utilizzato e la sua percentuale della riserva, il numero totale di Snapshot e l'età dello Snapshot più vecchio.
+
++
+Quando il consumo di snapshot supera la riserva, gli snapshot iniziano a consumare spazio dall'area dati del volume, riducendo lo spazio disponibile per nuove scritture.
+
+. Se il volume sposta i dati nel cloud, seleziona *Cloud Tier View* dal menu a discesa *View* per confrontare la capacità disponibile sul livello di prestazioni locale rispetto al livello di capacità cloud.
+. Attiva *Mostra previsioni* per vedere quando il volume raggiungerà una soglia di avviso o di capacità critica.
++
+La previsione della capacità richiede almeno 10 giorni di dati storici. Quando mancano meno di 30 giorni prima che il volume sia pieno, l'analizzatore identifica lo storage come quasi pieno. La previsione visualizza un messaggio informativo con una stima del tempo al superamento della soglia.
+
+
+
+.Dopo aver finito
+Usa le tendenze di capacità che osservi per decidere cosa fare dopo:
+
+* Se la capacità disponibile tende a esaurirsi, valuta la possibilità di aumentare le dimensioni del volume, abilitare l'espansione automatica o spostare i dati dal volume.
+* Se la capacità utilizzata per gli snapshot supera la riserva, rivedi la policy degli snapshot e la retention per recuperare spazio.
+* Se il rapporto di efficienza di archiviazione sta diminuendo, controlla se il tipo di dati del carico di lavoro o le impostazioni di efficienza inline stanno riducendo i risparmi. Usa link:reference-workload-analyzer-metrics.html["Scopri le metriche di Workload Analyzer nella distribuzione locale di NetApp Console"] per descrizioni dettagliate di capacità, snapshot e metriche di efficienza.
+

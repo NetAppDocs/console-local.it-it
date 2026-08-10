@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Accedi alla Console e associa l'agente della Console alla tua organizzazione. La modalità di accesso dipende dalla modalità in cui utilizzi la Console. Se utilizzi la Console in modalità standard, accedi tramite il sito web SaaS. Se utilizzi la Console in modalità limitata o privata, accedi localmente dall'host dell'agente della Console.
+
+.Passaggi
+. Apri un browser web e inserisci l'URL host dell'agente della Console:
++
+L'URL dell'host della Console può essere localhost, un indirizzo IP privato o un indirizzo IP pubblico, a seconda della configurazione dell'host. Ad esempio, se l'agente della Console si trova nel cloud pubblico senza un indirizzo IP pubblico, devi inserire un indirizzo IP privato di un host che abbia una connessione con l'host dell'agente della Console.
+
+. Registrati o accedi.
+. Dopo aver effettuato l'accesso, configura la Console:
++
+.. Specifica l'organizzazione Console da associare all'agente Console.
+.. Inserisci un nome per il sistema.
+.. Nella sezione *Stai eseguendo in un ambiente protetto?* lascia la modalità con restrizioni disattivata.
++
+La modalità limitata non è supportata quando l'agente della Console è installato in locale.
+
+.. Seleziona *Iniziamo*.
+
+
+

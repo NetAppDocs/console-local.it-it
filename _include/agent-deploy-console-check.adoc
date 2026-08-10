@@ -1,0 +1,16 @@
+= 
+:allow-uri-read: 
+
+
+. Rivedi le tue selezioni per verificare che la configurazione sia corretta.
++
+.. La check box *Convalida configurazione agente* è selezionata per impostazione predefinita per consentire alla Console di convalidare i requisiti di connettività di rete durante la distribuzione. Se la Console non riesce a distribuire l'agente, fornisce un report per aiutarti nella risoluzione dei problemi. Se la distribuzione ha esito positivo, non viene fornito alcun report.
+
+
++
+[]
+====
+Se stai ancora usando la link:reference-networking-saas-console-previous.html["endpoint precedenti"] usata per gli upgrade dell'agente, la convalida fallisce con un errore. Per evitarlo, deseleziona la check box per saltare il controllo di convalida.
+
+====
+

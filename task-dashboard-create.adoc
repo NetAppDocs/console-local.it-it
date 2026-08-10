@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-create.html 
+keywords: create dashboard, custom dashboard, add dashboard, metrics, cards, card templates, fleet monitoring, storage visibility, performance monitoring, capacity monitoring, netapp console local 
+summary: Crea una dashboard personalizzata nella distribuzione locale di NetApp Console, aggiungi schede e salva una visualizzazione di monitoraggio utilizzabile. 
+---
+= Crea dashboard per monitorare gli obiettivi nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crea una dashboard personalizzata nella distribuzione locale di NetApp Console, aggiungi schede e salva una vista di monitoraggio per le operazioni quotidiane.
+
+Se ti serve solo un sistema di monitoraggio a livello di organizzazione pronto all'uso, inizia con le dashboard predefinite della Home page. Crea una dashboard personalizzata quando hai bisogno di una visualizzazione specifica per ruolo, di un targeting a livello di risorsa o di un layout a schede su misura.
+
+.Linee guida per la dashboard di deployment locale della Console
+* Solo l'utente che crea la dashboard può visualizzarla. Non puoi condividere le dashboard con altri utenti, nemmeno aggiungendole alla Console Home page.
+* Puoi visualizzare solo le risorse per cui hai il permesso di visualizzazione. Se non vedi una risorsa nell'elenco delle risorse disponibili, non hai il permesso di visualizzarla.
+* Prima di iniziare, identifica i tipi di metriche e le risorse che vuoi che la dashboard monitori. link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"]
+
+
+
+
+[[build-a-dashboard-for-your-monitoring-goals]]
+== Crea una dashboard per i tuoi obiettivi di monitoraggio
+
+Crea una dashboard quando hai bisogno di un unico posto per monitorare le metriche che contano per il tuo ruolo, come lo stato di salute della flotta, i punti critici delle prestazioni e le tendenze degli avvisi.
+
+.Passaggi
+. Seleziona *Storage > Dashboards*.
+. Seleziona *Aggiungi dashboard*.
++
+La distribuzione locale della Console crea una nuova dashboard con un nome predefinito e senza descrizione.
+
+. Seleziona *Aggiungi carta*.
+. Seleziona il *tipo di risorsa* per la scheda, ad esempio flotta, sistema o volume e poi scegli le risorse dall'elenco delle risorse disponibili.
+. Seleziona *Avanti* per continuare a scegliere una metrica e un tipo di scheda.
+. Scegli una metrica da visualizzare. Puoi filtrare le metriche disponibili per tipo: il *Tipo di metrica*: *Prestazioni*, *Capacità*, *Stato di salute* o *Avvisi*, oppure cercare una metrica specifica per nome. Le metriche disponibili dipendono dal tipo di risorsa che hai selezionato.
++
+link:reference-dashboard-card-templates.html#metrics-list["Scopri le metriche disponibili."]
+
+. Seleziona una scheda da includere nella dashboard e seleziona *Avanti*.
++
+Puoi selezionare solo una scheda alla volta. L'anteprima della scheda mostra dati in tempo reale per la metrica e il tipo di risorsa selezionati.
+
+. Dai un nome alla tua scheda. Il nome deve essere univoco all'interno della dashboard.
+. Rivedi l'anteprima della scheda, inserisci un nome e una descrizione per la scheda, quindi seleziona *Aggiungi*.
+. Ripeti questi passaggi per le altre schede.
+. Seleziona l'icona della matita per modificare il nome e la descrizione del dashboard e descriverne lo scopo.
+. Seleziona il menu delle azioni a destra del pulsante Aggiungi scheda e seleziona *Salva dashboard*.
++
+La dashboard salvata è disponibile in *Storage > Dashboards*.
+
+. Facoltativamente, puoi aggiungere questa dashboard alla tua pagina iniziale selezionando *Aggiungi alla pagina iniziale* dal menu delle azioni. La dashboard viene aggiunta alla pagina iniziale. Solo tu puoi visualizzare le dashboard personalizzate che crei. Non è condivisa con altri.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:task-customize-dashboard-cards.html["Personalizza le schede del dashboard nella distribuzione locale di NetApp Console"]
+* link:task-dashboard-manage.html["Gestisci i dashboard nella distribuzione locale di NetApp Console"]
+

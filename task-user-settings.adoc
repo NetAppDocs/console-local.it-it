@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: task-user-settings.html 
+keywords: user profile, mfa, change password, role, login, multi-factor, authentication, dark mode, read-only mode, contact admin, AD, Active Directory, directory services 
+summary: 'Puoi modificare il tuo profilo della Console, incluso cambiare la password, abilitare l"autenticazione a più fattori (MFA) e vedere chi è il tuo amministratore della Console.' 
+---
+= Gestisci le impostazioni utente della distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, puoi modificare il profilo della tua distribuzione locale della Console, incluso cambiare la password, abilitare l'autenticazione a più fattori (MFA) e vedere chi è l'amministratore della tua Console.
+
+
+
+[[change-your-display-name]]
+== Modifica il tuo nome visualizzato
+
+Puoi cambiare il nome visualizzato della tua distribuzione locale della Console, che ti identifica agli altri utenti. Non puoi cambiare il tuo username o l'indirizzo email.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della distribuzione locale della Console per visualizzare il pannello delle impostazioni utente.
+. Seleziona l'icona *Modifica* accanto al tuo nome.
+. Inserisci il tuo nuovo nome visualizzato nel campo *Nome*.
+
+
+
+
+[[configure-multi-factor-authentication]]
+[[task-user-mfa]]
+== Configura l'autenticazione a più fattori
+
+Configura l'autenticazione a più fattori (MFA) per migliorare la sicurezza richiedendo un secondo metodo di verifica quando accedi all'implementazione locale di NetAppConsole.
+
+Gli utenti che accedono tramite il NetApp Support Site non possono abilitare MFA. Se questo è il tuo caso, non vedi l'opzione per abilitare MFA nelle impostazioni del tuo profilo.
+
+Non abilitare MFA se il tuo account utente viene utilizzato per l'accesso API. L'autenticazione a più fattori interrompe l'accesso API quando è abilitata per un account utente. Usa account di servizio per tutti gli accessi API.
+
+
+NOTE: Non puoi configurare l'autenticazione a più fattori (MFA) per il tuo account tramite la distribuzione locale della Console se il tuo account utilizza Active Directory o un altro servizio di directory integrato per l'autenticazione.
+
+.Prima di iniziare
+* Devi aver già scaricato un'app di autenticazione, come Google Authenticator o Microsoft Authenticator, sul tuo dispositivo.
+* Ti servirà la password per configurare l'autenticazione a più fattori (MFA).
+
+
+
+NOTE: Se non hai accesso alla tua app di autenticazione o perdi il codice di recupero, contatta l'amministratore della Console per aiuto.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della Console per visualizzare il pannello delle impostazioni utente.
+. Seleziona *Configura* accanto all'intestazione *Autenticazione a più fattori*.
+. Segui le istruzioni per configurare l'autenticazione a più fattori (MFA) per il tuo account.
+. Al termine della procedura, ti verrà chiesto di salvare i codici di recupero. Scegli se copiare i codici o scaricare un file di testo contenente i codici. Conserva questi codici in un luogo sicuro. Hai bisogno dei codici di recupero se perdi l'accesso alla tua app di autenticazione.
++
+
+NOTE: Se devi accedere con un codice di recupero, usali nell'ordine mostrato nell'interfaccia utente durante la richiesta del codice di recupero.
+
++
+Dopo che hai configurato l'autenticazione a più fattori (MFA), la distribuzione locale della Console ti chiede di inserire un codice monouso dalla tua app di autenticazione ogni volta che accedi.
+
+
+
+
+
+[[regenerate-your-mfa-recovery-code]]
+== Rigenera il tuo codice di recupero MFA
+
+Puoi utilizzare un codice di recupero una sola volta. Se lo perdi, creane uno nuovo.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della distribuzione locale della Console per visualizzare il pannello delle impostazioni utente.
+. Seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] accanto all'intestazione *Autenticazione a più fattori*.
+. Seleziona *Rigenera codice di ripristino*.
+. Copia i codici di ripristino generati e salvali in un luogo sicuro.
+
+
+
+
+[[delete-your-mfa-configuration]]
+== Elimina la configurazione MFA
+
+Eliminando l'autenticazione a più fattori (MFA), rimuovi il secondo passaggio di verifica per il prossimo accesso. Per usare di nuovo l'MFA, devi configurarla nuovamente dalle impostazioni utente.
+
+
+NOTE: Se non riesci ad accedere all'app di autenticazione o al codice di recupero, dovrai contattare l'amministratore della tua organizzazione per reimpostare la configurazione MFA.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della distribuzione locale della Console per visualizzare il pannello delle impostazioni utente.
+. Seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] accanto all'intestazione *Autenticazione a più fattori*.
+. Seleziona *Delete*.
+
+
+
+
+[[contact-your-organization-administrator]]
+[[contact-admin]]
+== Contatta l'amministratore della tua organizzazione
+
+Se devi contattare l'amministratore della tua organizzazione, puoi inviargli un'email direttamente dalla Console. L'amministratore gestisce gli account utente e le autorizzazioni all'interno della tua organizzazione.
+
+
+NOTE: Devi avere un'applicazione di posta elettronica predefinita configurata nel browser per usare la funzione *Contatta gli amministratori*.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della distribuzione locale della Console per visualizzare il pannello delle impostazioni utente.
+. Seleziona *Contatta gli amministratori* per inviare un'email all'amministratore della tua organizzazione.
+. Seleziona l'applicazione di posta elettronica da utilizzare.
+. Completa l'email e seleziona *Invia*.
+
+
+
+
+[[configure-dark-mode-dark-theme]]
+== Configura la modalità scura (tema scuro)
+
+Puoi impostare la distribuzione locale della Console per visualizzarla in modalità scura.
+
+.Passaggi
+. Seleziona l'icona del profilo nell'angolo in alto a destra della distribuzione locale della Console per visualizzare il pannello delle impostazioni utente.
+. Sposta il cursore *Dark theme* per attivarlo.
+

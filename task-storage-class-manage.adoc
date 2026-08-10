@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: task-storage-class-manage.html 
+keywords: create storage class, storage class, define, policy, netapp console 
+summary: Crea una classe di archiviazione nella distribuzione locale di NetApp Console per standardizzare il provisioning dello storage. 
+---
+= Crea classi di archiviazione nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crea una classe di archiviazione nella distribuzione locale della NetApp Console per standardizzare il modo in cui lo storage viene effettuato il provisioning e gestito tra le tue flotte. Una classe di archiviazione è un modello riutilizzabile che raggruppa le policy della classe di archiviazione, come obiettivi di prestazioni, comportamento della capacità, requisiti di sicurezza e pianificazioni di protezione dei dati, in un'unica definizione denominata.
+
+Quando gli utenti (o l'automazione) eseguono il provisioning di un volume o di una LUN utilizzando una classe di storage, NetApp Console local deployment applica automaticamente i criteri della classe. Dopo il provisioning, Console local deployment monitora continuamente i carichi di lavoro rispetto alla classe di storage per rilevare deviazioni e può guidare o automatizzare la correzione per ripristinare la conformità.
+
+
+
+[[before-you-begin]]
+== Prima di iniziare
+
+* Individua almeno un ONTAP cluster così la distribuzione locale della Console abbia destinazioni per i suggerimenti di posizionamento.
+* Assicurati di avere il ruolo di Organization admin (o un ruolo che conceda le autorizzazioni di gestione delle storage class nel tuo ambiente).
+* Crea (o identifica) le policy per le classi di archiviazione che intendi utilizzare—prestazioni, capacità, sicurezza e protezione dei dati—perché le classi di archiviazione sono composte da policy.
+
+
+
+
+[[create-a-storage-class]]
+=== Creare una storage class
+
+Devi avere il ruolo di admin dell'organizzazione, admin della cartella o admin della flotta per aggiungere una classe di archiviazione.
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Storage classes*.
+. Seleziona *Aggiungi*.
+. Nella sezione *Informazioni di base*, inserisci quanto segue:
++
+** *Nome della classe di archiviazione*: Inserisci un nome univoco per la classe di archiviazione.
+** *Descrizione*: (Facoltativo) Inserisci una descrizione della classe di archiviazione.
+** *App consigliate*: (Facoltativo) Inserisci un elenco di app consigliate per la storage class.
+
+
+. In *Criteri di archiviazione*, seleziona uno o più criteri da associare alla classe di archiviazione.
+. Seleziona *Aggiungi*.
+
+
+
+
+[[customize-an-existing-storage-class]]
+=== Personalizza una classe di archiviazione esistente
+
+Devi avere il ruolo di Organization admin, Folder admin o fleet admin per personalizzare una classe di archiviazione esistente.
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Storage classes*.
+. Per la classe di archiviazione che vuoi personalizzare, seleziona *…* e poi seleziona *Duplica*.
+. Nella sezione *Informazioni di base*, aggiorna quanto segue secondo necessità:
++
+** *Nome della classe di archiviazione*: Inserisci un nome univoco per la classe di archiviazione.
+** *Descrizione*: (Facoltativo) Inserisci una descrizione della classe di archiviazione.
+** *App consigliate*: (Facoltativo) Inserisci un elenco di app consigliate per la storage class.
+
+
+. In *Criteri di archiviazione*, seleziona uno o più criteri da associare alla classe di archiviazione.
+. Seleziona *Aggiungi*.
+
+
+
+
+[[edit-a-user-defined-storage-class]]
+=== Modifica una classe di archiviazione definita dall'utente
+
+Devi avere il ruolo di admin dell'organizzazione, o di admin della cartella o della fleet, per modificare una classe di storage definita dall'utente.
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Storage classes*.
+. Per la classe di archiviazione che vuoi modificare, seleziona *…* e poi seleziona *Modifica*.
+. Nella sezione *Informazioni di base*, modifica quanto segue secondo necessità:
++
+** *Nome della classe di archiviazione*: Inserisci un nome univoco per la classe di archiviazione.
+** *Descrizione*: (Facoltativo) Inserisci una descrizione della classe di archiviazione.
+** *App consigliate*: (Facoltativo) Inserisci un elenco di app consigliate per la storage class.
+
+
+. In *Criteri di archiviazione*, seleziona uno o più criteri da associare alla classe di archiviazione.
+. Seleziona *Modifica*.
+
+
+
+
+[[delete-a-user-defined-storage-class]]
+=== Elimina una classe di archiviazione definita dall'utente
+
+Devi avere il ruolo di Organization admin, Folder admin o fleet admin per eliminare una classe di archiviazione definita dall'utente.
+
+.Passaggi
+. Seleziona *Storage > Management*.
+. Seleziona *Storage classes*.
+. Per la storage class che vuoi eliminare, seleziona *…* e poi seleziona *Elimina*.
+. Seleziona *Delete*.
++
+Tieni presente che questa operazione non può essere annullata. Se elimini una classe di storage attualmente in uso, tutti i volumi o le LUN a cui è associata tale classe continueranno a funzionare ma non saranno più collegati alla classe eliminata.
+
+

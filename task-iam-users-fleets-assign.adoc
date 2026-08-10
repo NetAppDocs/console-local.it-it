@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-iam-users-fleets-assign.html 
+keywords: assign members, fleet, folder, access control, roles, storage management, netapp console 
+summary: Verifica o modifica le assegnazioni di accesso dei membri per cartelle e gruppi di archiviazione in NetApp Console distribuzione locale. 
+---
+= Visualizza o modifica le assegnazioni di accesso alla flotta nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verifica o modifica le assegnazioni di accesso dei membri per cartelle e storage fleet nella distribuzione locale di NetApp Console. Gli admin di cartelle e storage fleet di solito lavorano da questa vista perché mostra solo gli ambiti che amministrano.
+
+.Ruoli di accesso richiesti
+Super amministratore, amministratore dell'organizzazione o amministratore di cartella o di flotta. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+In alternativa, puoi gestire tutti i ruoli di un determinato membro in più cartelle o fleet. link:task-iam-manage-roles.html["Gestisci l'accesso dei membri"].
+
+
+
+[[how-folder-and-fleet-access-works]]
+== Come funziona l'accesso alle cartelle e alle fleet
+
+La distribuzione locale tramite console utilizza il controllo degli accessi in base al ruolo (RBAC). Un ruolo che assegni a livello di cartella si applica a tutte le fleet e alle sottocartelle all'interno di quella cartella; un ruolo che assegni a livello di fleet si applica solo alle risorse di quella fleet. link:concept-iam-rbac.html#role-inheritance["Scopri l'ereditarietà dei ruoli nella distribuzione locale di NetApp Console"].
+
+
+NOTE: Non puoi modificare un ruolo a livello di flotta se un membro lo eredita da una cartella o dall'organizzazione. Per modificare l'accesso ereditato, cambia il ruolo a un livello superiore.
+
+
+
+[[view-members-assigned-to-a-folder-or-fleet]]
+== Visualizza i membri assegnati a una cartella o a una fleet
+
+Verifica esattamente chi può gestire una cartella o un fleet specifico. Ad esempio, prima di associare un nuovo cluster ONTAP alla  `Production-US-East` fleet, apri la scheda Accesso della fleet per confermare chi ha accesso.
+
+.Passaggi
+. Seleziona *Amministrazione* > *Identità e accesso*.
+. Seleziona *Organization*.
+. Dalla pagina Organizzazione, vai a una cartella o a una fleet nella tabella, seleziona image:icon-action.png["Un'icona con tre puntini"] e poi seleziona *Modifica cartella* o *Modifica fleet*.
+. Seleziona *Access* per visualizzare i membri che hanno accesso alla cartella o al fleet.
+
+
+
+
+[[modify-member-access-from-a-folder-or-fleet]]
+== Modifica l'accesso dei membri da una cartella o da una fleet
+
+Modifica i ruoli dei membri che già appartengono alla tua organizzazione, con ambito limitato a una singola cartella o flotta. Ad esempio, quando un membro del team passa da una flotta di sviluppo a una flotta di produzione, promuovilo da Storage viewer a Storage admin nella flotta di produzione senza influire sul suo accesso altrove.
+
+Per aggiungere un nuovo membro e assegnargli il suo primo ruolo, usa invece l'attività di onboarding. link:task-iam-manage-members-permissions.html["Aggiungi membri e assegna ruoli"].
+
+.Passaggi
+. Dalla pagina Organizzazione, vai a una cartella o a una fleet nella tabella, seleziona image:icon-action.png["Un'icona con tre puntini"] e poi seleziona *Modifica cartella* o *Modifica fleet*.
+. Seleziona *Access* per visualizzare l'elenco dei membri che hanno accesso.
+. Modifica l'accesso dei membri:
++
+** *Modifica il ruolo di un membro*: Per qualsiasi membro con un ruolo diverso da Organization admin, seleziona il ruolo attuale e scegli un nuovo ruolo. La modifica si applica solo a questo livello; i ruoli ereditati da un livello superiore non vengono visualizzati qui.
+** *Rimuovi l'accesso del membro a questo ambito*: Per un membro a cui è stato assegnato un ruolo direttamente in questa cartella o flotta, rimuovi il ruolo per revocarne l'accesso a questo ambito. Questa operazione non rimuove il membro dall'organizzazione né influisce sui ruoli che ha in altri ambiti.
++
+link:task-iam-manage-roles.html#remove-a-member-from-your-organization["Rimuovi un membro dalla tua organizzazione"].
+
+
+
+. Seleziona *Applica*.
+

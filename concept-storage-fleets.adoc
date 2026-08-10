@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: concept-storage-fleets.html 
+keywords: storage fleets, fleet management, storage organization, folders, ONTAP, clusters, storage systems, resource grouping, delegated administration, fleet design, netapp console local 
+summary: 'Una storage fleet raggruppa i sistemi di archiviazione che gestisci insieme nella distribuzione locale della NetApp Console. Usa le cartelle per raggruppare le fleet correlate. Puoi applicare criteri, concedere l"accesso e monitorare lo stato di salute nell"ambito desiderato.' 
+---
+= Scopri le flotte di storage nella distribuzione locale della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una storage fleet raggruppa i sistemi di archiviazione che gestisci insieme nella distribuzione locale della NetApp Console. Usa le cartelle per raggruppare le fleet correlate. Puoi applicare criteri, concedere l'accesso e monitorare lo stato di salute nell'ambito desiderato.
+
+
+
+[[why-fleets-matter]]
+== Perché le flotte sono importanti
+
+Con la crescita degli ambienti di storage, gestire i singoli cluster in isolamento diventa impraticabile. Le flotte ti offrono un modo strutturato per raggruppare i sistemi di storage correlati, così puoi agire su di essi come un'unica unità. Invece di configurare policy o controlli di accesso cluster per cluster, li applichi una sola volta a livello di flotta. Questo riduce il lavoro amministrativo ripetitivo e garantisce che ogni cluster in una flotta operi secondo gli stessi standard.
+
+
+
+[[how-folders-and-fleets-organize-your-resources]]
+== Come cartelle e gruppi organizzano le tue risorse
+
+La gerarchia delle risorse della tua organizzazione è composta da cartelle e fleet. Le cartelle raggruppano le fleet correlate, e le fleet raggruppano i sistemi di storage.
+
+* L'organizzazione è il livello più alto della gerarchia e rappresenta la tua azienda.
+* Le cartelle ti aiutano a organizzare flotte correlate. Ad esempio, potresti creare una cartella per ogni regione o unità aziendale e poi creare flotte all'interno di ciascuna cartella. Le cartelle possono contenere altre cartelle o flotte, ma non possono avere sistemi di storage direttamente associati. Quando assegni un ruolo a un membro a livello di cartella, il membro eredita quel ruolo per tutte le flotte all'interno della cartella.
+* Le *flotte* raggruppano i sistemi di archiviazione che gestisci insieme. Associ i sistemi di archiviazione alle flotte e assegni i membri alle flotte per concedere loro l'accesso.
+
+
+
+NOTE: Le cartelle sono uno strumento organizzativo e non sono visibili ai membri che non hanno autorizzazioni IAM, come il ruolo di Organization admin, Folder admin o fleet admin. I membri accedono alle flotte, non alle cartelle.
+
+
+
+[[fleet-examples]]
+== Esempi di fleet
+
+Il modo in cui organizzi le flotte dipende dal tuo modello operativo. Gli approcci più comuni includono:
+
+* *Per ambiente* Crea flotte separate per i carichi di lavoro di produzione, sviluppo e test. Questo mantiene lo storage di produzione soggetto a criteri di performance e capacità più stringenti, consentendo al contempo maggiore flessibilità negli ambienti di livello inferiore.
+* *Per unità aziendale* Raggruppa i cluster che servono un reparto specifico—finanza, ingegneria o risorse umane—in una flotta dedicata. Puoi quindi assegnare le responsabilità di gestione dello storage ai membri del team all'interno di tale unità aziendale senza esporre loro altre flotte.
+* *Per posizione o data center* Quando i cluster sono distribuiti su più siti, organizzare per posizione ti permette di monitorare lo stato di salute a livello di sito, applicare criteri di tiering specifici per regione e tenere traccia del consumo di capacità per sito.
+* *Per tier applicativo* Raggruppa i cluster che ospitano una specifica classe di carico di lavoro—database, condivisioni di file o macchine virtuali—così puoi applicare una classe di storage ottimizzata per il profilo di performance di quel carico di lavoro su tutta la flotta.
+
+
+
+TIP: Utilizza le cartelle per aggiungere un ulteriore livello di organizzazione. Ad esempio, crea una cartella per ogni regione e poi crea fleet basate sull'ambiente all'interno di ciascuna cartella regionale.
+
+
+
+[[how-fleets-connect-to-storage-classes]]
+== Come le flotte si connettono alle classi di archiviazione
+
+Quando associ una classe di storage a una fleet, la distribuzione locale della Console applica i criteri di quella classe a tutto il provisioning dello storage all'interno della fleet. I carichi di lavoro di cui viene eseguito il provisioning all'interno della fleet ereditano automaticamente le regole di performance, capacità e tiering definite nella classe di storage, senza che gli amministratori debbano selezionare o verificare le impostazioni dei criteri al momento del provisioning. Questo rende le fleet il modo principale per garantire un comportamento di storage coerente tra cluster che servono uno scopo comune.
+
+
+
+[[how-folders-and-fleets-support-access-control-and-visibility]]
+== Come cartelle e fleet supportano il controllo degli accessi e la visibilità
+
+Cartelle e fleet fungono da limiti per l'accesso degli utenti:
+
+* Quando assegni un ruolo a livello di *cartella*, il membro eredita quel ruolo per tutte le flotte e le risorse all'interno della cartella. Questo permette agli admin dell'organizzazione di delegare le responsabilità amministrative creando cartelle e assegnando un ruolo di admin di cartella o di flotta. Questi admin possono poi gestire tutte le flotte nella loro cartella senza accedere all'intera organizzazione.
+* Quando assegni un ruolo a livello di *flotta*, il membro ha accesso solo ai sistemi di archiviazione all'interno di quella flotta.
+
+
+Questo ti permette di delegare la gestione dello storage ai membri del team o ai responsabili delle applicazioni senza concedere loro visibilità su parti non correlate della tua infrastruttura. La distribuzione locale della NetApp Console offre il monitoraggio dello stato e delle performance a livello di flotta, così puoi vedere lo stato di tutti i cluster di una flotta da un'unica schermata, identificare tempestivamente i problemi e intervenire prima che influiscano sui carichi di lavoro.

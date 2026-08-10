@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-get-started.html 
+keywords: dashboards, quick start, get started, custom dashboards, predefined dashboards, monitoring, netapp console local 
+summary: Inizia a usare le dashboard nella distribuzione locale di NetApp Console esaminando la Home page e le dashboard predefinite, creando dashboard personalizzate e mantenendole aggiornate. 
+---
+= Inizia a utilizzare le dashboard nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, segui questo flusso di lavoro per monitorare da una visione generale a una più specifica: esamina la dashboard della Home page, esamina le dashboard predefinite, crea dashboard personalizzate e mantieni aggiornate le dashboard.
+
+.Ruoli di accesso richiesti
+Tutti i ruoli. Le dashboard mostrano solo le risorse che sei autorizzato a visualizzare. Se non vedi una risorsa nell'elenco delle risorse disponibili, non hai il permesso di visualizzarla.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Verifica lo stato di salute di base nella Home page
+[role="quick-margin-para"]
+Usa la dashboard della pagina iniziale per controllare la capacità a livello di organizzazione, gli avvisi, le prestazioni e lo stato della protezione dei dati.
+
+[role="quick-margin-list"]
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+* link:concept-monitor-storage.html["Scopri il monitoraggio dello storage nella distribuzione locale di NetApp Console"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Esamina altri dashboard predefiniti
+[role="quick-margin-para"]
+Apri *Archiviazione > Dashboard* per visualizzare le dashboard predefinite e ottenere ulteriori visualizzazioni specifiche per il tuo ruolo.
+
+[role="quick-margin-list"]
+* link:task-dashboard-manage.html["Gestisci i dashboard nella distribuzione locale di NetApp Console"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Crea dashboard personalizzate per un monitoraggio mirato
+[role="quick-margin-para"]
+Crea dashboard personalizzate quando hai bisogno di visualizzazioni mirate per risorse, metriche e intervalli di tempo selezionati.
+
+[role="quick-margin-list"]
+* link:task-dashboard-create.html["Crea una dashboard personalizzata"]
+* link:task-customize-dashboard-cards.html["Personalizza le schede del dashboard nella distribuzione locale di NetApp Console"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Mantieni aggiornate le dashboard
+[role="quick-margin-para"]
+Aggiorna le dashboard quando cambiano le priorità modificando, duplicando o eliminando le dashboard personalizzate.
+
+[role="quick-margin-list"]
+* link:task-dashboard-manage.html["Gestisci i dashboard nella distribuzione locale di NetApp Console"]
+* link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"]
+
+
+.Informazioni correlate
+* link:concept-custom-dashboards.html["Scopri i dashboard personalizzati nella distribuzione locale di NetApp Console"]
+* link:task-storage-dashboard.html["Visualizza le metriche della pagina Home nella distribuzione locale di NetApp Console"]
+

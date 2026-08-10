@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-iam-rename-organization.html 
+keywords: rename organization, change organization name, name change, rename, change name, iam, ID, integration, fleet, organization, API, identity and access management 
+summary: 'Se necessario, puoi cambiare il nome dell"organizzazione di distribuzione locale della NetApp Console.' 
+---
+= Gestisci la tua organizzazione di distribuzione locale e gli ID flotta della NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nella distribuzione locale di NetApp Console, la tua organizzazione NetApp Console ha un nome e un ID. Puoi scegliere un nome per la tua organizzazione per aiutarti a identificarla. Potresti anche aver bisogno di recuperare l'ID dell'organizzazione per alcune integrazioni.
+
+.Ruoli di accesso richiesti
+Super amministratore o amministratore dell'organizzazione. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+
+
+
+[[rename-your-organization]]
+== Rinomina la tua organizzazione
+
+Puoi rinominare la tua organizzazione.
+
+.Passaggi
+. Seleziona *Amministrazione > Identità e accesso*.
+. Seleziona *Organization*.
+. Dalla pagina *Organizzazione*, vai alla prima riga della tabella, seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"] e poi seleziona *Modifica organizzazione*.
++
+image:screenshot-iam-edit-organization.png["Uno screenshot della pagina Panoramica che mostra l'icona delle azioni e l'opzione Modifica organizzazione."]
+
+. Inserisci il nome della nuova organizzazione e seleziona *Applica*.
+
+
+
+
+[[get-the-organization-id]]
+== Ottieni l'ID dell'organizzazione
+
+L'ID dell'organizzazione viene utilizzato per alcune integrazioni con la Console.
+
+Puoi visualizzare l'ID dell'organizzazione dalla pagina Organizzazioni e copiarlo negli appunti quando ti serve.
+
+.Passaggi
+. Seleziona *Amministrazione > Identità e accesso* > *Organizzazione*.
+. Nella pagina *Organizzazione*, cerca l'ID della tua organizzazione nella barra di riepilogo e copialo negli appunti. Puoi salvarlo per usarlo più tardi oppure copiarlo direttamente dove ti serve.
+
+
+
+
+[[obtain-the-id-for-a-fleet]]
+[[fleet-id]]
+== Ottieni l'ID per una flotta
+
+Devi ottenere l'ID della flotta se usi l'API.
+
+.Passaggi
+. Dalla pagina *Organizzazione*, vai a una flotta nella tabella e seleziona image:icon-action.png["Un'icona composta da tre punti affiancati"]
++
+Viene visualizzato l'ID della flotta.
+
+. Per copiare l'ID, seleziona il pulsante copia.
++
+image:screenshot-iam-project-id.png["Uno screenshot della tabella delle cartelle e delle flotte che mostra l'ID della flotta dopo aver selezionato il menu delle azioni per una flotta."]
+
+
+
+.Informazioni correlate
+* link:concept-identity-and-access-management.html["Scopri la gestione delle identità e degli accessi"]
+* link:task-iam-fleet-mgmt-get-started.html["Inizia a usare identità e accesso in NetApp Console"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["Scopri le API per l'identità e l'accesso"^]
+

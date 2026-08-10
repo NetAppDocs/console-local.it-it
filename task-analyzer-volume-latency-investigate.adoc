@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: task-analyzer-volume-latency-investigate.html 
+keywords: latency, slow performance, delay center, workload analyzer, investigate, netapp console 
+summary: Analizza la latenza su un volume utilizzando Workload Analyzer per identificare quale parte del percorso I/O sta causando tempi di risposta lenti. 
+---
+= Analizza l'elevata latenza su un volume nella distribuzione locale di NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza Workload Analyzer nella distribuzione locale della NetApp Console per individuare la causa dei tempi di risposta lenti di un volume.
+
+Se apri l'analizzatore da un avviso o dall'inventario dei volumi, il volume è già selezionato e puoi concentrarti sull'intervallo di tempo e sulle suddivisioni del grafico.
+
+Quando le prestazioni di un'applicazione si degradano, identifica quale parte del percorso I/O sta causando il rallentamento. La sezione di analisi della latenza suddivide il tempo di risposta per centro di ritardo, così puoi distinguere tra problemi di rete, sovraccarico di elaborazione dati, contesa aggregata e altri fattori.
+
+.Passaggi
+. Apri Workload Analyzer utilizzando uno dei seguenti metodi:
++
+** Dal menu *Salute*, seleziona *Analizzatore di carico di lavoro*, quindi cerca e seleziona il volume che vuoi analizzare nel campo *Volume*.
+** Dalla pagina *Storage > Fleets > Inventory*, individua un volume che vuoi analizzare e seleziona *Analizza* dal menu delle azioni.
+** Dalla pagina *Avvisi > Panoramica*, seleziona un avviso relativo alla capacità per il volume che vuoi esaminare, quindi seleziona *Analizza* dai dettagli dell'avviso.
+
+
+. Imposta l'intervallo di tempo in modo che copra il periodo in cui si è verificato il problema di prestazioni, quindi seleziona "Analizza".
+. Consulta la sezione *Cronologia degli eventi* per vedere le modifiche di configurazione e gli avvisi che corrispondono all'aumento della latenza.
++
+L'analizzatore traccia gli eventi di modifica della configurazione (icona a forma di chiave inglese) e gli eventi di avviso (icone di avviso e critiche) lungo lo stesso asse temporale del grafico della latenza, rendendo facile vedere se una modifica ha preceduto il degrado.
+
+. Nella sezione *Latenza*, apri il menu a tendina *Visualizza* e seleziona *Analisi per centro di ritardo*. Il grafico mostra il contributo di ciascun centro di ritardo alla latenza totale nel tempo. I centri di ritardo includono:
++
+** latenza di lettura
+** latenza di scrittura
+** Altra latenza
+
+
+. Passa il mouse sopra un punto del grafico in cui la latenza è più elevata per vedere il valore di ciascun centro di ritardo e la sua percentuale della latenza totale.
++
+Il centro di ritardo più elevato di solito indica la risorsa contesa. Quando una risorsa condivisa non riesce a tenere il passo con la domanda, i volumi che la utilizzano attendono più a lungo per I/O. Riduci il carico su quella risorsa, ad esempio spostando i carichi di lavoro o regolando un limite QoS, per ridurre la latenza.
+
+. Individua il fattore dominante e usa il valore per decidere i prossimi passi:
++
+** Un'elevata *latenza di lettura* potrebbe indicare una contesa del disco. Controlla la sezione *Utilizzo delle risorse* per confermare la percentuale di occupazione aggregata.
+** Un'elevata *latenza di scrittura* potrebbe indicare la saturazione della NIC o problemi nel percorso di rete al di fuori del cluster.
+** Un'elevata *latenza Altro* potrebbe indicare che le impostazioni di efficienza inline stanno consumando più CPU di quanto il carico di lavoro possa tollerare. Valuta di regolare le impostazioni di efficienza o il QoS.
+** Un'elevata *latenza cloud* potrebbe indicare che il carico di lavoro accede frequentemente a dati cold sul livello di capacità. Prendi in considerazione di modificare la policy di tiering.
+
+
+. Se i centri di ritardo non sono responsabili del rallentamento, controlla la sezione *Capacity Analysis*. Quando il sistema ONTAP è pieno per oltre l'85%, l'elevato utilizzo può causare problemi di prestazioni indipendentemente dalla suddivisione dei centri di ritardo.
+. Se la latenza è aumentata immediatamente dopo un evento di modifica, usa i dettagli dell'evento e i grafici correlati insieme per individuare la causa probabile:
++
+** Per le modifiche alla QoS, confronta la linea della latenza con le linee del limite QoS e rivedi i grafici del throughput per verificare se la domanda sta raggiungendo il limite imposto dalle policy.
+** Per gli spostamenti di aggregati o volumi, confronta il picco di latenza con i valori di utilizzo del nodo e dell'aggregato mostrati per lo stesso intervallo di tempo.
+** Per le modifiche alle policy di tiering, esamina il contributo della latenza del cloud per determinare se l'accesso ai dati non utilizzati è aumentato dopo la modifica.
+
+
+
+
+.Dopo aver finito
+Se il problema è causato da un errore di configurazione o di posizionamento e la distribuzione locale della Console può risolverlo, l'avviso sul volume potrebbe offrire un'opzione Fix-It.
+
+link:reference-workload-analyzer-metrics.html["Scopri le metriche di Workload Analyzer nella distribuzione locale di NetApp Console"].
