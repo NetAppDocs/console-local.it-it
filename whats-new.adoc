@@ -21,4 +21,4 @@ Scopri le nuove funzionalità e i miglioramenti dell'ultima versione della distr
 [[introducing-netapp-console-local-deployment]]
 === Presentazione della distribuzione locale di NetApp Console
 
-https://docs.netapp.com/us-en/console-local/netapp-console-local.html["Scopri la distribuzione locale di NetApp Console"].
+https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["Scopri la distribuzione locale di NetApp Console"].
