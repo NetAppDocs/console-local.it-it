@@ -63,7 +63,7 @@ NetApp supporta l'installazione della distribuzione locale della NetApp Console 
 
 Scarica l'OVA.
 
-. Scarica il software di distribuzione locale della Console dal sito di supporto NetApp.
+. Scarica il software di distribuzione locale della Console da link:https://mysupport.netapp.com/site/products/all/details/ncl/downloads-tab["Sito di supporto NetApp"^].
 
 
 

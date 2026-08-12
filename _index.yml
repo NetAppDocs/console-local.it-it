@@ -96,7 +96,7 @@ indexpage:
     links:
     - title: NetApp Console distribuzione locale
       url: https://www.netapp.com/console
-    - title: NetApp Data Services
-      url: https://www.netapp.com/data-services/
     - title: Community NetApp
       url: https://community.netapp.com/
+    - title: NetApp Trust Center
+      url: https://trust.netapp.com/
