@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-console-local-vm-config.html 
-keywords: Console local VM, vcenter, esxi, increase cpu, increase ram, vm maintenance, Console local maintenance, Console local operating system, Console local host 
-summary: 'Dopo che hai distribuito la Console local deployment, puoi apportare modifiche al tuo host VCenter o ESXi esistente. Ad esempio, puoi aumentare la CPU o la RAM dell"istanza di macchina virtuale che ospita la Console local deployment.' 
+keywords: Console local VM, vcenter, esxi, vm maintenance, Console local maintenance, Console local operating system, Console local host 
+summary: Dopo che hai distribuito la Console local deployment, puoi apportare modifiche al tuo host VCenter o ESXi esistente. 
 ---
 = Gestisci il tuo vCenter o host ESXi per la distribuzione locale della NetApp Console
 :hardbreaks:
@@ -14,11 +14,10 @@ summary: 'Dopo che hai distribuito la Console local deployment, puoi apportare m
 
 
 [role="lead"]
-Nella NetApp Console distribuzione locale, puoi apportare modifiche al tuo VCenter o host ESXi esistente dopo aver distribuito la Console distribuzione locale. Ad esempio, puoi aumentare la CPU o la RAM dell'istanza di macchina virtuale che ospita la Console distribuzione locale.
+Nella NetApp Console distribuzione locale, puoi apportare modifiche al tuo VCenter o host ESXi esistente dopo aver distribuito la Console distribuzione locale.
 
 Esegui queste attività di manutenzione utilizzando la console web della macchina virtuale:
 
-* Aumenta la dimensione del disco
 * Riavvia la distribuzione locale della Console
 * Aggiorna le rotte statiche
 * Aggiorna i domini di ricerca
@@ -55,37 +54,6 @@ Puoi cambiare la password per l’utente  `maint`.
 . Accedi all'istanza di macchina virtuale utilizzando il nome utente e la password che hai specificato quando hai creato l'istanza di macchina virtuale. Il nome utente è  `maint` e la password è quella che hai specificato quando hai creato l'istanza di macchina virtuale.
 . Premi  `1`Invio per visualizzare il  `System Configuration`menu.
 . Inserisci  `1` per cambiare la password dell'utente di manutenzione e segui le istruzioni visualizzate sullo schermo.
-
-
-
-
-[[increase-the-cpu-or-ram-of-the-vm-instance]]
-=== Aumenta la CPU o la RAM dell'istanza di macchine virtuali
-
-Puoi aumentare la CPU o la RAM dell'istanza di macchina virtuale che ospita la distribuzione locale della Console.
-
-Modifica le impostazioni dell'istanza di macchina virtuale nel tuo VCenter o host ESXi, quindi usa la Console di manutenzione per applicare le modifiche.
-
-.Passaggi nel client VSphere
-. Apri il client vSphere ed effettua l'accesso al tuo vCenter.
-. Seleziona l'istanza di macchina virtuale che ospita la distribuzione locale della Console.
-. Fai clic con il pulsante destro del mouse sull'istanza di macchina virtuale e seleziona *Modifica impostazioni*.
-. Aumenta lo spazio su disco rigido utilizzato per /opt o per la partizione /var.
-+
-.. Seleziona *Hard Disk 2* per aumentare lo spazio del disco rigido utilizzato per /opt.
-.. Seleziona *Hard Disk 3* per aumentare lo spazio su disco rigido utilizzato per /var.
-
-
-. Salva le modifiche.
-
-
-.Passaggi nella console di manutenzione
-. Apri il client vSphere ed effettua l'accesso al tuo vCenter.
-. Seleziona l'istanza di macchina virtuale che ospita la distribuzione locale della Console.
-. Seleziona *Avvia console Web*.
-. Accedi all'istanza di macchina virtuale utilizzando il nome utente e la password che hai specificato quando hai creato l'istanza di macchina virtuale. Il nome utente è  `maint` e la password è quella che hai specificato quando hai creato l'istanza di macchina virtuale.
-. Accedi al  `1 to view the `System Configuration` menu.
-. Accedi  `2` e segui le istruzioni visualizzate sullo schermo. La console esegue una scansione per rilevare nuove impostazioni e aumenta le dimensioni delle partizioni.
 
 
 

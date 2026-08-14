@@ -2160,19 +2160,8 @@
   <block id="16b1391fb12c1729b459d4078411bff9" category="cell">Un client ha tentato di connettersi alla condivisione privilegiata ONTAP_ADMIN$, ma l'utente connesso non fa parte di alcun pool di scanner Vscan attivo su questa SVM.</block>
   <block id="ffeaca4f7d6a46d7049fc8e2b7f0b27b" category="cell">Monitoraggio anti-ransomware del volume</block>
   <block id="f36dfd228964cdbde57b7f8b77815fd4" category="cell">Lo stato anti-ransomware di un volume è cambiato.</block>
-  <block id="8750ee5b8e03e45a2b63152d73f5465c" category="summary">L'agente Console utilizza porte _in entrata_ quando lo installi manualmente su un host Linux locale. Consulta queste porte per la pianificazione.</block>
-  <block id="741d67235c3ef4adaff2b42902e2d185" category="doc">Porte per l'agente Console on-premises nella distribuzione locale di NetApp Console</block>
-  <block id="970d420fc1a295c82b114cc434d08e14" category="paragraph">Nella distribuzione locale della NetApp Console, l'agente della Console utilizza porte _in entrata_ quando viene installato manualmente su un host Linux locale. Consulta queste porte per la pianificazione.</block>
-  <block id="186772c5d8658de6d80f0ce647f8b68c" category="paragraph">Queste regole in entrata si applicano a tutte le modalità di distribuzione della NetApp Console.</block>
   <block id="888a77f5ac0748b6c8001822417df8b6" category="cell">Protocollo</block>
   <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">Porta</block>
-  <block id="293c9ea246ff9985dc6f62a650f78986" category="cell">HTTP</block>
-  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
-  <block id="63b34d7f22329c0eb7915fca7a346007" category="list-text">Fornisce accesso HTTP dai browser web dei client all'interfaccia utente locale</block>
-  <block id="7e0ccd7729abca8ae58e9ceff3fd0b87" category="list-text">Utilizzato durante il processo di aggiornamento di Cloud Volumes ONTAP</block>
-  <block id="0e8433f9a404f1f3ba601c14b026d321" category="cell">HTTPS</block>
-  <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443</block>
-  <block id="2f0c197eb73a7c6da10b03384f241025" category="cell">Fornisce accesso HTTPS dai browser web dei client all'interfaccia utente locale</block>
   <block id="67ff18000868836147456b90ed3c09d8" category="summary">Consulta i criteri di classe di archiviazione definiti dal sistema disponibili nella distribuzione locale di NetApp Console.</block>
   <block id="e5c10406aeb9ecc88bc3d6ff3824ca76" category="doc">Esamina le policy predefinite delle classi di archiviazione nella NetApp Console distribuzione locale</block>
   <block id="06870dc681e77e4ce51cc638cf6d849a" category="paragraph">NetApp Console deployment locale include criteri definiti dal sistema per tutti e quattro i tipi di criteri. Usa questo riferimento per identificare quale criterio si adatta meglio ai requisiti del tuo carico di lavoro quando crei o personalizzi una classe di archiviazione.</block>
@@ -2600,10 +2589,7 @@
   <block id="7cdb1f2af961d23797553a855f761e28" category="list-text">Dopo che il test ha esito positivo, seleziona *Salva* per creare il webhook.</block>
   <block id="ff67c1e8def8da7cf2d07b0c822de82b" category="inline-link-macro">Scopri come creare regole di avviso e assegnare webhook per la consegna degli avvisi.</block>
   <block id="0f877db416e2ad40a2e559c42f1ce5cf" category="paragraph">Dopo aver salvato il webhook, è disponibile per gli utenti selezionarlo dove i webhook sono supportati, ad esempio nelle opzioni di invio degli avvisi. <block ref="669ccaec6c1dcee5862e49b40f39ec42" category="inline-link-macro-rx"></block></block>
-  <block id="086ed22d27145a0af40cfd83a074e87c" category="summary">Dopo che hai distribuito la Console local deployment, puoi apportare modifiche al tuo host VCenter o ESXi esistente. Ad esempio, puoi aumentare la CPU o la RAM dell'istanza di macchina virtuale che ospita la Console local deployment.</block>
-  <block id="4eea2d45bb5749e6b54f45f112048c3f" category="paragraph">Nella NetApp Console distribuzione locale, puoi apportare modifiche al tuo VCenter o host ESXi esistente dopo aver distribuito la Console distribuzione locale. Ad esempio, puoi aumentare la CPU o la RAM dell'istanza di macchina virtuale che ospita la Console distribuzione locale.</block>
   <block id="94e57c616c0770ea6904ed2397bb0c43" category="paragraph">Esegui queste attività di manutenzione utilizzando la console web della macchina virtuale:</block>
-  <block id="9a3ecb0cd9521bfd7a2e3a2834d9a866" category="list-text">Aumenta la dimensione del disco</block>
   <block id="aa9d9bd66060cd759418870198f87aa2" category="list-text">Riavvia la distribuzione locale della Console</block>
   <block id="eaa97a74be674590f501aafbddcdc12b" category="list-text">Aggiorna le rotte statiche</block>
   <block id="4f366b69ce0f39237eb284d461ee957a" category="list-text">Aggiorna i domini di ricerca</block>
@@ -2619,19 +2605,6 @@
   <block id="d93984b8c2a8824c883a08022dc2371b" category="paragraph">Puoi cambiare la password per l’utente <block ref="67f50785d40416a7a7689c5c353f1128" prefix=" " category="inline-code"></block>.</block>
   <block id="dfc06183e38ae0a25b4ca48c3a849dc3" category="list-text">Premi <block ref="c4ca4238a0b923820dcc509a6f75849b" prefix=" " category="inline-code"></block>Invio per visualizzare il <block ref="9b685fecb65f77899f1ea4fd1e767722" prefix=" " category="inline-code"></block>menu.</block>
   <block id="f8d68d435a716537321667f6d83873ef" category="list-text">Inserisci <block ref="c4ca4238a0b923820dcc509a6f75849b" prefix=" " category="inline-code"></block> per cambiare la password dell'utente di manutenzione e segui le istruzioni visualizzate sullo schermo.</block>
-  <block id="7bdccee6307bdfcab6b328e3b58873ac" category="section-title">Aumenta la CPU o la RAM dell'istanza di macchine virtuali</block>
-  <block id="8ab8872d165876c227474a223e048a96" category="paragraph">Puoi aumentare la CPU o la RAM dell'istanza di macchina virtuale che ospita la distribuzione locale della Console.</block>
-  <block id="9c1e3b597971db8490ccfbe471a560c0" category="paragraph">Modifica le impostazioni dell'istanza di macchina virtuale nel tuo VCenter o host ESXi, quindi usa la Console di manutenzione per applicare le modifiche.</block>
-  <block id="32011cb24074435157601af044ce5663" category="list-title">Passaggi nel client VSphere</block>
-  <block id="4cb240d37182d6c74e799680ccf1db95" category="list-text">Fai clic con il pulsante destro del mouse sull'istanza di macchina virtuale e seleziona *Modifica impostazioni*.</block>
-  <block id="888d5124c37691bc77f9fd61458331aa" category="list-text">Aumenta lo spazio su disco rigido utilizzato per /opt o per la partizione /var.</block>
-  <block id="e4e53d6b5475fac95593fb46c84ee67f" category="list-text">Seleziona *Hard Disk 2* per aumentare lo spazio del disco rigido utilizzato per /opt.</block>
-  <block id="c12cae49029925639b6d7b94b5bd87e6" category="list-text">Seleziona *Hard Disk 3* per aumentare lo spazio su disco rigido utilizzato per /var.</block>
-  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">Salva le modifiche.</block>
-  <block id="2f263f0d1841855ba6685c895ba3db8b" category="list-title">Passaggi nella console di manutenzione</block>
-  <block id="0a733be0407678405ecc94d2553d3cb4" category="list-text">Seleziona l'istanza di macchina virtuale che ospita la distribuzione locale della Console.</block>
-  <block id="a5527426dfe9b3215c0fe0144430c64c" category="list-text">Accedi al <block ref="feddfc071bb4b3e59bcd10161dac21cc" prefix=" " category="inline-code"></block> menu.</block>
-  <block id="3d80ea8b1dbf4ad9b1fb81c54b3f4126" category="list-text">Accedi <block ref="c81e728d9d4c2f636f067f89cc14862c" prefix=" " category="inline-code"></block> e segui le istruzioni visualizzate sullo schermo. La console esegue una scansione per rilevare nuove impostazioni e aumenta le dimensioni delle partizioni.</block>
   <block id="e8fa8fc0b3796a7fce5b9307b50ed032" category="section-title">Visualizza le impostazioni di rete per la VM di distribuzione locale della Console</block>
   <block id="427a252546c64ee615ec86ef47dc9126" category="paragraph">Visualizza le impostazioni di rete della VM di distribuzione locale della Console nel client vSphere per verificare o risolvere eventuali problemi di rete. Puoi solo visualizzare (non modificare) le seguenti impostazioni di rete: indirizzo IP e dettagli DNS.</block>
   <block id="57bc91c2ba2fc0985ecadad76ce00906" category="list-text">Premi Invio<block ref="c81e728d9d4c2f636f067f89cc14862c" prefix=" " category="inline-code"></block> per visualizzare il<block ref="dce011ea921230b4e3061bb70569c598" prefix=" " category="inline-code"></block> menu.</block>
@@ -3748,4 +3721,33 @@
   <block id="30ed16d592d987bc97f9c257fb0d026c" category="list-text">Il tuo nome utente o ID per l'account del provider LLM, se richiesto.</block>
   <block id="e90cfbea605d047e2c768be5cc0d5d90" category="list-text">Apri l'Assistente console in modalità Read only ed esegui una query di base.</block>
   <block id="ddbbb4fd6daa8474cc88e6beb3919a85" category="list-text">Apri l'Assistente console in modalità *Lettura/scrittura* e conferma che le azioni che modificano lo storage richiedano la conferma dell'utente prima dell'esecuzione.</block>
+  <block id="f9fe4a5426c609bf7ec63303066954e3" category="list-text">CPU e memoria vengono riservate sull'host ESXi all'avvio della VM, non semplicemente allocate. Assicurati che l'host di destinazione abbia almeno 16 core CPU e 64 GB disponibili come capacità non riservata. Le prenotazioni di VM esistenti sull'host riducono la capacità disponibile.</block>
+  <block id="fb2aa2f24e94d02ba0aa39b5b1953b02" category="list-text">Il datastore deve soddisfare i requisiti minimi di prestazioni di scrittura su disco: latenze di scrittura fsync p99 ≤ 20 ms e IOPS di scrittura casuale 4K ≥ 200. Una latenza superiore a 50 ms o IOPS inferiori a 30 causano errore di distribuzione.</block>
+  <block id="bc30837cb3bcee1ef470300a93faccd1" category="list-text">IPv6 non è supportato. È richiesto un indirizzo IPv4 statico.</block>
+  <block id="2938c9aef13e6b9e5ef64008f86cbed9" category="summary">L'NetApp Console local deployment OVA gestisce il proprio firewall interno. Se il tuo ambiente impone una policy firewall esterna alla VM, assicurati che le seguenti porte in entrata siano raggiungibili dagli host di gestione.</block>
+  <block id="d640078adcf8eb1ceaf8dbfab6c0720d" category="doc">Porte in entrata per NetApp Console distribuzione locale</block>
+  <block id="b6d767d2f8ed5d21a44b0e5886680cb9" category="cell">22</block>
+  <block id="b136ef5f6a01d816991fe3cf7a6ac763" category="cell">TCP</block>
+  <block id="0c4e05ccd1abb4e3392fea5423a4af37" category="cell">SSH per la manutenzione remota e l'accesso alla shell diagnostica</block>
+  <block id="202cb962ac59075b964b07152d234b70" category="cell">123</block>
+  <block id="f5ef036b4d8b630721e51fe23489fbc9" category="cell">UDP</block>
+  <block id="d8cd98eaca923c6ca73ac9374b25eaa7" category="cell">NTP per la sincronizzazione oraria</block>
+  <block id="add217938e07bb1fd8796e0315b88c10" category="cell">2379</block>
+  <block id="845bf240dea5c57c12b3d03689df0b54" category="cell">API client etcd per il traffico client etcd del control-plane RKE2</block>
+  <block id="da4902cb0bc38210839714ebdcf0efc3" category="cell">2380</block>
+  <block id="50cdddb418f7b6b7dad830939b422a69" category="cell">Porta peer etcd per la replica da membro a membro di etcd</block>
+  <block id="c03afab54002887e7e1d27a1069e206c" category="cell">6443</block>
+  <block id="e2e22dfc9080b9c68b6dbc84bf406d43" category="cell">Server API Kubernetes per l'accesso alle API kubectl e RKE2</block>
+  <block id="6d1e481bdcf159961818823e652a7725" category="cell">8472</block>
+  <block id="ff130471ec1970c4bda9bde0fb3b8c03" category="cell">Overlay Canal/Flannel VXLAN per il traffico pod-to-pod tra nodi RKE2</block>
+  <block id="0a7d7a81e8e3a20e4c34748e98ef45f6" category="cell">9091</block>
+  <block id="0f8aa63d0919d42b022ddcfa2e30e1b8" category="cell">Endpoint delle metriche di Calico Felix per la salute CNI e le metriche</block>
+  <block id="fc1dc4549df0335d7f506edb5d66af16" category="cell">9100</block>
+  <block id="b10328ad2875bbddf4d9d49cacb29474" category="cell">Prometheus node_exporter per l'estrazione delle metriche host</block>
+  <block id="76444b3132fda0e2aca778051d776f1c" category="cell">9345</block>
+  <block id="4d65c397f420cfc0233d2763cea9bffc" category="cell">Endpoint di registrazione del supervisore e del server RKE2</block>
+  <block id="183f50a7700982a3ed18ff6d7a5777bf" category="cell">10250</block>
+  <block id="924c6a9c613412a0e4058026aa89a86a" category="cell">API Kubelet per metrics-server e kube-apiserver verso kubelet</block>
+  <block id="50a807a194603f6075b05395337e3064" category="summary">Dopo che hai distribuito la Console local deployment, puoi apportare modifiche al tuo host VCenter o ESXi esistente.</block>
+  <block id="e137fee1052a69e09aea64b66a681285" category="paragraph">Nella NetApp Console distribuzione locale, puoi apportare modifiche al tuo VCenter o host ESXi esistente dopo aver distribuito la Console distribuzione locale.</block>
 </blocks>
