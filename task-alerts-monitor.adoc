@@ -19,7 +19,7 @@ Monitora e analizza gli avvisi nella distribuzione locale di NetApp Console per 
 Visualizza gli avvisi attivi in tutta l'organizzazione o in una flotta specifica, assegnagli una priorità in base alla gravità e all'area di impatto e indaga sulle cause principali così puoi risolvere i problemi prima che si aggravino. Quando un avviso include un'azione consigliata o un'opzione "Fix It", puoi passare direttamente dall'indagine alla risoluzione.
 
 .Ruolo di accesso richiesto
-Tutti i ruoli, ad eccezione di Federation admin e Federation viewer. Gli utenti con il ruolo di Federation admin o Federation viewer non possono visualizzare gli avvisi. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
+Tutti i ruoli. Gli avvisi vengono visualizzati solo per le risorse che sei autorizzato a visualizzare. Se non vedi una risorsa nell'elenco delle risorse disponibili, non hai l'autorizzazione per visualizzarne gli avvisi. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
 
 Per gli avvisi ONTAP, puoi accedere a strumenti come System Manager e Workload Analyzer direttamente dalla pagina Avvisi per analizzare e risolvere i problemi.
 
@@ -60,7 +60,8 @@ Puoi filtrare la dashboard per concentrarti sugli avvisi critici o sugli avvisi 
 +
 ** Gravità (critica, di avvertimento o informativa)
 ** Avvisi critici raggruppati per area di impatto
-** Area di impatto (Sicurezza, Protezione, Disponibilità, Prestazioni, Capacità o Configurazione)
+** Area di impatto (disponibilità, capacità, configurazione, prestazioni, protezione o sicurezza)
+** Avvisi di drift per vedere solo gli avvisi causati da drift della configurazione
 
 
 
@@ -111,7 +112,7 @@ Puoi visualizzare gli avvisi per uno specifico sistema all'interno di una flotta
 [[investigate-an-alert]]
 == Indaga su un avviso
 
-Puoi esaminare un avviso per vedere cosa lo ha attivato e chi ha ricevuto la notifica.
+Puoi esaminare un avviso per vedere cosa lo ha generato.
 
 Quando indaghi su un avviso ONTAP, puoi anche andare direttamente all'interfaccia di System Manager del sistema che ha generato l'avviso per visualizzare ulteriori dettagli e agire.
 

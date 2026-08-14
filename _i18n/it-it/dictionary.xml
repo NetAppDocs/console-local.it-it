@@ -644,7 +644,6 @@
   <block id="651199ccd6df9afe47c1a01cb2014b9a" category="summary">Scopri come gli avvisi di archiviazione nella distribuzione locale della NetApp Console ti aiutano a monitorare lo stato di salute dei tuoi cluster ONTAP on-premise in tutta la tua organizzazione e nelle flotte.</block>
   <block id="46dd71654e83b60d5a2b63a64c91c06b" category="doc">Scopri gli avvisi nella distribuzione locale di NetApp Console</block>
   <block id="96753cfc199c67944d48d5550d8a331e" category="paragraph">La distribuzione locale della NetApp Console genera avvisi che identificano problemi di integrità sui tuoi cluster ONTAP on-premises e per le operazioni di NetApp Backup and Recovery.</block>
-  <block id="0f666f93d79761d7ae4fe8424d7a778b" category="paragraph">La distribuzione locale della Console consolida gli avvisi provenienti dai cluster ONTAP e dalle operazioni di Backup and Recovery in un'unica visualizzazione. La pagina Avvisi include una dashboard, un elenco di avvisi e una visualizzazione dei sistemi, così puoi esaminare gli avvisi per l'intera organizzazione o limitarli a una flotta o a un sistema specifici. Ogni avviso identifica il sistema interessato, la gravità e l'area di impatto.</block>
   <block id="0855169a6f83f70eb10d05419bbd0b1b" category="paragraph">Usa gli avvisi nella distribuzione locale della NetApp Console per:</block>
   <block id="df580541dc1d5961973ae67dcad8ac67" category="list-text">Individua problemi di capacità, connettività, protezione dei dati, prestazioni e sicurezza.</block>
   <block id="a412e02ff5572e68270492382a758d4c" category="list-text">Assegna priorità agli avvisi in base alla gravità e all'area di impatto.</block>
@@ -653,27 +652,20 @@
   <block id="9b9ee1193cec05dc2a41ed3e6ece1ea0" category="list-text">Esporta l'elenco degli avvisi in un file CSV per l'analisi offline.</block>
   <block id="5992368e63ad83386054845741a8a33e" category="section-title">Gravità dell'allerta e aree di impatto</block>
   <block id="af16cc6229a519a3b6fda7956cf3bbb6" category="paragraph">Ogni allerta include un livello di gravità e un'area di impatto:</block>
-  <block id="a9c60291ee333f9f8b30a1d56049f2e3" category="list-text">*Gravità* indica l'urgenza, dalla più alta alla più bassa: Critica, Maggiore, Minore, Avviso e Informazione.</block>
-  <block id="8746c2cdf631ab24a14a3cef70775b09" category="list-text">*Area di impatto* identifica il dominio interessato: Capacità, Connettività, Protezione dei dati, Prestazioni e Sicurezza.</block>
   <block id="b464c96719ac8e689bf809558b1fbfb1" category="section-title">Fonti e ambito dell'allerta</block>
-  <block id="6c6025ea2f97b33e2c486828e0d64c65" category="list-text">*Gli avvisi ONTAP* provengono dal sistema di gestione degli eventi ONTAP (EMS) sui cluster on-premises che la distribuzione locale di Console ha rilevato. <block ref="9e05df594689e3a41c64bf5428dd8f1b" category="inline-link-macro-rx"></block></block>
   <block id="84a123db43de03103a06de7c20323cfc" category="inline-link-macro">Scopri di più sugli avvisi di NetApp Backup and Recovery.</block>
   <block id="ea0f0b01214b1b6564dedd1ccc0ef789" category="list-text">*NetApp Backup and Recovery alert* derivano dalle azioni di Backup and Recovery. <block ref="ce19bb3d3f0370071bd0a63bda9b1cb0" category="inline-link-macro-rx"></block></block>
   <block id="8f7cb705f10a2a8a43e44be4e26bce29" category="list-text">Le autorizzazioni in tuo possesso determinano quali flotte puoi visualizzare. Limita la visualizzazione all'intera organizzazione, a una flotta specifica o a un singolo sistema. La scheda *Stato di salute dei sistemi* mostra lo stato di ciascun sistema e la scheda *Avvisi* mostra l'elenco degli avvisi correnti per l'ambito selezionato.</block>
   <block id="e4512e69eb5052bb89ae3cb05beb2048" category="list-text">L'esportazione in formato CSV riflette l'ambito, il testo di ricerca e i filtri correnti.</block>
-  <block id="357c988d7b614f4a678bdeab216e8c0d" category="section-title">Regole di notifica degli avvisi</block>
   <block id="0cd5a479aeee5c75de6058d04d42884c" category="paragraph">Crea regole di notifica per determinare quali avvisi generano notifiche e chi le riceve. Una regola di notifica presenta le seguenti caratteristiche:</block>
   <block id="bd219bf7059c2b33f0ec554be065e6f1" category="list-text">Abbina gli avvisi relativi al servizio (come ONTAP management o Backup and Recovery), la gravità, l'area di impatto e il sistema di destinazione.</block>
   <block id="b2f7eced90ff21e599ef62d0fb532997" category="list-text">Per l'invio tramite e-mail, invia notifiche agli utenti con i ruoli di accesso specificati. Per l'invio tramite webhook, invia i dati di avviso all'endpoint configurato: l'accesso a tali dati è controllato dall'applicazione ricevente, non dalla distribuzione locale della Console.</block>
-  <block id="5969773a182e2f8badfffe0e0dba85f4" category="list-text">Si applica a sistemi specifici, non alle flotte.</block>
   <block id="e4b0a25eea6bb99ae00f0d8840506e6a" category="list-text">Puoi disattivarlo durante una finestra di manutenzione per sopprimere gli avvisi previsti.</block>
   <block id="4cf933aaee95403e05d1324cc29e0b21" category="paragraph">La distribuzione locale della Console include una regola di notifica predefinita che è attiva immediatamente dopo l'installazione. La regola predefinita monitora tutti i servizi e i sistemi per gli avvisi di gravità critica e invia le notifiche solo al Centro notifiche della Console: nessuna consegna tramite email o webhook viene configurata finché non la imposti tu. Puoi visualizzare e modificare questa regola e creare regole personalizzate per adattarle al tuo ambiente.</block>
   <block id="31a344bb0e11e5a55503d8881257edf1" category="paragraph">Gli avvisi di livello Info sono visibili nella pagina Avvisi, ma non vengono recapitati tramite notifica a meno che tu non crei esplicitamente una regola che includa il livello di gravità Info.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">Informazioni correlate</block>
   <block id="82a2d6c3a1797413a862c7f45ba90fc6" category="inline-link-macro">Monitora e analizza gli avvisi</block>
   <block id="c4b4941c3014489a62b6f0fd2b9cbe09" category="list-text"><block ref="c4b4941c3014489a62b6f0fd2b9cbe09" category="inline-link-macro-rx"></block></block>
-  <block id="bf4a2ffc2bbdd132b48f1c5434b4d680" category="inline-link-macro">Crea e gestisci le regole di notifica degli avvisi</block>
-  <block id="d0dcba044d6a8dc4a29573e265cf2310" category="list-text"><block ref="d0dcba044d6a8dc4a29573e265cf2310" category="inline-link-macro-rx"></block></block>
   <block id="ae385747b29e51a9811e8ce7976b7c6b" category="inline-link-macro">Scopri gli avvisi ONTAP nella distribuzione locale di NetApp Console</block>
   <block id="e77eeb959a8d6ff16124b745150a7b75" category="list-text"><block ref="e77eeb959a8d6ff16124b745150a7b75" category="inline-link-macro-rx"></block></block>
   <block id="98a9a9e956c44874c27b78d15a00bb40" category="summary">Scopri come interagiscono i dashboard predefiniti della pagina iniziale e i dashboard personalizzati in NetApp Console con una distribuzione locale.</block>
@@ -2333,49 +2325,30 @@
   <block id="53ccb7bd8c0be53a952139ebd4454132" category="paragraph-title">Ruoli di accesso richiesti</block>
   <block id="ab92140b4fca6a428c4d9dd6177333dc" category="paragraph">Super admin, admin dell'organizzazione, admin dello storage, analyst del supporto operativo o uno qualsiasi dei ruoli admin per NetApp Backup and Recovery. <block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>.</block>
   <block id="181c0a0c09dfe0f8ba7b3346903c6def" category="paragraph">Utilizza le regole di notifica per indirizzare gli avvisi giusti alle persone giuste attraverso i canali che si adattano al tuo ambiente, riducendo il rumore degli avvisi che non sono rilevanti per te. Le regole di notifica completano la pagina Avvisi: indaghi o risolvi l'avviso nel flusso di lavoro Avvisi, poi usi le regole per controllare come verranno consegnati avvisi simili in futuro.</block>
-  <block id="9d9e3ddcd0ba1071d2727b34998919fe" category="paragraph">Una regola di notifica abbina gli avvisi in base alle condizioni che definisci, come servizio, gravità e area di impatto, e poi invia una notifica attraverso i canali che selezioni. La distribuzione locale della Console include regole di notifica predefinite che puoi visualizzare e modificare, e puoi creare le tue regole personalizzate. Puoi anche silenziare le regole per sopprimere temporaneamente le notifiche durante eventi pianificati come le finestre di manutenzione.</block>
   <block id="ef9e7cefa30ba8567d3175e4dd97d705" category="inline-link-macro">Configura la consegna delle notifiche</block>
   <block id="ed25804203fe0cfacd7338fe370fab02" category="list-text">Per inviare notifiche tramite e-mail, l'amministratore dell'organizzazione deve configurare un server di posta elettronica nella distribuzione locale della Console. Per inviare notifiche a un sistema esterno, l'amministratore dell'organizzazione deve configurare un webhook. Per i passaggi, vedi <block ref="672eea012e5868d936761017846dcdbf" category="inline-link-macro-rx"></block>.</block>
   <block id="6be1395fcc81300b6bceb20c8b98659a" category="list-text">Il Centro notifiche della distribuzione locale della Console visualizza le notifiche per impostazione predefinita, quindi non è necessaria alcuna configurazione aggiuntiva per le notifiche nella console.</block>
   <block id="aa0688cb1a2561ce4a0b9e33ec24c385" category="section-title">Visualizza le regole di notifica</block>
   <block id="3fd13d8d5fe12b342d50496d8c1b14ea" category="paragraph">La pagina delle regole di notifica è il punto centrale in cui esaminare e gestire tutte le regole applicabili alla tua organizzazione. Ogni regola mostra i suoi attributi principali così puoi valutare e modificare rapidamente il comportamento delle notifiche.</block>
   <block id="994fd7486592f0f379c8f7c736e9858a" category="list-text">Dal menu di navigazione a sinistra, seleziona *Salute &gt; Avvisi*.</block>
-  <block id="232cdeb16b6b2880fb174bcdb7470db1" category="list-text">Seleziona *Impostazioni di notifica*.</block>
   <block id="3ea34819819081b3d79348ba42359018" category="list-text">Esamina le regole nell'elenco. Ogni regola mostra il suo stato di attività, il nome, i servizi e i livelli di gravità che monitora, i ruoli autorizzati a ricevere notifiche, i canali di consegna abilitati, quando è stata modificata l'ultima volta e l'eventuale periodo di silenziamento programmato.</block>
   <block id="386565a9df34302963e2a006eda691f7" category="list-text">Per trovare una regola specifica, usa i controlli di filtro e ricerca per filtrare in base allo stato attivo, al servizio, alla gravità, al ruolo, al canale o allo stato di silenziamento.</block>
   <block id="18fcc442133be306ba0fe4ee156658f9" category="section-title">Crea una regola di notifica</block>
   <block id="91c2e6e70b23b2568543595701eead74" category="paragraph">Crea una regola di notifica per definire le condizioni che attivano una notifica e come viene recapitata.</block>
-  <block id="aa9b63f1bf13ee27e6302024b407c536" category="admonition">Non puoi impostare regole di notifica per le flotte. Puoi impostarle solo per sistemi specifici. In ambienti di grandi dimensioni con molti sistemi, valuta di creare regole più ampie in base alla gravità invece di duplicare le regole per ogni sistema: ad esempio, una regola Critica che copre tutti i sistemi funge da regola generica, con regole mirate aggiuntive per i sistemi che richiedono un instradamento o destinatari diversi.</block>
   <block id="6a1b057cf8bcf8cfcb7fd2f2e5190889" category="paragraph-title">Esempio di regola di notifica per avvisi critici su tutti i sistemi</block>
-  <block id="df54dc817bfa65461d11b98d1e80e8dd" category="paragraph">Supponiamo tu voglia assicurarti che nessun avviso critico passi inosservato, indipendentemente dal sistema da cui proviene. Puoi creare una regola generale che instrada tutti gli avvisi critici al Console Notification Center per gli storage admin.</block>
   <block id="4bbe632b2568b2274341aa0b83187f54" category="paragraph">In questo esempio, crei una regola con le seguenti impostazioni:</block>
   <block id="61cf57ee3e9221a4a1af8b64894c7068" category="list-text">*Servizi*: Tutti</block>
-  <block id="96c8440cf70ffc5c99d3b6537771f675" category="list-text">*Gravità*: Critica</block>
-  <block id="c0eb8fd624cbe8c25fc9c9407c7efea7" category="list-text">*Ruolo IAM*: Storage admin</block>
-  <block id="c59b712970cde5ff67eb6de5c8da29fa" category="list-text">*Sistema*: (Lascia vuoto per applicare a tutti i sistemi)</block>
-  <block id="60d59c713d87c9724aa352ce6a1b5b34" category="list-text">*Metodo di consegna*: Centro notifiche della Console</block>
   <block id="24d167f15a64099d232cbac6cb917eaa" category="paragraph">Con questa regola attiva, gli amministratori dello storage visualizzano una notifica nella Console per ogni avviso critico su tutti i sistemi. Questa regola funge da base che puoi integrare con regole più mirate.</block>
   <block id="04a7d6a2d7e7d71268015fdcc29916b9" category="paragraph-title">Esempio di regola di notifica mirata per gli avvisi di capacità admin dello storage</block>
   <block id="87d32c9b50b31ec68f42710a8b498763" category="paragraph">Supponiamo che i tuoi amministratori dello storage debbano rispondere immediatamente a problemi critici di capacità su uno specifico sistema di produzione, ma non vuoi che le loro caselle di posta vengano inondate da avvisi di minore gravità. Puoi creare una regola mirata che invia un'email agli amministratori dello storage solo quando viene attivato un avviso critico di capacità su quel sistema.</block>
-  <block id="8d5c68803a7483180c2f579d68754ca3" category="list-text">*Servizi*: gestione ONTAP</block>
-  <block id="d76c9afc46a2bb4ffe8c662d24c3edbe" category="list-text">*Area di impatto*: Capacità</block>
-  <block id="50d993cad5510cc3b2bb8e1d14be3848" category="list-text">*Sistema*: &lt;system_name&gt;</block>
-  <block id="c809d6a68c232dcd6de973aa0339cb80" category="list-text">*Metodo di consegna*: Email</block>
   <block id="252e427d2b81f9a3381633ba3969aa27" category="paragraph">Con questa regola attiva, la distribuzione locale della Console invia un'email a tutti gli amministratori dello storage per il sistema specificato quando si verifica un avviso di capacità critica. Gli avvisi con un livello di gravità inferiore, come quelli di avviso o informativi, non generano un'email, così il team può concentrarsi sui problemi che richiedono attenzione urgente.</block>
-  <block id="4c63fbe84255b1ec2a74b41ab272605d" category="list-text">Seleziona *Impostazioni di notifica* e poi seleziona *Aggiungi regola*.</block>
   <block id="250976a2b8b2604800b3ad0e6e3ef5f3" category="list-text">Definisci le condizioni che la regola soddisfa:</block>
   <block id="de50f3dcf9e49c743a0a88531b406dab" category="list-text">*Nome della regola*: inserisci un nome conciso e descrittivo. Questo campo è obbligatorio.</block>
   <block id="00d401a946554da9480911973c7c00c1" category="list-text">*Descrizione della regola*: facoltativamente, inserisci ulteriori informazioni sullo scopo della regola.</block>
   <block id="3b715376b628913b6afe9e9e38110dfb" category="list-text">*Servizi*: seleziona uno o più servizi ONTAP o della piattaforma a cui si applica la regola.</block>
   <block id="59748e8bb2446fd93cbff6d3aafaea68" category="list-text">*Ruoli*: seleziona i ruoli di accesso che gli utenti devono avere per ricevere notifiche quando la regola viene attivata.</block>
   <block id="1c176ff939cc688d8fcbfca4a11a6d45" category="list-text">*Livelli di gravità*: seleziona quali livelli di gravità la regola monitora, come Critico, Avviso, Errore o Informazione.</block>
-  <block id="077f073ee19af6e75c93d302db769b91" category="list-text">*Area di impatto*: seleziona le aree operative da abbinare, come Capacità o Prestazioni.</block>
-  <block id="beb055f49bc5e9306f77d5676880c887" category="list-text">*Nome avviso*: seleziona i tipi di avviso specifici che attivano la regola.</block>
-  <block id="f7689ae17ad0ec5b65160f8cab6da1a8" category="list-text">*Sistema*: seleziona il contesto di sistema a cui si applica la regola.</block>
   <block id="99194c98d427b169878eeb0ceba35480" category="list-text">Seleziona i canali di consegna per la notifica:</block>
-  <block id="5112c21de19690f21dfd0064336fe8de" category="list-text">*Email*: invia email di avviso agli utenti che hanno i ruoli selezionati. Richiede un server di posta elettronica configurato.</block>
-  <block id="b1e0543a1c0bcd7043c7a36363478e54" category="list-text">*Webhook*: invia dati di allerta a un sistema esterno. Richiede la selezione di un'integrazione webhook configurata.</block>
-  <block id="08eea354ae8007e70c04ae40c4189cae" category="list-text">*Centro notifiche della console*: visualizza in real-time avvisi per gli utenti che hanno i ruoli selezionati.</block>
   <block id="86762968ec8f9332f58d8c0a6a2aa88f" category="list-text">Facoltativamente, per sopprimere le notifiche di questa regola durante un periodo pianificato, come una finestra di manutenzione, imposta una pianificazione per *Disattiva notifiche* e scegli una ricorrenza se vuoi che il periodo di disattivazione si ripeta. Puoi aggiungere più finestre di disattivazione per regola, utile per cicli di manutenzione ricorrenti come l'applicazione settimanale delle patch.</block>
   <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleziona *Crea*.</block>
   <block id="097f6ad8650956a694d1f6618a1835bc" category="section-title">Attiva o disattiva una regola di notifica</block>
@@ -2408,7 +2381,6 @@
   <block id="38f6a4f788dc0bd7558156d75efe8105" category="paragraph">Monitora e analizza gli avvisi nella distribuzione locale di NetApp Console per mantenere l'integrità dello storage e ridurre al minimo le interruzioni.</block>
   <block id="521327c34bbf46075820c1d409196127" category="paragraph">Visualizza gli avvisi attivi in tutta l'organizzazione o in una flotta specifica, assegnagli una priorità in base alla gravità e all'area di impatto e indaga sulle cause principali così puoi risolvere i problemi prima che si aggravino. Quando un avviso include un'azione consigliata o un'opzione "Fix It", puoi passare direttamente dall'indagine alla risoluzione.</block>
   <block id="e7738982e1706c423ed1dc4d154a847c" category="paragraph-title">Ruolo di accesso richiesto</block>
-  <block id="cbfb02cc13518d81307068ccf3ad42c2" category="paragraph">Tutti i ruoli, ad eccezione di Federation admin e Federation viewer. Gli utenti con il ruolo di Federation admin o Federation viewer non possono visualizzare gli avvisi. <block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>.</block>
   <block id="8925988857ff65e89454a4eb593456c2" category="paragraph">Per gli avvisi ONTAP, puoi accedere a strumenti come System Manager e Workload Analyzer direttamente dalla pagina Avvisi per analizzare e risolvere i problemi.</block>
   <block id="375606b0ccfefde5bee17bc22b7d863d" category="paragraph">Per la creazione di report esterni, puoi esportare l'elenco degli avvisi in un file CSV per l'analisi offline.</block>
   <block id="fc55a582a8dba8c098b8ae6afe46eb47" category="inline-link-macro">Scopri come impostare le notifiche di avviso</block>
@@ -2426,7 +2398,6 @@
   <block id="8ba926ef4f90ffefbd189d250c5b3d19" category="list-text">Filtra la dashboard in base agli avvisi che vuoi visualizzare, tra cui:</block>
   <block id="3f4983c4d6a52d72256e16993979c96e" category="list-text">Gravità (critica, di avvertimento o informativa)</block>
   <block id="cef4a8d30c1b18c6e2bed3dedd59f542" category="list-text">Avvisi critici raggruppati per area di impatto</block>
-  <block id="6efcfe6a265e05264d40d3dda6f3a76e" category="list-text">Area di impatto (Sicurezza, Protezione, Disponibilità, Prestazioni, Capacità o Configurazione)</block>
   <block id="856fb1b715c481e17f07d981ccc7ebf4" category="section-title">Visualizza tutti gli avvisi</block>
   <block id="69eb2dcfcf0f3a463a90960e81522f1e" category="paragraph">Usa la scheda Avvisi per visualizzare l'elenco completo degli avvisi attivi per l'ambito che hai selezionato. L'elenco si aggiorna per riflettere l'organizzazione o l'ambito corrente della flotta e puoi cercare avvisi specifici per nome o descrizione.</block>
   <block id="b86d6a92a51eed6dfd9938fac60df907" category="list-text">Seleziona la scheda *Avvisi* per visualizzare l'elenco completo degli avvisi attivi per l'ambito selezionato.</block>
@@ -2438,7 +2409,6 @@
   <block id="65f78453bc07f64ca861c0ecfe39b780" category="list-text">Seleziona la scheda *Stato di salute dei sistemi* per visualizzare un riepilogo degli avvisi associati ai sistemi compresi nell'ambito che hai selezionato.</block>
   <block id="42e73fcad32a3ab24bb2fab9280da0d9" category="list-text">Seleziona *Visualizza avvisi* sulla riga del sistema corrispondente per visualizzare l'elenco completo degli avvisi attivi associati a quel sistema.</block>
   <block id="0dc68aa31a49ba83f70b63f2b13bd416" category="section-title">Indaga su un avviso</block>
-  <block id="34419c92550cbb45bc553b2679b6cf50" category="paragraph">Puoi esaminare un avviso per vedere cosa lo ha attivato e chi ha ricevuto la notifica.</block>
   <block id="b00e88e4dda7b3a7db43247892b70bdf" category="paragraph">Quando indaghi su un avviso ONTAP, puoi anche andare direttamente all'interfaccia di System Manager del sistema che ha generato l'avviso per visualizzare ulteriori dettagli e agire.</block>
   <block id="23c5bc9e250e82c9b5bf441030d5bdd6" category="list-text">In una delle due schede, seleziona il nome dell'avviso che vuoi esaminare per visualizzarne i dettagli.</block>
   <block id="9f64c529078a13eebc43993d1ac578d4" category="inline-image-macro">Visualizza i dettagli dell'avviso</block>
@@ -2612,10 +2582,6 @@
   <block id="5b7fa871f0c8458f8606108c4cfd4e0f" category="list-text">Seleziona *Cancella campi* per cancellare la configurazione esistente.</block>
   <block id="a3013708d2cf8c341a84dca962344504" category="list-text">Inserisci i nuovi dati di connessione per il tuo server di posta elettronica.</block>
   <block id="21023e438743ec26a85fc29888772fe0" category="list-text">Dopo che il test ha esito positivo, seleziona *Salva* per salvare la nuova configurazione.</block>
-  <block id="102683a93268c2aad1e3d9ec49c6f6ce" category="section-title">Rimuovi la configurazione del server di posta elettronica</block>
-  <block id="4ce419a04c17b42f5c371b2953946ebf" category="paragraph">Puoi rimuovere la configurazione del server di posta elettronica se non vuoi più che la distribuzione locale della Console invii email.</block>
-  <block id="d36c245423608ab3299af01950915d86" category="list-text">Seleziona *Configuration* per aprire la pagina di configurazione dei sistemi.</block>
-  <block id="b41468ddb6280e56c1f532bdaa2a21c4" category="list-text">Seleziona *Salva* per salvare la configurazione cancellata, che rimuove la configurazione del server di posta elettronica dalla distribuzione locale della Console.</block>
   <block id="6a254a34bb4844c3f68630aa0250b116" category="section-title">Configura un webhook</block>
   <block id="f19efafccb40e70e49d027a90324485e" category="paragraph">Configura i webhook per inviare notifiche dalla distribuzione locale della Console ad altri strumenti o servizi. Puoi configurare più webhook, ognuno dei quali punta a un endpoint diverso. Ad esempio, uno per un SIEM e un altro per un servizio di paging di reperibilità.</block>
   <block id="40654a9753bb71b1c30d40fe1fcb0377" category="paragraph">Dopo che crei un webhook, gli utenti con il ruolo di Storage admin possono assegnarlo a specifiche regole di avviso. Ad esempio, possono inviare avvisi critici via email mentre inviano tutti gli avvisi a uno strumento di monitoraggio di terze parti tramite un webhook.</block>
@@ -3215,7 +3181,6 @@
   <block id="336e4351e57a856f458961abc5062751" category="list-text">La tua scelta sul tipo di fornitore: OpenAI o compatibile con OpenAI. <block ref="78f935c14127e9543a594b2e8112c798" category="inline-link-macro-rx"></block></block>
   <block id="d8bd49d8fe4a0de7a2b03c1aec99e88b" category="list-text">Una chiave API valida per il percorso del provider che selezioni.</block>
   <block id="12415726cf97af159e3e05710842f040" category="list-text">L'URL dell'endpoint per il percorso del tuo provider.</block>
-  <block id="0a3c869dbd390ca2cdefafd338d2cf3d" category="list-text">Il tuo nome utente o single sign-on (SSO) ID per l'account del provider LLM, se richiesto.</block>
   <block id="cfe024af8356a3decd0f09b47eff88fa" category="list-text">Accesso alla rete dalla distribuzione locale della Console all'endpoint selezionato.</block>
   <block id="1f3d7608a574b42ba681dcef64704661" category="list-text">Classi di archiviazione e controlli di accesso in base al ruolo per le azioni dell'assistente che vuoi consentire.</block>
   <block id="6d4074b2f4345e60985cf590c19c3368" category="section-title">Connetti un LLM alla distribuzione locale della NetApp Console</block>
@@ -3235,9 +3200,6 @@
   <block id="1de83f5da1c16cfca8ca9ae1534dcf3b" category="paragraph"><block ref="263da31548d1ff54f99ec1ad656a62e4" category="inline-link-macro-rx"></block>.</block>
   <block id="4e0ef856d01b17ebeacb44ab6e813a5b" category="section-title">Verifica che l'integrazione con LLM funzioni</block>
   <block id="649811a3ff05f0c93f06c2fdaa3bbeed" category="paragraph">Dopo aver salvato la configurazione, verifica la disponibilità e il comportamento dell'assistente.</block>
-  <block id="d7f8652c7bc65256b550f9446fb404f0" category="list-text">Conferma che il pulsante *Assistente console* appare sulla dashboard di distribuzione locale della NetApp Console.</block>
-  <block id="32755bc8ea4985295f55809c96237bd0" category="list-text">Apri l'assistente in modalità *sola lettura* ed esegui una query di base.</block>
-  <block id="6a0aa36fa7b572549e4bf529b93925a4" category="list-text">Apri l'assistente in modalità *lettura/scrittura* e verifica che le azioni che modificano lo storage richiedano la conferma dell'utente prima dell'esecuzione.</block>
   <block id="b9218edb7fcba77407a69cc8446ba839" category="list-text">Verifica che gli utenti che necessitano di flussi di lavoro di azione abbiano i controlli di accesso in base al ruolo richiesti.</block>
   <block id="3bc0e23bd46bad08da1876b2cc4430a7" category="inline-link-macro">Usa l'assistente della NetApp Console</block>
   <block id="7d69bfcb234231881e32fc0c2d9f1364" category="paragraph">Dopo aver completato la convalida, gli utenti possono aprire l'assistente Console dalla dashboard e descrivere le attività in linguaggio naturale. Per esempi di utilizzo e flussi di lavoro per gli utenti finali, vedi <block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>.</block>
@@ -3755,4 +3717,35 @@
   <block id="7886cf4f03a683503e8235a0eef59e73" category="list-text">*Anthropic* per i modelli Claude di Anthropic.</block>
   <block id="dc666edc3ed6edcb6babcae67d26fcd2" category="list-text">Scarica il software di distribuzione locale della Console da <block ref="5574d9b8352359225831a51c7e6c17ee" category="inline-link-macro-rx"></block>.</block>
   <block id="ad8f5be1c708f8e891508a0a9c643e0a" category="sidebar">NetApp Trust Center</block>
+  <block id="86fe53164e7d48e6addafc1fcdf26111" category="paragraph">La distribuzione locale della console consolida gli avvisi provenienti dai cluster ONTAP e dalle operazioni di Backup and Recovery in un'unica visualizzazione. La pagina Avvisi include una dashboard, un elenco di avvisi e una visualizzazione che mostra gli avvisi relativi a tutti i sistemi dell'organizzazione. Ogni avviso identifica il sistema interessato, il livello di gravità e l'area di impatto.</block>
+  <block id="fe055be6fd6957c00b782e6ba2e57773" category="list-text">*Gravità* indica l'urgenza, dalla più alta alla più bassa: Critica, Avviso e Informativa.</block>
+  <block id="60e4151f41d4a03ae921c4866360316f" category="list-text">*Area di impatto* identifica il dominio interessato: Disponibilità, Capacità, Configurazione, Performance, Protezione e Sicurezza.</block>
+  <block id="4f4677e32164d37927668f239193f729" category="list-text">*Gli avvisi ONTAP* provengono dall'Event Management System (EMS) di ONTAP sui cluster on-premises scoperti dalla distribuzione locale della Console, così come dalle metriche di monitoraggio raccolte da ONTAP. <block ref="9e05df594689e3a41c64bf5428dd8f1b" category="inline-link-macro-rx"></block></block>
+  <block id="b9ce699225d62badaa143b23f2a286ac" category="section-title">Regole di notifica</block>
+  <block id="a9dd2aada57993b6f95023192190ead8" category="list-text">Si applica a tutti i sistemi dell'organizzazione.</block>
+  <block id="a7ba1daf0536691400747397351ab72f" category="inline-link-macro">Crea e gestisci le regole di notifica</block>
+  <block id="4bdf746b4e7f6e6dfeb75b163f3de933" category="list-text"><block ref="4bdf746b4e7f6e6dfeb75b163f3de933" category="inline-link-macro-rx"></block></block>
+  <block id="6449f494e438a56acab5430a8fa9d46f" category="paragraph">Una regola di notifica abbina gli avvisi in base alle condizioni che definisci, come servizio, gravità e area di impatto, e poi invia una notifica attraverso i canali che selezioni. La distribuzione locale della Console include una regola di notifica predefinita che puoi visualizzare e modificare, e puoi anche creare le tue regole personalizzate. Puoi anche disattivare le regole per sopprimere temporaneamente le notifiche durante eventi pianificati come le finestre di manutenzione.</block>
+  <block id="e35f5087596b0e7233f53786114a613a" category="admonition">Le regole di notifica si applicano a tutti i sistemi dell'organizzazione.</block>
+  <block id="192722772d82aacac1ca6123672325c6" category="paragraph">Supponi di voler garantire che nessun avviso critico passi inosservato, indipendentemente dal sistema da cui proviene. Puoi creare una regola generale che instrada tutti gli avvisi critici alle notifiche della Console UI per gli admin dello storage.</block>
+  <block id="d7ccc5bae6b4903d6c255b3b045a4e55" category="list-text">*Livelli di gravità*: Critico</block>
+  <block id="423dffa169e3740d81b0a59fd14bc925" category="list-text">*Ruoli*: Storage admin</block>
+  <block id="3ee7a18f4aab3d155275f688c812b12b" category="list-text">*Canali di consegna*: Notifiche dell'interfaccia utente della console</block>
+  <block id="7c20f1cc356d3fb78cba60fb83153974" category="list-text">*Servizi*: ONTAP Management</block>
+  <block id="830f3e0189ace7d0a984dfbb36e2fdc7" category="list-text">*Aree di impatto*: Capacità</block>
+  <block id="1be5a6074654d08ae3538b278b8a8485" category="list-text">*Canali di consegna*: Email</block>
+  <block id="c922d0c540b57d391bd538d480dfc9cd" category="list-text">Seleziona *Regole di notifica* e poi seleziona *Aggiungi regola*.</block>
+  <block id="a988d3b5adb4dd67097b18a868770bb4" category="list-text">*Aree di impatto*: seleziona le aree operative da abbinare, come Capacità o Prestazioni.</block>
+  <block id="867364563b61efd0618777d3d71d7f8f" category="list-text">*Avvisi*: indica che tutti gli avvisi saranno notificati secondo la policy.</block>
+  <block id="576412b3f5d3de4868980e97973e7d8b" category="list-text">*Sistemi*: indica che gli avvisi segnalati su tutti i sistemi dell'organizzazione verranno notificati secondo la policy.</block>
+  <block id="ee71ff4f683cea1809ca49786f486a63" category="list-text">*Notifiche via e-mail*: invia email di avviso agli utenti che hanno i ruoli selezionati. Richiede un server email configurato.</block>
+  <block id="9d127813c946fea889954dd0fde53b15" category="list-text">*Integrazioni Webhook*: invia i dati di allerta a un sistema esterno. Richiede la selezione di un'integrazione webhook configurata.</block>
+  <block id="3896fb60fecaecbb0615fc54dd14d98a" category="list-text">*Notifiche dell'interfaccia utente della console*: visualizza notifiche real-time per gli utenti che hanno i ruoli selezionati.</block>
+  <block id="c12f8f1d006dc546dc07a83b341eb41d" category="paragraph">Tutti i ruoli. Gli avvisi vengono visualizzati solo per le risorse che sei autorizzato a visualizzare. Se non vedi una risorsa nell'elenco delle risorse disponibili, non hai l'autorizzazione per visualizzarne gli avvisi. <block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>.</block>
+  <block id="038da7e0743ee2312ac64e6eca9d2b12" category="list-text">Area di impatto (disponibilità, capacità, configurazione, prestazioni, protezione o sicurezza)</block>
+  <block id="15dabf59f40706e7567510f6c6998de1" category="list-text">Avvisi di drift per vedere solo gli avvisi causati da drift della configurazione</block>
+  <block id="6c630ee602118044ab23bd89b0b79149" category="paragraph">Puoi esaminare un avviso per vedere cosa lo ha generato.</block>
+  <block id="30ed16d592d987bc97f9c257fb0d026c" category="list-text">Il tuo nome utente o ID per l'account del provider LLM, se richiesto.</block>
+  <block id="e90cfbea605d047e2c768be5cc0d5d90" category="list-text">Apri l'Assistente console in modalità Read only ed esegui una query di base.</block>
+  <block id="ddbbb4fd6daa8474cc88e6beb3919a85" category="list-text">Apri l'Assistente console in modalità *Lettura/scrittura* e conferma che le azioni che modificano lo storage richiedano la conferma dell'utente prima dell'esecuzione.</block>
 </blocks>

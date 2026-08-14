@@ -16,7 +16,7 @@ summary: Scopri come gli avvisi di archiviazione nella distribuzione locale dell
 [role="lead"]
 La distribuzione locale della NetApp Console genera avvisi che identificano problemi di integrità sui tuoi cluster ONTAP on-premises e per le operazioni di NetApp Backup and Recovery.
 
-La distribuzione locale della Console consolida gli avvisi provenienti dai cluster ONTAP e dalle operazioni di Backup and Recovery in un'unica visualizzazione. La pagina Avvisi include una dashboard, un elenco di avvisi e una visualizzazione dei sistemi, così puoi esaminare gli avvisi per l'intera organizzazione o limitarli a una flotta o a un sistema specifici. Ogni avviso identifica il sistema interessato, la gravità e l'area di impatto.
+La distribuzione locale della console consolida gli avvisi provenienti dai cluster ONTAP e dalle operazioni di Backup and Recovery in un'unica visualizzazione. La pagina Avvisi include una dashboard, un elenco di avvisi e una visualizzazione che mostra gli avvisi relativi a tutti i sistemi dell'organizzazione. Ogni avviso identifica il sistema interessato, il livello di gravità e l'area di impatto.
 
 Usa gli avvisi nella distribuzione locale della NetApp Console per:
 
@@ -34,8 +34,8 @@ Usa gli avvisi nella distribuzione locale della NetApp Console per:
 
 Ogni allerta include un livello di gravità e un'area di impatto:
 
-* *Gravità* indica l'urgenza, dalla più alta alla più bassa: Critica, Maggiore, Minore, Avviso e Informazione.
-* *Area di impatto* identifica il dominio interessato: Capacità, Connettività, Protezione dei dati, Prestazioni e Sicurezza.
+* *Gravità* indica l'urgenza, dalla più alta alla più bassa: Critica, Avviso e Informativa.
+* *Area di impatto* identifica il dominio interessato: Disponibilità, Capacità, Configurazione, Performance, Protezione e Sicurezza.
 
 
 
@@ -43,7 +43,7 @@ Ogni allerta include un livello di gravità e un'area di impatto:
 [[alert-sources-and-scope]]
 == Fonti e ambito dell'allerta
 
-* *Gli avvisi ONTAP* provengono dal sistema di gestione degli eventi ONTAP (EMS) sui cluster on-premises che la distribuzione locale di Console ha rilevato. link:https://docs.netapp.com/us-en/ontap-ems/acp-auto-events.html["Scopri di più su ONTAP EMS e sugli avvisi disponibili."^]
+* *Gli avvisi ONTAP* provengono dall'Event Management System (EMS) di ONTAP sui cluster on-premises scoperti dalla distribuzione locale della Console, così come dalle metriche di monitoraggio raccolte da ONTAP. link:https://docs.netapp.com/us-en/ontap-ems/acp-auto-events.html["Scopri di più su ONTAP EMS e sugli avvisi disponibili."^]
 * *NetApp Backup and Recovery alert* derivano dalle azioni di Backup and Recovery. link:https://docs.netapp.com/us-en/data-services-backup-recovery/reference-audit-actions.html["Scopri di più sugli avvisi di NetApp Backup and Recovery."^]
 * Le autorizzazioni in tuo possesso determinano quali flotte puoi visualizzare. Limita la visualizzazione all'intera organizzazione, a una flotta specifica o a un singolo sistema. La scheda *Stato di salute dei sistemi* mostra lo stato di ciascun sistema e la scheda *Avvisi* mostra l'elenco degli avvisi correnti per l'ambito selezionato.
 * L'esportazione in formato CSV riflette l'ambito, il testo di ricerca e i filtri correnti.
@@ -51,14 +51,14 @@ Ogni allerta include un livello di gravità e un'area di impatto:
 
 
 
-[[alert-notification-rules]]
-== Regole di notifica degli avvisi
+[[notification-rules]]
+== Regole di notifica
 
 Crea regole di notifica per determinare quali avvisi generano notifiche e chi le riceve. Una regola di notifica presenta le seguenti caratteristiche:
 
 * Abbina gli avvisi relativi al servizio (come ONTAP management o Backup and Recovery), la gravità, l'area di impatto e il sistema di destinazione.
 * Per l'invio tramite e-mail, invia notifiche agli utenti con i ruoli di accesso specificati. Per l'invio tramite webhook, invia i dati di avviso all'endpoint configurato: l'accesso a tali dati è controllato dall'applicazione ricevente, non dalla distribuzione locale della Console.
-* Si applica a sistemi specifici, non alle flotte.
+* Si applica a tutti i sistemi dell'organizzazione.
 * Puoi disattivarlo durante una finestra di manutenzione per sopprimere gli avvisi previsti.
 
 
@@ -68,6 +68,6 @@ Gli avvisi di livello Info sono visibili nella pagina Avvisi, ma non vengono rec
 
 .Informazioni correlate
 * link:task-alerts-monitor.html["Monitora e analizza gli avvisi"]
-* link:task-alert-rules-manage.html["Crea e gestisci le regole di notifica degli avvisi"]
+* link:task-alert-rules-manage.html["Crea e gestisci le regole di notifica"]
 * link:reference-ontap-alerts.html["Scopri gli avvisi ONTAP nella distribuzione locale di NetApp Console"]
 

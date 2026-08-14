@@ -75,21 +75,6 @@ Se il test non va a buon fine, verifica nuovamente le impostazioni inserite e as
 
 
 
-[[remove-an-email-server-configuration]]
-=== Rimuovi la configurazione del server di posta elettronica
-
-Puoi rimuovere la configurazione del server di posta elettronica se non vuoi più che la distribuzione locale della Console invii email.
-
-.Passaggi
-. Seleziona *Administration > Console*.
-. Seleziona *Configuration* per aprire la pagina di configurazione dei sistemi.
-. Nella sezione *Server di posta elettronica*, seleziona *Configura*.
-. Seleziona *Cancella campi* per cancellare la configurazione esistente.
-. Seleziona *Salva* per salvare la configurazione cancellata, che rimuove la configurazione del server di posta elettronica dalla distribuzione locale della Console.
-
-
-
-
 [[configure-a-webhook]]
 == Configura un webhook
 
