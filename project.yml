@@ -199,8 +199,6 @@ sidebar:
         url: "/reference-svm-compliance-categories.html"
     - title: Conoscenza e supporto
       entries:
-      - title: Registrati per ricevere supporto
-        url: "/task-support-registration.html"
       - title: Ottieni aiuto
         url: "/task-get-help.html"
   - title: Note legali
