@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-install-agent-on-prem-ova.html 
-keywords: install agent, on-premises agent installation, vCenter, ESXi, VMware, OVA, deploy Console local deployment, agent deployment, netapp console local 
-summary: 'Se sei un utente VMWare, puoi utilizzare un file OVA per installare un agente Console nel tuo vCenter. Il download del file OVA o l"URL è disponibile tramite la distribuzione locale della NetApp Console.' 
+keywords: install , on-premises installation, vCenter, ESXi, VMware, OVA, deploy Console local deployment,  deployment, netapp console local 
+summary: 'Usi un file OVA per installare una distribuzione locale della NetApp Console nel tuo VCenter. Il download dell"OVA o l"URL sono disponibili tramite il sito di supporto NetApp.' 
 ---
 = Installa la distribuzione locale di NetApp Console usando un OVA in vCenter
 :hardbreaks:

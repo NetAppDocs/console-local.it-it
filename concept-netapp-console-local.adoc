@@ -23,7 +23,7 @@ Ottieni una gestione unificata dello storage, l'applicazione delle policy, l'aut
 [[deploy-and-operate-console-in-your-own-infrastructure]]
 == Distribuisci e gestisci Console nella tua infrastruttura
 
-NetApp Console distribuzione locale viene eseguita nella tua infrastruttura, quindi il tuo team controlla la distribuzione, la connettività e le operazioni quotidiane. Distribuisci l'agente Console, mantieni la macchina virtuale Console e gestisci i percorsi di rete necessari per il monitoraggio e il traffico di gestione. Questo offre agli amministratori aziendali il pieno controllo dei confini operativi, mantenendo i dati di gestione all'interno dell'ambiente.
+NetApp Console distribuzione locale viene eseguita nella tua infrastruttura, quindi il tuo team controlla la distribuzione, la connettività e le operazioni quotidiane. Questo offre agli amministratori aziendali il pieno controllo dei confini operativi, mantenendo i dati di gestione all'interno dell'ambiente.
 
 * link:task-install-agent-on-prem-ova.html["Installa la distribuzione locale di NetApp Console usando un OVA in vCenter"].
 * link:task-console-local-vm-config.html["Gestisci il tuo vCenter o host ESXi per la distribuzione locale della NetApp Console"].

@@ -16,8 +16,6 @@ summary: Riferimento per le limitazioni note nella distribuzione locale di NetAp
 [role="lead"]
 Le limitazioni note identificano le piattaforme, i dispositivi o le funzioni non supportati da questa versione del prodotto o che non interagiscono correttamente con essa. Esaminare attentamente queste limitazioni.
 
-Queste limitazioni sono specifiche della configurazione della NetApp Console e dell'amministrazione: l'agente, la piattaforma software as a service (SaaS) e altro ancora.
-
 
 
 [[console-vm-limitations]]
@@ -37,11 +35,11 @@ Vedi l'articolo della Knowledge Base "Agent IP conflict with existing network" p
 [[shared-linux-hosts-are-not-supported]]
 === Gli host Linux condivisi non sono supportati
 
-L'agente non è supportato su una macchina virtuale condivisa con altre applicazioni. La macchina virtuale deve essere dedicata al software dell'agente.
+NetApp Console la distribuzione locale non è supportata su una macchina virtuale condivisa con altre applicazioni. La macchina virtuale deve essere dedicata alla NetApp Console distribuzione locale.
 
 
 
 [[third-party-agents-and-extensions]]
 === Agenti ed estensioni di terze parti
 
-Gli agenti di terze parti o le estensioni di VM non sono supportati sulla VM dell'agente.
+Gli agenti di terze parti o le estensioni VM non sono supportati sulla VM di distribuzione locale della NetApp Console.

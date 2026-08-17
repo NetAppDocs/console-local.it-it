@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-ports-on-prem.html 
-keywords: networking, network requirements, ports, on-premises, TCP, UDP, firewall, connectivity requirements, Console agent, agent connectivity, netapp console local, inbound ports, OVA 
+keywords: networking, network requirements, ports, on-premises, TCP, UDP, firewall, connectivity requirements, Console local, Console local connectivity, netapp console local, inbound ports, OVA 
 summary: 'L"NetApp Console local deployment OVA gestisce il proprio firewall interno. Se il tuo ambiente impone una policy firewall esterna alla VM, assicurati che le seguenti porte in entrata siano raggiungibili dagli host di gestione.' 
 ---
 = Porte in entrata per NetApp Console distribuzione locale

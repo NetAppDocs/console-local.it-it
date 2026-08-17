@@ -1082,7 +1082,6 @@
   <block id="dbe73508391080b9a6912d86cd12081b" category="paragraph">NetApp Console deployment locale ti permette di ospitare ed eseguire il piano di controllo autonomo di NetApp Console nella tua infrastruttura.</block>
   <block id="beedafd761122a9080cda6f61cac7b4b" category="paragraph">Ottieni una gestione unificata dello storage, l'applicazione delle policy, l'automazione su larga scala e le operazioni assistite dall'intelligenza artificiale. Nessun dato, metadati o traffico di gestione esce dal tuo ambiente.</block>
   <block id="67e0c8d8a0aad1277b006016dd82f25c" category="section-title">Distribuisci e gestisci Console nella tua infrastruttura</block>
-  <block id="10aa80cd468ec0811813d44ef98bca90" category="paragraph">NetApp Console distribuzione locale viene eseguita nella tua infrastruttura, quindi il tuo team controlla la distribuzione, la connettività e le operazioni quotidiane. Distribuisci l'agente Console, mantieni la macchina virtuale Console e gestisci i percorsi di rete necessari per il monitoraggio e il traffico di gestione. Questo offre agli amministratori aziendali il pieno controllo dei confini operativi, mantenendo i dati di gestione all'interno dell'ambiente.</block>
   <block id="00a758ee2cda4e4890c0ee5cfce54b04" category="inline-link-macro">Installa la distribuzione locale di NetApp Console usando un OVA in vCenter</block>
   <block id="3e3c94e96f9dd9a6b52f7e3bd29e96cd" category="list-text"><block ref="d8fb061273f01bc1c630b76c017340f0" category="inline-link-macro-rx"></block>.</block>
   <block id="dd67cc32b95952e9b3fce404242dfee2" category="inline-link-macro">Gestisci il tuo vCenter o host ESXi per la distribuzione locale della NetApp Console</block>
@@ -1932,13 +1931,10 @@
   <block id="ad720d685bc721c408c448c0fe562369" category="summary">Riferimento per le limitazioni note nella distribuzione locale di NetApp Console.</block>
   <block id="7ffe052f293422713268a6bb9df1fc9f" category="doc">Limitazioni note nella distribuzione locale di NetApp Console</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="paragraph">Le limitazioni note identificano le piattaforme, i dispositivi o le funzioni non supportati da questa versione del prodotto o che non interagiscono correttamente con essa. Esaminare attentamente queste limitazioni.</block>
-  <block id="dceccbe9e562b7202ac801a976ca4d73" category="paragraph">Queste limitazioni sono specifiche della configurazione della NetApp Console e dell'amministrazione: l'agente, la piattaforma software as a service (SaaS) e altro ancora.</block>
   <block id="360330c9adc975e1008000d1df74a468" category="section-title">Limitazioni della console VM</block>
   <block id="682a2eb88d49c213f5029c53633e10c9" category="section-title">Possibile conflitto con indirizzi IP negli intervalli 10.42.0.0/16 e 10.43.0.0/16</block>
   <block id="3b9690f89f4029f3b099f8b7c371b951" category="section-title">Gli host Linux condivisi non sono supportati</block>
-  <block id="55334f6c7481482659eaa1b0aef1601a" category="paragraph">L'agente non è supportato su una macchina virtuale condivisa con altre applicazioni. La macchina virtuale deve essere dedicata al software dell'agente.</block>
   <block id="5ef1446cf0ab868961d473d928c394d6" category="section-title">Agenti ed estensioni di terze parti</block>
-  <block id="08ea771e22fb933fc1428178b36eb902" category="paragraph">Gli agenti di terze parti o le estensioni di VM non sono supportati sulla VM dell'agente.</block>
   <block id="3d8cb3230f2a32ea6afadc9475030feb" category="summary">Riferimento per gli avvisi ONTAP monitorati nella distribuzione locale di NetApp Console, organizzati per categoria di impatto.</block>
   <block id="a9a22f62e500b57a916841885d3320a2" category="doc">Riferimento agli avvisi ONTAP nella NetApp Console distribuzione locale</block>
   <block id="a3831fb324d31cc99ef99e375686386a" category="paragraph">Questo documento elenca gli avvisi ONTAP che la distribuzione locale della NetApp Console può monitorare, organizzati per categoria di impatto.</block>
@@ -3094,7 +3090,6 @@
   <block id="5783f062ee67d1e08bcb603d908bec19" category="list-text">*Rimuovi l'accesso del membro a questo ambito*: Per un membro a cui è stato assegnato un ruolo direttamente in questa cartella o flotta, rimuovi il ruolo per revocarne l'accesso a questo ambito. Questa operazione non rimuove il membro dall'organizzazione né influisce sui ruoli che ha in altri ambiti.</block>
   <block id="1f68cc23ffd79d8b92a25e3163e1bcff" category="paragraph"><block ref="2b3106c38646014daf77549827b80860" category="inline-link-macro-rx"></block>.</block>
   <block id="24347b3ddf5a25cc9c27e54ae285ade1" category="list-text">Seleziona *Applica*.</block>
-  <block id="54ead9f62e4ad67dbab07d7ac18a67c2" category="summary">Se sei un utente VMWare, puoi utilizzare un file OVA per installare un agente Console nel tuo vCenter. Il download del file OVA o l'URL è disponibile tramite la distribuzione locale della NetApp Console.</block>
   <block id="732484ec48b3de6a355c4a8d10a6491f" category="paragraph">Usi un file OVA per installare una distribuzione locale della NetApp Console nel tuo VCenter. Il download dell'OVA o l'URL sono disponibili tramite il sito di supporto NetApp.</block>
   <block id="bfa61bc8df2f0d4cb1dd6df73376608c" category="section-title">Preparati a installare la distribuzione locale di NetApp Console</block>
   <block id="4e00644af1cd7d7ae6f52544a8dc1472" category="paragraph">Prima dell'installazione, assicurati che l'host della macchina virtuale soddisfi i requisiti e che la distribuzione locale della NetApp Console possa accedere a internet e alle reti di destinazione. Per utilizzare i servizi dati NetApp come NetApp Backup and Recovery, crea le credenziali del cloud provider per la distribuzione locale della NetApp Console, così da poter eseguire azioni per tuo conto.</block>
@@ -3750,4 +3745,7 @@
   <block id="924c6a9c613412a0e4058026aa89a86a" category="cell">API Kubelet per metrics-server e kube-apiserver verso kubelet</block>
   <block id="50a807a194603f6075b05395337e3064" category="summary">Dopo che hai distribuito la Console local deployment, puoi apportare modifiche al tuo host VCenter o ESXi esistente.</block>
   <block id="e137fee1052a69e09aea64b66a681285" category="paragraph">Nella NetApp Console distribuzione locale, puoi apportare modifiche al tuo VCenter o host ESXi esistente dopo aver distribuito la Console distribuzione locale.</block>
+  <block id="c3bdc6c19998b310e22df96fbe31d526" category="paragraph">NetApp Console distribuzione locale viene eseguita nella tua infrastruttura, quindi il tuo team controlla la distribuzione, la connettività e le operazioni quotidiane. Questo offre agli amministratori aziendali il pieno controllo dei confini operativi, mantenendo i dati di gestione all'interno dell'ambiente.</block>
+  <block id="8797fdac4224deac7f57143811175742" category="paragraph">NetApp Console la distribuzione locale non è supportata su una macchina virtuale condivisa con altre applicazioni. La macchina virtuale deve essere dedicata alla NetApp Console distribuzione locale.</block>
+  <block id="9d22f7f3fcf091469f2515885be2bfb9" category="paragraph">Gli agenti di terze parti o le estensioni VM non sono supportati sulla VM di distribuzione locale della NetApp Console.</block>
 </blocks>
