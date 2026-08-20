@@ -36,6 +36,9 @@ Una regola di notifica abbina gli avvisi in base alle condizioni che definisci, 
 
 
 
+NOTE: Le notifiche dell'interfaccia utente della NetApp Console restano disponibili per 24 ore.
+
+
 
 [[view-notification-rules]]
 == Visualizza le regole di notifica

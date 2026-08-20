@@ -108,11 +108,6 @@ Accedi al tuo ambiente VCenter per distribuire Console local deployment.
 
 ** *Configurazione della macchina virtuale*
 +
-*** *Salta il controllo della configurazione*: questa check box è deselezionata per impostazione predefinita, il che significa che la NetApp Console distribuzione locale esegue un controllo della configurazione per convalidare l'accesso alla rete.
-+
-**** NetApp consiglia di lasciare questa check box deselezionata in modo che l'installazione includa un controllo di configurazione della NetApp Console distribuzione locale. Il controllo di configurazione verifica che la NetApp Console distribuzione locale abbia accesso di rete agli endpoint richiesti. Se la distribuzione non riesce a causa di problemi di connettività, puoi accedere al report di convalida e ai log dall'host della NetApp Console distribuzione locale. In alcuni casi, se sei sicuro che la NetApp Console distribuzione locale abbia accesso di rete, puoi scegliere di saltare il controllo.
-
-
 *** *Password di manutenzione*: Imposta la password per l’ `maint`utente che consente l’accesso alla console di manutenzione della distribuzione locale della NetApp Console.
 *** *Server NTP*: Specifica uno o più server NTP per la sincronizzazione dell'ora.
 *** *Nome host*: Imposta il nome host per questa VM. Non deve includere il domain name di ricerca. Ad esempio, un FQDN come console10.searchdomain.company.com deve essere inserito come console10.

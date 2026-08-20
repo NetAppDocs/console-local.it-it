@@ -94,6 +94,9 @@ La Console invia le istruzioni all'utente tramite e-mail.
 
 
 
+NOTE: I link di invito per gli utenti locali sono monouso e scadono dopo 7 giorni. Se un link scade prima che l'utente completi la configurazione, rimuovi l'utente e aggiungilo di nuovo per inviargli un nuovo link di invito.
+
+
 
 [[add-a-service-account]]
 [[service-account]]

@@ -26,6 +26,9 @@ Per gli avvisi ONTAP, puoi accedere a strumenti come System Manager e Workload A
 Per la creazione di report esterni, puoi esportare l'elenco degli avvisi in un file CSV per l'analisi offline.
 
 
+NOTE: Gli avvisi vengono conservati nella distribuzione locale di NetApp Console per 7 giorni dal momento in cui vengono generati.
+
+
 NOTE: Puoi anche impostare regole di notifica per ricevere avvisi tramite email o webhook. link:task-alert-rules-manage.html["Scopri come impostare le notifiche di avviso"].
 
 

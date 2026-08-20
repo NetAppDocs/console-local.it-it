@@ -43,3 +43,19 @@ NetApp Console la distribuzione locale non è supportata su una macchina virtual
 === Agenti ed estensioni di terze parti
 
 Gli agenti di terze parti o le estensioni VM non sono supportati sulla VM di distribuzione locale della NetApp Console.
+
+
+
+[[identity-and-access-limitations]]
+== Limitazioni di identità e accesso
+
+[cols="1,3"]
+|===
+| Area | Limitazione 
+
+
+| Onboarding degli utenti locali e recupero account | Devi configurare un server email SMTP prima di poter invitare utenti locali o usare la reimpostazione della password per gli utenti locali. 
+
+
+| Integrazione con Active Directory | Non è consentito utilizzare indirizzi email duplicati tra utenti locali e utenti di Active Directory. Ad esempio, se l'amministratore locale iniziale dell'organizzazione si aggiunge successivamente come utente di Active Directory, deve usare un indirizzo email diverso. 
+|===

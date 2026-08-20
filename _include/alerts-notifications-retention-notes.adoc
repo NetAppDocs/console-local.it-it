@@ -1,0 +1,9 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Gli avvisi vengono conservati nella distribuzione locale di NetApp Console per 7 giorni dal momento in cui vengono generati.
+
+
+NOTE: Le notifiche dell'interfaccia utente della NetApp Console restano disponibili per 24 ore.

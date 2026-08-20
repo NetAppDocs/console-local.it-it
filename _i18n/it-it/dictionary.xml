@@ -3057,8 +3057,6 @@
   <block id="bb1e1ef266584a5a332dfd21a0ceff90" category="list-text">Se hai selezionato proxy esplicito, inserisci il nome host o l'indirizzo IP del proxy server e il numero di porta, oltre a nome utente e password.</block>
   <block id="777fde86c6354cd539ec78cfac87b390" category="list-text">Se hai selezionato proxy trasparente, carica il relativo certificato.</block>
   <block id="f6b06d7af2e17b031527e55078cf6bda" category="list-text">*Configurazione della macchina virtuale*</block>
-  <block id="536601d5f2a0ce3000ead0f9e4f4cfc2" category="list-text">*Salta il controllo della configurazione*: questa check box è deselezionata per impostazione predefinita, il che significa che la NetApp Console distribuzione locale esegue un controllo della configurazione per convalidare l'accesso alla rete.</block>
-  <block id="04157edfd56e309364a7442b42b155a9" category="list-text">NetApp consiglia di lasciare questa check box deselezionata in modo che l'installazione includa un controllo di configurazione della NetApp Console distribuzione locale. Il controllo di configurazione verifica che la NetApp Console distribuzione locale abbia accesso di rete agli endpoint richiesti. Se la distribuzione non riesce a causa di problemi di connettività, puoi accedere al report di convalida e ai log dall'host della NetApp Console distribuzione locale. In alcuni casi, se sei sicuro che la NetApp Console distribuzione locale abbia accesso di rete, puoi scegliere di saltare il controllo.</block>
   <block id="4dbd3c987fc3c99f4068f93b9ddf0271" category="list-text">*Password di manutenzione*: Imposta la password per l’<block ref="67f50785d40416a7a7689c5c353f1128" prefix=" " category="inline-code"></block>utente che consente l’accesso alla console di manutenzione della distribuzione locale della NetApp Console.</block>
   <block id="cb059a17daa0db402273fce83326bc2b" category="list-text">*Server NTP*: Specifica uno o più server NTP per la sincronizzazione dell'ora.</block>
   <block id="fea958d8a6639552d2e73dadaab0eb59" category="list-text">*Nome host*: Imposta il nome host per questa VM. Non deve includere il domain name di ricerca. Ad esempio, un FQDN come console10.searchdomain.company.com deve essere inserito come console10.</block>
@@ -3626,4 +3624,13 @@
   <block id="d2102c65ff11954ccbf42346bfdd3f4f" category="list-text">Nella scheda Support, seleziona *Crea* per creare un pacchetto di log e dati di configurazione.</block>
   <block id="6d6556399a0b8fc0d6acf274ab50bd15" category="list-text">Una volta creato il pacchetto, seleziona *Scarica*. Ti viene chiesto di scaricare un file ZIP.</block>
   <block id="c5303cf1b99e0c56f64b84d5b1fa0e9a" category="paragraph">Il sistema conserva un solo pacchetto alla volta. La creazione di un nuovo pacchetto di supporto sostituisce quello precedente.</block>
+  <block id="5a416b505eeb414e2a13458a4f94ecbf" category="admonition">Gli avvisi vengono conservati nella distribuzione locale di NetApp Console per 7 giorni dal momento in cui vengono generati.</block>
+  <block id="ddd48b069384a5d886b18fc4008bcb18" category="admonition">Le notifiche dell'interfaccia utente della NetApp Console restano disponibili per 24 ore.</block>
+  <block id="3732468e73bd908d56c8b63b5774bb20" category="section-title">Limitazioni di identità e accesso</block>
+  <block id="deec4ff19974f12ed781cb9a59064214" category="cell">Area</block>
+  <block id="f3d9abb903127694db460aa9c7f4d7be" category="cell">Limitazione</block>
+  <block id="16492f4d2028d9a0f96c4e1590b65f2c" category="cell">Onboarding degli utenti locali e recupero account</block>
+  <block id="66ae36e07e30e4c89165201182d037be" category="cell">Devi configurare un server email SMTP prima di poter invitare utenti locali o usare la reimpostazione della password per gli utenti locali.</block>
+  <block id="d433d6de6ccf389e02982430306a440f" category="cell">Non è consentito utilizzare indirizzi email duplicati tra utenti locali e utenti di Active Directory. Ad esempio, se l'amministratore locale iniziale dell'organizzazione si aggiunge successivamente come utente di Active Directory, deve usare un indirizzo email diverso.</block>
+  <block id="3be37f60cf59fb4438b6120b07ffd2e9" category="admonition">I link di invito per gli utenti locali sono monouso e scadono dopo 7 giorni. Se un link scade prima che l'utente completi la configurazione, rimuovi l'utente e aggiungilo di nuovo per inviargli un nuovo link di invito.</block>
 </blocks>
