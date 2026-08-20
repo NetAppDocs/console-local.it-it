@@ -18,6 +18,8 @@ NetApp Console deployment locale ti permette di ospitare ed eseguire il piano di
 
 Ottieni una gestione unificata dello storage, l'applicazione delle policy, l'automazione su larga scala e le operazioni assistite dall'intelligenza artificiale. Nessun dato, metadati o traffico di gestione esce dal tuo ambiente.
 
+link:console-differences.html["Scopri le differenze tra la distribuzione locale di NetApp Console e NetApp Console SaaS e modalità privata"].
+
 
 
 [[deploy-and-operate-console-in-your-own-infrastructure]]

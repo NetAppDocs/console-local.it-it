@@ -22,3 +22,5 @@ Scopri le nuove funzionalità e i miglioramenti dell'ultima versione della distr
 === Presentazione della distribuzione locale di NetApp Console
 
 https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["Scopri la distribuzione locale di NetApp Console"].
+
+https://docs.netapp.com/us-en/console-local/console-differences.html["Scopri le differenze tra la distribuzione locale di NetApp Console e NetApp Console SaaS e modalità privata"].
