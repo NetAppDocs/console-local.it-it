@@ -31,7 +31,7 @@ Una regola di notifica abbina gli avvisi in base alle condizioni che definisci, 
 [[before-you-begin]]
 == Prima di iniziare
 
-* Per inviare notifiche tramite e-mail, l'amministratore dell'organizzazione deve configurare un server di posta elettronica nella distribuzione locale della Console. Per inviare notifiche a un sistema esterno, l'amministratore dell'organizzazione deve configurare un webhook. Per i passaggi, vedi link:task-console-configure-notifications-delivery.html["Configura la consegna delle notifiche"].
+* Per inviare notifiche tramite e-mail, l'amministratore dell'organizzazione deve configurare un server di posta elettronica nella distribuzione locale della Console. Per inviare notifiche a un sistema esterno, l'amministratore dell'organizzazione deve configurare un webhook. link:task-console-configure-notifications-delivery.html["Scopri come configurare i webhook"].
 * Il Centro notifiche della distribuzione locale della Console visualizza le notifiche per impostazione predefinita, quindi non è necessaria alcuna configurazione aggiuntiva per le notifiche nella console.
 
 

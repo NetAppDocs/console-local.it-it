@@ -101,17 +101,18 @@ I seguenti passaggi descrivono il processo per utilizzare le classi di archiviaz
 
 Le classi di storage sono associate alle fleet. Quando associ una classe di storage a una fleet, quella classe diventa disponibile per tutto il provisioning all'interno della fleet. Questo garantisce che ogni workload sottoposto a provisioning nella fleet segua gli stessi standard, rendendo le fleet il modo principale per imporre un comportamento di storage coerente tra cluster correlati.
 
-Per informazioni dettagliate su come organizzare le flotte, vedi link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
+link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
 
 
 
 [[where-to-go-next]]
 == Dove andare dopo
 
-* Per comprendere l'organizzazione della flotta, vedi link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
-* Per creare criteri e classi di archiviazione, vedi link:task-storage-class-manage.html["Gestisci classi e criteri di archiviazione"].
+* link:concept-manage-storage.html["Scopri la gestione della flotta nella distribuzione locale di NetApp Console"].
+* link:task-storage-class-manage.html["Gestisci classi e criteri di archiviazione"].
 * link:task-provisioning-manual.html["Effettua il provisioning dello storage manualmente"]
 * link:task-provisioning-automated.html["Effettua il provisioning dello storage automaticamente"]
 * link:task-provisioning-agentic.html["Effettua il provisioning dello storage con l'assistenza dell'IA"]
-* Per analizzare e correggere la deriva, vedi link:task-storage-class-drift-remediate.html["Correggi la deriva della storage class"]
+* link:reference-console-assistant-operations.html["Vedi le operazioni supportate di Console assistant"]
+* link:task-storage-class-drift-remediate.html["Scopri come rimediare alla deriva della storage class"]
 

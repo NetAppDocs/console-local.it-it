@@ -14,7 +14,7 @@ summary: 'Risolvi i problemi di integrazione di LLM nella NetApp Console distrib
 
 
 [role="lead"]
-Utilizza questo flusso di triage rapido per diagnosticare e risolvere i problemi comuni di integrazione LLM nella NetApp Console in una distribuzione locale.
+Diagnostica i problemi di integrazione LLM nella distribuzione locale di NetApp Console per ripristinare l'accesso all'assistente della Console e risposte affidabili per la guida e le operazioni di storage.
 
 
 NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
@@ -53,7 +53,7 @@ Esegui una semplice richiesta di sola lettura e verifica la raggiungibilità del
 | Salvataggio o test non riusciti in AI Tools | Mancata corrispondenza di configurazione o connettività | Tipo di provider, URL dell'endpoint, formato della chiave API, modello selezionato e outbound access | Correggi il valore che non supera la convalida e salva di nuovo 
 
 
-| Il pulsante *Assistente console* non è presente | Stato di integrazione non corretto, mancata corrispondenza dell'organizzazione o mancata corrispondenza in base al ruolo (RBAC) | Salvataggio riuscito degli strumenti di AI, stato di integrazione, organizzazione corrente e ruolo di accesso previsto | Aggiorna la sessione e verifica con un account admin noto e funzionante 
+| Il pulsante *Assistente console* non è presente | Stato di integrazione non integro | Salvataggio riuscito degli strumenti di AI, stato di integrazione e ruolo di accesso previsto | Aggiorna la sessione e verifica con un account admin noto e funzionante 
 
 
 | L'assistente si apre ma la richiesta fallisce | Problema relativo al provider o al percorso di runtime | Raggiungibilità dell'endpoint, disponibilità del modello su quell'endpoint, limiti del provider e stato temporaneo del provider | Riprova dopo aver risolto i problemi di incompatibilità tra endpoint/modello o i problemi relativi ai limiti lato provider 

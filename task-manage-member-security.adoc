@@ -67,7 +67,7 @@ Esamina il registro di controllo per confermare chi ha modificato l'accesso MFA,
 [[recreate-the-credentials-for-a-service-account]]
 == Ricrea le credenziali per un account di servizio
 
-È possibile creare nuove credenziali per un account di servizio in caso di smarrimento o necessità di aggiornamento delle stesse.
+Ruota le credenziali dell'account di servizio quando cambiano i requisiti di sicurezza, invalidando i segreti precedenti e preservando l'accesso controllato alle API.
 
 La creazione di nuove credenziali elimina quelle vecchie. Non puoi usare le vecchie credenziali.
 

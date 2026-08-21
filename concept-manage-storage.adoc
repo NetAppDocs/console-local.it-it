@@ -37,8 +37,6 @@ La gestione della flotta affronta tre sfide principali:
 
 La gerarchia delle risorse della tua organizzazione è composta da cartelle e fleet:
 
-Per una panoramica dettagliata della gerarchia e del modello di accesso, vedi link:concept-folders-fleets-overview.html["Scopri cartelle e gruppi nella distribuzione locale di NetApp Console"].
-
 * *Organizzazione* - Il livello più alto che rappresenta la tua azienda.
 * *Cartelle* - Ti aiutano a organizzare le flotte correlate. Ad esempio, potresti creare una cartella per ogni regione o unità aziendale, poi creare flotte all'interno di ciascuna cartella. Le cartelle possono contenere altre cartelle o flotte. Quando assegni un ruolo a livello di cartella, i membri ereditano quel ruolo per tutte le flotte all'interno della cartella.
 * *Flotte* - Raggruppa i sistemi di archiviazione che gestisci insieme. Associ i sistemi di archiviazione alle flotte e assegni i membri alle flotte per concedere loro accesso.
@@ -46,6 +44,8 @@ Per una panoramica dettagliata della gerarchia e del modello di accesso, vedi li
 
 
 NOTE: Le cartelle sono uno strumento organizzativo e non sono visibili ai membri che non hanno autorizzazioni IAM, come i ruoli di Organization admin, Folder admin o Fleet admin. I membri accedono alle flotte, non alle cartelle.
+
+link:concept-folders-fleets-overview.html["Scopri di più su cartelle e flotte nella distribuzione locale di NetApp Console"].
 
 
 
@@ -108,9 +108,10 @@ La distribuzione locale della console supporta tre approcci di provisioning, tut
 [[where-to-go-next]]
 == Dove andare dopo
 
-* Per capire gli standard di storage, vedi link:concept-storage-classes.html["Scopri le classi e le policy di archiviazione nella distribuzione locale di NetApp Console"].
-* Per creare e gestire flotte, vedi link:task-iam-manage-folders-fleets.html["Gestisci cartelle e flotte"].
+* link:concept-storage-classes.html["Scopri le classi e le policy di archiviazione nella distribuzione locale di NetApp Console"].
+* link:task-iam-manage-folders-fleets.html["Impara come creare e gestire flotte"].
 * link:task-provisioning-manual.html["Effettua il provisioning dello storage manualmente"]
 * link:task-provisioning-automated.html["Effettua il provisioning dello storage automaticamente"]
 * link:task-provisioning-agentic.html["Effettua il provisioning dello storage con l'assistenza dell'IA"]
+* link:reference-console-assistant-operations.html["Vedi le operazioni supportate di Console assistant"]
 

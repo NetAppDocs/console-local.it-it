@@ -53,7 +53,7 @@ Salute:: Stato di salute, numero di oggetti degradati o critici, dischi guasti, 
 Avvisi:: Conteggi degli avvisi critici, avvisi per gravità, avvisi per area di impatto, avvisi recenti e tendenze degli avvisi nel tempo.
 
 
-Per un catalogo completo di schede predefinite e metriche, vedi link:reference-dashboard-card-templates.html["Scopri le schede dashboard personalizzate e le metriche nella distribuzione locale di NetApp Console"].
+link:reference-dashboard-card-templates.html["Esamina il catalogo delle schede dashboard personalizzate e metriche nella NetApp Console distribuzione locale"].
 
 
 

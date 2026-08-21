@@ -63,7 +63,7 @@ Se hai il ruolo di amministratore di cartelle o flotte, la pagina mostra tutti i
 
 Puoi modificare l'accesso di un membro ogni volta che cambiano le sue responsabilità. Ad esempio, quando un collega si occupa del backup per una seconda regione, aggiungi il ruolo di Backup and Recovery admin alla fleet di quella regione senza toccare i suoi ruoli di storage esistenti.
 
-Se devi aggiungere un nuovo membro e assegnargli il suo primo ruolo, consulta link:task-iam-manage-members-permissions.html#add-members["Aggiungi membri e assegna ruoli"].
+link:task-iam-manage-members-permissions.html#add-members["Scopri come aggiungere membri e assegnare ruoli"].
 
 
 

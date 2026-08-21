@@ -60,6 +60,12 @@ Le tabelle seguenti indicano le azioni che ciascun ruolo della piattaforma di di
 
 
 | Visualizza la pagina Audit e le notifiche | Sì | Sì 
+
+
+| Configura l'integrazione LLM e abilita l'assistente della NetApp Console | Sì | No 
+
+
+| Configura le impostazioni di recapito delle notifiche e del server di posta elettronica | Sì | No 
 |===
 
 

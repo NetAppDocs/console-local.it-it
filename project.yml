@@ -12,194 +12,199 @@ settings:
 sidebar:
   entries:
   - title: NetApp Console distribuzione locale
+    url: "/index.html"
+  - title: Note di rilascio
     entries:
-    - title: Note di rilascio
+    - title: Novità
+      url: "/whats-new.html"
+    - title: Limitazioni note
+      url: "/reference-local-known-limitations.html"
+    - title: Confronta la distribuzione locale di NetApp Console e NetApp Console
+      url: "/console-differences.html"
+  - title: Inizia
+    entries:
+    - title: Scopri la NetApp Console
+      url: "/concept-netapp-console-local.html"
+    - title: Scopri la gestione delle identità e degli accessi
+      url: "/concept-identity-and-access-management.html"
+    - title: Scopri la gestione delle flotte
+      url: "/concept-manage-storage.html"
+    - title: Scopri le classi e le policy di archiviazione
+      url: "/concept-storage-classes.html"
+    - title: Scopri l'integrazione di LLM (gestione assistita dall'AI)
+      url: "/concept-llm-integration.html"
+    - title: Scopri NetApp Backup and Recovery
+      url: "/concept-data-services.html"
+  - title: Installare e configurare
+    entries:
+    - title: Guida rapida per configurare la NetApp Console
+      url: "/task-quick-start-console-setup.html"
+    - title: Installa NetApp Console
       entries:
-      - title: Novità
-        url: "/whats-new.html"
-      - title: Limitazioni note
-        url: "/reference-local-known-limitations.html"
-      - title: Confronta la distribuzione locale di NetApp Console e NetApp Console
-        url: "/console-differences.html"
-    - title: Inizia
-      entries:
-      - title: Scopri la NetApp Console
-        url: "/concept-netapp-console-local.html"
-      - title: Scopri la gestione delle identità e degli accessi
-        url: "/concept-identity-and-access-management.html"
-      - title: Scopri la gestione delle flotte
-        url: "/concept-manage-storage.html"
-      - title: Scopri le classi e le policy di archiviazione
-        url: "/concept-storage-classes.html"
-      - title: Scopri l'integrazione di LLM (gestione assistita dall'AI)
-        url: "/concept-llm-integration.html"
-      - title: Scopri NetApp Backup and Recovery
-        url: "/concept-data-services.html"
-    - title: Installare e configurare
-      entries:
-      - title: Guida rapida per configurare la NetApp Console
-        url: "/task-quick-start-console-setup.html"
       - title: Installa NetApp Console
-        entries:
-        - title: Installa NetApp Console
-          url: "/task-install-agent-on-prem-ova.html"
-      - title: Pianifica l'organizzazione della tua NetApp Console
-        entries:
-        - title: Inizia con identità e accesso
-          url: "/task-iam-fleet-mgmt-get-started.html"
-        - title: Scopri cartelle e flotte
-          url: "/concept-folders-fleets-overview.html"
-        - title: Scopri il controllo degli accessi in base al ruolo (RBAC)
-          url: "/concept-iam-rbac.html"
-      - title: Configura l'organizzazione della tua NetApp Console
-        entries:
-        - title: Crea cartelle e flotte
-          url: "/task-iam-manage-folders-fleets.html"
-        - title: Aggiungi sistemi di archiviazione alla NetApp Console
-          url: "/task-add-systems.html"
-        - title: Associa le risorse a cartelle e fleet
-          url: "/task-iam-manage-resources.html"
-        - title: Aggiungi i membri e assegna i ruoli iniziali
-          url: "/task-iam-manage-members-permissions.html"
-        - title: Ruoli di accesso
-          entries:
-          - title: NetApp Console access ruoli
-            url: "/reference-iam-predefined-roles.html"
-          - title: Ruoli della piattaforma
-            url: "/reference-iam-platform-roles.html"
-          - title: Ruoli di analista di supporto alle operazioni
-            url: "/reference-iam-analyst-roles.html"
-          - title: Ruoli di storage
-            url: "/reference-iam-storage-roles.html"
-          - title: Ruoli di backup e ripristino
-            url: "/reference-iam-backup-rec-roles.html"
-      - title: Configura le integrazioni e i servizi della NetApp Console
-        entries:
-        - title: Integra NetApp Console con Active Directory
-          url: "/task-iam-active-directory-integrate.html"
-        - title: Collega il tuo LLM e abilita l'assistente della NetApp Console
-          url: "/task-llm-connect.html"
-        - title: Risolvi i problemi di integrazione LLM
-          url: "/task-llm-troubleshoot-integration.html"
-        - title: Configura la consegna delle notifiche
-          url: "/task-console-configure-notifications-delivery.html"
-    - title: Usa la NetApp Console
+        url: "/task-install-agent-on-prem-ova.html"
+    - title: Pianifica l'organizzazione della tua NetApp Console
       entries:
-      - title: Accedi alla NetApp Console
-        url: "/task-logging-in.html"
-      - title: Visualizza i sistemi associati alle flotte
-        url: "/task-iam-switch-fleets.html"
-      - title: Gestisci le impostazioni utente della NetApp Console
-        url: "/task-user-settings.html"
-      - title: Usa l'assistente della NetApp Console
-        url: "/task-console-asst-use.html"
-    - title: Gestisci lo storage in NetApp Console
+      - title: Inizia con identità e accesso
+        url: "/task-iam-fleet-mgmt-get-started.html"
+      - title: Scopri cartelle e flotte
+        url: "/concept-folders-fleets-overview.html"
+      - title: Scopri il controllo degli accessi in base al ruolo (RBAC)
+        url: "/concept-iam-rbac.html"
+    - title: Configura l'organizzazione della tua NetApp Console
       entries:
-      - title: Scopri la gestione dello storage
-        url: "/concept-manage-storage.html"
-      - title: Standardizza il comportamento di archiviazione
+      - title: Crea cartelle e flotte
+        url: "/task-iam-manage-folders-fleets.html"
+      - title: Aggiungi sistemi di archiviazione alla NetApp Console
+        url: "/task-add-systems.html"
+      - title: Associa le risorse a cartelle e fleet
+        url: "/task-iam-manage-resources.html"
+      - title: Aggiungi i membri e assegna i ruoli iniziali
+        url: "/task-iam-manage-members-permissions.html"
+      - title: Ruoli di accesso
         entries:
-        - title: Scopri le classi di archiviazione
-          url: "/concept-storage-classes.html"
-        - title: Scopri le policy delle classi di archiviazione
-          url: "/concept-storage-class-policies.html"
-        - title: Esamina le policy predefinite per le classi di archiviazione
-          url: "/reference-storage-class-policies.html"
-        - title: Crea classi di archiviazione
-          url: "/task-storage-class-manage.html"
-      - title: Provisioning dello storage
-        url: "/task-provisioning-manual.html"
-    - title: Monitora lo stato dello storage
+        - title: NetApp Console access ruoli
+          url: "/reference-iam-predefined-roles.html"
+        - title: Ruoli della piattaforma
+          url: "/reference-iam-platform-roles.html"
+        - title: Ruoli di analista di supporto alle operazioni
+          url: "/reference-iam-analyst-roles.html"
+        - title: Ruoli di storage
+          url: "/reference-iam-storage-roles.html"
+        - title: Ruoli di backup e ripristino
+          url: "/reference-iam-backup-rec-roles.html"
+    - title: Configura le integrazioni e i servizi della NetApp Console
       entries:
-      - title: Scopri come monitorare lo stato di integrità dello storage in NetApp
-          Console
-        url: "/concept-monitor-storage.html"
-      - title: Monitora con dashboard
+      - title: Integra NetApp Console con Active Directory
+        url: "/task-iam-active-directory-integrate.html"
+      - title: Collega il tuo LLM e abilita l'assistente della NetApp Console
+        url: "/task-llm-connect.html"
+      - title: Risolvi i problemi di integrazione LLM
+        url: "/task-llm-troubleshoot-integration.html"
+      - title: Configura la consegna delle notifiche
+        url: "/task-console-configure-notifications-delivery.html"
+  - title: Usa la NetApp Console
+    entries:
+    - title: Accedi alla NetApp Console
+      url: "/task-logging-in.html"
+    - title: Visualizza i sistemi associati alle flotte
+      url: "/task-iam-switch-fleets.html"
+    - title: Gestisci le impostazioni utente della NetApp Console
+      url: "/task-user-settings.html"
+    - title: Usa l'assistente della NetApp Console
+      url: "/task-console-asst-use.html"
+    - title: Operazioni dell'assistente della NetApp Console supportate
+      url: "/reference-console-assistant-operations.html"
+  - title: Gestisci lo storage in NetApp Console
+    entries:
+    - title: Scopri la gestione dello storage
+      url: "/concept-manage-storage.html"
+    - title: Standardizza il comportamento di archiviazione
+      entries:
+      - title: Scopri le classi di archiviazione
+        url: "/concept-storage-classes.html"
+      - title: Scopri le policy delle classi di archiviazione
+        url: "/concept-storage-class-policies.html"
+      - title: Esamina le policy predefinite per le classi di archiviazione
+        url: "/reference-storage-class-policies.html"
+      - title: Crea classi di archiviazione
+        url: "/task-storage-class-manage.html"
+    - title: Provisioning dello storage
+      url: "/task-provisioning-manual.html"
+    - title: Effettua il provisioning dello storage con l'assistenza dell'IA
+      url: "/task-provisioning-agentic.html"
+  - title: Monitora lo stato dello storage
+    entries:
+    - title: Scopri come monitorare lo stato di integrità dello storage in NetApp
+        Console
+      url: "/concept-monitor-storage.html"
+    - title: Monitora con dashboard
+      entries:
+      - title: Visualizza le metriche della pagina Home
+        url: "/task-storage-dashboard.html"
+      - title: Usa dashboard personalizzate
         entries:
-        - title: Visualizza le metriche della pagina Home
-          url: "/task-storage-dashboard.html"
-        - title: Usa dashboard personalizzate
-          entries:
-          - title: Scopri le dashboard personalizzate
-            url: "/concept-custom-dashboards.html"
-          - title: Inizia a usare le dashboard
-            url: "/task-dashboard-get-started.html"
-          - title: Crea una dashboard personalizzata
-            url: "/task-dashboard-create.html"
-          - title: Personalizza le schede della dashboard
-            url: "/task-customize-dashboard-cards.html"
-          - title: Schede dashboard personalizzate e riferimento alle metriche
-            url: "/reference-dashboard-card-templates.html"
+        - title: Scopri le dashboard personalizzate
+          url: "/concept-custom-dashboards.html"
+        - title: Inizia a usare le dashboard
+          url: "/task-dashboard-get-started.html"
+        - title: Crea una dashboard personalizzata
+          url: "/task-dashboard-create.html"
+        - title: Personalizza le schede della dashboard
+          url: "/task-customize-dashboard-cards.html"
+        - title: Schede dashboard personalizzate e riferimento alle metriche
+          url: "/reference-dashboard-card-templates.html"
+      - title: Gestisci dashboard personalizzate
+        entries:
         - title: Gestisci dashboard personalizzate
-          entries:
-          - title: Gestisci dashboard personalizzate
-            url: "/task-dashboard-manage.html"
-      - title: Monitora le flotte usando l'inventario
-        url: "/concept-monitor-fleets-inventory.html"
-      - title: Correggi gli avvisi
-        entries:
-        - title: Scopri gli avvisi
-          url: "/concept-console-alerts.html"
-        - title: Visualizza gli avvisi
-          url: "/task-alerts-monitor.html"
-        - title: Configura le regole di notifica per gli avvisi
-          url: "/task-alert-rules-manage.html"
-        - title: Correggi la deriva della storage class
-          url: "/task-storage-class-drift-remediate.html"
-        - title: Azioni correttive di allerta
-          url: "/reference-alert-remediation.html"
-      - title: Indaga sui problemi di prestazioni
-        entries:
-        - title: Scopri l'analizzatore di carico di lavoro
-          url: "/concept-workload-analyzer.html"
-        - title: Indaga sull'alta latenza su un volume
-          url: "/task-analyzer-volume-latency-investigate.html"
-        - title: Analizza la domanda di throughput elevato su un volume
-          url: "/task-analyzer-volume-throughput-investigate.html"
-        - title: Esamina la crescita della capacità su un volume
-          url: "/task-analyzer-volume-capacity-investigate.html"
-        - title: Riferimento alle metriche di Workload Analyzer
-          url: "/reference-workload-analyzer-metrics.html"
-    - title: Gestisci e monitora la distribuzione locale di NetApp Console
+          url: "/task-dashboard-manage.html"
+    - title: Monitora le flotte usando l'inventario
+      url: "/concept-monitor-fleets-inventory.html"
+    - title: Correggi gli avvisi
       entries:
-      - title: Scopri come amministrare la distribuzione locale di NetApp Console
-        url: "/concept-administer-netapp-console-local.html"
-      - title: Verifica le operazioni di distribuzione locale della NetApp Console
-        url: "/task-audit-console-activity.html"
-      - title: Licenses and subscriptions
-        url: https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html
-      - title: Gestisci NetApp Console
-        entries:
-        - title: Gestisci la macchina virtuale della NetApp Console
-          url: "/task-console-local-vm-config.html"
-      - title: Gestisci utenti e accessi
-        entries:
-        - title: Gestisci l'accesso dei membri (approccio incentrato sul membro)
-          url: "/task-iam-manage-roles.html"
-        - title: Gestisci le assegnazioni di accesso alla flotta (incentrato sulla
-            flotta)
-          url: "/task-iam-users-fleets-assign.html"
-        - title: Gestisci la sicurezza dei membri
-          url: "/task-manage-member-security.html"
-    - title: Riferimento
+      - title: Scopri gli avvisi
+        url: "/concept-console-alerts.html"
+      - title: Visualizza gli avvisi
+        url: "/task-alerts-monitor.html"
+      - title: Configura le regole di notifica per gli avvisi
+        url: "/task-alert-rules-manage.html"
+      - title: Correggi la deriva della storage class
+        url: "/task-storage-class-drift-remediate.html"
+      - title: Azioni correttive di allerta
+        url: "/reference-alert-remediation.html"
+    - title: Indaga sui problemi di prestazioni
       entries:
-      - title: NetApp Console API di distribuzione locale
-        entries:
-        - title: ID dell'organizzazione e della flotta
-          url: "/task-iam-rename-organization.html"
-        - title: Riferimento API per la distribuzione locale della console
-          url: https://docs.netapp.com/us-en/console-local-automation/index.html
-      - title: Fornitori e modelli LLM supportati
-        url: "/reference-llm-supported-models.html"
-      - title: Riferimento agli avvisi ONTAP
-        url: "/reference-ontap-alerts.html"
-      - title: Categorie di conformità alla sicurezza del cluster
-        url: "/reference-cluster-compliance-categories.html"
-      - title: Categorie di conformità alla sicurezza delle Storage VM
-        url: "/reference-svm-compliance-categories.html"
-    - title: Conoscenza e supporto
+      - title: Scopri l'analizzatore di carico di lavoro
+        url: "/concept-workload-analyzer.html"
+      - title: Indaga sull'alta latenza su un volume
+        url: "/task-analyzer-volume-latency-investigate.html"
+      - title: Analizza la domanda di throughput elevato su un volume
+        url: "/task-analyzer-volume-throughput-investigate.html"
+      - title: Esamina la crescita della capacità su un volume
+        url: "/task-analyzer-volume-capacity-investigate.html"
+      - title: Riferimento alle metriche di Workload Analyzer
+        url: "/reference-workload-analyzer-metrics.html"
+  - title: Gestisci e monitora la distribuzione locale di NetApp Console
+    entries:
+    - title: Scopri come amministrare la distribuzione locale di NetApp Console
+      url: "/concept-administer-netapp-console-local.html"
+    - title: Verifica le operazioni di distribuzione locale della NetApp Console
+      url: "/task-audit-console-activity.html"
+    - title: Licenze
+      url: https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html
+    - title: Gestisci NetApp Console
       entries:
-      - title: Ottieni aiuto
-        url: "/task-get-help.html"
+      - title: Gestisci la macchina virtuale della NetApp Console
+        url: "/task-console-local-vm-config.html"
+    - title: Gestisci utenti e accessi
+      entries:
+      - title: Gestisci l'accesso dei membri (approccio incentrato sul membro)
+        url: "/task-iam-manage-roles.html"
+      - title: Gestisci le assegnazioni di accesso alla flotta (incentrato sulla flotta)
+        url: "/task-iam-users-fleets-assign.html"
+      - title: Gestisci la sicurezza dei membri
+        url: "/task-manage-member-security.html"
+  - title: Riferimento
+    entries:
+    - title: NetApp Console API di distribuzione locale
+      entries:
+      - title: ID dell'organizzazione e della flotta
+        url: "/task-iam-rename-organization.html"
+      - title: Riferimento API per la distribuzione locale della console
+        url: https://docs.netapp.com/us-en/console-local-automation/index.html
+    - title: Fornitori e modelli LLM supportati
+      url: "/reference-llm-supported-models.html"
+    - title: Operazioni dell'assistente della NetApp Console supportate
+      url: "/reference-console-assistant-operations.html"
+    - title: Riferimento agli avvisi ONTAP
+      url: "/reference-ontap-alerts.html"
+    - title: Categorie di conformità alla sicurezza del cluster
+      url: "/reference-cluster-compliance-categories.html"
+    - title: Categorie di conformità alla sicurezza delle Storage VM
+      url: "/reference-svm-compliance-categories.html"
+  - title: Conoscenza e supporto
+    entries:
+    - title: Ottieni aiuto
+      url: "/task-get-help.html"
   - title: Note legali
     url: "/legal-notices.html"
