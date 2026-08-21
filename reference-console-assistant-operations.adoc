@@ -14,19 +14,37 @@ summary: 'Esamina le categorie di operazioni rivolte al cliente supportate dall"
 
 
 [role="lead"]
-L'assistente della NetApp Console supporta domande in linguaggio naturale e operazioni di storage selezionate. Le operazioni disponibili dipendono dalla release, dall'endpoint LLM configurato e dalle autorizzazioni assegnate.
-
-
-NOTE: Questa documentazione relativa alla connessione di un LLM all'assistente della Console per abilitare le funzionalità di intelligenza artificiale è fornita come anteprima tecnologica. Con questa offerta in anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+Usa l'assistente Console nella distribuzione locale di NetApp Console per fare domande in linguaggio naturale ed eseguire alcune operazioni di storage. Le operazioni disponibili dipendono dal ruolo di accesso assegnato. NOTA: questa documentazione relativa alla connessione di un LLM all'assistente Console per abilitare le funzionalità AI è fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
 
 Usa l'assistente della Console in modalità *sola lettura* per domande e analisi senza modifiche all'infrastruttura. Usa la modalità *lettura/scrittura* per le operazioni supportate che possono modificare le risorse di storage o i sistemi ONTAP. L'assistente mostra la modifica proposta e richiede conferma prima di eseguire un'operazione di scrittura.
 
 
 
-[[conversational-guidance-and-search]]
-== Guida conversazionale e ricerca
+[[console-assistant-capabilities]]
+== Funzionalità di assistente della console
 
-Fai domande sulla distribuzione locale di NetApp Console, sul tuo ambiente di storage o sui flussi di lavoro di amministrazione ONTAP supportati. L'assistente utilizza l'endpoint LLM configurato insieme alla documentazione disponibile e al contesto della fleet per restituire una risposta o richiedere ulteriore contesto.
+L'assistente della Console supporta le seguenti categorie di operazioni. Le operazioni disponibili dipendono dalla tua versione, dall'endpoint LLM configurato, dai ruoli assegnati e dall'ambito delle risorse.
+
+[cols="28,18,54"]
+|===
+| Capacità | Modalità di accesso | Usalo per 
+
+
+| Guida conversazionale e ricerca | Solo lettura | Fai domande sulla distribuzione locale di NetApp Console, sul tuo ambiente di storage e sui flussi di lavoro di amministrazione ONTAP supportati. 
+
+
+| Metriche e analisi | Solo lettura | Analizza la capacità supportata, le prestazioni e altre metriche entro i limiti consentiti. 
+
+
+| Provisioning dello storage | Lettura/scrittura | Pianifica e predisponi i volumi o le LUN supportati dopo aver esaminato e confermato l'operazione proposta. 
+
+
+| Indagine e risoluzione degli avvisi | Sola lettura o lettura/scrittura | Esamina gli avvisi attivi e rivedi le azioni correttive supportate prima che modifichino lo storage. 
+
+
+| Gestione ONTAP | Sola lettura o lettura/scrittura | Visualizza o esegui operazioni di gestione supportate sui sistemi associati alla Console. 
+|===
+Usa i ruoli assegnati e l'ambito di organizzazione, cartella o flotta per determinare a quali sistemi e carichi di lavoro l'assistente può accedere. L'assistente non bypassa i controlli di accesso alla distribuzione locale della Console.
 
 
 
@@ -36,6 +54,8 @@ Fai domande sulla distribuzione locale di NetApp Console, sul tuo ambiente di st
 Poni domande di sola lettura sulla capacità di storage supportata, le prestazioni e altre metriche per le risorse che rientrano nel tuo ambito di autorizzazione. Includi la risorsa, la metrica e il periodo di tempo quando questi dettagli sono rilevanti per la tua domanda.
 
 L'assistente restituisce un'analisi e non modifica lo storage in modalità *Read only*.
+
+Usa l'assistente Console per domande in linguaggio naturale e analisi high-level sulle risorse nel tuo ambito consentito. Usa Workload Analyzer quando hai bisogno di un'analisi dettagliata e basata sul tempo di un singolo volume, inclusi latenza, throughput, utilizzo delle risorse, capacità, eventi e previsioni. link:concept-workload-analyzer.html["Scopri Workload Analyzer."]
 
 
 
@@ -51,26 +71,31 @@ Dopo che approvi il piano, l'assistente esegue il provisioning dell'operazione s
 [[alert-investigation-and-remediation]]
 == Indagine e risoluzione degli avvisi
 
-Chiedi all'assistente di esaminare un avviso attivo supportato. Analizza l'avviso e può suggerire un'azione di correzione. Quando una correzione supportata modifica lo storage, l'assistente presenta l'azione per la revisione e richiede conferma prima dell'esecuzione.
+Chiedi all'assistente di esaminare un avviso attivo. Analizza l'avviso e può suggerire un'azione correttiva. Quando una correzione supportata modifica lo storage, l'assistente presenta l'azione per la revisione e richiede conferma prima dell'esecuzione.
+
+Esamina i dettagli della soluzione proposta e conferma l'azione prima che l'assistente cambi lo storage.
+
+link:reference-alert-remediation.html["Scopri le azioni di correzione degli avvisi."]
 
 
 
 [[ontap-management]]
 == Gestione ONTAP
 
-Richiedi in linguaggio naturale un'operazione di gestione supportata per un sistema ONTAP registrato. Identifica il cluster, l'SVM o la risorsa di destinazione quando li conosci, così l'assistente può usare il contesto corretto.
+Richiedi un'operazione di gestione supportata per un sistema ONTAP registrato in linguaggio naturale. Identifica il cluster di destinazione, la storage virtual machine (SVM) o la risorsa quando la conosci, così l'assistente può usare il contesto corretto.
 
-L'assistente distingue le richieste di sola lettura dalle operazioni di scrittura. Rivedi la destinazione e le modifiche proposte prima di confermare un'operazione di scrittura. Il set di operazioni disponibili dipende dalla versione di distribuzione locale della Console e dalle autorizzazioni assegnate al tuo account.
+Verifica se la tua richiesta si limita a leggere informazioni o modifica un sistema ONTAP, quindi conferma l'operazione di scrittura proposta. Il set di operazioni disponibili dipende dalla versione di distribuzione locale della Console e dalle autorizzazioni assegnate al tuo account.
+
+link:task-console-asst-use.html["Scopri come utilizzare l'assistente della Console."]
 
 
 
 [[permissions-and-scope]]
 == Permessi e ambito
 
-L'assistente utilizza le autorizzazioni e l'ambito delle risorse dell'utente che ha effettuato l'accesso:
+L'assistente utilizza le autorizzazioni e l'ambito delle risorse dell'utente connesso. L'organizzazione, la cartella o l'ambito del fleet assegnato determinano a quali sistemi e carichi di lavoro l'assistente può accedere.
 
 * Il tuo ruolo determina quali risorse e operazioni puoi visualizzare o modificare.
-* L'organizzazione, la cartella e l'ambito della flotta limitano i sistemi e i carichi di lavoro disponibili per l'assistente.
 * Le policy relative alle classi di archiviazione limitano il provisioning assistito dall'IA.
 * L'assistente non aggira i controlli di accesso alla distribuzione locale della NetApp Console.
 
@@ -82,7 +107,7 @@ link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso alla distrib
 [[asynchronous-operations]]
 == Operazioni asincrone
 
-Alcune operazioni di scrittura supportate non vengono completate immediatamente. Per queste operazioni, l'assistente crea un job. Chiedi all'assistente lo stato della richiesta per monitorare il completamento.
+Chiedi all'assistente lo stato di un'operazione di scrittura supportata che viene eseguita in modo asincrono. L'assistente crea un job per le operazioni che non vengono completate immediatamente.
 
 
 

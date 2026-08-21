@@ -14,7 +14,7 @@ summary: Riferimento per le azioni correttive disponibili nella NetApp Console d
 
 
 [role="lead"]
-Usa questo riferimento per capire quali azioni di correzione sono disponibili da *Fix it* nella distribuzione locale di NetApp Console. Per ogni azione, la tabella descrive cosa fa l'azione e l'avviso correlato. Controlla i dettagli dell'azione nella finestra di conferma prima di eseguirla.
+Usa questo riferimento per capire le azioni di correzione disponibili da *Fix It* nella distribuzione locale della NetApp Console. Per ogni azione, la tabella descrive cosa fa l'azione e l'avviso correlato. Controlla i dettagli dell'azione nella finestra di conferma prima di eseguirla. Questo riferimento descrive le azioni nel workflow degli avvisi; non identifica quali azioni l'assistente della Console può suggerire.
 
 
 

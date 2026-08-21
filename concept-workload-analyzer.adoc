@@ -16,6 +16,8 @@ summary: Scopri come Workload Analyzer ti aiuta a esaminare i problemi relativi 
 [role="lead"]
 Utilizza lo strumento Workload Analyzer per le distribuzioni locali di NetApp Console per visualizzare il comportamento di un singolo volume nel tempo. Puoi esaminare il peggioramento delle performance, le tendenze di capacità e i problemi di contesa delle risorse dal volume stesso, da un avviso o dall'inventario.
 
+Per domande in linguaggio naturale e per analisi high-level sulle risorse consentite, usa l'assistente Console. link:reference-console-assistant-operations.html["Scopri le operazioni supportate dell'assistente Console."]
+
 
 
 [[how-workload-analyzer-identifies-root-causes]]

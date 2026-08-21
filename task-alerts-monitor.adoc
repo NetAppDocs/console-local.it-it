@@ -166,6 +166,8 @@ Se l'azione risolve il problema, l'avviso non risulta più attivo per quell'ambi
 
 Puoi analizzare un avviso ONTAP in Workload Analyzer per capire cosa lo ha generato.
 
+Utilizza Workload Analyzer per un'analisi dettagliata e temporale del volume interessato. Per domande in linguaggio naturale o per un'analisi high-level sulle risorse consentite, utilizza l'assistente Console. link:reference-console-assistant-operations.html["Scopri le operazioni supportate dell'assistente Console."]
+
 Quando indaghi su un avviso ONTAP, puoi anche andare direttamente all'interfaccia di System Manager del sistema che ha generato l'avviso per visualizzare ulteriori dettagli e agire.
 
 .Passaggi

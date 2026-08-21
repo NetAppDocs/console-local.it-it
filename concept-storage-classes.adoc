@@ -68,7 +68,7 @@ Le problematiche si suddividono in due categorie:
 * *Non conformità delle performance*: il comportamento in fase di esecuzione del carico di lavoro non soddisfa più l'intento di performance della classe di storage (ad esempio, pressione prolungata in prossimità di un limite QoS o aumento della latenza di coda).
 
 
-Una vista di analisi spiega cosa è cambiato e perché. Potrebbero essere disponibili azioni di correzione guidate (ad esempio, *Correggi*) per aiutarti a ripristinare la conformità. Alcune correzioni possono essere applicate sul posto, mentre altre potrebbero richiedere l'allineamento del carico di lavoro a una diversa classe di storage per ripristinare il comportamento previsto.
+Una vista di analisi spiega cosa è cambiato e perché. Potrebbero essere disponibili azioni di correzione guidate (per esempio, *Fix It*) per aiutarti a ripristinare la conformità. Alcune correzioni possono essere applicate direttamente, mentre altre potrebbero richiedere di allineare il carico di lavoro a una diversa classe di archiviazione per ripristinare il comportamento previsto.
 
 .Dove indagare
 Di solito puoi analizzare le deviazioni e le non conformità da una di queste posizioni (la disponibilità dipende dalla tua configurazione e dalle autorizzazioni):

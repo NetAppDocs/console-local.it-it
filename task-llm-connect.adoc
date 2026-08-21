@@ -32,8 +32,8 @@ Per connettere il tuo LLM, seleziona un percorso del provider, inserisci i detta
 
 
 
-[[gather-what-you-need-before-you-connect-an-llm]]
-== Raccogli tutto il necessario prima di connetterti a un LLM
+[[before-you-begin]]
+== Prima di iniziare
 
 Prepara le credenziali del provider e l'accesso all'endpoint in modo che l'assistente della NetApp Console possa operare entro i limiti di governance configurati dalla tua organizzazione.
 

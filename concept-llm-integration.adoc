@@ -88,6 +88,8 @@ Proteggi l'integrazione con questi controlli:
 * Esamina l'utilizzo e gli avvisi del provider per rilevare attività insolite.
 
 
+Controlla i costi dell'assistente della Console scegliendo un fornitore e un modello LLM appropriati, impostando limiti di utilizzo e avvisi con il fornitore e monitorando l'utilizzo dei token. Solo le attività che inviano richieste al LLM consumano token del fornitore; le operazioni di backend non li consumano.
+
 
 
 [[connect-your-llm]]

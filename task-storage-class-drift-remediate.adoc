@@ -46,7 +46,7 @@ La pagina *Avvisi > Panoramica* si apre con i filtri applicati.
 +
 Per individuare eventuali discrepanze nella configurazione, confronta le impostazioni previste con quelle effettive per capire cosa è cambiato.
 
-. Seleziona l'azione di correzione consigliata, ad esempio *Fix it*.
+. Seleziona l'azione di remediation consigliata, ad esempio *Fix It*.
 . Esamina le modifiche proposte e applica le misure correttive.
 . Torna su *Archiviazione > Classi di archiviazione* e verifica che il carico di lavoro non appaia più come drifted.
 +
