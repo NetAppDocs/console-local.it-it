@@ -14,21 +14,21 @@ summary: 'Dalla pagina Audit puoi controllare l"attività degli utenti (avviata 
 
 
 [role="lead"]
-Dalla pagina Audit puoi controllare l'attività degli utenti avviata sia dall'interfaccia utente che dalle API e puoi monitorare lo stato delle operazioni nella distribuzione locale di NetApp Console e l'utente che le ha avviate.
+Documenta l'attività amministrativa durante le verifiche di conformità per verificare le modifiche di accesso e conservare una registrazione delle azioni nella distribuzione locale di NetApp Console.
 
 .Ruoli richiesti
 Super amministratore, amministratore dell'organizzazione, amministratore di cartelle e flotte, analista del supporto operativo, super visualizzatore, visualizzatore dell'organizzazione o visualizzatore di cartelle e flotte. link:reference-iam-predefined-roles.html["Scopri i ruoli di accesso"].
 
-Puoi visualizzare l'attività di audit nella distribuzione locale della Console, scaricare un file CSV dei log di audit oppure configurare l'invio dei log di audit al tuo server syslog tramite un webhook.
+Puoi visualizzare l'attività di audit nella distribuzione locale della Console e scaricare un file CSV dei log di audit.
 
 
 
 [[audit-user-activity-from-the-audit-page]]
 == Verifica l'attività degli utenti dalla pagina Audit
 
-Usa la pagina Audit per identificare chi ha eseguito un'azione o il suo stato.
+Monitora l'attività amministrativa per tracciare le modifiche nella tua NetApp Console implementazione locale quando risolvi incidenti o verifichi la responsabilità operativa.
 
-La pagina Audit mostra le azioni completate dagli utenti all'interno della tua organizzazione. Ad esempio, puoi verificare chi ha aggiunto un membro a un'organizzazione o che una fleet è stata eliminata correttamente, oltre a vedere altre azioni di gestione dello storage eseguite dagli utenti nella tua organizzazione.
+La pagina Audit mostra le azioni completate dagli utenti all'interno della tua organizzazione. Ad esempio, puoi verificare chi ha aggiunto un membro a un'organizzazione, confermare che un utente ha eliminato una fleet o visualizzare altre azioni di gestione dello storage che gli utenti eseguono nella tua organizzazione.
 
 I registri di controllo mostrano l'attività relativa ai seguenti servizi:
 
@@ -39,18 +39,19 @@ I registri di controllo mostrano l'attività relativa ai seguenti servizi:
 
 .Passaggi
 . Seleziona *Administration > Audit*.
-. Utilizza i filtri sopra la tabella per modificare quali azioni vengono visualizzate nella tabella.
-+
+. Utilizza i filtri sopra la tabella per restringere l'attività di audit in base a intervallo di tempo, servizio, azione, risorsa, utente o stato.
+
+
+Le voci di audit mostrano l'utente che ha eseguito l'azione quando l'identità dell'utente può essere risolta. Se l'identità dell'utente non può essere risolta, la voce mostra l'utente `auth0Id` invece del suo nome.
+
 Ad esempio, puoi usare il filtro *Servizio* per mostrare le azioni relative a un servizio specifico, oppure puoi usare il filtro *Utente* per mostrare le azioni relative a un account utente specifico.
-
-
 
 
 
 [[filter-audit-logs-for-identity-and-access-management-actions]]
 === Filtra i registri di controllo per azioni di gestione dell'identità e dell'accesso
 
-Per visualizzare solo le azioni relative alla gestione della tua organizzazione, come l'aggiunta di membri, la creazione di flotte o l'eliminazione di risorse, filtra il registro di controllo in base al servizio Tenancy.
+Esamina le modifiche alla gestione degli accessi per confermare chi ha modificato le risorse organizzative e supportare indagini di sicurezza accurate.
 
 .Passaggi
 . Seleziona *Administration > Audit*.
@@ -66,7 +67,7 @@ Ad esempio, usa il filtro *Utente* per mostrare le azioni IAM eseguite da uno sp
 [[download-audit-logs-from-the-audit-page]]
 === Scarica i registri di controllo dalla pagina Audit
 
-Puoi scaricare i log di audit dalla pagina Audit in un file CSV. Questo ti permette di tenere un registro delle azioni che gli utenti eseguono nella tua organizzazione. Il file CSV scaricato include tutte le colonne dei log di audit, indipendentemente dai filtri o dalle colonne visualizzate nella pagina Audit.
+Conserva una registrazione indipendente delle azioni organizzative a supporto delle verifiche di conformità e delle future indagini sugli incidenti. Il file CSV scaricato include tutte le colonne del registro di controllo, anche se applichi filtri o cambi le colonne visualizzate.
 
 .Passaggi
 . Nella pagina *Audit*, seleziona l'icona di download nell'angolo in alto a destra della tabella.
