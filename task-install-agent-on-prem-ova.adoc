@@ -98,14 +98,8 @@ Accedi al tuo ambiente VCenter per distribuire Console local deployment.
 . Scegli il tipo di configurazione proxy che vuoi usare: proxy esplicito, proxy trasparente o nessun proxy.
 . Seleziona il datastore in cui desideri distribuire la VM, quindi seleziona *Avanti*. Assicurati che soddisfi i requisiti dell'host.
 . Seleziona la rete a cui vuoi connettere la VM, poi seleziona *Avanti*. Assicurati che la rete sia IPv4 e che abbia accesso outbound a Internet verso gli endpoint richiesti.
-. Nella finestra *Personalizza modello*, compila i seguenti campi:
+. Nella finestra *Personalizza modello*, compilare i seguenti campi:
 +
-** *Informazioni sul proxy*
-+
-*** Se hai selezionato proxy esplicito, inserisci il nome host o l'indirizzo IP del proxy server e il numero di porta, oltre a nome utente e password.
-*** Se hai selezionato proxy trasparente, carica il relativo certificato.
-
-
 ** *Configurazione della macchina virtuale*
 +
 *** *Password di manutenzione*: Imposta la password per l’ `maint`utente che consente l’accesso alla console di manutenzione della distribuzione locale della NetApp Console.
