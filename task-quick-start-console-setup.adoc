@@ -50,6 +50,6 @@ Super amministratore o amministratore dell'organizzazione. link:reference-iam-pr
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"] Configura NetApp Backup and Recovery
 [role="quick-margin-list"]
 * link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-byol-license["Ottieni una licenza per NetApp Backup and Recovery"^]. Puoi saltare questo passaggio se non desideri accedere ai servizi avanzati di Backup and Recovery.
-* Aggiungi la licenza NetApp Backup and Recovery alla distribuzione locale di NetApp Console. link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Aggiungi la licenza alla distribuzione locale di NetApp Console"^].
+* Aggiungi la licenza NetApp Backup and Recovery alla distribuzione locale di NetApp Console. link:task-manage-licenses.html["Gestisci le licenze nella distribuzione locale di NetApp Console"].
 * link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["Concedi agli utenti l'accesso a NetApp Backup and Recovery"].
 

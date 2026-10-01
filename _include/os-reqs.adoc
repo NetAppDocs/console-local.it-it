@@ -169,7 +169,7 @@ Coppia di chiavi:: Quando crei l'agente della Console, dovrai selezionare una co
 Limite di hop della risposta PUT quando usi IMDSv2:: Se IMDSv2 è abilitato sull'istanza EC2 (questa è l'impostazione predefinita per le nuove istanze EC2), devi modificare il limite di hop della risposta PUT sull'istanza a 3. Se non cambi il limite sull'istanza EC2, riceverai un errore di inizializzazione dell'interfaccia utente quando provi a configurare l'agente.
 +
 --
-* link:task-require-imdsv2.html["Richiedi l'utilizzo di IMDSv2 sulle istanze Amazon EC2"]
+* https://docs.netapp.com/us-en/console-setup-admin/task-require-imdsv2.html["Richiedi l'utilizzo di IMDSv2 sulle istanze Amazon EC2"^]
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["Documentazione AWS: Modifica il limite di hop della risposta PUT"^]
 
 

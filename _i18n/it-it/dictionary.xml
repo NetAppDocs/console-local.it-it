@@ -507,7 +507,6 @@
   <block id="c8e7383477673ee726b6ba29dc487444" category="list-text">Limite di hop della risposta PUT quando usi IMDSv2</block>
   <block id="6072a0c0865bf8071e3960e01a77d5f4" category="list-text">Se IMDSv2 è abilitato sull'istanza EC2 (questa è l'impostazione predefinita per le nuove istanze EC2), devi modificare il limite di hop della risposta PUT sull'istanza a 3. Se non cambi il limite sull'istanza EC2, riceverai un errore di inizializzazione dell'interfaccia utente quando provi a configurare l'agente.</block>
   <block id="98dddf7eafbbdfa88756d62945237473" category="inline-link-macro">Richiedi l'utilizzo di IMDSv2 sulle istanze Amazon EC2</block>
-  <block id="8d8efedf65fe740dfe59c5779c9d745c" category="list-text"><block ref="8d8efedf65fe740dfe59c5779c9d745c" category="inline-link-macro-rx"></block></block>
   <block id="75c0fbf84b1614b17a984df62bf849f6" category="inline-link">Documentazione AWS: Modifica il limite di hop della risposta PUT</block>
   <block id="ca7f44589a06d75665d92002d6148e98" category="list-text"><block ref="ca7f44589a06d75665d92002d6148e98" category="inline-link-rx"></block></block>
   <block id="893ba5865a015de9dc77765cdf7184e3" category="list-text">dimensione della VM Azure</block>
@@ -614,7 +613,6 @@
   <block id="1727dc0bbb7fbac9af669b5ee698c1ac" category="paragraph">Se (cliente) hai bisogno di arrestare e poi avviare la macchina virtuale dell'agente della Console, dovresti farlo dalla console del tuo cloud provider oppure utilizzando le procedure standard per la gestione on-premises.</block>
   <block id="2402a0b8d9aa0c3e1beaccf0071277cc" category="doc">Presentazione della distribuzione locale di NetApp Console</block>
   <block id="258ea65dfbe28db96b93f873d22fbf91" category="inline-link">Scopri la distribuzione locale di NetApp Console</block>
-  <block id="01d7fad8bf6934be5b2c4a94892a6089" category="summary">Scopri come amministrare e monitorare l'implementazione locale di NetApp Console, incluse le attività di audit, le subscriptions, la manutenzione, la risoluzione dei problemi e l'accesso dei membri.</block>
   <block id="c6c906d845365b31f1a3d974e79792f1" category="doc">Scopri l'amministrazione e il monitoraggio nella distribuzione locale di NetApp Console</block>
   <block id="670ed77781e2c20b187adbc14ae28dad" category="paragraph">Dopo che hai distribuito la NetApp Console in locale, usa gli strumenti di amministrazione e monitoraggio per esaminare l'attività, mantenere la VM e gestire l'accesso dei membri.</block>
   <block id="980949ecd0b09f55572260f966480f7c" category="section-title">Attività di audit</block>
@@ -623,10 +621,6 @@
   <block id="e1de85747c549269b8ff9d47258fa0f5" category="list-text"><block ref="e1de85747c549269b8ff9d47258fa0f5" category="inline-link-macro-rx"></block></block>
   <block id="e464be32a656da70e4497036dd7bfa27" category="inline-link-macro">Configura i canali di consegna delle notifiche nella distribuzione locale di NetApp Console</block>
   <block id="390314978359a827205be20044a720d7" category="list-text"><block ref="390314978359a827205be20044a720d7" category="inline-link-macro-rx"></block></block>
-  <block id="0e83ec1135d78041291977ef91f42a52" category="section-title">Licenses and subscriptions</block>
-  <block id="d3750dc5d54e736686cf3b9cc84cc828" category="paragraph">Utilizza le informazioni relative a Licenses and subscriptions per comprendere i diritti di servizio e lo stato dell'abbonamento per il tuo ambiente NetApp Console.</block>
-  <block id="1a64901c54ab09814efdf25e5f43e721" category="inline-link-macro">Scopri di più su Licenses and subscriptions</block>
-  <block id="2911a770deda0bb77566f78d552dfda4" category="paragraph"><block ref="0af2069e5399d38f7197920e16d3e933" category="inline-link-macro-rx"></block>.</block>
   <block id="3104f37255772981acbacccf67d9e69d" category="section-title">Gestisci e risolvi i problemi della VM di distribuzione locale della Console</block>
   <block id="0d37b7263460fc595f1d4f006dc06a67" category="paragraph">Gestisci la VM che ospita la distribuzione locale della Console, rivedi le impostazioni di rete e di sistema, accedi agli strumenti di diagnostica e risolvi i problemi quando il servizio o l'agente non si comporta come previsto.</block>
   <block id="3971ca1022683ea0d36cbdd46c250ee4" category="inline-link-macro">Esegui la manutenzione del tuo vCenter o host ESXi per la distribuzione locale della Console</block>
@@ -3192,8 +3186,6 @@
   <block id="e230576dace207ebd856e57c6fe8e15a" category="list-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Configura NetApp Backup and Recovery</block>
   <block id="eca3fd2056bf98a6c5e6cef89ccab0f7" category="inline-link-macro">Ottieni una licenza per NetApp Backup and Recovery</block>
   <block id="f0babb8294f33c3aef3243c2efb1cc1a" category="list-text"><block ref="490656acfefe9653179282fa7c05f8f5" category="inline-link-macro-rx"></block>. Puoi saltare questo passaggio se non desideri accedere ai servizi avanzati di Backup and Recovery.</block>
-  <block id="f8b074d6473f4ccd3b5744a93a40658f" category="inline-link-macro">Aggiungi la licenza alla distribuzione locale di NetApp Console</block>
-  <block id="d5c8020a1894db77e7f90ec62af195a1" category="list-text">Aggiungi la licenza NetApp Backup and Recovery alla distribuzione locale di NetApp Console. <block ref="76a2d5b2eea7a314e0fcef167796a267" category="inline-link-macro-rx"></block>.</block>
   <block id="d31be9c871f00244df75cc58f27c83c2" category="inline-link-macro">Concedi agli utenti l'accesso a NetApp Backup and Recovery</block>
   <block id="f1632e37ec141a641ef4e45008b6c65b" category="list-text"><block ref="2f2dc60c865addcfc19ab84f30977762" category="inline-link-macro-rx"></block>.</block>
   <block id="e7563db134aee8b1b774296ac9f4f6e5" category="summary">Individua, analizza e correggi le deviazioni della classe di archiviazione nella distribuzione locale di NetApp Console.</block>
@@ -3715,4 +3707,41 @@
   <block id="e68d2c37dd2355df41bb544adc897de6" category="inline-link-macro">NetApp articolo della Knowledge Base</block>
   <block id="29bfebf6dcc74c9e558756ca6998173c" category="admonition">Per proteggere la comunicazione con il tuo certificato TLS, segui le istruzioni in questo <block ref="eb10a8c97ab666bf81650f11f6a3aa78" category="inline-link-macro-rx"></block>.</block>
   <block id="e1b143775fd4087c8f3fffb22a2a2569" category="list-text">Nella finestra *Personalizza modello*, compilare i seguenti campi:</block>
+  <block id="b874ba81953e4df46329ee5a8e8b7ce0" category="list-text"><block ref="b874ba81953e4df46329ee5a8e8b7ce0" category="inline-link-rx"></block></block>
+  <block id="d8333cc7485c82a7c067cc852cfce42a" category="summary">Scopri come amministrare e monitorare la distribuzione locale di NetApp Console, incluse le attività di audit, le licenze, la manutenzione, la risoluzione dei problemi e l'accesso dei membri.</block>
+  <block id="176f491924b5945481f66571c5dec3a1" category="paragraph">Utilizza le informazioni sulla licenza per comprendere i diritti ai servizi per la tua implementazione locale di Console.</block>
+  <block id="f2a9940fd0d7a08ae86365be93b73609" category="inline-link-macro">Gestisci le licenze nella distribuzione locale di NetApp Console</block>
+  <block id="b245df0c039209d78d5353ec232ea246" category="paragraph"><block ref="b245df0c039209d78d5353ec232ea246" category="inline-link-macro-rx"></block></block>
+  <block id="5ea7a0024ab1d2b3244ba0c699b3390c" category="summary">Gestisci le licenze dirette per NetApp Backup and Recovery nella distribuzione locale di NetApp Console.</block>
+  <block id="1414b8807db3a544302b461e7372d3d9" category="paragraph">Gestisci la licenza di NetApp Backup and Recovery nella distribuzione locale di NetApp Console. Si tratta di una licenza floating che puoi usare in tutti i sistemi associati alla tua organizzazione di NetApp Console. Se la licenza fornisce una capacità di backup sufficiente, non devi acquistarne un'altra. Puoi aggiungere, aggiornare e rimuovere la licenza e visualizzarne la capacità utilizzata, la capacità della licenza e la scadenza della licenza.</block>
+  <block id="db999994b08c5c61418e4ca147392c08" category="inline-link-macro">Documentazione sulle licenze di NetApp Backup and Recovery</block>
+  <block id="4aa97d391dbc667c46beaaf39dfb7ddd" category="admonition">La distribuzione locale di NetApp Console non richiede una licenza. NetApp Backup and Recovery è attualmente l'unico servizio che supporta la licenza diretta nella distribuzione locale di NetApp Console. Questa licenza è anche chiamata licenza bring-your-own-license (BYOL). Per ulteriori informazioni, consulta <block ref="b68a6b1a846d68bcaf8da70ea0f764ae" category="inline-link-macro-rx"></block>.</block>
+  <block id="7b17f4802e5875aea6b273b7dfe498f3" category="paragraph">Per gestire le licenze nella distribuzione locale di Console, devi avere il ruolo di Super admin o Organization admin.</block>
+  <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="section-title">Aggiungi una licenza</block>
+  <block id="ba11df1d1373b340eae5ee22a7703b40" category="paragraph">Aggiungi una licenza alla tua organizzazione Console caricando un file di licenza.</block>
+  <block id="a03e1a44589be8a351ff3a7a1d863c97" category="paragraph">Per generare il file di licenza, ti servono il numero di serie del servizio cloud e l'ID dell'organizzazione di NetApp Console.</block>
+  <block id="c2dab7efe42335c34a0f152ae2750987" category="list-text">Seleziona *Amministrazione &gt; Licenze*.</block>
+  <block id="e8287c7448cfd8625359581b1cb6deb2" category="list-text">Seleziona la scheda *Licenze dirette*.</block>
+  <block id="37fcb8e7d30cc5903f7318cd979d8ae4" category="list-text">Seleziona *Add license*.</block>
+  <block id="bc8ae46a6370e9f316f1e4bfce188513" category="list-text">Vai alla scheda *Sistema &gt; Licenze software* nel sito di supporto NetApp e genera il file di licenza.</block>
+  <block id="1794b7dae269471cf87de4697f4ba5b0" category="list-text">Torna alla finestra di dialogo *Aggiungi licenza*, seleziona *Carica* e seleziona il file di licenza.</block>
+  <block id="b74e2bce077ef14025639b4f19ad4337" category="list-text">Seleziona *Add license* per installare la licenza.</block>
+  <block id="bbc338806b3fde403217598842ed392b" category="paragraph">La licenza compare nella tabella *Licenze dirette* e il riepilogo *Distribuzione licenze e capacità* si aggiorna.</block>
+  <block id="6d6c2071320d39aedc7f752f83e093e6" category="section-title">Visualizza lo stato della licenza</block>
+  <block id="d82718ab00ad307fce581d5eb2860f64" category="paragraph">Controlla le licenze installate e il loro stato dalla scheda *Licenze dirette*. La tabella mostra il servizio, il numero di serie, il tipo, la capacità utilizzata, la capacità della licenza e la scadenza della licenza. Il riepilogo *Distribuzione licenze e capacità* mostra il numero di licenze installate e la capacità allocata a NetApp Backup and Recovery.</block>
+  <block id="21a7e07f0125ddcf392e4ca0d7d37806" category="paragraph">Dal menu delle azioni <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block> in ogni riga, puoi aggiornare o rimuovere una licenza.</block>
+  <block id="7e1885787a91975e343dfdb2b890f307" category="list-text">Esamina la tabella e il riepilogo *Distribuzione delle licenze e della capacità*.</block>
+  <block id="6c1c5737355a8b30e87ad5d7c6da9553" category="section-title">Aggiorna una licenza</block>
+  <block id="f09c55ca898583bd4ec051e61c0d6cdb" category="paragraph">Sostituisci una licenza esistente nella tua organizzazione Console, ad esempio quando una licenza viene rinnovata o cambiano la sua capacità o la data di scadenza.</block>
+  <block id="e3e575e1c2597108bb52d42a805493f3" category="list-text">Seleziona il menu delle azioni <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block> per la licenza che stai aggiornando e seleziona *Aggiorna licenza*.</block>
+  <block id="973469f4c553cd4cf50320ce0103e19c" category="list-text">Nella finestra di dialogo *Aggiorna licenza*, seleziona *Upload* e seleziona il nuovo file di licenza.</block>
+  <block id="290735d09687ddc37259135c5300ba5f" category="list-text">Seleziona *Aggiorna licenza* per confermare l'aggiornamento.</block>
+  <block id="fb5fa0478317073a0a52cdc3a1dde652" category="paragraph">Dopo l'aggiornamento della licenza, la riga selezionata mostra la nuova capacità della licenza e la scadenza della licenza. Anche il riepilogo *Distribuzione licenze e capacità* si aggiorna.</block>
+  <block id="621e98bbd8c91680af3f444c8d10eaa3" category="section-title">Rimuovi una licenza</block>
+  <block id="542cace16423f513003aaff591c943db" category="paragraph">Rimuovi una licenza dalla tua organizzazione Console. La rimozione di una licenza è permanente. Una licenza rimossa non contribuisce più alla capacità o alla durata di NetApp Backup and Recovery. Se la licenza scade, i backup dai criteri esistenti e i ripristini continuano, ma non puoi creare nuovi criteri di backup o estendere la protezione ad altri carichi di lavoro e datastore.</block>
+  <block id="b0baed4c31346f82a57cdffed05036ec" category="list-text">Seleziona il menu delle azioni <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block> per la licenza che desideri rimuovere e seleziona *Rimuovi licenza*.</block>
+  <block id="ddfe8d8ce6e3dfceb7a2039cd142aa3e" category="list-text">Nella finestra di dialogo di conferma *Rimuovi licenza*, verifica il numero di serie nel messaggio.</block>
+  <block id="37bea8c46b8d33fa477648eba0912d07" category="list-text">Seleziona *Rimuovi* per rimuovere definitivamente la licenza.</block>
+  <block id="2c6ce7383b3cc986a190791da38b9a2a" category="paragraph">La licenza viene rimossa dalla tabella *Licenze dirette* e il riepilogo *Distribuzione delle licenze e della capacità* si aggiorna.</block>
+  <block id="81c2b56f99167782a533db86470cac6e" category="list-text">Aggiungi la licenza NetApp Backup and Recovery alla distribuzione locale di NetApp Console. <block ref="b245df0c039209d78d5353ec232ea246" category="inline-link-macro-rx"></block>.</block>
 </blocks>
