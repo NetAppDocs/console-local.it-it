@@ -29,7 +29,7 @@ Scegli un modello che corrisponda alle tue esigenze in termini di prestazioni, c
 Il tipo di provider che scegli determina quali modelli vengono visualizzati nell'elenco dei modelli di distribuzione locale della Console:
 
 * *OpenAI* — fornisce modelli per l'integrazione diretta con OpenAI.
-* *Compatibile con OpenAI* — fornisce modelli che l'endpoint compatibile della tua organizzazione espone.
+* *Proxy compatibile con OpenAI* — per usare un gateway aziendale o un servizio proxy per connetterti ai modelli supportati.
 * *Anthropic* — fornisce modelli per l'integrazione diretta di Anthropic.
 
 
