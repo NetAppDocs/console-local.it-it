@@ -3738,6 +3738,10 @@
   <block id="06b44c661a84a26e0ce1a017b3a10bf5" category="list-text">*proxy compatibile con OpenAI* per utilizzare un gateway aziendale o un servizio proxy.</block>
   <block id="06cec8d93319a0a41f62ded52e6e388b" category="list-text">*Proxy compatibile con OpenAI* — per usare un gateway aziendale o un servizio proxy per connetterti ai modelli supportati.</block>
   <block id="b1cda2c8041bdb2e7c757f55bc07d4e0" category="list-text">La tua scelta del tipo di provider: OpenAI, proxy compatibile con OpenAI o Anthropic</block>
-  <block id="a9e0ed29bcf0eb9114558aea8e38b3dd" category="paragraph"><block ref="ab74dc1a527eb39bc2a75230306dc5a0" category="inline-link-macro-rx"></block>. . Se ti viene richiesto un endpoint del provider, inserisci l'URL dell'endpoint per il percorso del provider che hai selezionato. . Nel campo *Nome utente*, inserisci il tuo nome utente o l'SSO ID se il percorso del tuo provider lo richiede. . Nel campo *Chiave API*, incolla la chiave API dal percorso del provider selezionato. . Seleziona un modello dall'elenco. . Rivedi la configurazione, quindi seleziona *Salva*.</block>
-  <block id="3202e0a5b24589a1f3bedee597ddb7d9" category="paragraph">Prima di salvare la configurazione, verifica il tipo di provider, l'URL dell'endpoint, la chiave API e il modello selezionato.</block>
+  <block id="cf72c8170aef768cae71f4e2a449acaf" category="list-text">Se ti viene richiesto un endpoint del provider, inserisci l'URL dell'endpoint per il percorso del provider che hai selezionato.</block>
+  <block id="d78f26f4373007724d98776e20cd9322" category="list-text">Nel campo *Nome utente*, inserisci il tuo nome utente o l'SSO ID se il percorso del tuo provider lo richiede.</block>
+  <block id="b2914c614292093e506dbf4a10fd671c" category="list-text">Nel campo *Chiave API*, incolla la chiave API dal percorso del provider selezionato.</block>
+  <block id="73d0a6de3953116536b1666d0db7c78a" category="list-text">Seleziona un modello dall'elenco.</block>
+  <block id="f646c307a4396cd41f6593ce84be57d7" category="list-text">Rivedi la configurazione, quindi seleziona *Salva*.</block>
+  <block id="26033ba1ab8ce1319bdb0de963d1cdcc" category="paragraph">Verifica il tipo di provider, l'URL dell'endpoint, la chiave API e il modello selezionato prima di salvare la configurazione.</block>
 </blocks>

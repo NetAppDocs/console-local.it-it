@@ -62,13 +62,20 @@ Abilita le funzionalità di assistenza tramite una configurazione del provider c
 ** *OpenAI* per l'accesso diretto ai modelli OpenAI.
 ** *proxy compatibile con OpenAI* per utilizzare un gateway aziendale o un servizio proxy.
 ** *Anthropic* per i modelli Claude di Anthropic.
++
+link:concept-llm-integration.html["Scopri l'integrazione di LLM nella distribuzione locale di NetApp Console"].
 
 
 
+. Se ti viene richiesto un endpoint del provider, inserisci l'URL dell'endpoint per il percorso del provider che hai selezionato.
+. Nel campo *Nome utente*, inserisci il tuo nome utente o l'SSO ID se il percorso del tuo provider lo richiede.
+. Nel campo *Chiave API*, incolla la chiave API dal percorso del provider selezionato.
+. Seleziona un modello dall'elenco.
+. Rivedi la configurazione, quindi seleziona *Salva*.
++
+Verifica il tipo di provider, l'URL dell'endpoint, la chiave API e il modello selezionato prima di salvare la configurazione.
 
-link:concept-llm-integration.html["Scopri l'integrazione di LLM nella distribuzione locale di NetApp Console"]. . Se ti viene richiesto un endpoint del provider, inserisci l'URL dell'endpoint per il percorso del provider che hai selezionato. . Nel campo *Nome utente*, inserisci il tuo nome utente o l'SSO ID se il percorso del tuo provider lo richiede. . Nel campo *Chiave API*, incolla la chiave API dal percorso del provider selezionato. . Seleziona un modello dall'elenco. . Rivedi la configurazione, quindi seleziona *Salva*.
 
-Prima di salvare la configurazione, verifica il tipo di provider, l'URL dell'endpoint, la chiave API e il modello selezionato.
 
 
 
